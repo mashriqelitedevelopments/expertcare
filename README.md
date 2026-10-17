@@ -35,6 +35,20 @@ npm run check      # builds into .next-build and gates every page (see scripts/c
 | Interface strings and page copy | `lib/ui.ts` |
 | Content rules for writers | `docs/STYLE.md` |
 
+## Deploying to Hostinger
+
+The `hostinger` branch holds the built site (plain HTML, CSS, JS, images and an `.htaccess`) and is
+what Hostinger's Git deployment clones into `public_html`. Rebuild it after every change to main:
+
+```bash
+npm run deploy
+```
+
+In hPanel: Websites → Manage → Advanced → Git → repository `git@github.com:mashriqelitedevelopments/expertcare.git`,
+branch `hostinger`, directory `public_html`. The repo is private, so add the deploy key hPanel shows
+under the GitHub repository's Settings → Deploy keys first. Hostinger can auto-deploy on push through
+the webhook URL it shows on the same screen (add it under GitHub Settings → Webhooks).
+
 ## Before launch
 
 - Fill `lib/site.ts`: domain, email, phone, WhatsApp, ORN, trade licence, social links; then set `live: true`
