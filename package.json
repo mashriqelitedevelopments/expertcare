@@ -1,0 +1,25 @@
+{
+  "name": "expertcare",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ExpertCare, a full-service real estate brokerage in Dubai. Static export.",
+  "scripts": {
+    "dev": "next dev -p 4370",
+    "build": "next build && node scripts/postbuild.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "node scripts/check.mjs",
+    "market": "sh scripts/dld/refresh.sh",
+    "offplan": "python3 scripts/offplan/build.py"
+  },
+  "dependencies": {
+    "next": "15.5",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.7",
+    "@types/react": "19.0.7",
+    "@types/react-dom": "19.0.3",
+    "typescript": "5.7.3"
+  }
+}

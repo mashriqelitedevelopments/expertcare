@@ -1,0 +1,524 @@
+[
+  {
+    "slug": "emaar-montiva-by-vida",
+    "name": "Montiva by Vida",
+    "developer": "Emaar Properties",
+    "developerUrl": "https://www.emaar.com",
+    "projectUrl": "https://www.emaar.com/en/properties/montiva-by-vida-at-dubai-creek-harbour",
+    "community": "Dubai Creek Harbour",
+    "district": "Ras Al Khor / Dubai Creek Harbour",
+    "unitTypes": [
+      "Apartment"
+    ],
+    "bedrooms": {
+      "min": 1,
+      "max": 3
+    },
+    "priceFrom": 1916888,
+    "priceFromUnit": null,
+    "sizeFrom": 755,
+    "handover": null,
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": null,
+    "availability": "Selling: units listed under Available Units with Book Now",
+    "highlights": [
+      "Vida-branded residences in Dubai Creek Harbour",
+      "1 to 3-bedroom apartments",
+      "Nine units listed as available on 16 Sep 2026, priced AED 1,916,888 to 2,881,888",
+      "Listed available units range from 755 to 1,246 sq ft",
+      "Infinity pool and children's splash zone within landscaped gardens"
+    ],
+    "amenities": [
+      "Infinity pool",
+      "Splash zone",
+      "Landscaped gardens",
+      "Community Park",
+      "Sport Park",
+      "Multi-Sport Court",
+      "Running Track",
+      "Promenade Retail"
+    ],
+    "description": [
+      "Montiva is a Vida-branded apartment building in Dubai Creek Harbour, Emaar's waterfront district beside the Ras Al Khor Wildlife Sanctuary. It offers one to three-bedroom homes, and Emaar describes views over parkland and the neighbouring golf course from the units.",
+      "Shared facilities centre on an infinity pool, a children's splash area and planted gardens, with sports courts, a running track and retail along the community promenade. On 16 September 2026 Emaar's page listed nine available units from 755 to 1,246 sq ft. It gives no handover date or payment plan."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/emaar-montiva-by-vida/1.jpg",
+        "sourceUrl": "https://uae-cms.emaar.com/uploads/419522_brochure_File_1ed1216b0b.pdf#page=9",
+        "alt": "Residential tower beside a landscaped park path with Dubai Creek Harbour towers behind",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/emaar-montiva-by-vida/2.jpg",
+        "sourceUrl": "https://uae-cms.emaar.com/uploads/419522_brochure_File_1ed1216b0b.pdf#page=22",
+        "alt": "Living room with floor-to-ceiling windows looking over greenery",
+        "kind": "interior"
+      },
+      {
+        "file": "img/emaar-montiva-by-vida/3.jpg",
+        "sourceUrl": "https://uae-cms.emaar.com/uploads/419522_brochure_File_1ed1216b0b.pdf#page=11",
+        "alt": "Pool deck with cabanas at dusk",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.emaar.com/en/properties/montiva-by-vida-at-dubai-creek-harbour",
+      "https://uae-cms.emaar.com/uploads/419522_brochure_File_1ed1216b0b.pdf"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "priceFrom and sizeFrom are the lowest price and smallest area among the 9 units in the page's Available Units list on 16 Sep 2026, not necessarily the smallest unit in the project; the page headline says 'Starting Price AED 1.91 Mn'",
+      "Bedroom count of the cheapest listed unit is not shown in the page data, so priceFromUnit is null",
+      "Handover date and payment plan are shown per unit through Emaar's booking API (disallowed by robots.txt), so they were not collected",
+      "The amenity list on the page matches the one on Palace Residences Hillside word for word; it may be a shared community template",
+      "Launch date not found on an official page"
+    ]
+  },
+  {
+    "slug": "emaar-palace-residences-hillside",
+    "name": "Palace Residences Hillside",
+    "developer": "Emaar Properties",
+    "developerUrl": "https://www.emaar.com",
+    "projectUrl": "https://www.emaar.com/en/properties/palace-residences-hillside-at-dubai-hills-estate",
+    "community": "Dubai Hills Estate",
+    "district": "Mohammed Bin Rashid City",
+    "unitTypes": [
+      "Apartment",
+      "Townhouse"
+    ],
+    "bedrooms": {
+      "min": 1,
+      "max": 3
+    },
+    "priceFrom": 1719888,
+    "priceFromUnit": null,
+    "sizeFrom": 680,
+    "handover": null,
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": null,
+    "availability": "Selling: units listed under Available Units with Book Now",
+    "highlights": [
+      "Palace-branded residences in Dubai Hills Estate",
+      "1 to 3-bedroom apartments and 3-bedroom townhouses",
+      "18 units listed as available on 16 Sep 2026, priced AED 1,719,888 to 6,337,888",
+      "Listed available units range from 680 to 2,623 sq ft",
+      "Near Dubai Hills Park and Hillside Park"
+    ],
+    "amenities": [
+      "Swimming pool",
+      "Cabanas and lounge areas",
+      "Padel courts",
+      "Outdoor gym",
+      "Table tennis",
+      "Community Park",
+      "Sport Park",
+      "Running Track"
+    ],
+    "description": [
+      "Palace Residences Hillside is a Palace-branded project in Dubai Hills Estate. It combines one to three-bedroom apartments with three-bedroom townhouses, and Emaar places it close to Dubai Hills Park and Hillside Park. Emaar describes the grounds as resort-style, with pools, dining and wellness spaces.",
+      "Emaar lists a pool with cabanas, padel courts, an outdoor gym and table tennis. On 16 September 2026 the page listed 18 available units from 680 to 2,623 sq ft, priced from AED 1,719,888 to AED 6,337,888. It gives no handover date or payment plan."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/emaar-palace-residences-hillside/1.jpg",
+        "sourceUrl": "https://uae-cms.emaar.com/uploads/423136_brochure_File_0054f5e0c6.pdf#page=14",
+        "alt": "Row of low-rise townhouses beside a tree-lined walkway at dusk",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/emaar-palace-residences-hillside/2.jpg",
+        "sourceUrl": "https://uae-cms.emaar.com/uploads/423136_brochure_File_0054f5e0c6.pdf#page=21",
+        "alt": "Dining and living area with a view over the community",
+        "kind": "interior"
+      },
+      {
+        "file": "img/emaar-palace-residences-hillside/3.jpg",
+        "sourceUrl": "https://uae-cms.emaar.com/uploads/423136_brochure_File_0054f5e0c6.pdf#page=16",
+        "alt": "Pool with sun loungers beside the residential building",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.emaar.com/en/properties/palace-residences-hillside-at-dubai-hills-estate",
+      "https://uae-cms.emaar.com/uploads/423136_brochure_File_0054f5e0c6.pdf"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "priceFrom and sizeFrom are the lowest price and smallest area in the page's Available Units list on 16 Sep 2026; the page headline says 'Starting Price AED 1.71 Mn'",
+      "The unit list does not say which units are townhouses or give bedroom counts, so priceFromUnit is null",
+      "The page's map coordinates (25.2034, 55.3600) are the same as Montiva's in Dubai Creek Harbour, which looks like a CMS error; the community is given as Dubai Hills Estate",
+      "The amenity icon list is the same generic list used on Montiva; the amenities here come from the page's feature text instead",
+      "'Mohammed Bin Rashid City' as the district comes from general usage, not from the Emaar page",
+      "Handover and payment plan are not published outside Emaar's booking API; launch date not found"
+    ]
+  },
+  {
+    "slug": "emaar-ovelle",
+    "name": "Ovelle",
+    "developer": "Emaar Properties",
+    "developerUrl": "https://www.emaar.com",
+    "projectUrl": "https://www.emaar.com/en/properties/ovelle-at-the-valley",
+    "community": "The Valley",
+    "district": "Ud Al Bayda, Al Ain Road",
+    "unitTypes": [
+      "Villa"
+    ],
+    "bedrooms": {
+      "min": 4,
+      "max": 5
+    },
+    "priceFrom": 8897888,
+    "priceFromUnit": null,
+    "sizeFrom": 5670,
+    "handover": null,
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": null,
+    "availability": "Selling: units listed under Available Units with Book Now",
+    "highlights": [
+      "4 and 5-bedroom villas in The Valley",
+      "Six villas listed as available on 16 Sep 2026, priced AED 8,897,888 to 13,835,888",
+      "Listed available villas range from 5,670 to 7,970 sq ft",
+      "Terrace Trails and Central Park inside the community",
+      "Pet park and landscaped pool deck"
+    ],
+    "amenities": [
+      "Landscaped pool deck",
+      "Generous common landscape",
+      "Outdoor areas",
+      "Kids Playground",
+      "Fitness centre",
+      "Indoor multipurpose room",
+      "Pet Park"
+    ],
+    "description": [
+      "Ovelle is a villa neighbourhood within The Valley, Emaar's community in the Ud Al Bayda area on the Dubai side of the Al Ain Road. It is made up of four and five-bedroom detached villas, with interiors in earthy tones and large glazed openings.",
+      "Shared spaces include a landscaped pool deck, a gym, an indoor multipurpose room, a children's playground and a pet park, with Terrace Trails and Central Park inside the community. On 16 September 2026 Emaar listed six available villas from 5,670 to 7,970 sq ft."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/emaar-ovelle/1.jpg",
+        "sourceUrl": "https://uae-cms.emaar.com/uploads/426599_hero_slide_2_4d0196e9c1.jpg",
+        "alt": "Two-storey white villa with a landscaped front garden at dusk",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/emaar-ovelle/2.jpg",
+        "sourceUrl": "https://uae-cms.emaar.com/uploads/426584_interior_0_05f61cfa68.jpg",
+        "alt": "Double-height living room with pale sofas and a garden view",
+        "kind": "interior"
+      },
+      {
+        "file": "img/emaar-ovelle/3.jpg",
+        "sourceUrl": "https://uae-cms.emaar.com/uploads/426572_feature_block_1_7533a23c7f.jpg",
+        "alt": "Community pool with palm trees and villas behind at dusk",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.emaar.com/en/properties/ovelle-at-the-valley"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Sources disagree: the page text says 'Starting price AED 7.09 Mn', but the cheapest villa in the Available Units list on 16 Sep 2026 is AED 8,897,888 (5,670 sq ft); priceFrom uses the listed unit",
+      "sizeFrom is the smallest villa listed as available, not necessarily the smallest villa type",
+      "No brochure is linked on the page; handover and payment plan not published outside the booking API; launch date not found",
+      "The largest official images are 1620px (exterior), 1024px (interior) and 1200px (amenity)",
+      "The district label comes from the page's map address ('Ud al Bayda') and general knowledge of The Valley's location on Al Ain Road"
+    ]
+  },
+  {
+    "slug": "emaar-salva",
+    "name": "Salva",
+    "developer": "Emaar Properties",
+    "developerUrl": "https://www.emaar.com",
+    "projectUrl": "https://www.emaar.com/en/properties/salva-at-the-heights-country-club-and-wellness",
+    "community": "The Heights Country Club & Wellness",
+    "district": "Near Al Maktoum International Airport",
+    "unitTypes": [
+      "Villa"
+    ],
+    "bedrooms": {
+      "min": 3,
+      "max": 5
+    },
+    "priceFrom": 6762888,
+    "priceFromUnit": null,
+    "sizeFrom": 3340,
+    "handover": null,
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": null,
+    "availability": "Selling: units listed under Available Units with Book Now",
+    "highlights": [
+      "3 to 5-bedroom villas in The Heights Country Club & Wellness",
+      "15 villas listed as available on 16 Sep 2026, priced AED 6,762,888 to 11,303,888",
+      "Listed available villas range from 3,340 to 5,884 sq ft",
+      "Wellness lake with promenade and a private beach",
+      "Emaar says the master community is 10 minutes from Al Maktoum International Airport"
+    ],
+    "amenities": [
+      "Wellness Centre",
+      "Meditation Garden",
+      "Wellness Lake & Promenade",
+      "Private Beach",
+      "Fitness Area",
+      "Yoga Lake",
+      "Social Terrace"
+    ],
+    "description": [
+      "Salva is a villa release in The Heights Country Club & Wellness, a master community Emaar unveiled in May 2024 and describes as 10 minutes from Al Maktoum International Airport. The villas have three to five bedrooms and white contemporary exteriors with covered parking.",
+      "The community is organised around health and outdoor activity: a wellness centre, a lake with a promenade, a yoga lake, a meditation garden and a private beach. On 16 September 2026 Emaar listed 15 available villas from 3,340 to 5,884 sq ft."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/emaar-salva/1.jpg",
+        "sourceUrl": "https://uae-cms.emaar.com/uploads/430607_hero_slide_2_94765c1c04.jpg",
+        "alt": "White contemporary villa with a covered carport and palm trees",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/emaar-salva/2.jpg",
+        "sourceUrl": "https://uae-cms.emaar.com/uploads/430622_interior_3_23a9456f20.jpg",
+        "alt": "Open-plan living room with a sculptural chandelier and garden views",
+        "kind": "interior"
+      },
+      {
+        "file": "img/emaar-salva/3.jpg",
+        "sourceUrl": "https://uae-cms.emaar.com/uploads/430610_hero_slide_1_23c379e624.jpg",
+        "alt": "Palm-lined swimming pool with cabanas",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.emaar.com/en/properties/salva-at-the-heights-country-club-and-wellness",
+      "https://www.emaar.com/en/press-release-listing/emaar-properties-celebrates-the-grand-unveiling-of-the-heights-country-club-wellness"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "The page headline says 'Starting Price – AED 6 Mn', but the cheapest villa in the Available Units list on 16 Sep 2026 is AED 6,762,888 (3,340 sq ft); priceFrom uses the listed unit",
+      "The 2024 press release describes the master community's homes as townhouses and semi-attached villas; the Salva page only says '3 -5 Bedroom Villas'",
+      "The press release does not name a district; 'Near Al Maktoum International Airport' paraphrases its '10 minutes from Al Maktoum International Airport'",
+      "No brochure is linked; handover and payment plan not published outside the booking API; launch date not found",
+      "The largest official images are 1620px (exterior, amenity) and 1024px (interior)"
+    ]
+  },
+  {
+    "slug": "nakheel-palm-central-private-residences",
+    "name": "Palm Central Private Residences",
+    "developer": "Nakheel",
+    "developerUrl": "https://www.nakheel.com",
+    "projectUrl": "https://www.nakheel.com/en/new-launches/palm-central-private-residences",
+    "community": "Palm Jebel Ali",
+    "district": "Jebel Ali",
+    "unitTypes": [
+      "Apartment",
+      "Townhouse"
+    ],
+    "bedrooms": {
+      "min": 1,
+      "max": 5
+    },
+    "priceFrom": 2700000,
+    "priceFromUnit": "1 bedroom",
+    "sizeFrom": 805,
+    "handover": "September 2030 (estimated construction completion)",
+    "paymentPlan": [
+      {
+        "stage": "On booking",
+        "pct": 20
+      },
+      {
+        "stage": "November 2026",
+        "pct": 5
+      },
+      {
+        "stage": "April 2027",
+        "pct": 5
+      },
+      {
+        "stage": "September 2027",
+        "pct": 10
+      },
+      {
+        "stage": "February 2028",
+        "pct": 10
+      },
+      {
+        "stage": "July 2028",
+        "pct": 10
+      },
+      {
+        "stage": "November 2028",
+        "pct": 5
+      },
+      {
+        "stage": "March 2029",
+        "pct": 5
+      },
+      {
+        "stage": "September 2030",
+        "pct": 30
+      }
+    ],
+    "paymentPlanLabel": null,
+    "launched": "2025-10",
+    "availability": "New Launch; next phase released 24 June 2026",
+    "highlights": [
+      "Three buildings at the centre of Palm Jebel Ali, between the fronds, with direct beach access",
+      "The June 2026 phase has 222 homes in three low to mid-rise buildings",
+      "Published starting prices: AED 2.7m (1-bed), 4.3m (2-bed), 4.9m (2-bed + maid), 7.5m (3-bed), 12.4m (4-bed), 14.9m (townhouse)",
+      "Estimated construction completion September 2030",
+      "Smallest 1-bedroom in the floor plans is 805 sq ft total, including balcony"
+    ],
+    "amenities": [
+      "Infinity Pool",
+      "Padel Court",
+      "Fitness Studio",
+      "Beach Volleyball",
+      "Beach Lounge",
+      "Clubhouse",
+      "Game Room",
+      "Kids' Play Areas"
+    ],
+    "description": [
+      "Palm Central Private Residences is a Nakheel apartment and townhouse project on Palm Jebel Ali, spread over three low to mid-rise buildings in the middle of the island. Nakheel first released it in October 2025 and added a 222-home phase in June 2026.",
+      "Homes range from one-bedroom apartments to townhouses. Nakheel's price sheet starts at AED 2.7 million for a one-bedroom and gives an estimated construction completion of September 2030. Facilities include an infinity pool, padel and volleyball courts, a fitness studio, a clubhouse and children's play areas."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/nakheel-palm-central-private-residences/1.jpg",
+        "sourceUrl": "https://www.nakheel.com/images/nakheelcorporatelibraries/spotlight/palm-central_banner.jpg?sfvrsn=43f99260_1",
+        "alt": "Aerial view of low-rise buildings on Palm Jebel Ali's central island with beaches and fronds",
+        "kind": "aerial"
+      },
+      {
+        "file": "img/nakheel-palm-central-private-residences/2.jpg",
+        "sourceUrl": "https://www.nakheel.com/images/nakheelcorporatelibraries/developments/projects/palm-central_image-05.jpg?sfvrsn=704f0022_1",
+        "alt": "Living room with full-height glazing overlooking the water",
+        "kind": "interior"
+      },
+      {
+        "file": "img/nakheel-palm-central-private-residences/3.jpg",
+        "sourceUrl": "https://www.nakheel.com/images/nakheelcorporatelibraries/developments/projects/palm-central_image-02.jpg?sfvrsn=245ba597_1",
+        "alt": "Infinity pool between the residential buildings with the sea beyond",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.nakheel.com/en/new-launches/palm-central-private-residences",
+      "https://dubaiholding.box.com/s/5k81gkmy44xldnmg7okjztxkal69la73",
+      "https://dubaiholding.box.com/s/rk1p6js54mwfetja1lbn17hzohyd1iwc",
+      "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "The payment plan PDF has two plans. The one recorded (20/5/5/10/10/10/5/5/30) is on the page with the 1-bed, 2-bed and 2-bed + maid prices. The page with the 3-bed, 4-bed and townhouse prices shows 20% on booking, 5% Nov 2026, 5% Apr 2027, 10% Sep 2027, 5% Feb 2028, 5% Jul 2028, 5% Nov 2028, 5% Mar 2029 and 40% Sep 2030",
+      "Payment-plan dates may be for the June 2026 phase only; the PDF is undated",
+      "The June 2026 press release says the townhouses have 4 to 5 bedrooms; the price sheet only says 'Townhouse'. The bedroom maximum of 5 comes from the press release",
+      "sizeFrom is total area (suite 712 sq ft plus balcony 93 sq ft) for 1-bed Type A1 in the floor-plan PDF",
+      "The documents are on Dubai Holding's Box account, linked from the Nakheel page",
+      "The district label 'Jebel Ali' is general usage, not taken from the Nakheel page"
+    ]
+  },
+  {
+    "slug": "nakheel-bay-grove-residences",
+    "name": "Bay Grove Residences",
+    "developer": "Nakheel",
+    "developerUrl": "https://www.nakheel.com",
+    "projectUrl": "https://www.nakheel.com/en/new-launches/baygrove-residences",
+    "community": "Dubai Islands",
+    "district": "Deira (Island B, Dubai Islands)",
+    "unitTypes": [
+      "Apartment",
+      "Penthouse"
+    ],
+    "bedrooms": {
+      "min": 1,
+      "max": 4
+    },
+    "priceFrom": null,
+    "priceFromUnit": null,
+    "sizeFrom": null,
+    "handover": null,
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": "2025-07",
+    "availability": "New Launch (final phase); Register your interest",
+    "highlights": [
+      "Final phase of Bay Grove on Island B, Dubai Islands: four buildings (B12 to B15) with 257 homes",
+      "1 to 4-bedroom apartments and one 4-bedroom penthouse",
+      "Building 15 contains only 4-bedroom homes and the penthouse, with its own lobby and drop-off",
+      "Residents get direct access to Crystal Beach",
+      "Infinity lap pool, family pool, clubhouse with cinema room, gym and kids' club"
+    ],
+    "amenities": [
+      "Infinity lap pool",
+      "Family pool",
+      "Clubhouse",
+      "Cinema & game room",
+      "Fitness centre",
+      "Yoga studio",
+      "Podium gardens",
+      "Kids' club"
+    ],
+    "description": [
+      "Bay Grove Residences is a Nakheel apartment development on Island B of Dubai Islands, off the Deira coast. Its final phase, announced in July 2025, adds four connected buildings with 257 homes, from one-bedroom apartments to four-bedroom units, plus a single penthouse.",
+      "The buildings share a podium with gardens, an infinity lap pool, a family pool, a clubhouse with a cinema room, a gym and indoor and outdoor children's areas. Residents can reach Crystal Beach directly. Nakheel does not publish prices, sizes, a payment plan or a handover date for this phase."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/nakheel-bay-grove-residences/1.jpg",
+        "sourceUrl": "https://www.nakheel.com/images/nakheelcorporatelibraries/developments/projects/gallery-images-1920x1080-ext-01.jpg?sfvrsn=aa7620d8_1",
+        "alt": "Aerial view of the Bay Grove buildings on a curved beach with shallow turquoise water",
+        "kind": "aerial"
+      },
+      {
+        "file": "img/nakheel-bay-grove-residences/2.jpg",
+        "sourceUrl": "https://www.nakheel.com/images/nakheelcorporatelibraries/developments/projects/gallery-images-1920x1080-int-02.jpg?sfvrsn=b94d3266_1",
+        "alt": "Open-plan living and dining room with tall windows",
+        "kind": "interior"
+      },
+      {
+        "file": "img/nakheel-bay-grove-residences/3.jpg",
+        "sourceUrl": "https://www.nakheel.com/images/nakheelcorporatelibraries/developments/projects/gallery-images-1920x1080-ext-02.jpg?sfvrsn=beaf1fad_1",
+        "alt": "Pool deck with loungers below a terraced residential building",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.nakheel.com/en/new-launches/baygrove-residences",
+      "https://dubaiholding.box.com/s/j9sctws8nfklxwsokbu6n3rssesuojf1",
+      "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2025/07/03/nakheel-unveils-final-phase-of-bay-grove-residences-on-dubai-islands",
+      "https://www.nakheel.com/en/media-centre/blogs/detail/who-should-consider-buying-at-bay-grove-residences-on-dubai-islands"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Availability is not stated explicitly. The project is under New Launches with a Register Interest form, and an undated Nakheel blog addresses buyers, but the final phase was announced in July 2025 and could be largely sold",
+      "No price, size, payment plan or handover date is published on the page, in the brochure or in the press release",
+      "The gallery file names are generic ('gallery-images-1920x1080-...'); the images are taken to show Bay Grove because they appear on the Bay Grove page",
+      "The district label is based on the brochure's 'Located just north of the city' and the blog's 'off the coast of Deira'"
+    ]
+  }
+]

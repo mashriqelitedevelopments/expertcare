@@ -1,0 +1,490 @@
+[
+  {
+    "slug": "damac-islands-2",
+    "name": "DAMAC Islands 2",
+    "developer": "DAMAC Properties",
+    "developerUrl": "https://www.damacproperties.com",
+    "projectUrl": "https://www.damacproperties.com/en/communities/damac-islands-2-community/projects/damac-islands-2/",
+    "community": "DAMAC Islands 2",
+    "district": "Dubailand",
+    "unitTypes": [
+      "Villa",
+      "Townhouse"
+    ],
+    "bedrooms": {
+      "min": 4,
+      "max": 6
+    },
+    "priceFrom": 2990000,
+    "priceFromUnit": null,
+    "sizeFrom": 2186,
+    "handover": "Q4 2030",
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": "2025-11",
+    "availability": "Selling (available units listed)",
+    "highlights": [
+      "Clusters are named after eight islands, including Bahamas, Tahiti, Bermuda, Cuba and Maui",
+      "The developer gives the master community as 20 million sq ft",
+      "Brochure floor plans run from a 4-bedroom mid townhouse (2,185.50 sq ft) to a 6-bedroom villa with maid's room (6,276.33 sq ft)",
+      "Home types: townhouses, twin villas and detached villas"
+    ],
+    "amenities": [
+      "Tranquil Lake & Eco Park",
+      "Whispering Waterfall",
+      "Botanic Garden",
+      "Island Vida Wellness",
+      "Sky Woods Adventure",
+      "Eco Lodge Hospitality",
+      "Garden of Insight",
+      "Eco Explorers' Land"
+    ],
+    "description": [
+      "DAMAC Islands 2 is the second island-themed villa community from DAMAC in Dubailand. Its clusters take their names from eight tropical islands, and the homes sit around lagoons, waterways and planted parks. The developer lists the master community at 20 million square feet.",
+      "The brochure covers three home types: 4- and 5-bedroom townhouses, 5-bedroom twin villas and 6-bedroom detached villas, several with a maid's room. The smallest published plan is 2,185.50 sq ft. The project page currently lists 4- and 5-bedroom homes as available."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/damac-islands-2/1.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/5ogXqVy4sac1iP6Xjt8F0c/0080708f88cb34b854698b2ff8756364/DAMAC_Islands_2-Gallery-12.jpg",
+        "alt": "Aerial render of townhouse rows along a winding lagoon at dusk",
+        "kind": "aerial"
+      },
+      {
+        "file": "img/damac-islands-2/2.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/60Q9DQorMVtg2S2SFnffsm/aed3e3785967b68c35997ab73b07c4e1/4BR_03.jpg",
+        "alt": "Render of a 4-bedroom home's living and dining room",
+        "kind": "interior"
+      },
+      {
+        "file": "img/damac-islands-2/3.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/5AKUTnG7gFvZyumzkbhSwP/1c2b49ca4914a1f9dc3f8c3420d0a7de/DAMAC_Islands_2-Amenities-01-TRANQUIL_LAKE___ECO_PARK.jpg",
+        "alt": "Render of the lake and eco park with kayakers and a small island",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.damacproperties.com/en/communities/damac-islands-2-community/projects/damac-islands-2/",
+      "https://downloads.ctfassets.net/zoq5l15g49wj/3GEn7qwLmvXX3R0GwZmZ0D/ceed6aa7cdfb404401a9bcc2de30a20d/DAMAC_ISLANDS_2_Brochure_DIGITAL_ENG_NOV12_1.pdf",
+      "https://www.damacproperties.com/en/projects/"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Starting price: the project page shows 'AED 2,990,000*' as a fixed figure, but the project listing and cards show a live 'From' of AED 3,329,000. The page figure is used here.",
+      "Handover: the page has no handover field. The available-unit cards show Q4 2030 for 4-bedroom and Q2 2030 for 5-bedroom homes; the site's listing data gives 2030-12-31. Q4 2030 (the later date) is used here.",
+      "Bedrooms 4-6 come from the brochure and FAQ. Current inventory lists only 4- and 5-bedroom homes.",
+      "sizeFrom is the brochure's 2,185.50 sq ft (4-bedroom mid townhouse), rounded up to 2,186; the unit card also shows 2,186 sq ft.",
+      "Launch month (2025-11) comes from the site's listing data (launchDate 2025-11-12), not from visible text.",
+      "No payment plan is published on the page or in the brochure.",
+      "The interior image comes from the page's 4-bedroom unit card, not the main gallery."
+    ]
+  },
+  {
+    "slug": "damac-chelsea-residences",
+    "name": "Chelsea Residences",
+    "developer": "DAMAC Properties",
+    "developerUrl": "https://www.damacproperties.com",
+    "projectUrl": "https://www.damacproperties.com/en/projects/chelsea-residences/",
+    "community": "Dubai Maritime City",
+    "district": "Dubai Maritime City",
+    "unitTypes": [
+      "Apartment"
+    ],
+    "bedrooms": {
+      "min": 1,
+      "max": 3
+    },
+    "priceFrom": 2513000,
+    "priceFromUnit": null,
+    "sizeFrom": null,
+    "handover": "Q2 2030",
+    "paymentPlan": null,
+    "paymentPlanLabel": "1%",
+    "launched": "2025-05",
+    "availability": "Selling (available units listed)",
+    "highlights": [
+      "Branded residences developed with Chelsea Football Club",
+      "Six towers in two phases (Chelsea Residences 1 and 2), rising from 25 to 33 storeys above ground and two podium levels",
+      "The developer states the scheme has more than 1,400 homes",
+      "Rooftop football pitch, football simulation room and an athlete training gym are among the listed amenities"
+    ],
+    "amenities": [
+      "Chelsea Lion Beach",
+      "Stamford Summit rooftop pitch",
+      "Football Simulation Room",
+      "Chelsea Athlete Performance Training Centre",
+      "Underwater-Themed Kids Play Area",
+      "Serenity Spa",
+      "Starlit Wellness Centre",
+      "Rain Therapy"
+    ],
+    "description": [
+      "Chelsea Residences is a waterfront apartment scheme in Dubai Maritime City, developed by DAMAC in partnership with Chelsea Football Club. The brochure shows six towers split into two phases. Heights range from 25 to 33 floors above a ground level and two podium floors, and the developer counts more than 1,400 homes.",
+      "Apartments have one, two or three bedrooms. The podium and roof carry football-themed facilities, including a rooftop pitch, a simulation room and a training gym, plus pools, a spa and a children's play area. The project page currently lists 1- and 2-bedroom units for sale."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/damac-chelsea-residences/1.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/1ekJe0zSQqUN4LwZB8Y7Ux/9ca4fca5b30bd47a406d380fbc7ee6cb/Chelsea_Residences-Gallery-00.jpg",
+        "alt": "Render of the towers on the waterfront at dusk, reflected in the water",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/damac-chelsea-residences/2.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/1moLdrptanHF6pSznZ8Tqd/4a8b0acb4ab2d39da56bc164acc584c7/Chelsea_Residences-Gallery-18.jpg",
+        "alt": "Render of an apartment living and dining room with floor-to-ceiling sea views",
+        "kind": "interior"
+      },
+      {
+        "file": "img/damac-chelsea-residences/3.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/1QNgBYRv6nVs0j0t80POTD/11b4a83130205b158325e88d1bc9fc25/Chelsea_Residences-2-Amenities-STAMFORD_SUMMIT.jpg",
+        "alt": "Aerial render of the rooftop football pitch above the podium pools",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.damacproperties.com/en/projects/chelsea-residences/",
+      "https://downloads.ctfassets.net/zoq5l15g49wj/32NQYslOxv49gWtFui7K2F/656d958ca265e33372342a9051bf34b1/Chelsea_English.pdf",
+      "https://www.damacproperties.com/en/projects/"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Starting price is the live 'From' figure DAMAC's site shows on its project listing and project cards (it comes from current inventory, and the server-rendered page labels it with a £ symbol by mistake; the AED value matches the site's own AED currency data). It changes as units sell. The page's fallback headline is 'AED 2.32 Million*'; the live figure shown is AED 2,513,000.",
+      "Handover: the unit cards show Q2 2030 for 1-bedroom and Q4 2029 for 2-bedroom units; the site's listing data gives 2030-06-30. Q2 2030 (the later date) is used here.",
+      "The payment plan is published only as '1%', with no breakdown, so paymentPlan is null.",
+      "The listing summary shows 1-2 bedrooms (current inventory); the brochure, FAQ and floor plans also include 3-bedroom units.",
+      "sizeFrom is null: no minimum size is shown on the page. The site's listing data holds areaMin 773 sq ft, which is not displayed.",
+      "Launch month (2025-05) comes from the site's listing data (launchDate 2025-05-27).",
+      "The page says 'World's first football-themed residence'. That claim is left out of the highlights because it is unverified."
+    ]
+  },
+  {
+    "slug": "damac-riverside-views-azure-2",
+    "name": "Azure 2 at DAMAC Riverside Views",
+    "developer": "DAMAC Properties",
+    "developerUrl": "https://www.damacproperties.com",
+    "projectUrl": "https://www.damacproperties.com/en/communities/damac-riverside/projects/damac-riverside-views/",
+    "community": "DAMAC Riverside",
+    "district": "Dubai Investment Park",
+    "unitTypes": [
+      "Apartment"
+    ],
+    "bedrooms": {
+      "min": 1,
+      "max": 2
+    },
+    "priceFrom": 795000,
+    "priceFromUnit": null,
+    "sizeFrom": null,
+    "handover": "Q1 2029",
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": "2025-02",
+    "availability": "Selling (available units listed)",
+    "highlights": [
+      "Apartment cluster inside the DAMAC Riverside master community",
+      "The project page lists more than 15 amenities",
+      "Unit cards show 1-bedroom units up to 1,050 sq ft and 2-bedroom units up to 1,504 sq ft",
+      "The page gives handover as Q1 2029"
+    ],
+    "amenities": [
+      "Malibu Cove",
+      "Essential oils lake",
+      "Peace room",
+      "Floating sports",
+      "Calisthenics stations",
+      "Cooking stations",
+      "Island restaurant",
+      "Adventure land"
+    ],
+    "description": [
+      "Azure 2 is an apartment cluster within DAMAC Riverside Views, part of the DAMAC Riverside community that the site places in Dubai Investment Park. Mid-rise buildings line a man-made river and water channels, and residents share landscaped walkways and open space between the blocks.",
+      "The project offers 1- and 2-bedroom apartments; the unit cards show maximum sizes of 1,050 and 1,504 sq ft. Listed facilities include a beach-style lagoon, water-based sports, outdoor fitness stations, cooking stations and a children's play area. The page gives handover as Q1 2029."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/damac-riverside-views-azure-2/1.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/2oinspeYqJiCjerO3PX5w1/46f037cb417a597fbd101192241a0a28/Riverside_Views-Gallery-00.jpg",
+        "alt": "Render of apartment buildings along the river channel with a boat",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/damac-riverside-views-azure-2/2.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/5EC7VHqMiE4nDJvYn7XhK7/4d838e380914219ba9f5c476976a0a7f/Riverside_Views-Gallery-18.jpg",
+        "alt": "Render of an apartment living room with a balcony view over the community",
+        "kind": "interior"
+      },
+      {
+        "file": "img/damac-riverside-views-azure-2/3.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/59ggZKFK3rJTqXZJVpadjb/106f28bfab2e74b17999223e0e72afcb/Riverside_Views-Amenities-01-Malibu_Cove.jpg",
+        "alt": "Render of the Malibu Cove lagoon with a sand beach and a floating screen",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.damacproperties.com/en/communities/damac-riverside/projects/damac-riverside-views/",
+      "https://www.damacproperties.com/en/projects/"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Starting price is the live 'From' figure DAMAC's site shows on its project listing and project cards (it comes from current inventory, and the server-rendered page labels it with a £ symbol by mistake; the AED value matches the site's own AED currency data). It changes as units sell. The project page itself shows only 'AED 1,800/MONTH*' as the starting price, with no terms, so AED 795,000 comes from the listing and project cards only.",
+      "Naming: the page headline is 'Azure 2', while the page title and listing say 'DAMAC Riverside Views' / 'Riverside Views'.",
+      "Bedrooms: the FAQ says 1 to 2 bedrooms; the site's listing data also includes studios (STD), which do not appear on the unit cards.",
+      "sizeFrom is null: only maximum sizes are shown. The site's listing data holds areaMin 491 sq ft, which is not displayed (possibly a studio).",
+      "The district 'Dubai Investment Park' is taken from the site's unit cards.",
+      "No brochure PDF or payment-plan breakdown was found on the page.",
+      "Launch month (2025-02) comes from the site's listing data (launchDate 2025-02-25)."
+    ]
+  },
+  {
+    "slug": "damac-hills-2-violet-4",
+    "name": "Violet 4",
+    "developer": "DAMAC Properties",
+    "developerUrl": "https://www.damacproperties.com",
+    "projectUrl": "https://www.damacproperties.com/en/communities/damac-hills-2/projects/violet-4/",
+    "community": "DAMAC Hills 2",
+    "district": "Dubailand",
+    "unitTypes": [
+      "Townhouse"
+    ],
+    "bedrooms": {
+      "min": 4,
+      "max": 4
+    },
+    "priceFrom": 2152000,
+    "priceFromUnit": "4 bedroom townhouse",
+    "sizeFrom": 2352,
+    "handover": "Q4 2028",
+    "paymentPlan": null,
+    "paymentPlanLabel": "1%",
+    "launched": "2024-10",
+    "availability": "Selling (available units listed)",
+    "highlights": [
+      "4-bedroom townhouses only, in end (TH12-4E) and middle (TH12-4M) plans",
+      "Total saleable area of 2,352.26 sq ft (middle unit) or 2,415.33 sq ft (end unit), per the brochure",
+      "Homes have private gardens and roof terraces",
+      "Located in DAMAC Hills 2, next to its Water Town, Down Town and Sports Town zones"
+    ],
+    "amenities": [
+      "Wave pool",
+      "Zen garden",
+      "Malibu beach",
+      "Sports fields",
+      "Floating cinema",
+      "Lazy river"
+    ],
+    "description": [
+      "Violet 4 is a cluster of 4-bedroom townhouses in DAMAC Hills 2, a large master community by the same developer in Dubailand. There are two layouts, an end unit and a middle unit. Each has ground, first and roof floors, a private garden and a roof terrace.",
+      "The brochure gives total saleable areas of 2,352.26 sq ft for the middle unit and 2,415.33 sq ft for the end unit. Residents use the wider community's facilities, including a wave pool, a lazy river, sports fields, a zen garden and an open-air cinema."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/damac-hills-2-violet-4/1.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/6VxguJSBuuriZTYgcNknjk/b4ef2d9320b2bbeb5927b95e0271758e/Violet_4-Gallery-4x3-00.jpg",
+        "alt": "Render of a row of three-storey townhouses with front gardens",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/damac-hills-2-violet-4/2.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/1e26A09S3e5EMzud4J7wL9/7bab3a0e3651374390be31e088483c50/Violet_4-Gallery-4x3-02.jpg",
+        "alt": "Render of a living room opening onto a private garden terrace",
+        "kind": "interior"
+      },
+      {
+        "file": "img/damac-hills-2-violet-4/3.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/5xglh6lYYLHf5OUWsVk5px/4a4bcb6da3579e6019d0cd1ad34a29cf/Violet_4-Amenities-03-MalibuBeach-4x3.jpg",
+        "alt": "Aerial render of the Malibu Beach lagoon pool with water slides",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.damacproperties.com/en/communities/damac-hills-2/projects/violet-4/",
+      "https://downloads.ctfassets.net/zoq5l15g49wj/3bTcP9Ew7qH1RGw0ZbJa6W/0901ced2ddcc64d5b30632fe995db4bf/violet_4-d2-brochure-en.pdf",
+      "https://www.damacproperties.com/en/projects/"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Starting price is the live 'From' figure DAMAC's site shows on its project listing and project cards (it comes from current inventory, and the server-rendered page labels it with a £ symbol by mistake; the AED value matches the site's own AED currency data). It changes as units sell. The page's fallback text is 'Available on Request'; the live figure shown is AED 2,152,000, and all current inventory is 4-bedroom.",
+      "Handover conflict: the page headline says 'Q3, 2027', but the available-unit card shows Q4 2028 and the site's listing data gives 2028-12-31. Q4 2028 is used here.",
+      "The payment plan is published only as '1%', with no breakdown.",
+      "The site's listing labels the property type 'Villa'; the FAQ, page title and brochure call the homes townhouses.",
+      "Launch month (2024-10) comes from the site's listing data (launchDate 2024-10-22)."
+    ]
+  },
+  {
+    "slug": "damac-lagoons-district-valencia",
+    "name": "Valencia at DAMAC Lagoons District",
+    "developer": "DAMAC Properties",
+    "developerUrl": "https://www.damacproperties.com",
+    "projectUrl": "https://www.damacproperties.com/en/communities/damac-lagoons/projects/damac-lagoons-district-valencia/",
+    "community": "DAMAC Lagoons",
+    "district": "Dubailand",
+    "unitTypes": [
+      "Apartment"
+    ],
+    "bedrooms": {
+      "min": 0,
+      "max": 2
+    },
+    "priceFrom": 1520000,
+    "priceFromUnit": null,
+    "sizeFrom": null,
+    "handover": "Q1 2029",
+    "paymentPlan": null,
+    "paymentPlanLabel": "60/40",
+    "launched": null,
+    "availability": "Selling (available units listed)",
+    "highlights": [
+      "Apartment component of DAMAC Lagoons District, a mixed-use zone that also includes the Piazza Roma office towers and a mall",
+      "The developer lists the DAMAC Lagoons master community at 49 million sq ft",
+      "Studios, 1-bedroom and 2-bedroom apartments, per the brochure",
+      "Payment plan published as 60/40"
+    ],
+    "amenities": [
+      "Pool bar",
+      "Floating pods",
+      "Fitness centre",
+      "Spa",
+      "Lounge",
+      "DAMAC Mall",
+      "Outdoor theatre",
+      "Cooling mist corridors"
+    ],
+    "description": [
+      "Valencia is the residential part of DAMAC Lagoons District, a mixed-use area inside the DAMAC Lagoons master community in Dubailand. The district combines apartment buildings with the Piazza Roma office towers and a mall with shops and restaurants, all linked by walkways.",
+      "The brochure covers studios, 1-bedroom and 2-bedroom apartments. The project page currently lists 1- and 2-bedroom units. Shared facilities include a pool bar, a gym, a spa, a lounge, an outdoor theatre and shaded walkways with misting. The developer publishes a 60/40 payment plan."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/damac-lagoons-district-valencia/1.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/4arcgGdM47wJvH4vWGKk0T/68c5a3059233b3778a47f868a045daf6/DAMAC_Lagoons_District-Gallery-00.jpg",
+        "alt": "Daytime render of the white apartment buildings from the main road",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/damac-lagoons-district-valencia/2.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/64O3CByyXHHew4uqhcOyXa/01263574a5909add384066c29d46cee0/DAMAC_Lagoons_District-Gallery-12.jpg",
+        "alt": "Render of an apartment bedroom with a full-height window",
+        "kind": "interior"
+      },
+      {
+        "file": "img/damac-lagoons-district-valencia/3.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/6HjAJwFqln9TjZeGFNV5cs/d25b44e37ce9641c4aad2060160f4165/DAMAC_Lagoons_District-Amenities-01-Pool_Bar.jpg",
+        "alt": "Aerial render of the podium pools and pool bar between buildings",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.damacproperties.com/en/communities/damac-lagoons/projects/damac-lagoons-district-valencia/",
+      "https://downloads.ctfassets.net/zoq5l15g49wj/43LIFHwRz0JcuBhzAxrhKT/f435d34a3f4f048550b489fdd00f5283/Lagoons_District_CONCEPT_DIGITAL_2.pdf",
+      "https://www.damacproperties.com/en/projects/"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Starting price is the live 'From' figure DAMAC's site shows on its project listing and project cards (it comes from current inventory, and the server-rendered page labels it with a £ symbol by mistake; the AED value matches the site's own AED currency data). It changes as units sell. The page's fallback headline is 'AED 725,000*' (probably a studio price that no longer applies); the live figure shown is AED 1,520,000.",
+      "Handover conflict: the page headline says 'Q3, 2029', but the unit cards show Q1 2029 and the site's listing data gives 2029-03-31. Q1 2029 is used here.",
+      "'60/40' is published without a breakdown, so paymentPlan is null.",
+      "Bedrooms 0-2 come from the brochure and FAQ; current inventory lists only 1- and 2-bedroom units.",
+      "sizeFrom is null: the unit cards show only maximum sizes (1-bedroom up to 1,418 sq ft, 2-bedroom up to 1,303 sq ft; the 1-bedroom maximum being larger than the 2-bedroom one is as published). The site's listing data holds areaMin 938 sq ft, which is not displayed.",
+      "No launch date is given in the site's data.",
+      "Name: the site uses both 'Valencia' and 'Damac Lagoons District - Valencia'."
+    ]
+  },
+  {
+    "slug": "damac-couture-by-cavalli",
+    "name": "Couture by Cavalli",
+    "developer": "DAMAC Properties",
+    "developerUrl": "https://www.damacproperties.com",
+    "projectUrl": "https://www.damacproperties.com/en/projects/couture-by-cavalli/",
+    "community": "Safa Park, Dubai Canal",
+    "district": "Business Bay",
+    "unitTypes": [
+      "Apartment",
+      "Penthouse"
+    ],
+    "bedrooms": {
+      "min": 3,
+      "max": 6
+    },
+    "priceFrom": 21904000,
+    "priceFromUnit": null,
+    "sizeFrom": null,
+    "handover": "Q4 2028",
+    "paymentPlan": null,
+    "paymentPlanLabel": "60/40",
+    "launched": "2024-03",
+    "availability": "Selling (available units listed)",
+    "highlights": [
+      "Tower with interiors branded by Roberto Cavalli",
+      "Limited to 95 homes over levels 1 to 16, per the brochure (August 2026 edition)",
+      "3- to 5-bedroom apartments and 6-bedroom penthouses",
+      "The brochure says every unit has a private infinity pool and terrace garden",
+      "Podium includes a swimmable lagoon, a gym and spa, and a cigar lounge"
+    ],
+    "amenities": [
+      "Cigar lounge",
+      "Clubhouse",
+      "Gym",
+      "Rooftop pool",
+      "Swimmable lagoon"
+    ],
+    "description": [
+      "Couture by Cavalli is a residential tower on the Dubai Canal beside Safa Park, with interiors branded by the Italian fashion house Roberto Cavalli. The brochure caps the building at 95 homes over 16 residential levels, with 3- to 5-bedroom apartments and 6-bedroom penthouses on the upper floors.",
+      "According to the brochure, each home has its own infinity pool and terrace garden, and the penthouses have private sky gardens. The podium holds a lagoon-style pool, a gym and spa, a cigar lounge and club rooms. Unit cards currently show 3-, 4- and 5-bedroom apartments of up to 7,711 sq ft."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/damac-couture-by-cavalli/1.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/2fom6xavuYeALV9bvPiWPs/4d973b300b05300d6b3d2c57f21bbf7d/Couture_by_Cavalli-Gallery-17.jpg",
+        "alt": "Aerial render of the terraced tower beside the canal",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/damac-couture-by-cavalli/2.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/KKOuKrHVVvpRQRZNzGiIs/2d6ca4c10b5a10e3f14dcb0600ed588a/Couture_by_Cavalli-Gallery-10.jpg",
+        "alt": "Render of a dining and living area with marble and green accents",
+        "kind": "interior"
+      },
+      {
+        "file": "img/damac-couture-by-cavalli/3.jpg",
+        "sourceUrl": "https://images.ctfassets.net/zoq5l15g49wj/6wxHTrdGcG8F7A4KBkZ6fe/712b946ce6de3964afd8184edd2146d1/amenities-5-swimmable-lagoon-4x3_1.webp",
+        "alt": "Render of the swimmable lagoon pool at the base of the terraced tower",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.damacproperties.com/en/projects/couture-by-cavalli/",
+      "https://downloads.ctfassets.net/zoq5l15g49wj/3oBUKfPfXPlAQ7T5qQBo7c/dfa2bcf079e58d287c2198d35b6d23a5/couture-by-cavalli-brochure-aug-26.pdf",
+      "https://www.damacproperties.com/en/projects/"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Starting price is the live 'From' figure DAMAC's site shows on its project listing and project cards (it comes from current inventory, and the server-rendered page labels it with a £ symbol by mistake; the AED value matches the site's own AED currency data). It changes as units sell. The page's fallback text is 'Available on Request'; the live figure shown is AED 21,904,000, which is the cheapest unit currently in stock, not an entry price for the whole scheme.",
+      "Handover conflict: the page headline says 'Q2, 2027', but the unit cards show Q4 2028 and the site's listing data gives 2028-12-31. Q4 2028 is used here.",
+      "'60/40*' is published without a breakdown or the asterisk's terms.",
+      "Location conflict: the page text and FAQ place the tower on the Dubai Canal at Safa Park, while the unit cards and listing say 'Business Bay'. The district is left as the site's 'Business Bay'; check before publishing.",
+      "sizeFrom is null: the unit cards show only maximums (3-bedroom up to 6,679 sq ft, 5-bedroom up to 7,711 sq ft). The site's listing data holds areaMin 3,920 sq ft, which is not displayed.",
+      "Current inventory lists 3-5 bedroom apartments (and 'Penthouse' as a property type); the 6-bedroom penthouses come from the brochure and page text.",
+      "Launch month (2024-03) comes from the site's listing data (launchDate 2024-03-05).",
+      "Image 3 was converted from webp to jpg."
+    ]
+  }
+]

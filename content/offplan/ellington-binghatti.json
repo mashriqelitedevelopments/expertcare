@@ -1,0 +1,351 @@
+[
+  {
+    "slug": "ellington-everly-place",
+    "name": "Everly Place",
+    "developer": "Ellington Properties",
+    "developerUrl": "https://ellingtonproperties.ae",
+    "projectUrl": "https://ellingtonproperties.ae/en/property-for-sale/everly-place-mohammed-bin-rashid-city",
+    "community": "Meydan Horizon",
+    "district": "Mohammed Bin Rashid City",
+    "unitTypes": [
+      "Apartment"
+    ],
+    "bedrooms": {
+      "min": 1,
+      "max": 3
+    },
+    "priceFrom": null,
+    "priceFromUnit": null,
+    "sizeFrom": null,
+    "handover": null,
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": "2026-06",
+    "availability": "Register interest",
+    "highlights": [
+      "209 residences in a mid-rise tower beside the Meydan Horizon crystal lagoon",
+      "Mix of 1- and 2-bedroom apartments plus 1- to 3-bedroom units with a study",
+      "Living areas with 3.1-metre ceilings and floor-to-ceiling glazing",
+      "23-metre infinity-edge pool on the podium facing the lagoon",
+      "Designed to Dubai Green Building Regulations"
+    ],
+    "amenities": [
+      "Infinity-edge pool",
+      "Club lounge",
+      "Bowling alley",
+      "Fitness studio",
+      "Yoga studio",
+      "Sauna and chromotherapy showers",
+      "Indoor and outdoor children's play areas",
+      "Outdoor cinema"
+    ],
+    "description": [
+      "Everly Place is a mid-rise residential building by Ellington Properties in Meydan Horizon, part of Mohammed Bin Rashid City. Its U-shaped plan wraps around the crystal lagoon, and the developer lists 209 homes: one- and two-bedroom apartments, and one- to three-bedroom layouts that include a study. Launch was announced in June 2026.",
+      "Shared facilities sit on a landscaped podium and include a 23-metre infinity-edge pool, a club lounge with a bowling alley, a fitness studio, a yoga room and changing rooms with sauna. Interiors use engineered stone kitchens with European appliances and 3.1-metre ceilings. Ellington has not published prices, unit sizes or a completion date on its website."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/ellington-everly-place/1.jpg",
+        "sourceUrl": "https://assets.ellingtonproperties.ae/sales/files/Marketing-Collaterals/Everly%20Place/Launch/Everly%20Place%20-%20Brochure.pdf (page 7, embedded image)",
+        "alt": "Everly Place tower at dusk seen across the lagoon, with the podium and palm-lined waterfront",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/ellington-everly-place/2.jpg",
+        "sourceUrl": "https://ellingtonproperties.ae/wp-content/uploads/bs1-1.jpg",
+        "alt": "Open-plan living and dining room with full-height windows facing the water",
+        "kind": "interior"
+      },
+      {
+        "file": "img/ellington-everly-place/3.jpg",
+        "sourceUrl": "https://ellingtonproperties.ae/wp-content/uploads/everly-feature.jpg",
+        "alt": "Double-height club lounge with seating looking out to the pool deck",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://ellingtonproperties.ae/en/property-for-sale/everly-place-mohammed-bin-rashid-city",
+      "https://ellingtonproperties.ae/en/media-center/news/ellington-properties-unveils-everly-place",
+      "https://assets.ellingtonproperties.ae/sales/files/Marketing-Collaterals/Everly%20Place/Launch/Everly%20Place%20-%20Brochure.pdf"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Ellington's project page shows no sales-status label; it is listed under the site's 'Ellington Collection' menu and offers Register interest / Download brochure. Launch press release dated 16 Jun 2026.",
+      "No starting price, unit size, handover date or payment plan on any Ellington page or the brochure. Portals only (not used): Engel & Voelkers shows AED 2.05M; other aggregators show AED 1,943,200, a 20/50/30 plan and Q4 2030 handover — they disagree on price.",
+      "Image 2 (bs1-1.jpg) comes from the Everly Place page header slider; the file name does not name the project.",
+      "Community name 'Meydan Horizon' is from the press release and brochure; the project page says MBR City."
+    ]
+  },
+  {
+    "slug": "ellington-the-meriva-collection",
+    "name": "The Meriva Collection",
+    "developer": "Ellington Properties",
+    "developerUrl": "https://ellingtonproperties.ae",
+    "projectUrl": "https://ellingtonproperties.ae/en/property-for-sale/the-meriva-collection-dubai-islands",
+    "community": "Dubai Islands",
+    "district": "Deira",
+    "unitTypes": [
+      "Apartment",
+      "Penthouse"
+    ],
+    "bedrooms": {
+      "min": 1,
+      "max": 5
+    },
+    "priceFrom": null,
+    "priceFromUnit": null,
+    "sizeFrom": null,
+    "handover": null,
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": "2026-02",
+    "availability": "Register interest",
+    "highlights": [
+      "Beachfront scheme on Island B of Dubai Islands with direct beach access",
+      "Five residential buildings, a signature beachfront residence and a hotel",
+      "One- to four-bedroom apartments and penthouses, many with a study",
+      "Limited three- and five-bedroom signature residences with private pools",
+      "Ellington's first development that includes a hotel"
+    ],
+    "amenities": [
+      "Adult and kids' pools",
+      "Paddle tennis court",
+      "Mini golf corner",
+      "Pet park",
+      "Fitness stations",
+      "Dining and BBQ areas",
+      "Kids' play areas",
+      "Guest parking with EV chargers"
+    ],
+    "description": [
+      "The Meriva Collection is a beachfront development by Ellington Properties on Island B of Dubai Islands. It combines five residential buildings, one signature beachfront residence and a hotel run by a third-party operator, all with access to the beach. Homes range from one- to four-bedroom apartments and penthouses, many with study rooms.",
+      "A small number of three- and five-bedroom signature residences have private pools and a rooftop gym. The masterplan adds indoor and outdoor pools, a 2 km jogging track, sports courts, a jazz club, coworking space and cafes. Ellington announced the launch in February 2026 but does not publish prices, unit sizes or a handover date on its website."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/ellington-the-meriva-collection/1.jpg",
+        "sourceUrl": "https://ellingtonproperties.ae/wp-content/uploads/ext4.webp",
+        "alt": "Terrace lounge overlooking the beach, sea and low-rise buildings of the development",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/ellington-the-meriva-collection/2.jpg",
+        "sourceUrl": "https://ellingtonproperties.ae/wp-content/uploads/section3-img1.jpg",
+        "alt": "Living room and kitchen with floor-to-ceiling windows facing the sea",
+        "kind": "interior"
+      },
+      {
+        "file": "img/ellington-the-meriva-collection/3.jpg",
+        "sourceUrl": "https://ellingtonproperties.ae/wp-content/uploads/meriva-feature.jpg",
+        "alt": "Indoor pool with loungers and a wall of glass looking out to the sea",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://ellingtonproperties.ae/en/property-for-sale/the-meriva-collection-dubai-islands",
+      "https://ellingtonproperties.ae/en/media-center/news/ellington-properties-unveils-the-meriva-collection-a-hospitality-led-beachfront-destination-on-dubai-islands"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Ellington's project page shows no sales-status label; it is listed under the site's 'Ellington Collection' menu and offers Register interest. Launch press release dated 11 Feb 2026.",
+      "The 'Download brochure' link on the project page (Meriva Collection - Slim brochure.pdf) returned an HTML page, not a PDF, so the brochure could not be checked.",
+      "No starting price, unit size, handover or payment plan on Ellington's site. Portals only (not used): AED 2.7M–2.9M from, 1BR from 832 sq ft, 20/50/30 plan, Q2 2030 handover; one portal counts six residential buildings where the press release says five plus a signature residence.",
+      "Whether the 3- and 5-bedroom signature residences should be typed as Penthouse or Villa is unclear: the press release calls them 'signature beachfront residences'; aggregators call them penthouses.",
+      "District 'Deira' is the usual wider name for Dubai Islands (formerly Deira Islands); Ellington does not state a district.",
+      "Image files (ext4.webp, section3-img1.jpg) are taken from the Meriva project page; their file names do not name the project."
+    ]
+  },
+  {
+    "slug": "binghatti-etherea",
+    "name": "Binghatti Etherea",
+    "developer": "Binghatti Developers",
+    "developerUrl": "https://www.binghatti.com",
+    "projectUrl": "https://www.binghatti.com/en/projects/binghatti-etherea",
+    "community": "Jumeirah Village Circle",
+    "district": "Al Barsha South",
+    "unitTypes": [
+      "Apartment"
+    ],
+    "bedrooms": {
+      "min": 0,
+      "max": 2
+    },
+    "priceFrom": 767999,
+    "priceFromUnit": "Studio",
+    "sizeFrom": 336,
+    "handover": "July 2027",
+    "paymentPlan": [
+      {
+        "stage": "On booking",
+        "pct": 20
+      },
+      {
+        "stage": "During construction",
+        "pct": 50
+      },
+      {
+        "stage": "On completion",
+        "pct": 30
+      }
+    ],
+    "paymentPlanLabel": null,
+    "launched": null,
+    "availability": "Available",
+    "highlights": [
+      "282 homes: 64 studios, 134 one-bedroom and 84 two-bedroom apartments",
+      "Tower of basement, ground, 5 podium levels and 22 residential floors",
+      "Five ground-floor retail units",
+      "Amenity deck on the 5th floor",
+      "Payment plan of 20% on booking, 50% during construction, 30% on completion"
+    ],
+    "amenities": [
+      "Adult and children's swimming pools",
+      "Jacuzzi",
+      "Children's play area",
+      "Sun bathing area",
+      "Aerobics platform",
+      "Bicycle and walking path",
+      "Outdoor shower",
+      "Sitting area"
+    ],
+    "description": [
+      "Binghatti Etherea is a residential tower in Jumeirah Village Circle with 282 apartments and five shops at ground level. The building rises over a basement, ground floor and five podium levels to 22 residential floors. Homes are studios, one-bedroom and two-bedroom apartments, with published sizes starting at 336 sq ft for a studio.",
+      "Shared facilities are grouped on a fifth-floor deck with adult and children's pools, a jacuzzi, a play area and an exercise platform. Binghatti gives the handover as July 2027 and lists a plan of 20% at booking, 50% during construction and 30% on completion. The site lists studios from AED 767,999."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/binghatti-etherea/1.jpg",
+        "sourceUrl": "https://binghattiweb.imgix.net/binghatti-etheria-exterior-1.webp",
+        "alt": "Aerial view of the white Etherea tower among the low-rise villas of JVC",
+        "kind": "aerial"
+      },
+      {
+        "file": "img/binghatti-etherea/2.jpg",
+        "sourceUrl": "https://binghattiweb.imgix.net/binghatti-etheria-living-room-1.webp",
+        "alt": "Living room with a marble feature wall, sectional sofa and full-height windows",
+        "kind": "interior"
+      },
+      {
+        "file": "img/binghatti-etherea/3.jpg",
+        "sourceUrl": "https://binghattiweb.imgix.net/binghatti-etheria-amenities-1.webp",
+        "alt": "Podium pool lit at night with loungers along the edge",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.binghatti.com/en/projects/binghatti-etherea",
+      "https://www.binghatti.com/en/project-details/studio-binghatti-etherea/10087",
+      "https://binghatti-frankfurt-public.s3.eu-central-1.amazonaws.com/project-assets/binghatti-etherea-assets/binghatti-etherea-project-facts.pdf"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Binghatti's pages give three different studio prices: AED 764,999 in the project page header, AED 767,999 in the unit list and on the studio page (used here), and AED 765,999 in a related-projects card.",
+      "Other published starting prices: 1BR AED 1,199,999 (575 sq ft), 2BR AED 1,699,999 (756 sq ft).",
+      "Launch date not published on the project page.",
+      "District 'Al Barsha South' is the common wider area for JVC; Binghatti does not state it."
+    ]
+  },
+  {
+    "slug": "binghatti-skyblade",
+    "name": "Binghatti Skyblade",
+    "developer": "Binghatti Developers",
+    "developerUrl": "https://www.binghatti.com",
+    "projectUrl": "https://www.binghatti.com/en/projects/binghatti-skyblade",
+    "community": "Downtown Dubai",
+    "district": "Burj Khalifa",
+    "unitTypes": [
+      "Apartment"
+    ],
+    "bedrooms": {
+      "min": 0,
+      "max": 3
+    },
+    "priceFrom": 1764999,
+    "priceFromUnit": "Studio",
+    "sizeFrom": 386,
+    "handover": "Q4 2027",
+    "paymentPlan": [
+      {
+        "stage": "On booking",
+        "pct": 20
+      },
+      {
+        "stage": "During construction",
+        "pct": 50
+      },
+      {
+        "stage": "On completion",
+        "pct": 30
+      }
+    ],
+    "paymentPlanLabel": null,
+    "launched": null,
+    "availability": "Available",
+    "highlights": [
+      "619 homes and 2 retail units on Burj Khalifa Boulevard",
+      "55 residential floors above 4 basements, ground and 3 podium levels",
+      "Studios, premium studios, one-bedroom Royal Suites and two- and three-bedroom units",
+      "Rooftop infinity pool facing the Burj Khalifa",
+      "Payment plan of 20% at contract signing, 50% during construction, 30% on completion"
+    ],
+    "amenities": [
+      "Rooftop infinity pool",
+      "Skyline gym",
+      "Running track",
+      "Spa and wellness",
+      "Kids' play area",
+      "Private pools for sky terrace apartments",
+      "Landscaped recreational area",
+      "Retail"
+    ],
+    "description": [
+      "Binghatti Skyblade is a high-rise on Burj Khalifa Boulevard in Downtown Dubai, with views toward the Burj Khalifa and the Dubai Water Canal. The project facts list 619 homes: 188 studios, 208 premium studios, 100 one-bedroom Royal Suites, 110 two-bedroom apartments, 10 two-bedroom suites and 3 three-bedroom units, plus two shops.",
+      "The tower has four basement levels, three podium floors and 55 residential floors topped by a lit crown. Facilities include a rooftop infinity pool, a gym, a running track, a spa and private pools for the sky terrace apartments. Binghatti gives completion as Q4 2027 and lists studios from AED 1,764,999 for 386 sq ft."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/binghatti-skyblade/1.jpg",
+        "sourceUrl": "https://binghattiweb.imgix.net/binghatti-skyblade-hero-banner.webp",
+        "alt": "Aerial view of Skyblade beside the Burj Khalifa at sunset",
+        "kind": "aerial"
+      },
+      {
+        "file": "img/binghatti-skyblade/2.jpg",
+        "sourceUrl": "https://binghattiweb.imgix.net/binghatti-skyblade-living-room-2.webp",
+        "alt": "Curved living room with a sculptural ceiling piece and city views",
+        "kind": "interior"
+      },
+      {
+        "file": "img/binghatti-skyblade/3.jpg",
+        "sourceUrl": "https://binghattiweb.imgix.net/binghatti-skyblade-amenities-2.webp",
+        "alt": "Infinity pool deck with the Burj Khalifa in the background",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://www.binghatti.com/en/projects/binghatti-skyblade",
+      "https://www.binghatti.com/en/project-details/studio-binghatti-skyblade/10064",
+      "https://binghatti-frankfurt-public.s3.eu-central-1.amazonaws.com/project-assets/binghatti-skyblade-assets/binghatti-skyblade-project-facts.pdf"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Binghatti's project page header says 'from AED 1,674,999' while the unit list and the studio page say AED 1,764,999 (used here); the header figure may be a typo.",
+      "The project page header lists studios and 1-3BR, but its 'available units' list shows only studios and 3BR (from AED 13,394,999, 2,196 sq ft), so 1BR and 2BR may be sold out.",
+      "District 'Burj Khalifa' is the DLD area name used in Binghatti's property-search URL; the marketing community is Downtown Dubai.",
+      "Launch date not published on the project page.",
+      "Image 3 is 1440 px wide; the developer's CDN has no larger version."
+    ]
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "slug": "mashriq-elite-floarea-skies",
+    "name": "Floareá Skies",
+    "developer": "Mashriq Elite",
+    "developerUrl": "https://mashriqelite.com",
+    "projectUrl": "https://mashriqelite.com/",
+    "community": "Jumeirah Village Circle",
+    "district": "Jumeirah Village Circle",
+    "unitTypes": ["Apartment"],
+    "bedrooms": { "min": 0, "max": 2 },
+    "priceFrom": null,
+    "priceFromUnit": null,
+    "sizeFrom": 398,
+    "handover": null,
+    "paymentPlan": [
+      { "stage": "During construction", "pct": 30 },
+      { "stage": "On handover", "pct": 70 }
+    ],
+    "paymentPlanLabel": "30/70",
+    "launched": "2025-Q2",
+    "availability": "Units available",
+    "highlights": [
+      "192 homes in a tower of four podium levels and 19 residential floors",
+      "Studios, one-bedroom and two-bedroom apartments, several with a study",
+      "Direct access to Al Khail Road",
+      "Also sold on a 1% monthly plan or a 30/35/35 plan that runs after handover",
+      "Mashriq Elite handed over Floareá Residence in Arjan in August 2025"
+    ],
+    "amenities": ["Rooftop infinity pool", "Children's organic pool", "Japanese garden with mini golf", "Floating meditation deck", "Sunken lounge", "Fully equipped gym"],
+    "description": [
+      "Floareá Skies is a 192-apartment tower in Jumeirah Village Circle with direct access to Al Khail Road. Homes run from 398 sq ft studios to two-bedroom apartments with a study, spread over 19 residential floors above four podium levels.",
+      "The amenities sit at the top and at podium level: an infinity pool on the roof, an organic pool for children, a Japanese garden with mini golf and a floating meditation deck. Payments follow a 30/70 plan, with 1% monthly and post-handover options."
+    ],
+    "images": [
+      { "file": "img/mashriq-elite-floarea-skies/1.jpg", "sourceUrl": "Mashriq Elite sales kit (roof pool render)", "alt": "Rooftop pool at Floareá Skies with loungers and a palm", "kind": "amenity" },
+      { "file": "img/mashriq-elite-floarea-skies/2.jpg", "sourceUrl": "Mashriq Elite sales kit (tower render)", "alt": "The Floareá Skies tower above low-rise Jumeirah Village Circle", "kind": "exterior" },
+      { "file": "img/mashriq-elite-floarea-skies/3.jpg", "sourceUrl": "Mashriq Elite sales kit (pool deck render)", "alt": "Beach-edge pool with shaded seating at the foot of Floareá Skies", "kind": "amenity" }
+    ],
+    "sources": ["Mashriq Elite sales presentation, August 2026", "Mashriq Elite project brief, 25 July 2026", "DLD Real Estate Projects open data (project 3717)"],
+    "checked": "2026-09-16",
+    "uncertain": ["Prices and handover date are not published: Mashriq Elite quotes prices on request and shows no handover dates (company decision, 12 Sep 2026)."]
+  },
+  {
+    "slug": "mashriq-elite-floarea-oasis",
+    "name": "Floareá Oasis",
+    "developer": "Mashriq Elite",
+    "developerUrl": "https://mashriqelite.com",
+    "projectUrl": "https://mashriqelite.com/",
+    "community": "Dubai Land Residence Complex",
+    "district": "Dubailand",
+    "unitTypes": ["Apartment"],
+    "bedrooms": { "min": 0, "max": 2 },
+    "priceFrom": null,
+    "priceFromUnit": null,
+    "sizeFrom": 425,
+    "handover": null,
+    "paymentPlan": [
+      { "stage": "During construction", "pct": 30 },
+      { "stage": "On handover", "pct": 70 }
+    ],
+    "paymentPlanLabel": "30/70",
+    "launched": "2025-Q3",
+    "availability": "Units available",
+    "highlights": [
+      "257 homes over 13 residential floors",
+      "Studios, one-bedroom apartments with a study, and two-bedroom apartments with a maid's room",
+      "Family amenities on the podium and the roof",
+      "Also sold on a 1% monthly plan or a 30/35/35 plan that runs after handover",
+      "Mashriq Elite handed over Floareá Residence in Arjan in August 2025"
+    ],
+    "amenities": ["Swimming pool", "Splash pad", "Children's play area", "Outdoor gym", "Barbecue area", "Fully equipped gym"],
+    "description": [
+      "Floareá Oasis is a 257-apartment building in the Dubai Land Residence Complex, with studios from 425 sq ft, one-bedroom apartments with a study and two-bedroom apartments with a maid's room, over 13 residential floors.",
+      "It is planned around families: a pool and splash pad, a children's play area, an outdoor gym and barbecue stations, with a fully equipped gym inside. Payments follow a 30/70 plan, with 1% monthly and post-handover options."
+    ],
+    "images": [
+      { "file": "img/mashriq-elite-floarea-oasis/1.jpg", "sourceUrl": "Mashriq Elite sales kit (facade render, June 2025)", "alt": "The white terraced facade of Floareá Oasis at dusk", "kind": "exterior" },
+      { "file": "img/mashriq-elite-floarea-oasis/2.jpg", "sourceUrl": "Mashriq Elite sales kit (facade render, June 2025)", "alt": "Balconies with planting across the Floareá Oasis facade", "kind": "exterior" },
+      { "file": "img/mashriq-elite-floarea-oasis/3.jpg", "sourceUrl": "Mashriq Elite sales kit (rooftop render)", "alt": "Rooftop pool with sculpted shade canopies at Floareá Oasis", "kind": "amenity" }
+    ],
+    "sources": ["Mashriq Elite sales presentation, August 2026", "Mashriq Elite project brief, 25 July 2026", "DLD Real Estate Projects open data (project 3603)"],
+    "checked": "2026-09-16",
+    "uncertain": ["Prices and handover date are not published: Mashriq Elite quotes prices on request and shows no handover dates (company decision, 12 Sep 2026)."]
+  },
+  {
+    "slug": "mashriq-elite-floarea-breeze",
+    "name": "Floareá Breeze",
+    "developer": "Mashriq Elite",
+    "developerUrl": "https://mashriqelite.com",
+    "projectUrl": "https://mashriqelite.com/",
+    "community": "Dubai Islands",
+    "district": "Dubai Islands",
+    "unitTypes": ["Apartment", "Townhouse"],
+    "bedrooms": { "min": 1, "max": 3 },
+    "priceFrom": null,
+    "priceFromUnit": null,
+    "sizeFrom": 878,
+    "handover": null,
+    "paymentPlan": [
+      { "stage": "During construction", "pct": 30 },
+      { "stage": "On handover", "pct": 70 }
+    ],
+    "paymentPlanLabel": "30/70",
+    "launched": "2025-Q4",
+    "availability": "Units available",
+    "highlights": [
+      "A boutique building of 48 apartments and 4 townhouses",
+      "One, two and three-bedroom apartments, and three-bedroom townhouses facing the park",
+      "Five minutes' walk from the marina, the mall and the beach",
+      "Also sold on a 30/35/35 plan that runs after handover",
+      "Mashriq Elite handed over Floareá Residence in Arjan in August 2025"
+    ],
+    "amenities": ["Swimming pool", "Children's pool", "Fully equipped indoor gym", "Outdoor children's play area", "Board game nook", "Barbecue area"],
+    "description": [
+      "Floareá Breeze is a boutique building on Dubai Islands with 48 apartments and 4 park-facing townhouses. Apartments have one to three bedrooms, from 878 sq ft; the three-bedroom townhouses run to about 1,900 sq ft.",
+      "The marina, the mall and the beach are about five minutes away on foot. The building has a pool and a children's pool, an indoor gym, a play area and a board game nook. Payments follow a 30/70 plan, with a post-handover option."
+    ],
+    "images": [
+      { "file": "img/mashriq-elite-floarea-breeze/1.jpg", "sourceUrl": "Mashriq Elite sales kit (hero render, January 2026)", "alt": "Floareá Breeze at dusk beside the park, with the sea beyond", "kind": "aerial" },
+      { "file": "img/mashriq-elite-floarea-breeze/2.jpg", "sourceUrl": "Mashriq Elite sales kit (facade render, February 2026)", "alt": "The terraced facade of Floareá Breeze in daylight", "kind": "exterior" },
+      { "file": "img/mashriq-elite-floarea-breeze/3.jpg", "sourceUrl": "Mashriq Elite sales kit (podium render, February 2026)", "alt": "A planted garden walk on the Floareá Breeze podium", "kind": "amenity" }
+    ],
+    "sources": ["Mashriq Elite sales presentation, August 2026", "Mashriq Elite project brief, 25 July 2026", "DLD Real Estate Projects open data (project 4061)"],
+    "checked": "2026-09-16",
+    "uncertain": ["Prices and handover date are not published: Mashriq Elite quotes prices on request and shows no handover dates (company decision, 12 Sep 2026).", "The draft sale agreement sets a 40/60 schedule; the sales team quotes 30/70 (re-confirmed 1 Sep 2026)."]
+  }
+]

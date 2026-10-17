@@ -1,0 +1,500 @@
+[
+  {
+    "slug": "sobha-sanctuary-the-woods-abode",
+    "name": "The Woods Abode",
+    "developer": "Sobha Realty",
+    "developerUrl": "https://www.sobharealty.com",
+    "projectUrl": "https://sobharealty.com/properties-in-dubai/sobha-sanctuary/the-woods-abode",
+    "community": "Sobha Sanctuary",
+    "district": "Dubailand",
+    "unitTypes": [
+      "Apartment"
+    ],
+    "bedrooms": {
+      "min": 1,
+      "max": 2
+    },
+    "priceFrom": 1000000,
+    "priceFromUnit": null,
+    "sizeFrom": 546.38,
+    "handover": "2029",
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": null,
+    "availability": "New release, price listed (subject to availability)",
+    "highlights": [
+      "Third apartment release within The Woods enclave at Sobha Sanctuary; the earlier Retreat release is marked sold out",
+      "Four published layouts: two 1-bedroom and two 2-bedroom types, 546 to 964 sq ft in total area",
+      "Listed from AED 1.00M; the upper price is given on request",
+      "Brochure describes The Woods as anchored by a park of about 800,000 sq ft",
+      "Sobha lists access via Al Ain–Dubai Road and Jebel Ali–Lehbab Road"
+    ],
+    "amenities": [
+      "Pool deck",
+      "Yoga zone & meditation deck",
+      "Serenity garden",
+      "Outdoor fitness zones",
+      "Co-working space",
+      "Nature-themed kids play area",
+      "Library",
+      "Nursery"
+    ],
+    "description": [
+      "The Woods Abode is a block of 1 and 2 bedroom apartments inside The Woods, the apartment cluster of Sobha Sanctuary in Dubailand. Sobha lists four layouts, from a 546 sq ft one-bedroom to a 964 sq ft two-bedroom, each with a balcony. The listed starting price is AED 1.00M, and handover is shown as 2029.",
+      "The building sits among parkland, landscaped walkways and villa neighbourhoods within the wider Sobha Sanctuary masterplan, with a school close by according to the developer. Shared facilities include a pool deck, yoga and meditation areas, outdoor fitness zones, a co-working space, a library, a nursery and a children's play area themed around nature."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/sobha-sanctuary-the-woods-abode/1.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2026-08/Desk%20banner.jpg",
+        "alt": "Street-level view of The Woods Abode apartment blocks with landscaped frontage",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/sobha-sanctuary-the-woods-abode/2.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2026-08/ID-01a_1.jpg",
+        "alt": "Open-plan living and dining room in a Woods Abode apartment",
+        "kind": "interior"
+      },
+      {
+        "file": "img/sobha-sanctuary-the-woods-abode/3.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2026-08/L-02%20-%20KIDS%20PLAY%20AREA_1.jpg",
+        "alt": "Shaded children's play area with fitness equipment in the landscaped grounds",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://sobharealty.com/properties-in-dubai/sobha-sanctuary/the-woods-abode",
+      "https://sobharealty.com/properties-in-dubai/sobha-sanctuary/the-woods",
+      "https://sobharealty.com/apartments-for-sale-in-dubai",
+      "https://sobharealty.com/sites/default/files/2026-08/The%20Woods%20Abode%20at%20Sobha%20Sanctuary_Brochure.pdf"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Prices are shown on sobharealty.com rounded to two decimals in AED millions (e.g. 'AED 1.57 M*'); the exact starting figure is not published.",
+      "No payment plan is published on the project page, the listing page or the brochure.",
+      "No DLD project number, escrow account or RERA permit is printed on the page or brochure.",
+      "The unit type the AED 1.00M price applies to is not stated (the listing pairs it with the 546.38 sq ft minimum, which is the 1-bedroom Type A).",
+      "The parent page for The Woods says residences start from AED 999,000; the Abode page and listing show AED 1.00M.",
+      "Location is given as 'Dubai Land' on the listing and 'Al Yufrah' in the FAQ.",
+      "Launch date not published (the brochure file was uploaded in August 2026)."
+    ]
+  },
+  {
+    "slug": "sobha-sanctuary-the-willows",
+    "name": "The Willows",
+    "developer": "Sobha Realty",
+    "developerUrl": "https://www.sobharealty.com",
+    "projectUrl": "https://sobharealty.com/properties-in-dubai/sobha-sanctuary/the-willows",
+    "community": "Sobha Sanctuary",
+    "district": "Dubailand",
+    "unitTypes": [
+      "Villa"
+    ],
+    "bedrooms": {
+      "min": 4,
+      "max": 4
+    },
+    "priceFrom": 4060000,
+    "priceFromUnit": "4 bedroom villa",
+    "sizeFrom": 2459.02,
+    "handover": null,
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": null,
+    "availability": "Selling, price listed (subject to availability)",
+    "highlights": [
+      "Villa-only cluster in Sobha Sanctuary offering four-bedroom homes only",
+      "Four villa types (A to D) with saleable areas from 2,459 to 3,430 sq ft",
+      "Listed from AED 4.06M up to AED 5.83M",
+      "Sobha lists Dubai Outlet Mall about 8 minutes and Al Maktoum International Airport about 30 minutes away"
+    ],
+    "amenities": [
+      "Mosque",
+      "Yoga and Pilates pavilion",
+      "Forest-themed parks",
+      "Clubhouse",
+      "Outdoor calisthenics zone",
+      "Botanical gardens",
+      "Meditation sanctuaries",
+      "Jogging & cycling forest loops"
+    ],
+    "description": [
+      "The Willows is a group of four-bedroom villas in Sobha Sanctuary, a Sobha Realty masterplan in Dubailand. Four layouts are published, with saleable areas between about 2,459 and 3,430 sq ft; the two larger types add a maid's room and an upstairs living room. Listed prices run from AED 4.06M to AED 5.83M, and handover is shown as to be announced.",
+      "The cluster is planned around green space, with parks, a botanical garden, jogging and cycling loops, yoga and meditation areas, and an outdoor calisthenics zone. A mosque, a clubhouse, a pet zone and mobility hubs are also listed. The developer describes the community as gated and low-density."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/sobha-sanctuary-the-willows/1.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2026-02/deskbanner.jpg",
+        "alt": "Row of two-storey Willows villas with covered parking",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/sobha-sanctuary-the-willows/2.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2026-02/Gallery-images--DESK5.jpg",
+        "alt": "Bedroom in a Willows villa with full-height glazing",
+        "kind": "interior"
+      },
+      {
+        "file": "img/sobha-sanctuary-the-willows/3.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2026-02/Gallery-images--DESK3.jpg",
+        "alt": "Landscaped garden court between villas",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://sobharealty.com/properties-in-dubai/sobha-sanctuary/the-willows",
+      "https://sobharealty.com/villas-for-sale-in-dubai",
+      "https://sobharealty.com/sites/default/files/2026-08/The%20Willows%20at%20Sobha%20Sanctuary%2019%20Aug%202026.pdf"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Prices are shown on sobharealty.com rounded to two decimals in AED millions (e.g. 'AED 1.57 M*'); the exact starting figure is not published.",
+      "No payment plan is published on the project page, the listing page or the brochure.",
+      "No DLD project number, escrow account or RERA permit is printed on the page or brochure.",
+      "Handover is listed as 'TBA' on the villas listing page, so it is null here.",
+      "The brochure also lists smaller area figures (about 1,731 to 3,074 sq ft) per floor or type; the page's saleable area figures (2,459.02 to 3,430.24 sq ft) are used.",
+      "Launch date not published."
+    ]
+  },
+  {
+    "slug": "sobha-orbis",
+    "name": "Sobha Orbis",
+    "developer": "Sobha Realty",
+    "developerUrl": "https://www.sobharealty.com",
+    "projectUrl": "https://sobharealty.com/properties-in-dubai/sobha-orbis",
+    "community": "Sobha Orbis",
+    "district": "Motor City",
+    "unitTypes": [
+      "Apartment"
+    ],
+    "bedrooms": {
+      "min": 1,
+      "max": 2
+    },
+    "priceFrom": 1570000,
+    "priceFromUnit": null,
+    "sizeFrom": 538.41,
+    "handover": "Dec 2027",
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": null,
+    "availability": "Selling, price listed (subject to availability)",
+    "highlights": [
+      "Seven residential towers in Motor City",
+      "1, 1.5 and 2-bedroom apartments; the 1.5-bedroom types include a study",
+      "Listed from AED 1.57M to AED 2.81M",
+      "Handover listed as December 2027",
+      "Sobha lists First Avenue Mall about 2 minutes and Dubai Autodrome about 5 minutes away"
+    ],
+    "amenities": [
+      "Resort-style pool",
+      "Jacuzzi",
+      "Kids play area",
+      "BBQ zone",
+      "Retail zone",
+      "Panoramic green views"
+    ],
+    "description": [
+      "Sobha Orbis is a seven-tower apartment development by Sobha Realty in Motor City. It offers one, one-and-a-half and two-bedroom homes; the published floor plans run from about 538 sq ft for a one-bedroom to about 988 sq ft for a two-bedroom, and every layout has a balcony. Listed prices run from AED 1.57M to AED 2.81M.",
+      "Shared facilities include a resort-style pool, a jacuzzi, a barbecue area, a children's play area and ground-level retail. The developer lists First Avenue Mall, Dubai Autodrome and Dubai Studio City within a few minutes' drive, with Al Khail Road and Sheikh Zayed Road about 10 to 15 minutes away. Handover is listed as December 2027."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/sobha-orbis/1.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2024-11/Sobha%20Orbis_0.jpg",
+        "alt": "Sobha Orbis towers at dusk above Motor City",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/sobha-orbis/2.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2024-06/I%20%282%29-.jpg",
+        "alt": "Living room with floor-to-ceiling window in a Sobha Orbis apartment",
+        "kind": "interior"
+      },
+      {
+        "file": "img/sobha-orbis/3.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2024-06/L%20%282%29-.jpg",
+        "alt": "Podium pool and landscaping between the Orbis towers",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://sobharealty.com/properties-in-dubai/sobha-orbis",
+      "https://sobharealty.com/apartments-for-sale-in-dubai",
+      "https://sobharealty.com/sites/default/files/2024-11/11.%20Sobha%20Orbis.pdf"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Prices are shown on sobharealty.com rounded to two decimals in AED millions (e.g. 'AED 1.57 M*'); the exact starting figure is not published.",
+      "No payment plan is published on the project page, the listing page or the brochure.",
+      "No DLD project number, escrow account or RERA permit is printed on the page or brochure.",
+      "The listing card gives the minimum size as 702.2 sq ft, while the project page floor plans start at 538.41 sq ft (1-bedroom Type D); the floor-plan figure is used. The smaller units may no longer be available.",
+      "The listing card gives the top size as 1,251.5 sq ft, larger than any floor plan shown on the page (max 988.45 sq ft).",
+      "The unit type the starting price applies to is not stated.",
+      "Launch date not published."
+    ]
+  },
+  {
+    "slug": "sobha-central-the-eden",
+    "name": "The Eden",
+    "developer": "Sobha Realty",
+    "developerUrl": "https://www.sobharealty.com",
+    "projectUrl": "https://sobharealty.com/properties-in-dubai/sobha-central/the-eden",
+    "community": "Sobha Central",
+    "district": "Sheikh Zayed Road",
+    "unitTypes": [
+      "Apartment"
+    ],
+    "bedrooms": {
+      "min": 1,
+      "max": 2
+    },
+    "priceFrom": 1830000,
+    "priceFromUnit": null,
+    "sizeFrom": 568.33,
+    "handover": "Dec 2029",
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": null,
+    "availability": "Selling, price listed (subject to availability)",
+    "highlights": [
+      "One of the six towers of Sobha Central on Sheikh Zayed Road",
+      "Covered lift-lobby links to the other Sobha Central towers and the shared mall, cinema, gym, prayer hall, clinic and supermarket",
+      "1 and 2-bedroom apartments from about 568 to 1,202 sq ft",
+      "Listed from AED 1.83M to AED 3.54M, handover December 2029",
+      "Sobha lists Jebel Ali Metro Station about 2 minutes away"
+    ],
+    "amenities": [
+      "Leisure pool",
+      "Outdoor gym",
+      "Outdoor cinema",
+      "Family BBQ & gathering space",
+      "Kids play area",
+      "Office spaces"
+    ],
+    "description": [
+      "The Eden is an apartment tower in Sobha Central, a six-tower Sobha Realty cluster beside Sheikh Zayed Road near Jebel Ali Metro Station. It has one and two-bedroom apartments; the published plans run from about 568 sq ft to about 1,202 sq ft, all with balconies. Listed prices run from AED 1.83M to AED 3.54M, with handover listed as December 2029.",
+      "Residents reach the other towers and the shared podium through covered, connected lift lobbies. The developer lists a shopping mall, a multiplex cinema, a gym, a prayer hall, a medical clinic and a supermarket in the cluster, and the brochure mentions 175,000 sq ft of office space. The tower's own facilities include a leisure pool, an outdoor gym and an outdoor cinema."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/sobha-central-the-eden/1.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2025-05/1006x608%20%E2%80%93%2051.jpg",
+        "alt": "The Sobha Central towers seen from street level",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/sobha-central-the-eden/2.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2025-05/1006x608%20%E2%80%93%2062.jpg",
+        "alt": "Living and dining area with city views in an Eden apartment",
+        "kind": "interior"
+      },
+      {
+        "file": "img/sobha-central-the-eden/3.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2025-05/1006x608%20%E2%80%93%2063.jpg",
+        "alt": "Podium pool with fountains and sun loungers",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://sobharealty.com/properties-in-dubai/sobha-central/the-eden",
+      "https://sobharealty.com/properties-in-dubai/sobha-central",
+      "https://sobharealty.com/apartments-for-sale-in-dubai",
+      "https://sobharealty.com/sites/default/files/2025-06/Sobha%20Central%20Brochure%20-%20The%20Eden.pdf"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Prices are shown on sobharealty.com rounded to two decimals in AED millions (e.g. 'AED 1.57 M*'); the exact starting figure is not published.",
+      "No payment plan is published on the project page, the listing page or the brochure.",
+      "No DLD project number, escrow account or RERA permit is printed on the page or brochure.",
+      "The listing card gives the minimum size as 631.6 sq ft; the project page floor plans start at 568.33 sq ft (1-bedroom Type A). The floor-plan figure is used.",
+      "The exterior image shows the whole Sobha Central cluster, not The Eden tower alone.",
+      "District is given as the developer's location label 'Sheikh Zayed Road'; the exact area (near Jebel Ali Metro) is not named more precisely on the page.",
+      "The unit type the starting price applies to is not stated.",
+      "Launch date not published."
+    ]
+  },
+  {
+    "slug": "sobha-hartland-ii-skyvue-stellar",
+    "name": "Skyvue Stellar",
+    "developer": "Sobha Realty",
+    "developerUrl": "https://www.sobharealty.com",
+    "projectUrl": "https://sobharealty.com/properties-in-dubai/sobha-hartland-2/skyvue/stellar",
+    "community": "Sobha Hartland II",
+    "district": "Mohammed Bin Rashid City",
+    "unitTypes": [
+      "Apartment"
+    ],
+    "bedrooms": {
+      "min": 1,
+      "max": 4
+    },
+    "priceFrom": 2380000,
+    "priceFromUnit": null,
+    "sizeFrom": 625.59,
+    "handover": "March 2029",
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": null,
+    "availability": "Selling, price listed (subject to availability)",
+    "highlights": [
+      "Described by Sobha as the tallest tower in the Skyvue collection in Sobha Hartland II",
+      "Published floor plans cover 1, 1.5, 2, 3 and 3.5-bedroom apartments",
+      "Listed from AED 2.38M to AED 8.96M",
+      "Handover listed as March 2029",
+      "Sobha lists Downtown Dubai about 10 minutes and Dubai International Airport about 12 minutes away"
+    ],
+    "amenities": [
+      "Leisure pool & infinity pool",
+      "Kids play area",
+      "Open cinema area",
+      "Skate park",
+      "BBQ zone",
+      "Jogging loop",
+      "Indoor gym",
+      "Library and reading room"
+    ],
+    "description": [
+      "Skyvue Stellar is an apartment tower in the Skyvue group at Sobha Hartland II, the Sobha Realty community in Mohammed Bin Rashid City. The published plans range from a one-bedroom of about 626 sq ft to three and three-and-a-half-bedroom units of about 1,600 to 1,681 sq ft. Listed prices run from AED 2.38M to AED 8.96M, with handover listed as March 2029.",
+      "The tower faces the community lagoon and looks toward the Downtown Dubai skyline. Facilities include a leisure pool and an infinity pool, an indoor gym, an indoor cinema, a jogging loop, a skate park, an art and music room, and a library. Sobha lists Downtown Dubai and Business Bay within about 10 to 12 minutes."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/sobha-hartland-ii-skyvue-stellar/1.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2025-04/Banner%201440x618%20%E2%80%93%205.jpg",
+        "alt": "Skyvue towers on the Dubai skyline",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/sobha-hartland-ii-skyvue-stellar/2.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2025-03/Gallery%201006x608%202%20%281%29.jpg",
+        "alt": "Bedroom with full-height window in a Skyvue Stellar apartment",
+        "kind": "interior"
+      },
+      {
+        "file": "img/sobha-hartland-ii-skyvue-stellar/3.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2025-03/Gallery%201006x608%208%20%281%29.jpg",
+        "alt": "Aerial view of the podium pools between the Skyvue towers",
+        "kind": "aerial"
+      }
+    ],
+    "sources": [
+      "https://sobharealty.com/properties-in-dubai/sobha-hartland-2/skyvue/stellar",
+      "https://sobharealty.com/properties-in-dubai/sobha-hartland-2/skyvue",
+      "https://sobharealty.com/apartments-for-sale-in-dubai",
+      "https://sobharealty.com/sites/default/files/2025-03/Skyvue%20Stellar.pdf"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Prices are shown on sobharealty.com rounded to two decimals in AED millions (e.g. 'AED 1.57 M*'); the exact starting figure is not published.",
+      "No payment plan is published on the project page, the listing page or the brochure.",
+      "No DLD project number, escrow account or RERA permit is printed on the page or brochure.",
+      "Bedroom range conflicts: the page text and brochure say 1 to 3.5 bedrooms; the listing card says '1.5, 2, 3 and 4 Bedroom' and a top size of 3,110.7 sq ft, which no floor plan on the page matches. Max is set to 4 from the card; 1-bedroom may no longer be available.",
+      "The listing card gives the minimum size as 877.1 sq ft (matching the 1.5-bedroom); the page floor plans start at 625.59 sq ft (1-bedroom Type A). The floor-plan figure is used.",
+      "The exterior banner shows the Skyvue group, and the aerial shows the shared podium; neither isolates Stellar.",
+      "The unit type the starting price applies to is not stated.",
+      "Launch date not published."
+    ]
+  },
+  {
+    "slug": "sobha-elwood",
+    "name": "Sobha Elwood",
+    "developer": "Sobha Realty",
+    "developerUrl": "https://www.sobharealty.com",
+    "projectUrl": "https://sobharealty.com/properties-in-dubai/sobha-elwood",
+    "community": "Sobha Elwood",
+    "district": "Al Yufrah (Dubai–Al Ain Road)",
+    "unitTypes": [
+      "Villa"
+    ],
+    "bedrooms": {
+      "min": 4,
+      "max": 6
+    },
+    "priceFrom": 9920000,
+    "priceFromUnit": null,
+    "sizeFrom": 4957.86,
+    "handover": "June 2027",
+    "paymentPlan": null,
+    "paymentPlanLabel": null,
+    "launched": null,
+    "availability": "Selling, price listed (subject to availability)",
+    "highlights": [
+      "Villa community of about 10 million sq ft off Dubai–Al Ain Road",
+      "Sobha states 47% of the site is open space and parks, with more than 10,000 trees",
+      "4, 5 and 6-bedroom villas from about 4,958 to 7,186 sq ft saleable area",
+      "Listed from AED 9.92M to AED 14.39M, handover June 2027",
+      "Parks are themed on large forests of the world, such as Amazon Park and Baobab Park"
+    ],
+    "amenities": [
+      "Adventure walk",
+      "Cycling track",
+      "Cricket pitch",
+      "Community garden",
+      "Dog park",
+      "Clubhouse",
+      "Fitness & wellness decks",
+      "Treehouse"
+    ],
+    "description": [
+      "Sobha Elwood is a villa community by Sobha Realty in Al Yufrah, off Dubai–Al Ain Road, covering about 10 million sq ft. It offers four, five and six-bedroom villas; published saleable areas run from about 4,958 sq ft to 7,186 sq ft, and every published type includes a maid's room. Listed prices run from AED 9.92M to AED 14.39M, with handover listed as June 2027.",
+      "The developer states that 47% of the land is open space and parks, planted with more than 10,000 trees, and that the parks are themed on forests such as the Amazon and baobab woodlands. Listed facilities include a clubhouse, a cycling track, a cricket pitch, a dog park, a community garden and a treehouse."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/sobha-elwood/1.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2025-11/no%20112.jpg",
+        "alt": "Aerial view of Sobha Elwood villas around a lagoon and clubhouse",
+        "kind": "aerial"
+      },
+      {
+        "file": "img/sobha-elwood/2.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2024-08/Desktop-Visual%20symphony%20gallery%201-1440x922%20%CE%93%C3%87%C3%B4%2028.jpg",
+        "alt": "Dining room with garden view in a Sobha Elwood villa",
+        "kind": "interior"
+      },
+      {
+        "file": "img/sobha-elwood/3.jpg",
+        "sourceUrl": "https://sobharealty.com/sites/default/files/2025-01/Gallery3.jpg",
+        "alt": "Baobab Park, one of the themed parks in Sobha Elwood",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://sobharealty.com/properties-in-dubai/sobha-elwood",
+      "https://sobharealty.com/villas-for-sale-in-dubai",
+      "https://sobharealty.com/sites/default/files/2025-01/Sobha%20Elwood%20Brochure-compressed.pdf"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Prices are shown on sobharealty.com rounded to two decimals in AED millions (e.g. 'AED 1.57 M*'); the exact starting figure is not published.",
+      "No payment plan is published on the project page, the listing page or the brochure.",
+      "No DLD project number, escrow account or RERA permit is printed on the page or brochure.",
+      "The listing card gives the minimum size as 4,957.6 sq ft; the page floor plans give 4,957.86 sq ft. The floor-plan figure is used.",
+      "The page says '10,000+ trees adorn 26% of the site area' and separately '47% open space and parks'; both are Sobha's figures.",
+      "The unit type the starting price applies to is not stated (likely the 4-bedroom, but not confirmed).",
+      "Handover 'June 2027' comes from the villas listing card; it is not repeated on the project page itself.",
+      "Launch date not published."
+    ]
+  }
+]

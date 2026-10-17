@@ -1,0 +1,79 @@
+# Project images
+
+Developer renders and photographs, used to present each developer's project. Written permission from each developer (normally part of the marketing agreement) is needed before launch.
+
+- `p/mashriq-elite-floarea-skies-1`: Mashriq Elite, Floareá Skies. Mashriq Elite sales kit (roof pool render)
+- `p/mashriq-elite-floarea-skies-2`: Mashriq Elite, Floareá Skies. Mashriq Elite sales kit (tower render)
+- `p/mashriq-elite-floarea-skies-3`: Mashriq Elite, Floareá Skies. Mashriq Elite sales kit (pool deck render)
+- `p/mashriq-elite-floarea-oasis-1`: Mashriq Elite, Floareá Oasis. Mashriq Elite sales kit (facade render, June 2025)
+- `p/mashriq-elite-floarea-oasis-2`: Mashriq Elite, Floareá Oasis. Mashriq Elite sales kit (facade render, June 2025)
+- `p/mashriq-elite-floarea-oasis-3`: Mashriq Elite, Floareá Oasis. Mashriq Elite sales kit (rooftop render)
+- `p/mashriq-elite-floarea-breeze-1`: Mashriq Elite, Floareá Breeze. Mashriq Elite sales kit (hero render, January 2026)
+- `p/mashriq-elite-floarea-breeze-2`: Mashriq Elite, Floareá Breeze. Mashriq Elite sales kit (facade render, February 2026)
+- `p/mashriq-elite-floarea-breeze-3`: Mashriq Elite, Floareá Breeze. Mashriq Elite sales kit (podium render, February 2026)
+- `p/sobha-sanctuary-the-woods-abode-1`: Sobha Realty, The Woods Abode. https://sobharealty.com/sites/default/files/2026-08/Desk%20banner.jpg
+- `p/sobha-sanctuary-the-woods-abode-2`: Sobha Realty, The Woods Abode. https://sobharealty.com/sites/default/files/2026-08/ID-01a_1.jpg
+- `p/sobha-sanctuary-the-woods-abode-3`: Sobha Realty, The Woods Abode. https://sobharealty.com/sites/default/files/2026-08/L-02%20-%20KIDS%20PLAY%20AREA_1.jpg
+- `p/sobha-sanctuary-the-willows-1`: Sobha Realty, The Willows. https://sobharealty.com/sites/default/files/2026-02/deskbanner.jpg
+- `p/sobha-sanctuary-the-willows-2`: Sobha Realty, The Willows. https://sobharealty.com/sites/default/files/2026-02/Gallery-images--DESK5.jpg
+- `p/sobha-sanctuary-the-willows-3`: Sobha Realty, The Willows. https://sobharealty.com/sites/default/files/2026-02/Gallery-images--DESK3.jpg
+- `p/sobha-orbis-1`: Sobha Realty, Sobha Orbis. https://sobharealty.com/sites/default/files/2024-11/Sobha%20Orbis_0.jpg
+- `p/sobha-orbis-2`: Sobha Realty, Sobha Orbis. https://sobharealty.com/sites/default/files/2024-06/I%20%282%29-.jpg
+- `p/sobha-orbis-3`: Sobha Realty, Sobha Orbis. https://sobharealty.com/sites/default/files/2024-06/L%20%282%29-.jpg
+- `p/sobha-central-the-eden-1`: Sobha Realty, The Eden. https://sobharealty.com/sites/default/files/2025-05/1006x608%20%E2%80%93%2051.jpg
+- `p/sobha-central-the-eden-2`: Sobha Realty, The Eden. https://sobharealty.com/sites/default/files/2025-05/1006x608%20%E2%80%93%2062.jpg
+- `p/sobha-central-the-eden-3`: Sobha Realty, The Eden. https://sobharealty.com/sites/default/files/2025-05/1006x608%20%E2%80%93%2063.jpg
+- `p/sobha-hartland-ii-skyvue-stellar-1`: Sobha Realty, Skyvue Stellar. https://sobharealty.com/sites/default/files/2025-04/Banner%201440x618%20%E2%80%93%205.jpg
+- `p/sobha-hartland-ii-skyvue-stellar-2`: Sobha Realty, Skyvue Stellar. https://sobharealty.com/sites/default/files/2025-03/Gallery%201006x608%202%20%281%29.jpg
+- `p/sobha-hartland-ii-skyvue-stellar-3`: Sobha Realty, Skyvue Stellar. https://sobharealty.com/sites/default/files/2025-03/Gallery%201006x608%208%20%281%29.jpg
+- `p/sobha-elwood-1`: Sobha Realty, Sobha Elwood. https://sobharealty.com/sites/default/files/2025-11/no%20112.jpg
+- `p/sobha-elwood-2`: Sobha Realty, Sobha Elwood. https://sobharealty.com/sites/default/files/2024-08/Desktop-Visual%20symphony%20gallery%201-1440x922%20%CE%93%C3%87%C3%B4%2028.jpg
+- `p/sobha-elwood-3`: Sobha Realty, Sobha Elwood. https://sobharealty.com/sites/default/files/2025-01/Gallery3.jpg
+- `p/damac-islands-2-1`: DAMAC Properties, DAMAC Islands 2. https://images.ctfassets.net/zoq5l15g49wj/5ogXqVy4sac1iP6Xjt8F0c/0080708f88cb34b854698b2ff8756364/DAMAC_Islands_2-Gallery-12.jpg
+- `p/damac-islands-2-2`: DAMAC Properties, DAMAC Islands 2. https://images.ctfassets.net/zoq5l15g49wj/60Q9DQorMVtg2S2SFnffsm/aed3e3785967b68c35997ab73b07c4e1/4BR_03.jpg
+- `p/damac-islands-2-3`: DAMAC Properties, DAMAC Islands 2. https://images.ctfassets.net/zoq5l15g49wj/5AKUTnG7gFvZyumzkbhSwP/1c2b49ca4914a1f9dc3f8c3420d0a7de/DAMAC_Islands_2-Amenities-01-TRANQUIL_LAKE___ECO_PARK.jpg
+- `p/damac-chelsea-residences-1`: DAMAC Properties, Chelsea Residences. https://images.ctfassets.net/zoq5l15g49wj/1ekJe0zSQqUN4LwZB8Y7Ux/9ca4fca5b30bd47a406d380fbc7ee6cb/Chelsea_Residences-Gallery-00.jpg
+- `p/damac-chelsea-residences-2`: DAMAC Properties, Chelsea Residences. https://images.ctfassets.net/zoq5l15g49wj/1moLdrptanHF6pSznZ8Tqd/4a8b0acb4ab2d39da56bc164acc584c7/Chelsea_Residences-Gallery-18.jpg
+- `p/damac-chelsea-residences-3`: DAMAC Properties, Chelsea Residences. https://images.ctfassets.net/zoq5l15g49wj/1QNgBYRv6nVs0j0t80POTD/11b4a83130205b158325e88d1bc9fc25/Chelsea_Residences-2-Amenities-STAMFORD_SUMMIT.jpg
+- `p/damac-riverside-views-azure-2-1`: DAMAC Properties, Azure 2 at DAMAC Riverside Views. https://images.ctfassets.net/zoq5l15g49wj/2oinspeYqJiCjerO3PX5w1/46f037cb417a597fbd101192241a0a28/Riverside_Views-Gallery-00.jpg
+- `p/damac-riverside-views-azure-2-2`: DAMAC Properties, Azure 2 at DAMAC Riverside Views. https://images.ctfassets.net/zoq5l15g49wj/5EC7VHqMiE4nDJvYn7XhK7/4d838e380914219ba9f5c476976a0a7f/Riverside_Views-Gallery-18.jpg
+- `p/damac-riverside-views-azure-2-3`: DAMAC Properties, Azure 2 at DAMAC Riverside Views. https://images.ctfassets.net/zoq5l15g49wj/59ggZKFK3rJTqXZJVpadjb/106f28bfab2e74b17999223e0e72afcb/Riverside_Views-Amenities-01-Malibu_Cove.jpg
+- `p/damac-hills-2-violet-4-1`: DAMAC Properties, Violet 4. https://images.ctfassets.net/zoq5l15g49wj/6VxguJSBuuriZTYgcNknjk/b4ef2d9320b2bbeb5927b95e0271758e/Violet_4-Gallery-4x3-00.jpg
+- `p/damac-hills-2-violet-4-2`: DAMAC Properties, Violet 4. https://images.ctfassets.net/zoq5l15g49wj/1e26A09S3e5EMzud4J7wL9/7bab3a0e3651374390be31e088483c50/Violet_4-Gallery-4x3-02.jpg
+- `p/damac-hills-2-violet-4-3`: DAMAC Properties, Violet 4. https://images.ctfassets.net/zoq5l15g49wj/5xglh6lYYLHf5OUWsVk5px/4a4bcb6da3579e6019d0cd1ad34a29cf/Violet_4-Amenities-03-MalibuBeach-4x3.jpg
+- `p/damac-lagoons-district-valencia-1`: DAMAC Properties, Valencia at DAMAC Lagoons District. https://images.ctfassets.net/zoq5l15g49wj/4arcgGdM47wJvH4vWGKk0T/68c5a3059233b3778a47f868a045daf6/DAMAC_Lagoons_District-Gallery-00.jpg
+- `p/damac-lagoons-district-valencia-2`: DAMAC Properties, Valencia at DAMAC Lagoons District. https://images.ctfassets.net/zoq5l15g49wj/64O3CByyXHHew4uqhcOyXa/01263574a5909add384066c29d46cee0/DAMAC_Lagoons_District-Gallery-12.jpg
+- `p/damac-lagoons-district-valencia-3`: DAMAC Properties, Valencia at DAMAC Lagoons District. https://images.ctfassets.net/zoq5l15g49wj/6HjAJwFqln9TjZeGFNV5cs/d25b44e37ce9641c4aad2060160f4165/DAMAC_Lagoons_District-Amenities-01-Pool_Bar.jpg
+- `p/damac-couture-by-cavalli-1`: DAMAC Properties, Couture by Cavalli. https://images.ctfassets.net/zoq5l15g49wj/2fom6xavuYeALV9bvPiWPs/4d973b300b05300d6b3d2c57f21bbf7d/Couture_by_Cavalli-Gallery-17.jpg
+- `p/damac-couture-by-cavalli-2`: DAMAC Properties, Couture by Cavalli. https://images.ctfassets.net/zoq5l15g49wj/KKOuKrHVVvpRQRZNzGiIs/2d6ca4c10b5a10e3f14dcb0600ed588a/Couture_by_Cavalli-Gallery-10.jpg
+- `p/damac-couture-by-cavalli-3`: DAMAC Properties, Couture by Cavalli. https://images.ctfassets.net/zoq5l15g49wj/6wxHTrdGcG8F7A4KBkZ6fe/712b946ce6de3964afd8184edd2146d1/amenities-5-swimmable-lagoon-4x3_1.webp
+- `p/emaar-montiva-by-vida-1`: Emaar Properties, Montiva by Vida. https://uae-cms.emaar.com/uploads/419522_brochure_File_1ed1216b0b.pdf#page=9
+- `p/emaar-montiva-by-vida-2`: Emaar Properties, Montiva by Vida. https://uae-cms.emaar.com/uploads/419522_brochure_File_1ed1216b0b.pdf#page=22
+- `p/emaar-montiva-by-vida-3`: Emaar Properties, Montiva by Vida. https://uae-cms.emaar.com/uploads/419522_brochure_File_1ed1216b0b.pdf#page=11
+- `p/emaar-palace-residences-hillside-1`: Emaar Properties, Palace Residences Hillside. https://uae-cms.emaar.com/uploads/423136_brochure_File_0054f5e0c6.pdf#page=14
+- `p/emaar-palace-residences-hillside-2`: Emaar Properties, Palace Residences Hillside. https://uae-cms.emaar.com/uploads/423136_brochure_File_0054f5e0c6.pdf#page=21
+- `p/emaar-palace-residences-hillside-3`: Emaar Properties, Palace Residences Hillside. https://uae-cms.emaar.com/uploads/423136_brochure_File_0054f5e0c6.pdf#page=16
+- `p/emaar-ovelle-1`: Emaar Properties, Ovelle. https://uae-cms.emaar.com/uploads/426599_hero_slide_2_4d0196e9c1.jpg
+- `p/emaar-ovelle-2`: Emaar Properties, Ovelle. https://uae-cms.emaar.com/uploads/426584_interior_0_05f61cfa68.jpg
+- `p/emaar-ovelle-3`: Emaar Properties, Ovelle. https://uae-cms.emaar.com/uploads/426572_feature_block_1_7533a23c7f.jpg
+- `p/emaar-salva-1`: Emaar Properties, Salva. https://uae-cms.emaar.com/uploads/430607_hero_slide_2_94765c1c04.jpg
+- `p/emaar-salva-2`: Emaar Properties, Salva. https://uae-cms.emaar.com/uploads/430622_interior_3_23a9456f20.jpg
+- `p/emaar-salva-3`: Emaar Properties, Salva. https://uae-cms.emaar.com/uploads/430610_hero_slide_1_23c379e624.jpg
+- `p/nakheel-palm-central-private-residences-1`: Nakheel, Palm Central Private Residences. https://www.nakheel.com/images/nakheelcorporatelibraries/spotlight/palm-central_banner.jpg?sfvrsn=43f99260_1
+- `p/nakheel-palm-central-private-residences-2`: Nakheel, Palm Central Private Residences. https://www.nakheel.com/images/nakheelcorporatelibraries/developments/projects/palm-central_image-05.jpg?sfvrsn=704f0022_1
+- `p/nakheel-palm-central-private-residences-3`: Nakheel, Palm Central Private Residences. https://www.nakheel.com/images/nakheelcorporatelibraries/developments/projects/palm-central_image-02.jpg?sfvrsn=245ba597_1
+- `p/ellington-everly-place-1`: Ellington Properties, Everly Place. https://assets.ellingtonproperties.ae/sales/files/Marketing-Collaterals/Everly%20Place/Launch/Everly%20Place%20-%20Brochure.pdf (page 7, embedded image)
+- `p/ellington-everly-place-2`: Ellington Properties, Everly Place. https://ellingtonproperties.ae/wp-content/uploads/bs1-1.jpg
+- `p/ellington-everly-place-3`: Ellington Properties, Everly Place. https://ellingtonproperties.ae/wp-content/uploads/everly-feature.jpg
+- `p/ellington-the-meriva-collection-1`: Ellington Properties, The Meriva Collection. https://ellingtonproperties.ae/wp-content/uploads/ext4.webp
+- `p/ellington-the-meriva-collection-2`: Ellington Properties, The Meriva Collection. https://ellingtonproperties.ae/wp-content/uploads/section3-img1.jpg
+- `p/ellington-the-meriva-collection-3`: Ellington Properties, The Meriva Collection. https://ellingtonproperties.ae/wp-content/uploads/meriva-feature.jpg
+- `p/binghatti-etherea-1`: Binghatti Developers, Binghatti Etherea. https://binghattiweb.imgix.net/binghatti-etheria-exterior-1.webp
+- `p/binghatti-etherea-2`: Binghatti Developers, Binghatti Etherea. https://binghattiweb.imgix.net/binghatti-etheria-living-room-1.webp
+- `p/binghatti-etherea-3`: Binghatti Developers, Binghatti Etherea. https://binghattiweb.imgix.net/binghatti-etheria-amenities-1.webp
+- `p/binghatti-skyblade-1`: Binghatti Developers, Binghatti Skyblade. https://binghattiweb.imgix.net/binghatti-skyblade-hero-banner.webp
+- `p/binghatti-skyblade-2`: Binghatti Developers, Binghatti Skyblade. https://binghattiweb.imgix.net/binghatti-skyblade-living-room-2.webp
+- `p/binghatti-skyblade-3`: Binghatti Developers, Binghatti Skyblade. https://binghattiweb.imgix.net/binghatti-skyblade-amenities-2.webp
+- `p/danube-bayz-102-1`: Danube Properties, BAYZ 102. https://danubeproperties.com/wp-content/uploads/2024/09/1.jpg
+- `p/danube-bayz-102-2`: Danube Properties, BAYZ 102. https://danubeproperties.com/wp-content/uploads/2024/09/2.jpg
+- `p/danube-bayz-102-3`: Danube Properties, BAYZ 102. https://danubeproperties.com/wp-content/uploads/2024/09/3-3.jpg

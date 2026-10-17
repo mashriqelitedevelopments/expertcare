@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "danube-bayz-102",
+    "name": "BAYZ 102",
+    "developer": "Danube Properties",
+    "developerUrl": "https://danubeproperties.com",
+    "projectUrl": "https://danubeproperties.com/portfolio/bayz102/",
+    "community": "Business Bay",
+    "district": "Business Bay",
+    "unitTypes": ["Apartment", "Penthouse"],
+    "bedrooms": { "min": 0, "max": 4 },
+    "priceFrom": 2400000,
+    "priceFromUnit": null,
+    "sizeFrom": null,
+    "handover": "June 2029",
+    "paymentPlan": null,
+    "paymentPlanLabel": "Pay 2% Monthly",
+    "launched": "2024-09",
+    "availability": "Book Online (listed under Latest Launches)",
+    "highlights": [
+      "Residential tower of 102 levels on Al Mustaqbal Street in Business Bay, next to Danube's BAYZ 101",
+      "Homes are sold fully furnished with Dolce Vita Italian furniture; some units have private pools",
+      "A rooftop helipad is planned for helicopters and sky taxis",
+      "Studios to four-bedroom apartments plus penthouses, 956 apartments listed on the project page",
+      "Developer lists Business Bay Metro at 3 minutes and Burj Khalifa and Dubai Mall at 3 minutes"
+    ],
+    "amenities": [
+      "Infinity Pool",
+      "Aquatic Gym",
+      "Indoor Gym",
+      "SPA",
+      "Padel Tennis",
+      "Outdoor Cinema",
+      "Sky Garden",
+      "Kids Pool"
+    ],
+    "description": [
+      "BAYZ 102 is a 102-level apartment tower by Danube Properties on Al Mustaqbal Street in Business Bay, a short walk from the Business Bay Metro station and near Sheikh Zayed Road. It sits on the same street as the developer's BAYZ 101 and was announced in September 2024. The upper floors look toward the Burj Khalifa and the Dubai Canal.",
+      "The tower offers studios, one- to four-bedroom apartments and penthouses, all handed over furnished with Dolce Vita Italian furniture, and some units include a private pool. Danube lists more than 40 shared facilities, among them a canal-view infinity pool, an aquatic gym, a spa, sports courts and an outdoor cinema, as well as a helipad intended for sky taxis."
+    ],
+    "dldProjectNumber": null,
+    "escrowAccount": null,
+    "reraPermit": null,
+    "images": [
+      {
+        "file": "img/danube-bayz-102/1.jpg",
+        "sourceUrl": "https://danubeproperties.com/wp-content/uploads/2024/09/1.jpg",
+        "alt": "Render of the BAYZ 102 tower rising over Business Bay beside the Dubai Canal, with the Burj Khalifa to its left",
+        "kind": "exterior"
+      },
+      {
+        "file": "img/danube-bayz-102/2.jpg",
+        "sourceUrl": "https://danubeproperties.com/wp-content/uploads/2024/09/2.jpg",
+        "alt": "Render of the BAYZ 102 entrance lobby with marble floors, lounge seating and the tower name behind the reception desk",
+        "kind": "interior"
+      },
+      {
+        "file": "img/danube-bayz-102/3.jpg",
+        "sourceUrl": "https://danubeproperties.com/wp-content/uploads/2024/09/3-3.jpg",
+        "alt": "Render of the elevated infinity pool with sun loungers overlooking the Dubai Canal at sunset",
+        "kind": "amenity"
+      }
+    ],
+    "sources": [
+      "https://danubeproperties.com/portfolio/bayz102/",
+      "https://danubeproperties.com/wp-content/uploads/2024/09/Bayz_102_brochure_04.pdf",
+      "https://danubeproperties.com/built-for-air-taxis-danube-unveils-bayz102-tower/",
+      "https://danubeproperties.com/1-payment-plan/"
+    ],
+    "checked": "2026-09-16",
+    "uncertain": [
+      "Starting price conflicts on the same official page: the headline says 'Starting Price AED 2.4 Million', while the FAQ says studios start around AED 1.27 million (flex-studios AED 1.68m, 1-bed Executive AED 2.23m, 2-bed AED 3.05m, 3-bed AED 4.9m, 4-bed AED 6.70m, penthouses from AED 26m). The headline figure is used; which unit it refers to is not stated.",
+      "Handover conflicts on the same page: headline 'Completion June 2029' vs FAQ 'estimated to be completed by Dec 2028'. The September 2024 press release said completion was anticipated in 2028. The headline figure is used.",
+      "Unit count conflicts: project page says 956 apartments; the September 2024 press release said about 1,300 units.",
+      "Payment plan: the project page says only 'Pay 2% Monthly' and links to Danube's generic 1% payment plan page (around 20% down payment, 1% monthly, balance on completion). No project-specific stage breakdown is published, so paymentPlan is null.",
+      "Unit sizes are not published on the page or in the brochure (Bayz_102_brochure_04.pdf).",
+      "Launch month 2024-09 is taken from the press release dated 12 September 2024 announcing the tower; the exact sales-launch date is not stated.",
+      "Availability: the page does not say 'Selling' in words; it has a 'Book Online' button that links to Danube's property-search booking portal, and the site menu lists the project under 'Latest Launches'. Remaining stock was not checked.",
+      "Not found in the local dld-projects.csv by name; no DLD project number, escrow account or permit is printed on the official pages."
+    ]
+  }
+]

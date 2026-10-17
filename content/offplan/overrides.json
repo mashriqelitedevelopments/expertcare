@@ -1,0 +1,98 @@
+{
+  "_note": "Per-slug edits applied by scripts/offplan/build.py. `summary` is required for every project. `projectNumber` values come from the DLD Real Estate Projects open dataset (data.dubai 467654, file of 6 Jul 2026), matched on developer number and project name. `patch` overrides researched fields; `area` forces the area-guide match (null keeps a project out of the guides).",
+  "mashriq-elite-floarea-skies": {
+    "summary": "A 192-apartment tower in JVC with direct access to Al Khail Road and a rooftop infinity pool.",
+    "projectNumber": "3717"
+  },
+  "mashriq-elite-floarea-oasis": {
+    "summary": "257 studios, one- and two-bedroom apartments in the Dubai Land Residence Complex, planned around family amenities.",
+    "projectNumber": "3603"
+  },
+  "mashriq-elite-floarea-breeze": {
+    "summary": "A boutique building of 48 apartments and 4 park-facing townhouses on Dubai Islands, a short walk from the beach.",
+    "projectNumber": "4061"
+  },
+  "sobha-sanctuary-the-woods-abode": {
+    "summary": "One and two-bedroom apartments among the parks of Sobha Sanctuary in Dubailand, from 546 sq ft."
+  },
+  "sobha-sanctuary-the-willows": {
+    "summary": "Four-bedroom villas in Sobha Sanctuary, a gated, low-density community built around parks and gardens."
+  },
+  "sobha-orbis": {
+    "summary": "Seven apartment towers in Motor City with one, one-and-a-half and two-bedroom homes, handover December 2027.",
+    "projectNumber": "3070"
+  },
+  "sobha-central-the-eden": {
+    "summary": "One and two-bedroom apartments in Sobha Central, a six-tower cluster by Jebel Ali Metro Station on Sheikh Zayed Road."
+  },
+  "sobha-hartland-ii-skyvue-stellar": {
+    "summary": "The tallest of the Skyvue towers in Sobha Hartland II, with one to three-and-a-half-bedroom apartments facing the lagoon."
+  },
+  "sobha-elwood": {
+    "summary": "Four to six-bedroom villas in a 10 million sq ft community off Dubai–Al Ain Road, almost half of it parkland.",
+    "projectNumber": "3602"
+  },
+  "damac-islands-2": {
+    "summary": "Townhouses and villas around lagoons and waterways in DAMAC Islands 2, Dubailand, from four bedrooms."
+  },
+  "damac-chelsea-residences": {
+    "summary": "Waterfront apartments in Dubai Maritime City, developed with Chelsea Football Club, with a rooftop football pitch."
+  },
+  "damac-riverside-views-azure-2": {
+    "summary": "One and two-bedroom apartments along the water channels of DAMAC Riverside, handover Q1 2029.",
+    "projectNumber": "3661"
+  },
+  "damac-hills-2-violet-4": {
+    "summary": "Four-bedroom townhouses with gardens and roof terraces in DAMAC Hills 2.",
+    "projectNumber": "3288"
+  },
+  "damac-lagoons-district-valencia": {
+    "summary": "Studios, one and two-bedroom apartments in the mixed-use district of DAMAC Lagoons, beside offices and a mall."
+  },
+  "damac-couture-by-cavalli": {
+    "summary": "95 homes with Roberto Cavalli interiors on the Dubai Canal beside Safa Park, each with its own pool.",
+    "area": null,
+    "patch": {
+      "community": "Dubai Canal, Safa Park",
+      "district": "Al Wasl"
+    }
+  },
+  "ellington-everly-place": {
+    "summary": "209 apartments in a mid-rise building around the crystal lagoon of Meydan Horizon, Mohammed Bin Rashid City."
+  },
+  "ellington-the-meriva-collection": {
+    "summary": "Beachfront apartments, penthouses and signature residences on Island B of Dubai Islands."
+  },
+  "binghatti-etherea": {
+    "summary": "282 studios, one and two-bedroom apartments in JVC, handover July 2027."
+  },
+  "binghatti-skyblade": {
+    "summary": "A 55-floor tower on Burj Khalifa Boulevard with 619 homes and a rooftop pool facing the Burj Khalifa.",
+    "projectNumber": "3725"
+  },
+  "emaar-montiva-by-vida": {
+    "summary": "Vida-branded one to three-bedroom apartments in Dubai Creek Harbour, beside parkland.",
+    "projectNumber": "3744"
+  },
+  "emaar-palace-residences-hillside": {
+    "summary": "Palace-branded apartments and three-bedroom townhouses in Dubai Hills Estate, close to Dubai Hills Park."
+  },
+  "emaar-ovelle": {
+    "summary": "Four and five-bedroom detached villas in The Valley, Emaar's community off the Al Ain Road."
+  },
+  "emaar-salva": {
+    "summary": "Three to five-bedroom villas in The Heights Country Club & Wellness, a community built around a wellness lake."
+  },
+  "nakheel-palm-central-private-residences": {
+    "summary": "Apartments and townhouses in three low to mid-rise buildings at the centre of Palm Jebel Ali, with beach access.",
+    "patch": {
+      "handover": "September 2030"
+    }
+  },
+  "nakheel-bay-grove-residences": {
+    "skip": "no published price, size or handover, and no confirmation units are still for sale"
+  },
+  "danube-bayz-102": {
+    "summary": "A 102-storey tower of furnished apartments and penthouses in Business Bay, sold on Danube's 2% monthly plan."
+  }
+}
