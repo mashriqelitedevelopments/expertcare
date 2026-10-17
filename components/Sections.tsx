@@ -29,15 +29,12 @@ export function Crumbs({ items, locale }: { items: Crumb[]; locale: Locale }) {
 /** Two-digit index for eyebrows and lists. */
 export const nn = (i: number) => String(i + 1).padStart(2, "0");
 
-export function Eyebrow({ n, children, plain = false }: { n?: string | number; children: React.ReactNode; plain?: boolean }) {
-  return (
-    <p className={`eyebrow${plain ? " plain" : ""}`} data-n={typeof n === "number" ? nn(n - 1) : n}>
-      {children}
-    </p>
-  );
+/** Section labels are gone from the design: the heading carries the section on its own. */
+export function Eyebrow(_props: { n?: string | number; children?: React.ReactNode; plain?: boolean }) {
+  return null;
 }
 
-/** The split hero: copy on the left, a photograph on the right, a rule between. */
+/** The hero: a full-bleed photograph with the type in its lower left. */
 export function Hero({
   image,
   mobile,
@@ -45,7 +42,6 @@ export function Hero({
   lede,
   crumbs,
   byline,
-  eyebrow,
   caption,
   small = false,
   locale,
@@ -66,25 +62,20 @@ export function Hero({
   foot?: React.ReactNode;
 }) {
   return (
-    <section className={`hero${small ? " hero-sm" : ""}`}>
+    <section className={`hero on-photo${small ? " hero-sm" : ""}`}>
+      <div className="hero-media">
+        <Pic name={image} mobile={mobile} priority sizes="100vw" locale={locale} />
+        {caption && <span className="caption">{caption}</span>}
+      </div>
       <div className="hero-copy">
         <div>
           {crumbs && <Crumbs items={crumbs} locale={locale} />}
-          {eyebrow && !crumbs && <Eyebrow plain>{eyebrow}</Eyebrow>}
           <h1>{h1}</h1>
           {lede && <p className="lede">{lede}</p>}
-          {byline && (
-            <p className="byline" style={{ marginTop: 18 }}>
-              {byline}
-            </p>
-          )}
+          {byline && <p className="byline">{byline}</p>}
           {children}
         </div>
         {foot}
-      </div>
-      <div className="hero-media">
-        <Pic name={image} mobile={mobile} priority sizes="(max-width: 900px) 100vw, 50vw" locale={locale} />
-        {caption && <span className="caption">{caption}</span>}
       </div>
     </section>
   );
@@ -93,7 +84,7 @@ export function Hero({
 /** A full-bleed photograph with a bone card sitting on its lower edge. */
 export function Plate({ image, h2, lede, caption, locale, children }: { image: ImgKey; h2: string; lede?: string; caption?: string; locale: Locale; children?: React.ReactNode }) {
   return (
-    <section className="plate">
+    <section className="plate on-photo">
       <Pic name={image} sizes="100vw" locale={locale} />
       {caption && <span className="caption">{caption}</span>}
       <div className="plate-card rv">

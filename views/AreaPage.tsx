@@ -249,7 +249,7 @@ export function AreaPage({ locale, slug }: { locale: Locale; slug: string }) {
         <div className="wrap twin">
           <div>
             <Eyebrow n={7}>{t.common.beforeYouBuy}</Eyebrow>
-            <div className="index" style={{ marginTop: 18 }}>
+            <div className="index no-thumb" style={{ marginTop: 18 }}>
               {["how-to-buy-property-in-dubai", "cost-of-buying-property-in-dubai"].map((s, i) => {
                 const g = getGuide(locale, s)!;
                 return <IndexRow key={s} idx={i} title={g.title} text={g.dek} href={`/guides/${g.slug}/`} locale={locale} />;

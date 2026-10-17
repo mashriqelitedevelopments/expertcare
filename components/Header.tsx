@@ -9,16 +9,23 @@ import { getAreas, getServices } from "@/lib/content";
 import { lp } from "@/lib/i18n";
 import type { Locale } from "@/lib/locale";
 import { servicePath } from "@/lib/paths";
-import { site } from "@/lib/site";
 import { ui } from "@/lib/ui";
 
-/** An ink utility strip above a bone header that stays at the top of the page. */
-export function Header({ locale, strip }: { locale: Locale; strip: string[] }) {
+/** Transparent over the hero photograph, bone once the page scrolls; the menu is a half-width panel. */
+export function Header({ locale }: { locale: Locale }) {
   const t = ui(locale);
   const raw = usePathname() || "/";
   const path = raw.length > 1 ? raw.replace(/\/$/, "") : raw;
   const [open, setOpen] = useState(false);
   const [saved, setSaved] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const read = () => {
@@ -55,23 +62,7 @@ export function Header({ locale, strip }: { locale: Locale; strip: string[] }) {
 
   return (
     <>
-      <div className="top">
-        <div className="wrap top-in">
-          <div className="top-l">
-            {strip.map((s) => (
-              <span key={s}>{s}</span>
-            ))}
-          </div>
-          <div className="top-r">
-            {site.phone && <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>}
-            {site.whatsapp && <a href={`https://wa.me/${site.whatsapp}`}>WhatsApp</a>}
-            <Link href={lp(locale, "/about/")}>{t.footer.about}</Link>
-            <Link href={lp(locale, "/faq/")}>{t.faq.crumb}</Link>
-            <Link href={lp(locale, "/contact/")}>{t.footer.contact}</Link>
-          </div>
-        </div>
-      </div>
-      <header className={`hdr${open ? " is-open" : ""}`}>
+      <header className={["hdr", scrolled ? "is-scrolled" : "", open ? "is-open" : ""].filter(Boolean).join(" ")}>
         <div className="wrap hdr-in">
           <Link href={home} aria-label={t.chrome.homeAria}>
             <Logo />

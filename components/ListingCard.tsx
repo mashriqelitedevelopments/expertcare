@@ -21,23 +21,12 @@ export function priceLine(locale: Locale, l: Pick<ListingView, "price">) {
   return l.price ? `${t.from} ${aed(l.price, locale)}` : t.onRequest;
 }
 
-/** The column headings above a ledger of rows. */
-export function LedgerHead({ locale }: { locale: Locale }) {
-  const t = ui(locale).card;
-  return (
-    <div className="ledger-head" aria-hidden="true">
-      <span />
-      <span>{t.colProject}</span>
-      <span>{t.colHomes}</span>
-      <span>{t.colHandover}</span>
-      <span>{t.colPrice}</span>
-      <span />
-      <span />
-    </div>
-  );
+/** Rows have no column headings any more: each listing is a photograph with three lines under it. */
+export function LedgerHead(_props: { locale: Locale }) {
+  return null;
 }
 
-/** A listing as one ruled row: photo, project, homes, handover, price, arrow. */
+/** A listing: the photograph, then project, homes, status and price. */
 export function ListingRow({ l, locale, sizes = "140px", priority = false }: { l: ListingView; locale: Locale; sizes?: string; priority?: boolean }) {
   const t = ui(locale).card;
   return (
