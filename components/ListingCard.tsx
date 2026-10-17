@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Arrow } from "./Icons";
 import { Pic } from "./Pic";
 import { SaveButton } from "./SaveButton";
 import type { ListingView } from "@/lib/content";
@@ -20,44 +21,61 @@ export function priceLine(locale: Locale, l: Pick<ListingView, "price">) {
   return l.price ? `${t.from} ${aed(l.price, locale)}` : t.onRequest;
 }
 
-export function ListingCard({
-  l,
-  locale,
-  sizes = "(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 33vw",
-  priority = false,
-}: {
-  l: ListingView;
-  locale: Locale;
-  sizes?: string;
-  priority?: boolean;
-}) {
+/** The column headings above a ledger of rows. */
+export function LedgerHead({ locale }: { locale: Locale }) {
   const t = ui(locale).card;
   return (
-    <article className="card">
-      <div className="card-media">
+    <div className="ledger-head" aria-hidden="true">
+      <span />
+      <span>{t.colProject}</span>
+      <span>{t.colHomes}</span>
+      <span>{t.colHandover}</span>
+      <span>{t.colPrice}</span>
+      <span />
+      <span />
+    </div>
+  );
+}
+
+/** A listing as one ruled row: photo, project, homes, handover, price, arrow. */
+export function ListingRow({ l, locale, sizes = "140px", priority = false }: { l: ListingView; locale: Locale; sizes?: string; priority?: boolean }) {
+  const t = ui(locale).card;
+  return (
+    <article className="row">
+      <div className="row-media">
         <Pic name={l.images[0]} sizes={sizes} priority={priority} locale={locale} />
-        {l.status === "off-plan" && (
-          <span className="card-tag">
-            {t.offPlan}
-            {l.handover ? ` · ${t.handover} ${l.handover}` : ""}
-          </span>
-        )}
-        <SaveButton slug={l.slug} title={l.title} locale={locale} />
       </div>
-      <div className="card-body">
-        <p className="card-price num">{priceLine(locale, l)}</p>
-        <h3 className="card-title">
-          <Link href={lp(locale, `/properties/${l.slug}/`)} className="card-link">
+      <div className="row-title">
+        <h3>
+          <Link href={lp(locale, `/properties/${l.slug}/`)} className="row-link">
             {l.title}
           </Link>
         </h3>
-        <p className="card-meta">
+        <p className="m">
           <span dir="ltr">{l.developer}</span> · {l.place}
         </p>
-        <p className="card-meta">
-          {l.typeLabel} · {bedRange(locale, l)}
+      </div>
+      <div className="row-meta">
+        <p className="m">{l.typeLabel}</p>
+        <p className="m">{bedRange(locale, l)}</p>
+      </div>
+      <div className="row-meta">
+        <p className="m">{l.status === "off-plan" ? `${t.offPlan}${l.handover ? ` · ${l.handover}` : ""}` : t.ready}</p>
+        {l.planLabel && <p className="m">{l.planLabel}</p>}
+      </div>
+      <div className="row-price">
+        <p className="price">
+          {l.price ? aed(l.price, locale) : t.onRequest}
+          {l.price && <small>{t.from}</small>}
         </p>
       </div>
+      <div className="row-save">
+        <SaveButton slug={l.slug} title={l.title} locale={locale} />
+      </div>
+      <span className="row-arrow" aria-hidden="true">
+        <Arrow />
+      </span>
     </article>
   );
 }
+export const ListingCard = ListingRow;

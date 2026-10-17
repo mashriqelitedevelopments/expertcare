@@ -2,8 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Blocks, Rich } from "@/components/Blocks";
 import { EnquiryForm } from "@/components/EnquiryForm";
-import { ServiceCard } from "@/components/ServiceCard";
-import { GuideLink, Hero } from "@/components/Sections";
+import { Arrow } from "@/components/Icons";
+import { Eyebrow, Hero, IndexRow } from "@/components/Sections";
+import { ServiceRow } from "@/components/ServiceCard";
 import { getGuides, getService, getServices } from "@/lib/content";
 import { plainText } from "@/lib/format";
 import { ogImage } from "@/lib/images";
@@ -57,24 +58,27 @@ export function ServicePage({ locale, slug }: { locale: Locale; slug: string }) 
       <JsonLd data={faq} />
       <JsonLd data={howTo} />
       <JsonLd data={breadcrumbs(locale, crumbs)} />
-      <Hero small image={s.image} crumbs={crumbs} h1={s.title} lede={s.dek} locale={locale} />
+      <Hero small image={s.image} crumbs={crumbs} h1={s.title} lede={s.dek} locale={locale} foot={
+          <p className="note">
+            <Rich text={s.fees} locale={locale} />
+          </p>
+        } />
 
-      <section className="sec">
-        <div className="wrap article">
-          <div className="prose">
-            <aside className="keypoints" aria-labelledby="in-short">
-              <h2 id="in-short">{sv.inShort}</h2>
-              <ul>
-                {s.summary.map((x) => (
-                  <li key={x}>
-                    <Rich text={x} locale={locale} />
-                  </li>
-                ))}
-              </ul>
-            </aside>
-
-            <h2 id="how">{sv.stepsH}</h2>
-            <div className="steps">
+      <section className="sec tight">
+        <div className="wrap twin">
+          <div className="keypoints">
+            <h2>{sv.inShort}</h2>
+            <ul>
+              {s.summary.map((x) => (
+                <li key={x}>
+                  <Rich text={x} locale={locale} />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <Eyebrow n={1}>{sv.stepsH}</Eyebrow>
+            <div className="ladder" style={{ marginTop: 16 }}>
               {s.steps.map((st) => (
                 <div key={st.t}>
                   <div>
@@ -86,21 +90,25 @@ export function ServicePage({ locale, slug }: { locale: Locale; slug: string }) 
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
 
+      <section className="sec">
+        <div className="wrap article">
+          <div className="prose">
             {s.sections.map((sec) => (
               <section key={sec.id} id={sec.id} aria-labelledby={`${sec.id}-h`}>
                 <h2 id={`${sec.id}-h`}>{sec.h}</h2>
                 <Blocks blocks={sec.blocks} locale={locale} />
               </section>
             ))}
-
-            <div className="fee-box" id="fees">
-              <h2>{sv.feesH}</h2>
-              <p>
+            <section aria-labelledby="fees-h" id="fees">
+              <h2 id="fees-h">{sv.feesH}</h2>
+              <p className="note">
                 <Rich text={s.fees} locale={locale} />
               </p>
-            </div>
-
+            </section>
             <section aria-labelledby="faq-h">
               <h2 id="faq-h">{sv.faqH}</h2>
               <div className="faq">
@@ -115,9 +123,25 @@ export function ServicePage({ locale, slug }: { locale: Locale; slug: string }) 
               </div>
             </section>
           </div>
-
           <aside className="aside">
+            <nav className="toc" aria-labelledby="toc-h">
+              <h2 id="toc-h">{t.common.onThisPage}</h2>
+              <ol>
+                {s.sections.map((sec) => (
+                  <li key={sec.id}>
+                    <a href={`#${sec.id}`}>{sec.h}</a>
+                  </li>
+                ))}
+                <li>
+                  <a href="#fees">{sv.feesH}</a>
+                </li>
+                <li>
+                  <a href="#enquire">{sv.enquireH}</a>
+                </li>
+              </ol>
+            </nav>
             <div className="panel" id="enquire">
+              <p className="aside-ref">{s.short}</p>
               <h2 className="aside-h">{sv.enquireH}</h2>
               <p className="aside-p">{sv.enquireLede}</p>
               <EnquiryForm locale={locale} intent={s.intent} context={s.short} />
@@ -127,14 +151,20 @@ export function ServicePage({ locale, slug }: { locale: Locale; slug: string }) 
       </section>
 
       {guides.length > 0 && (
-        <section className="sec stone" aria-labelledby="guides-h">
+        <section className="sec sand" aria-labelledby="guides-h">
           <div className="wrap">
-            <h2 id="guides-h" className="rv" style={{ marginBottom: 28 }}>
-              {sv.guidesH}
-            </h2>
-            <div className="guide-list">
-              {guides.slice(0, 4).map((g) => (
-                <GuideLink key={g.slug} g={g} locale={locale} />
+            <div className="sec-head rv">
+              <div>
+                <Eyebrow n={2}>{sv.guidesEyebrow}</Eyebrow>
+                <h2 id="guides-h">{sv.guidesH}</h2>
+              </div>
+              <Link href={lp(locale, "/guides/")} className="more">
+                {t.common.allGuides} <Arrow />
+              </Link>
+            </div>
+            <div className="index">
+              {guides.slice(0, 4).map((g, i) => (
+                <IndexRow key={g.slug} idx={i} title={g.title} text={g.dek} meta={g.topic} href={`/guides/${g.slug}/`} image={g.image} locale={locale} />
               ))}
             </div>
           </div>
@@ -144,14 +174,17 @@ export function ServicePage({ locale, slug }: { locale: Locale; slug: string }) 
       <section className="sec" aria-labelledby="other-h">
         <div className="wrap">
           <div className="sec-head rv">
-            <h2 id="other-h">{sv.otherH}</h2>
+            <div>
+              <Eyebrow n={3}>{sv.crumb}</Eyebrow>
+              <h2 id="other-h">{sv.otherH}</h2>
+            </div>
             <Link href={lp(locale, "/services/")} className="more">
-              {t.home.allServices}
+              {t.home.allServices} <Arrow />
             </Link>
           </div>
-          <div className="services">
-            {others.map((x) => (
-              <ServiceCard key={x.slug} s={x} locale={locale} />
+          <div className="index">
+            {others.map((x, i) => (
+              <ServiceRow key={x.slug} s={x} locale={locale} idx={i} />
             ))}
           </div>
         </div>

@@ -13,7 +13,7 @@ export function Footer({ locale }: { locale: Locale }) {
   const t = ui(locale);
   const f = t.footer;
   const areas = getAreas(locale);
-  const guides = getGuides(locale).slice(0, 6);
+  const guides = getGuides(locale).slice(0, 7);
   const services = getServices(locale);
   const all = getListings(locale);
   const order = ["developer", "type", "community", "budget"];
@@ -25,9 +25,11 @@ export function Footer({ locale }: { locale: Locale }) {
   const social = Object.entries(site.social).filter(([, url]) => url);
 
   return (
-    <footer className="ftr dark">
+    <footer className="ftr ink">
       <div className="wrap">
-        <p className="ftr-line">{t.home.h1}</p>
+        <p className="ftr-line" aria-hidden="true">
+          {site.name}
+        </p>
         <div className="ftr-top">
           <div className="ftr-brand">
             <Link href={L("/")} aria-label={t.chrome.homeAria}>
@@ -39,7 +41,7 @@ export function Footer({ locale }: { locale: Locale }) {
                 {social.map(([name, url]) => (
                   <li key={name}>
                     <a href={url} rel="noopener noreferrer" target="_blank">
-                      {name.charAt(0).toUpperCase() + name.slice(1)}
+                      {name}
                     </a>
                   </li>
                 ))}
@@ -100,6 +102,17 @@ export function Footer({ locale }: { locale: Locale }) {
               <li>
                 <Link href={L("/guides/")}>{f.allGuides}</Link>
               </li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="f-company">
+            <h2 id="f-company">{f.company}</h2>
+            <ul>
+              <li>
+                <Link href={L("/about/")}>{f.about}</Link>
+              </li>
+              <li>
+                <Link href={L("/contact/")}>{f.contact}</Link>
+              </li>
               <li>
                 <Link href={L("/faq/")}>{f.faq}</Link>
               </li>
@@ -115,30 +128,13 @@ export function Footer({ locale }: { locale: Locale }) {
               <li>
                 <Link href={L("/mortgage-calculator/")}>{f.mortgage}</Link>
               </li>
-            </ul>
-          </nav>
-          <nav aria-labelledby="f-company">
-            <h2 id="f-company">{f.company}</h2>
-            <ul>
-              <li>
-                <Link href={L("/about/")}>{f.about}</Link>
-              </li>
-              <li>
-                <Link href={L("/contact/")}>{f.contact}</Link>
-              </li>
-              <li>
-                <Link href={L("/sell/")}>{f.valuation}</Link>
-              </li>
-              <li>
-                <Link href={L("/landlords/")}>{f.landlords}</Link>
-              </li>
               <li>
                 <Link href={L("/privacy/")}>{f.privacy}</Link>
               </li>
             </ul>
           </nav>
         </div>
-        <nav className="ftr-links" aria-labelledby="f-popular">
+        <nav className="ftr-links links" aria-labelledby="f-popular">
           <h2 id="f-popular">{t.collection.popular}</h2>
           <ul className="chips">
             {popular.map((c) => (

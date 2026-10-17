@@ -1,6 +1,9 @@
-import { ServiceCard } from "@/components/ServiceCard";
-import { Hero } from "@/components/Sections";
+import Link from "next/link";
+import { Arrow } from "@/components/Icons";
+import { Eyebrow, Hero } from "@/components/Sections";
+import { ServiceRow } from "@/components/ServiceCard";
 import { getServices } from "@/lib/content";
+import { lp } from "@/lib/i18n";
 import type { Locale } from "@/lib/locale";
 import { servicePath } from "@/lib/paths";
 import { JsonLd, ORG_ID, absL, breadcrumbs } from "@/lib/seo";
@@ -32,12 +35,48 @@ export function Services({ locale }: { locale: Locale }) {
       <JsonLd data={list} />
       <JsonLd data={offers} />
       <JsonLd data={breadcrumbs(locale, crumbs)} />
-      <Hero small image="viewing" locale={locale} crumbs={crumbs} h1={s.h1} lede={s.lede} />
-      <section className="sec">
+      <Hero small image="viewing" locale={locale} crumbs={crumbs} h1={s.h1} lede={s.lede} caption={s.heroCaption} />
+      <section className="sec tight">
         <div className="wrap">
-          <div className="services">
-            {services.map((x) => (
-              <ServiceCard key={x.slug} s={x} locale={locale} />
+          <div className="tbl-wrap">
+            <table className="tbl tbl-left">
+              <caption>{s.tableCaption}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">{s.colService}</th>
+                  <th scope="col">{s.colFor}</th>
+                  <th scope="col">{s.colFee}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {services.map((x) => (
+                  <tr key={x.slug}>
+                    <td>
+                      <Link href={lp(locale, servicePath(x.slug))}>{x.short}</Link>
+                    </td>
+                    <td>{x.dek}</td>
+                    <td>{x.fees}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section className="sec" aria-labelledby="index-h">
+        <div className="wrap">
+          <div className="sec-head rv">
+            <div>
+              <Eyebrow n={1}>{s.indexEyebrow}</Eyebrow>
+              <h2 id="index-h">{s.indexH}</h2>
+            </div>
+            <Link href={lp(locale, "/contact/")} className="more">
+              {t.chrome.adviser} <Arrow />
+            </Link>
+          </div>
+          <div className="index">
+            {services.map((x, i) => (
+              <ServiceRow key={x.slug} s={x} locale={locale} idx={i} />
             ))}
           </div>
         </div>

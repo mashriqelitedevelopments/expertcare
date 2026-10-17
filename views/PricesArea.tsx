@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Rich } from "@/components/Blocks";
 import { Arrow } from "@/components/Icons";
-import { Hero } from "@/components/Sections";
+import { Eyebrow, Hero } from "@/components/Sections";
 import { getArea, getAreas } from "@/lib/content";
 import { aed, fill, num, plainText } from "@/lib/format";
 import { formatDate } from "@/lib/guides";
@@ -11,7 +11,7 @@ import type { Locale } from "@/lib/locale";
 import { MARKET, marketFor, quarterLabel, signedPct } from "@/lib/market";
 import { JsonLd, breadcrumbs } from "@/lib/seo";
 import { ui } from "@/lib/ui";
-import { MarketCharts, MethodNote, datasetLd } from "./Prices";
+import { MarketCharts, MarketFigs, MethodNote, datasetLd } from "./Prices";
 
 const SEGMENTS = ["all:all", "apartment:ready", "apartment:off-plan", "villa:ready", "villa:off-plan"] as const;
 
@@ -32,6 +32,12 @@ export function PricesArea({ locale, slug }: { locale: Locale; slug: string }) {
     { name: p.crumb, path: "/dubai-property-prices/" },
     { name: a.name, path },
   ];
+  const figs = [
+    { n: l.medianPsf ? num(l.medianPsf) : p.noFigure, label: p.figPsf },
+    { n: num(l.sales), label: p.figSales },
+    { n: l.changePct != null ? signedPct(l.changePct) : p.noFigure, label: p.figChange },
+    { n: l.offPlanShare != null ? `${l.offPlanShare}%` : p.noFigure, label: p.figOffPlan },
+  ];
   const faqs = [
     ...(l.medianPsf ? [{ q: fill(p.faqAreaQ, { area: a.name }), a: fill(p.faqAreaA, { area: a.name, q, psf: num(l.medianPsf), sales: num(l.sales) }) }] : []),
     ...(l.changePct != null
@@ -46,6 +52,7 @@ export function PricesArea({ locale, slug }: { locale: Locale; slug: string }) {
     mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: plainText(f.a) } })),
   };
   const segRows = SEGMENTS.map((k) => ({ k, s: m.segments[k] })).filter((x) => x.s && x.s.sales > 0);
+  const others = getAreas(locale).filter((x) => x.slug !== slug && marketFor(x.slug));
 
   return (
     <>
@@ -62,16 +69,21 @@ export function PricesArea({ locale, slug }: { locale: Locale; slug: string }) {
         locale={locale}
       />
 
+      <MarketFigs items={figs} />
+
       <section className="sec">
         <div className="wrap">
           <MarketCharts locale={locale} block={m} psfTitle={`${p.areaPsf}${locale === "ar" ? "، " : ", "}${a.name}`} salesTitle={p.areaSales} scopeName={a.name} />
         </div>
       </section>
 
-      <section className="sec stone" aria-labelledby="seg-h">
+      <section className="sec" aria-labelledby="seg-h">
         <div className="wrap">
           <div className="sec-head">
-            <h2 id="seg-h">{p.segmentsH}</h2>
+            <div>
+              <Eyebrow n={1}>{a.name}</Eyebrow>
+              <h2 id="seg-h">{p.segmentsH}</h2>
+            </div>
             <Link href={`${lp(locale, "/properties/")}?area=${slug}`} className="more">
               {p.homesLink} {a.name} <Arrow />
             </Link>
@@ -98,18 +110,22 @@ export function PricesArea({ locale, slug }: { locale: Locale; slug: string }) {
               </tbody>
             </table>
           </div>
-          <p style={{ marginTop: 28 }}>
+          <div className="btns">
             <Link href={lp(locale, `/areas/${slug}/`)} className="more">
               {p.guideLink}: {a.name} <Arrow />
             </Link>
-          </p>
+          </div>
         </div>
       </section>
+
+      <MethodNote locale={locale} />
 
       {faqs.length > 0 && (
         <section className="sec" aria-labelledby="faq-h">
           <div className="wrap narrow">
-            <h2 id="faq-h">{t.common.questions}</h2>
+            <div className="sec-head">
+              <h2 id="faq-h">{t.common.questions}</h2>
+            </div>
             <div className="faq">
               {faqs.map((f) => (
                 <details key={f.q}>
@@ -124,7 +140,7 @@ export function PricesArea({ locale, slug }: { locale: Locale; slug: string }) {
         </section>
       )}
 
-      <section className="sec" aria-labelledby="other-h">
+      <section className="sec tight" aria-labelledby="other-h">
         <div className="wrap">
           <div className="sec-head">
             <h2 id="other-h">{p.otherAreas}</h2>
@@ -132,19 +148,15 @@ export function PricesArea({ locale, slug }: { locale: Locale; slug: string }) {
               {p.allPrices} <Arrow />
             </Link>
           </div>
-          <ul className="links">
-            {getAreas(locale)
-              .filter((x) => x.slug !== slug && marketFor(x.slug))
-              .map((x) => (
-                <li key={x.slug}>
-                  <Link href={lp(locale, `/dubai-property-prices/${x.slug}/`)}>{fill(p.areaH1, { area: x.name })}</Link>
-                </li>
-              ))}
+          <ul className="chips">
+            {others.map((x) => (
+              <li key={x.slug}>
+                <Link href={lp(locale, `/dubai-property-prices/${x.slug}/`)}>{fill(p.areaH1, { area: x.name })}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
-
-      <MethodNote locale={locale} />
     </>
   );
 }

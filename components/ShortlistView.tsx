@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ListingCard } from "./ListingCard";
-import { bedRange, priceLine } from "./ListingCard";
+import { LedgerHead, ListingRow, bedRange, priceLine } from "./ListingCard";
 import { getListing, type ListingView } from "@/lib/content";
 import { buyingCosts } from "@/lib/costs";
 import { aed, num } from "@/lib/format";
@@ -49,16 +48,19 @@ export function ShortlistView({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <div className="grid">
+      <div className="ledger">
+        <LedgerHead locale={locale} />
         {list.map((l) => (
-          <ListingCard key={l.slug} l={l} locale={locale} />
+          <ListingRow key={l.slug} l={l} locale={locale} />
         ))}
       </div>
       {list.length > 1 && (
-        <section className="block" aria-labelledby="compare-h">
-          <h2 id="compare-h">{t.compare}</h2>
+        <section className="sec tight" aria-labelledby="compare-h">
+          <div className="sec-head">
+            <h2 id="compare-h">{t.compare}</h2>
+          </div>
           <div className="tbl-wrap">
-            <table className="tbl compare">
+            <table className="tbl tbl-left">
               <thead>
                 <tr>
                   <td />

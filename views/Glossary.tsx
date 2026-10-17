@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Hero } from "@/components/Sections";
+import { Hero, nn } from "@/components/Sections";
 import { getGlossary, getGuide } from "@/lib/content";
 import { GLOSSARY_UPDATED } from "@/lib/glossary";
 import { formatDate } from "@/lib/guides";
@@ -9,6 +9,8 @@ import { JsonLd, ORG_ID, absL, breadcrumbs } from "@/lib/seo";
 import { ui } from "@/lib/ui";
 
 const PATH = "/dubai-property-glossary/";
+
+const initial = (term: string) => term.trim().charAt(0).toUpperCase();
 
 export function Glossary({ locale }: { locale: Locale }) {
   const t = ui(locale);
@@ -23,6 +25,9 @@ export function Glossary({ locale }: { locale: Locale }) {
     if (slug) return getGuide(locale, slug)?.title ?? t.glossary.readMore;
     return t.glossary.factsLabel;
   };
+  const letters = Array.from(new Set(terms.map((x) => initial(x.term)))).sort();
+  const groups = letters.map((L) => ({ L, id: `letter-${L.toLowerCase()}`, items: terms.filter((x) => initial(x.term) === L) }));
+  const position = new Map(terms.map((x, i) => [x.id, i]));
   const set = {
     "@context": "https://schema.org",
     "@type": "DefinedTermSet",
@@ -56,36 +61,50 @@ export function Glossary({ locale }: { locale: Locale }) {
         byline={`${t.common.updated} ${formatDate(GLOSSARY_UPDATED, locale)}`}
         locale={locale}
       />
-      <section className="sec">
-        <div className="wrap narrow">
-          <nav className="letters" aria-label={t.glossary.termsNav}>
-            {terms.map((x) => (
-              <a key={x.id} href={`#${x.id}`}>
-                {x.term}
-              </a>
-            ))}
+
+      <section className="sec tight">
+        <div className="wrap">
+          <nav aria-label={t.glossary.az}>
+            <ul className="chips">
+              {groups.map((g) => (
+                <li key={g.L}>
+                  <a href={`#${g.id}`}>{g.L}</a>
+                </li>
+              ))}
+            </ul>
           </nav>
-          <dl className="terms">
-            {terms.map((x) => (
-              <div key={x.id} id={x.id}>
-                <dt>
-                  {x.term}
-                  {x.full && <span>{x.full}</span>}
-                </dt>
-                <dd>
-                  {x.def}
-                  {x.link && (
-                    <>
-                      {" "}
-                      <Link href={lp(locale, x.link)}>{label(x.link)}</Link>
-                    </>
-                  )}
-                </dd>
-              </div>
-            ))}
-          </dl>
         </div>
       </section>
+
+      {groups.map((g) => (
+        <section className="sec tight" id={g.id} key={g.L} aria-labelledby={`${g.id}-h`}>
+          <div className="wrap">
+            <div className="sec-head">
+              <h2 id={`${g.id}-h`}>{g.L}</h2>
+            </div>
+            <div className="index no-thumb">
+              {g.items.map((x) => (
+                <article className="index-row" id={x.id} key={x.id}>
+                  <span className="idx">{nn(position.get(x.id) ?? 0)}</span>
+                  <div className="row-title">
+                    <h3>{x.term}</h3>
+                    {x.full && <p className="m">{x.full}</p>}
+                  </div>
+                  <p className="row-text">
+                    {x.def}
+                    {x.link && (
+                      <>
+                        {" "}
+                        <Link href={lp(locale, x.link)}>{label(x.link)}</Link>
+                      </>
+                    )}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
     </>
   );
 }

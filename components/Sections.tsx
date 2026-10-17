@@ -26,6 +26,18 @@ export function Crumbs({ items, locale }: { items: Crumb[]; locale: Locale }) {
   );
 }
 
+/** Two-digit index for eyebrows and lists. */
+export const nn = (i: number) => String(i + 1).padStart(2, "0");
+
+export function Eyebrow({ n, children, plain = false }: { n?: string | number; children: React.ReactNode; plain?: boolean }) {
+  return (
+    <p className={`eyebrow${plain ? " plain" : ""}`} data-n={typeof n === "number" ? nn(n - 1) : n}>
+      {children}
+    </p>
+  );
+}
+
+/** The split hero: copy on the left, a photograph on the right, a rule between. */
 export function Hero({
   image,
   mobile,
@@ -33,78 +45,133 @@ export function Hero({
   lede,
   crumbs,
   byline,
+  eyebrow,
+  caption,
   small = false,
   locale,
   children,
+  foot,
 }: {
   image: ImgKey;
   mobile?: ImgKey;
-  h1: string;
+  h1: React.ReactNode;
   lede?: string;
   crumbs?: Crumb[];
   byline?: string;
+  eyebrow?: string;
+  caption?: string;
   small?: boolean;
   locale: Locale;
   children?: React.ReactNode;
+  foot?: React.ReactNode;
 }) {
   return (
-    <section className={`hero on-photo${small ? " hero-sm" : ""}`}>
-      <Pic name={image} mobile={mobile} priority sizes="100vw" className="hero-media" locale={locale} />
-      <div className="wrap hero-in">
-        {crumbs && <Crumbs items={crumbs} locale={locale} />}
-        <h1>{h1}</h1>
-        {lede && <p className="lede">{lede}</p>}
-        {byline && <p className="byline">{byline}</p>}
-        {children}
+    <section className={`hero${small ? " hero-sm" : ""}`}>
+      <div className="hero-copy">
+        <div>
+          {crumbs && <Crumbs items={crumbs} locale={locale} />}
+          {eyebrow && !crumbs && <Eyebrow plain>{eyebrow}</Eyebrow>}
+          <h1>{h1}</h1>
+          {lede && <p className="lede">{lede}</p>}
+          {byline && (
+            <p className="byline" style={{ marginTop: 18 }}>
+              {byline}
+            </p>
+          )}
+          {children}
+        </div>
+        {foot}
+      </div>
+      <div className="hero-media">
+        <Pic name={image} mobile={mobile} priority sizes="(max-width: 900px) 100vw, 50vw" locale={locale} />
+        {caption && <span className="caption">{caption}</span>}
       </div>
     </section>
   );
 }
 
-export function Band({ image, h2, lede, locale, children }: { image: ImgKey; h2: string; lede?: string; locale: Locale; children?: React.ReactNode }) {
+/** A full-bleed photograph with a bone card sitting on its lower edge. */
+export function Plate({ image, h2, lede, caption, locale, children }: { image: ImgKey; h2: string; lede?: string; caption?: string; locale: Locale; children?: React.ReactNode }) {
   return (
-    <section className="band on-photo">
+    <section className="plate">
       <Pic name={image} sizes="100vw" locale={locale} />
-      <div className="wrap band-in rv">
+      {caption && <span className="caption">{caption}</span>}
+      <div className="plate-card rv">
         <h2>{h2}</h2>
-        {lede && <p className="lede">{lede}</p>}
+        {lede && <p>{lede}</p>}
         {children && <div className="btns">{children}</div>}
       </div>
     </section>
   );
 }
+export const Band = Plate;
 
-export function AreaTile({ a, locale, sizes = "(max-width: 700px) 80vw, 25vw" }: { a: Area; locale: Locale; sizes?: string }) {
+export function AtlasTile({ a, locale, idx, sizes = "(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw" }: { a: Area; locale: Locale; idx?: number; sizes?: string }) {
   const n = listingsInArea(locale, a.slug).length;
+  const t = ui(locale);
   return (
-    <Link href={lp(locale, `/areas/${a.slug}/`)} className="tile">
-      <Pic name={a.image} sizes={sizes} locale={locale} />
-      <div className="tile-in">
+    <Link href={lp(locale, `/areas/${a.slug}/`)}>
+      <div className="atlas-media">
+        <Pic name={a.image} sizes={sizes} locale={locale} />
+      </div>
+      <div className="atlas-in">
         <h3>{a.name}</h3>
+        {idx !== undefined && <span className="idx">{nn(idx)}</span>}
+        <span className="m">
+          {a.developer}
+          {n > 0 ? ` · ${homeCount(locale, n)} ${t.common.homesForSale}` : ""}
+        </span>
         <p>{a.card}</p>
-        {n > 0 && (
-          <p>
-            {homeCount(locale, n)} {ui(locale).common.homesForSale}
-          </p>
-        )}
       </div>
     </Link>
   );
 }
+export const AreaTile = AtlasTile;
 
-export function GuideLink({ g, locale }: { g: Pick<Guide, "slug" | "title" | "dek"> & { href?: string; cta?: string; image?: string }; locale: Locale }) {
+/** One ruled row of an index: number, title, text, an optional thumbnail, an arrow. */
+export function IndexRow({
+  idx,
+  title,
+  text,
+  meta,
+  href,
+  image,
+  locale,
+  sizes = "180px",
+}: {
+  idx: number;
+  title: string;
+  text?: string;
+  meta?: string;
+  href: string;
+  image?: ImgKey;
+  locale: Locale;
+  sizes?: string;
+}) {
   return (
-    <article className={`guide rv${g.image ? " has-img" : ""}`}>
-      {g.image && (
-        <div className="guide-media">
-          <Pic name={g.image as ImgKey} sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 25vw" locale={locale} />
+    <article className="index-row">
+      <span className="idx">{nn(idx)}</span>
+      <div className="row-title">
+        <h3>
+          <Link href={lp(locale, href)} className="row-link">
+            {title}
+          </Link>
+        </h3>
+        {meta && <p className="m">{meta}</p>}
+      </div>
+      {text && <p className="row-text">{text}</p>}
+      {image && (
+        <div className="thumb">
+          <Pic name={image} sizes={sizes} locale={locale} />
         </div>
       )}
-      <h3>{g.title}</h3>
-      <p>{g.dek}</p>
-      <Link href={lp(locale, g.href ?? `/guides/${g.slug}/`)} className="more">
-        {g.cta ?? ui(locale).common.readGuide} <Arrow />
-      </Link>
+      <span className="row-arrow" aria-hidden="true">
+        <Arrow />
+      </span>
     </article>
   );
+}
+
+export function GuideLink({ g, locale, idx = 0 }: { g: Pick<Guide, "slug" | "title" | "dek"> & { href?: string; image?: string; topic?: string; updated?: string }; locale: Locale; idx?: number }) {
+  return <IndexRow idx={idx} title={g.title} text={g.dek} meta={g.topic} href={g.href ?? `/guides/${g.slug}/`} image={g.image as ImgKey | undefined} locale={locale} />;
 }

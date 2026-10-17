@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Rich } from "@/components/Blocks";
 import { ColumnChart, LineChart, type Point } from "@/components/charts/Charts";
 import { HBars, TableView } from "@/components/charts/TableView";
-import { Hero } from "@/components/Sections";
+import { Eyebrow, Hero } from "@/components/Sections";
 import { getAreas } from "@/lib/content";
 import { aed, fill, num, plainText } from "@/lib/format";
 import { formatDate } from "@/lib/guides";
@@ -13,6 +13,24 @@ import { JsonLd, ORG_ID, absL, breadcrumbs } from "@/lib/seo";
 import { ui } from "@/lib/ui";
 
 const PATH = "/dubai-property-prices/";
+
+/** A row of headline numbers. Shared by the Dubai and area pages. */
+export function MarketFigs({ items }: { items: { n: string; label: string }[] }) {
+  return (
+    <section className="sec tight">
+      <div className="wrap">
+        <div className="figs">
+          {items.map((f) => (
+            <div key={f.label}>
+              <p className="num">{f.n}</p>
+              <span>{f.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 /** The two quarterly charts, each with its table twin. Shared by the Dubai and area pages. */
 export function MarketCharts({ locale, block, psfTitle, salesTitle, scopeName }: { locale: Locale; block: ScopeBlock; psfTitle: string; salesTitle: string; scopeName: string }) {
@@ -42,10 +60,12 @@ export function MethodNote({ locale }: { locale: Locale }) {
   const p = ui(locale).prices;
   const date = formatDate(MARKET.snapshot, locale);
   return (
-    <section className="sec stone" aria-labelledby="method-h">
+    <section className="sec tight" aria-labelledby="method-h">
       <div className="wrap narrow">
-        <h2 id="method-h">{p.methodH}</h2>
-        <div className="method prose" style={{ marginTop: 24 }}>
+        <div className="sec-head">
+          <h2 id="method-h">{p.methodH}</h2>
+        </div>
+        <div className="note stack">
           {p.method.map((m) => (
             <p key={m}>
               <Rich text={fill(m, { date })} locale={locale} />
@@ -89,6 +109,12 @@ export function Prices({ locale }: { locale: Locale }) {
   const ranked = [...areas].sort((x, y) => y.m.last12.medianPsf! - x.m.last12.medianPsf!);
   const top = ranked[0];
   const low = ranked[ranked.length - 1];
+  const figs = [
+    { n: d.last12.medianPsf ? num(d.last12.medianPsf) : p.noFigure, label: p.figPsf },
+    { n: num(d.last12.sales), label: p.figSales },
+    { n: d.last12.changePct != null ? signedPct(d.last12.changePct) : p.noFigure, label: p.figChange },
+    { n: String(ranked.length), label: p.figAreas },
+  ];
   const faqs = [
     { q: p.faqCityQ, a: fill(p.faqCityA, { q, psf: num(d.last12.medianPsf ?? 0), sales: num(d.last12.sales) }) },
     ...(top && low && top !== low
@@ -121,25 +147,40 @@ export function Prices({ locale }: { locale: Locale }) {
         locale={locale}
       />
 
+      <MarketFigs items={figs} />
+
       <section className="sec">
         <div className="wrap">
           <MarketCharts locale={locale} block={d} psfTitle={p.cityPsf} salesTitle={p.citySales} scopeName={t.collection.inDubai} />
         </div>
       </section>
 
-      <section className="sec stone" aria-labelledby="compare-h">
+      <section className="sec" aria-labelledby="compare-h">
         <div className="wrap">
           <div className="sec-head">
-            <h2 id="compare-h">{p.compareH}</h2>
+            <div>
+              <Eyebrow n={1}>{p.crumb}</Eyebrow>
+              <h2 id="compare-h">{p.compareH}</h2>
+            </div>
           </div>
           <HBars
             label={p.compareH}
             format={(n) => aed(n, locale)}
             rows={ranked.map((x) => ({ key: x.a.slug, label: x.a.name, href: lp(locale, `${PATH}${x.a.slug}/`), value: x.m.last12.medianPsf! }))}
           />
-          <h3 style={{ marginTop: 56 }}>{p.tableH}</h3>
-          <div className="tbl-wrap" style={{ marginTop: 16 }}>
-            <table className="tbl tbl-wide">
+        </div>
+      </section>
+
+      <section className="sec tight" aria-labelledby="table-h">
+        <div className="wrap">
+          <div className="sec-head">
+            <div>
+              <Eyebrow n={2}>{p.crumb}</Eyebrow>
+              <h2 id="table-h">{p.tableH}</h2>
+            </div>
+          </div>
+          <div className="tbl-wrap">
+            <table className="tbl">
               <thead>
                 <tr>
                   <th scope="col">{p.thArea}</th>
@@ -157,10 +198,10 @@ export function Prices({ locale }: { locale: Locale }) {
                       <Link href={lp(locale, `${PATH}${a.slug}/`)}>{a.name}</Link>
                     </th>
                     <td>{aed(m.last12.medianPsf!, locale)}</td>
-                    <td>{m.last12.changePct != null ? signedPct(m.last12.changePct) : "—"}</td>
+                    <td>{m.last12.changePct != null ? signedPct(m.last12.changePct) : p.noFigure}</td>
                     <td>{num(m.last12.sales)}</td>
-                    <td>{m.last12.offPlanShare != null ? `${m.last12.offPlanShare}%` : "—"}</td>
-                    <td>{m.last12.medianPrice ? aed(m.last12.medianPrice, locale) : "—"}</td>
+                    <td>{m.last12.offPlanShare != null ? `${m.last12.offPlanShare}%` : p.noFigure}</td>
+                    <td>{m.last12.medianPrice ? aed(m.last12.medianPrice, locale) : p.noFigure}</td>
                   </tr>
                 ))}
               </tbody>
@@ -169,9 +210,13 @@ export function Prices({ locale }: { locale: Locale }) {
         </div>
       </section>
 
+      <MethodNote locale={locale} />
+
       <section className="sec" aria-labelledby="faq-h">
         <div className="wrap narrow">
-          <h2 id="faq-h">{t.common.questions}</h2>
+          <div className="sec-head">
+            <h2 id="faq-h">{t.common.questions}</h2>
+          </div>
           <div className="faq">
             {faqs.map((f) => (
               <details key={f.q}>
@@ -184,8 +229,6 @@ export function Prices({ locale }: { locale: Locale }) {
           </div>
         </div>
       </section>
-
-      <MethodNote locale={locale} />
     </>
   );
 }

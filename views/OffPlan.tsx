@@ -1,15 +1,20 @@
 import Link from "next/link";
 import { Arrow } from "@/components/Icons";
-import { Pic } from "@/components/Pic";
 import { PropertySearch } from "@/components/PropertySearch";
-import { Hero } from "@/components/Sections";
+import { Eyebrow, Hero, Plate } from "@/components/Sections";
+import { getGuide, getListings } from "@/lib/content";
+import { FEES } from "@/lib/costs";
 import { lp } from "@/lib/i18n";
+import { developers } from "@/lib/listings";
 import type { Locale } from "@/lib/locale";
 import { ui } from "@/lib/ui";
 
 export function OffPlan({ locale }: { locale: Locale }) {
   const t = ui(locale);
   const o = t.offPlan;
+  const all = getListings(locale).filter((l) => l.status === "off-plan");
+  const guide = getGuide(locale, "buying-off-plan-in-dubai");
+  const guidePath = "/guides/buying-off-plan-in-dubai/";
   return (
     <>
       <Hero
@@ -23,32 +28,61 @@ export function OffPlan({ locale }: { locale: Locale }) {
         h1={o.h1}
         lede={o.lede}
       />
+
+      <section className="wrap figs" aria-label={o.figsAria}>
+        <div>
+          <strong className="num">{all.length}</strong>
+          <span>{o.figProjects}</span>
+        </div>
+        <div>
+          <strong className="num">{developers().length}</strong>
+          <span>{o.figDevelopers}</span>
+        </div>
+        <div>
+          <strong className="num">{Math.round(FEES.transferPct * 100)}%</strong>
+          <span>{o.figOqood}</span>
+        </div>
+        <div>
+          <strong className="num">{all.filter((l) => l.plan).length}</strong>
+          <span>{o.figPlans}</span>
+        </div>
+      </section>
+
       <PropertySearch locale={locale} fixedStatus="off-plan" level="h2" />
-      <section className="sec stone" aria-labelledby="how-h">
-        <div className="wrap split">
-          <div className="split-media rv">
-            <Pic name="area-dubai-creek-harbour" sizes="(max-width: 900px) 100vw, 50vw" locale={locale} />
-          </div>
+
+      <section className="sec sand" aria-labelledby="how-h">
+        <div className="wrap twin">
           <div>
-            <h2 id="how-h" className="rv">
+            <Eyebrow plain>{o.howEyebrow}</Eyebrow>
+            <h2 id="how-h" style={{ marginTop: 18 }}>
               {o.howH}
             </h2>
-            <div className="promises">
-              {o.how.map((p) => (
-                <div key={p.t} className="rv">
-                  <h3>{p.t}</h3>
-                  <p>{p.d}</p>
-                </div>
-              ))}
-            </div>
             <div className="btns">
-              <Link href={lp(locale, "/guides/buying-off-plan-in-dubai/")} className="more">
+              <Link href={lp(locale, guidePath)} className="more">
                 {o.guideLink} <Arrow />
               </Link>
             </div>
           </div>
+          <div className="ladder">
+            {o.how.map((p) => (
+              <div key={p.t}>
+                <div>
+                  <h3>{p.t}</h3>
+                  <p>{p.d}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+
+      {guide && (
+        <Plate image="area-dubai-creek-harbour" h2={guide.title} lede={guide.dek} caption={o.plateCaption} locale={locale}>
+          <Link href={lp(locale, guidePath)} className="btn btn-clay">
+            {o.guideLink}
+          </Link>
+        </Plate>
+      )}
     </>
   );
 }

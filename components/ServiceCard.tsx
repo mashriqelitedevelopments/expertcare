@@ -1,24 +1,10 @@
-import Link from "next/link";
-import { Arrow } from "./Icons";
-import { Pic } from "./Pic";
-import { lp } from "@/lib/i18n";
+import { IndexRow } from "./Sections";
 import type { Locale } from "@/lib/locale";
 import { servicePath } from "@/lib/paths";
 import type { Service } from "@/lib/services";
-import { ui } from "@/lib/ui";
 
-export function ServiceCard({ s, locale }: { s: Service; locale: Locale }) {
-  return (
-    <article className="service rv">
-      <Pic name={s.image} sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw" locale={locale} />
-      <div className="service-in">
-        <h3>{s.short}</h3>
-        <p>{s.dek}</p>
-        <p className="service-fee">{s.fees}</p>
-        <Link href={lp(locale, servicePath(s.slug))} className="more">
-          {ui(locale).common.readMore} <Arrow />
-        </Link>
-      </div>
-    </article>
-  );
+/** A service as one row of the services index. */
+export function ServiceRow({ s, locale, idx }: { s: Service; locale: Locale; idx: number }) {
+  return <IndexRow idx={idx} title={s.short} text={s.dek} href={servicePath(s.slug)} image={s.image} locale={locale} />;
 }
+export const ServiceCard = ServiceRow;

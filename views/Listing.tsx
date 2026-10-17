@@ -4,7 +4,7 @@ import { PaymentPlan } from "@/components/Blocks";
 import { CostCalculator, MortgageCalculator } from "@/components/Calculators";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Arrow } from "@/components/Icons";
-import { ListingCard, bedRange, priceLine } from "@/components/ListingCard";
+import { LedgerHead, ListingRow, bedRange, priceLine } from "@/components/ListingCard";
 import { Pic } from "@/components/Pic";
 import { SaveButton } from "@/components/SaveButton";
 import { Crumbs } from "@/components/Sections";
@@ -67,100 +67,110 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
       : {}),
   };
   const calcPrice = l.price ?? NO_PRICE_DEFAULT;
+  const refs = [
+    [d.reference, l.ref],
+    [d.projectNo, l.projectNumber],
+    [d.permit, l.permit],
+    [d.escrow, l.escrow],
+    [d.orn, site.orn],
+  ].filter((r): r is [string, string] => Boolean(r[1]));
 
   return (
     <>
       <JsonLd data={ld} />
       <JsonLd data={breadcrumbs(locale, crumbs)} />
-      <div className="wrap">
-        <div className="crumbs-nav">
+
+      <section className="sec tight">
+        <div className="wrap">
           <Crumbs items={crumbs} locale={locale} />
+          <div className="gallery" style={{ marginTop: 18 }}>
+            {l.images.slice(0, 3).map((k, i) => (
+              <Pic key={k} name={k} priority={i === 0} sizes={i === 0 ? "(max-width: 700px) 100vw, 66vw" : "(max-width: 700px) 100vw, 33vw"} locale={locale} />
+            ))}
+          </div>
         </div>
-        <div className={`gallery${l.images.length === 1 ? " one" : l.images.length >= 3 ? " three" : ""}`}>
-          {l.images.slice(0, 3).map((k, i) => (
-            <Pic key={k} name={k} priority={i === 0} sizes={i === 0 ? "(max-width: 760px) 100vw, 66vw" : "33vw"} locale={locale} />
-          ))}
-        </div>
+      </section>
 
-        <div className="detail">
-          <div>
-            <header className="detail-head">
-              <h1>{l.title}</h1>
-              <p className="detail-loc">
-                {l.typeLabel} {d.inArea}{" "}
-                {area ? <Link href={lp(locale, `/areas/${area.slug}/`)}>{area.name}</Link> : l.community}
-                {comma}
-                <span dir="ltr">{l.developer}</span>
-                {comma}
-                {l.status === "off-plan" ? `${d.offPlan}${l.handover ? `${comma}${d.expectedHandover} ${l.handover}` : ""}` : d.ready}
-              </p>
-              <dl className="facts">
+      <section className="sec tight">
+        <div className="wrap article">
+          <div className="prose">
+            <h1>{l.title}</h1>
+            <p className="byline">
+              {l.typeLabel} {d.inArea} {area ? <Link href={lp(locale, `/areas/${area.slug}/`)}>{area.name}</Link> : l.community}
+              {comma}
+              <span dir="ltr">{l.developer}</span>
+              {comma}
+              {l.status === "off-plan" ? `${d.offPlan}${l.handover ? `${comma}${d.expectedHandover} ${l.handover}` : ""}` : d.ready}
+            </p>
+
+            <dl className="facts">
+              <div>
+                <dt>{d.startingPrice}</dt>
+                <dd>{l.price ? aed(l.price, locale) : d.onRequest}</dd>
+              </div>
+              <div>
+                <dt>{d.homes}</dt>
+                <dd>{bedRange(locale, l)}</dd>
+              </div>
+              {l.size && (
                 <div>
-                  <dt>{d.startingPrice}</dt>
-                  <dd>{l.price ? aed(l.price, locale) : d.onRequest}</dd>
+                  <dt>{d.smallest}</dt>
+                  <dd>
+                    {num(l.size)} {sqft}
+                  </dd>
                 </div>
+              )}
+              <div>
+                <dt>{d.handover}</dt>
+                <dd>{l.handover ?? d.notPublished}</dd>
+              </div>
+              {!l.plan && l.planLabel && (
                 <div>
-                  <dt>{d.homes}</dt>
-                  <dd>{bedRange(locale, l)}</dd>
+                  <dt>{d.paymentPlan}</dt>
+                  <dd>{l.planLabel}</dd>
                 </div>
-                {l.size && (
+              )}
+              <div>
+                <dt>{d.developer}</dt>
+                <dd dir="ltr">{l.developer}</dd>
+              </div>
+              <div>
+                <dt>{d.community}</dt>
+                <dd>{l.community}</dd>
+              </div>
+            </dl>
+
+            <p className="lede">{l.summary}</p>
+            {l.description.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+
+            <section aria-labelledby="features-h">
+              <h2 id="features-h">{l.amenities.length > 0 ? d.featuresAmenities : d.features}</h2>
+              <div className="cols cols-2">
+                <div>
+                  <h3>{d.features}</h3>
+                  <ul>
+                    {l.features.map((f) => (
+                      <li key={f}>{f}</li>
+                    ))}
+                  </ul>
+                </div>
+                {l.amenities.length > 0 && (
                   <div>
-                    <dt>{d.smallest}</dt>
-                    <dd>
-                      {num(l.size)} {sqft}
-                    </dd>
+                    <h3>{d.amenities}</h3>
+                    <ul>
+                      {l.amenities.map((f) => (
+                        <li key={f}>{f}</li>
+                      ))}
+                    </ul>
                   </div>
                 )}
-                <div>
-                  <dt>{d.handover}</dt>
-                  <dd>{l.handover ?? d.notPublished}</dd>
-                </div>
-                {!l.plan && l.planLabel && (
-                  <div>
-                    <dt>{d.paymentPlan}</dt>
-                    <dd>{l.planLabel}</dd>
-                  </div>
-                )}
-                <div>
-                  <dt>{d.developer}</dt>
-                  <dd dir="ltr">{l.developer}</dd>
-                </div>
-                <div>
-                  <dt>{d.community}</dt>
-                  <dd>{l.community}</dd>
-                </div>
-              </dl>
-            </header>
-
-            <section className="block prose-p" aria-label={d.aboutProject}>
-              <p className="lede">{l.summary}</p>
-              {l.description.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
+              </div>
             </section>
-
-            <section className="block" aria-labelledby="features-h">
-              <h2 id="features-h">{d.features}</h2>
-              <ul className="ticks">
-                {l.features.map((f) => (
-                  <li key={f}>{f}</li>
-                ))}
-              </ul>
-            </section>
-
-            {l.amenities.length > 0 && (
-              <section className="block" aria-labelledby="amenities-h">
-                <h2 id="amenities-h">{d.amenities}</h2>
-                <ul className="ticks">
-                  {l.amenities.map((f) => (
-                    <li key={f}>{f}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
 
             {l.plan && (
-              <section className="block" id="payment-plan" aria-labelledby="plan-h">
+              <section id="payment-plan" aria-labelledby="plan-h">
                 <h2 id="plan-h">
                   {d.paymentPlan}
                   {l.planLabel ? ` ${l.planLabel}` : ""}
@@ -169,24 +179,24 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
               </section>
             )}
 
-            <section className="block" id="costs" aria-labelledby="costs-h">
+            <section id="costs" aria-labelledby="costs-h">
               <h2 id="costs-h">{d.totalCost}</h2>
               <p className="note">{l.price ? d.atStartingPrice : d.noPrice}</p>
               <CostCalculator locale={locale} price={calcPrice} status={l.status} />
             </section>
 
-            <section className="block" id="mortgage" aria-labelledby="mortgage-h">
+            <section id="mortgage" aria-labelledby="mortgage-h">
               <h2 id="mortgage-h">{d.monthly}</h2>
               <MortgageCalculator locale={locale} price={calcPrice} status={l.status} />
             </section>
 
             {area && (
-              <section className="block" aria-labelledby="area-h">
+              <section aria-labelledby="area-h">
                 <h2 id="area-h">
                   {d.livingIn} {area.name}
                 </h2>
                 <p>{area.overview[0]}</p>
-                <div className="area-facts">
+                <div className="cols cols-2">
                   <div>
                     <h3>{d.gettingAround}</h3>
                     <ul>
@@ -205,16 +215,13 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
                     </ul>
                   </div>
                 </div>
-                <Link href={lp(locale, `/areas/${area.slug}/`)} className="more">
-                  {d.areaGuide} {area.name} <Arrow />
-                </Link>
+                <p>
+                  <Link href={lp(locale, `/areas/${area.slug}/`)} className="more">
+                    {d.livingIn} {area.name} <Arrow />
+                  </Link>
+                </p>
               </section>
             )}
-
-            <section className="block" id="enquire" aria-labelledby="enquire-h">
-              <h2 id="enquire-h">{d.enquireProject}</h2>
-              <EnquiryForm locale={locale} intent="viewing" context={`${l.ref}, ${l.title}, ${l.developer}, ${l.place}`} />
-            </section>
 
             <p className="source-line">
               {d.sourceLine} {formatDate(l.checked, locale)}:{" "}
@@ -225,54 +232,48 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
           </div>
 
           <aside className="aside" aria-label={d.priceAndViewing}>
-            <p className="aside-price num">{priceLine(locale, l)}</p>
-            <p className="aside-sub">
-              {l.typeLabel} · {bedRange(locale, l)}
-              {l.size ? ` · ${d.smallest} ${num(l.size)} ${sqft}` : ""}
-            </p>
-            {allIn && (
-              <div className="aside-all">
-                <span>
-                  {d.withFees}
-                  <a href="#costs">{d.breakdown}</a>
-                </span>
-                <strong className="num">{aed(allIn, locale)}</strong>
+            <div className="panel">
+              <dl className="calc-sum">
+                <div className="big">
+                  <dt>{d.startingPrice}</dt>
+                  <dd className="num">{priceLine(locale, l)}</dd>
+                </div>
+                {allIn && (
+                  <div>
+                    <dt>
+                      {d.withFees} <a href="#costs">{d.breakdown}</a>
+                    </dt>
+                    <dd className="num">{aed(allIn, locale)}</dd>
+                  </div>
+                )}
+              </dl>
+              <p className="aside-p" style={{ marginTop: 14 }}>
+                {l.typeLabel} · {bedRange(locale, l)}
+                {l.size ? ` · ${d.smallest} ${num(l.size)} ${sqft}` : ""}
+              </p>
+              <div className="btns">
+                <a href="#enquire" className="btn btn-clay">
+                  {d.askAvailability}
+                </a>
+                <SaveButton slug={l.slug} title={l.title} locale={locale} wide />
               </div>
-            )}
-            <a href="#enquire" className="btn">
-              {d.askAvailability}
-            </a>
-            <SaveButton slug={l.slug} title={l.title} locale={locale} wide />
-            <p className="aside-ref">
-              <span>
-                {d.reference} {l.ref}
-              </span>
-              {l.projectNumber && (
-                <span>
-                  {d.projectNo} {l.projectNumber}
-                </span>
-              )}
-              {l.permit && (
-                <span>
-                  {d.permit} {l.permit}
-                </span>
-              )}
-              {l.escrow && (
-                <span>
-                  {d.escrow} {l.escrow}
-                </span>
-              )}
-              {site.orn && (
-                <span>
-                  {d.orn} {site.orn}
-                </span>
-              )}
-            </p>
+              <ul className="aside-ref" style={{ marginTop: 18 }}>
+                {refs.map(([label, value]) => (
+                  <li key={label}>
+                    {label} {value}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="panel" id="enquire">
+              <h2 className="aside-h">{d.enquireProject}</h2>
+              <EnquiryForm locale={locale} intent="viewing" context={`${l.ref}, ${l.title}, ${l.developer}, ${l.place}`} />
+            </div>
           </aside>
         </div>
-      </div>
+      </section>
 
-      <section className="sec stone" aria-labelledby="similar-h">
+      <section className="sec sand" aria-labelledby="similar-h">
         <div className="wrap">
           <div className="sec-head">
             <h2 id="similar-h">{d.similarProjects}</h2>
@@ -280,9 +281,10 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
               {d.allProjects} <Arrow />
             </Link>
           </div>
-          <div className="grid">
+          <div className="ledger">
+            <LedgerHead locale={locale} />
             {similar.map((x) => (
-              <ListingCard key={x.slug} l={x} locale={locale} />
+              <ListingRow key={x.slug} l={x} locale={locale} />
             ))}
           </div>
         </div>
@@ -297,7 +299,7 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
             </span>
           )}
         </div>
-        <a href="#enquire" className="btn">
+        <a href="#enquire" className="btn btn-clay">
           {d.askAvailability}
         </a>
       </div>

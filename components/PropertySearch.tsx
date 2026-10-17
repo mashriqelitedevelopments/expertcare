@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { ListingCard } from "./ListingCard";
+import { useEffect, useId, useState } from "react";
+import { LedgerHead, ListingRow } from "./ListingCard";
 import { getListings, inPlace, places, type ListingView } from "@/lib/content";
 import type { Status } from "@/lib/costs";
 import { aedShort, homeCount } from "@/lib/format";
@@ -26,18 +26,19 @@ export function headingFor(locale: Locale, { status, area, type }: { status?: st
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-function Pick({ label, value, onChange, options }: { label: string; value: string; onChange: (v: string) => void; options: [string, string][] }) {
+/** One cell of the ticket: a label over a select. */
+function Field({ id, label, value, onChange, options }: { id: string; label: string; value: string; onChange: (v: string) => void; options: [string, string][] }) {
   return (
-    <label className="pick">
-      <span className="sr">{label}</span>
-      <select value={value} onChange={(e) => onChange(e.target.value)}>
+    <div className="field">
+      <label htmlFor={id}>{label}</label>
+      <select id={id} value={value} onChange={(e) => onChange(e.target.value)}>
         {options.map(([v, text]) => (
           <option key={v} value={v}>
             {text}
           </option>
         ))}
       </select>
-    </label>
+    </div>
   );
 }
 
@@ -49,6 +50,7 @@ function Pick({ label, value, onChange, options }: { label: string; value: strin
  */
 export function PropertySearch({ locale, fixedStatus, level = "h1" }: { locale: Locale; fixedStatus?: Status; level?: Level }) {
   const t = ui(locale);
+  const id = useId();
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -97,96 +99,128 @@ export function PropertySearch({ locale, fixedStatus, level = "h1" }: { locale: 
   if (sort === "price-asc") list = [...list].sort((a, b) => priceOf(a, 1) - priceOf(b, 1));
   if (sort === "price-desc") list = [...list].sort((a, b) => priceOf(a, -1) - priceOf(b, -1));
 
-  const active = Boolean(area || type || beds || min || max || dev || (!fixedStatus && status));
+  const setCount = [area, type, beds, min, max, dev, !fixedStatus && status].filter(Boolean).length;
+  const active = setCount > 0;
   const prices: [string, string][] = PRICE_STEPS.map((p) => [String(p), aedShort(p, locale)]);
   const H = level;
-  const heading = level === "h2" && !area && !type ? t.results.allOffPlan : headingFor(locale, { status, area, type });
+  const heading =
+    level === "h2" && !area && !type && (fixedStatus || !status)
+      ? fixedStatus === "off-plan"
+        ? t.results.allOffPlan
+        : t.results.allHomes
+      : headingFor(locale, { status, area, type });
 
   return (
     <>
-      <div className="filters">
-        <div className="wrap filters-in">
-          {!fixedStatus && (
-            <Pick
-              label={t.filters.status}
-              value={status}
-              onChange={(v) => set("status", v)}
-              options={[
-                ["", t.filters.readyAndOffPlan],
-                ["ready", t.filters.ready],
-                ["off-plan", t.filters.offPlan],
-              ]}
-            />
-          )}
-          <Pick
-            label={t.filters.area}
-            value={area}
-            onChange={(v) => set("area", v)}
-            options={[["", t.filters.allAreas], ...places(locale).map((p): [string, string] => [p.value, p.label])]}
-          />
-          <Pick
-            label={t.filters.developer}
-            value={dev}
-            onChange={(v) => set("dev", v)}
-            options={[["", t.filters.anyDeveloper], ...developers().map((d): [string, string] => [d.slug, d.name])]}
-          />
-          <Pick
-            label={t.filters.type}
-            value={type}
-            onChange={(v) => set("type", v)}
-            options={[["", t.filters.anyType], ...PROPERTY_TYPES.map((p): [string, string] => [p, t.results.typePlural[p]])]}
-          />
-          <Pick
-            label={t.filters.beds}
-            value={beds ? String(beds) : ""}
-            onChange={(v) => set("beds", v)}
-            options={[["", t.filters.anyBeds], ...[1, 2, 3, 4, 5].map((n): [string, string] => [String(n), `${n}${t.filters.bedsPlus}`])]}
-          />
-          <Pick label={t.filters.min} value={min ? String(min) : ""} onChange={(v) => set("min", v)} options={[["", t.filters.noMin], ...prices]} />
-          <Pick label={t.filters.max} value={max ? String(max) : ""} onChange={(v) => set("max", v)} options={[["", t.filters.noMax], ...prices]} />
-          <Pick
-            label={t.filters.sort}
-            value={sort}
-            onChange={(v) => set("sort", v === "featured" ? "" : v)}
-            options={[
-              ["featured", t.filters.featured],
-              ["price-asc", t.filters.priceAsc],
-              ["price-desc", t.filters.priceDesc],
-            ]}
-          />
-          {active && (
-            <button type="button" className="clear" onClick={clear}>
-              {t.filters.clear}
-            </button>
-          )}
-        </div>
-      </div>
-      <div className="wrap results">
-        <div className="results-bar">
-          <H>{heading}</H>
-          <p aria-live="polite">{homeCount(locale, list.length)}</p>
-        </div>
-        {list.length > 0 ? (
-          <div className="grid">
-            {list.map((l, i) => (
-              <ListingCard key={l.slug} l={l} locale={locale} priority={i < 3 && level === "h1"} />
-            ))}
-          </div>
-        ) : (
-          <div className="empty">
-            <h2>{t.results.emptyH}</h2>
-            <p>{t.results.emptyP}</p>
-            <div className="btns">
-              <button type="button" className="btn btn-ghost" onClick={clear}>
-                {t.filters.clear}
-              </button>
-              <Link href={`${lp(locale, "/contact/")}#brief`} className="btn">
-                {t.results.sendBrief}
-              </Link>
+      <section className="sec tight" aria-label={t.filters.label}>
+        <div className="wrap">
+          <div className="ticket wide" role="search">
+            <div className="ticket-head">
+              <span>{t.filters.label}</span>
+              {!fixedStatus && (
+                <div className="seg" role="group" aria-label={t.filters.status}>
+                  {(
+                    [
+                      ["", t.filters.readyAndOffPlan],
+                      ["ready", t.filters.ready],
+                      ["off-plan", t.filters.offPlan],
+                    ] as [string, string][]
+                  ).map(([value, label]) => (
+                    <button key={value} type="button" aria-pressed={status === value} onClick={() => set("status", value)}>
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className="ticket-rows">
+              <Field
+                id={`${id}-area`}
+                label={t.filters.area}
+                value={area}
+                onChange={(v) => set("area", v)}
+                options={[["", t.filters.allAreas], ...places(locale).map((p): [string, string] => [p.value, p.label])]}
+              />
+              <Field
+                id={`${id}-dev`}
+                label={t.filters.developer}
+                value={dev}
+                onChange={(v) => set("dev", v)}
+                options={[["", t.filters.anyDeveloper], ...developers().map((d): [string, string] => [d.slug, d.name])]}
+              />
+              <Field
+                id={`${id}-type`}
+                label={t.filters.type}
+                value={type}
+                onChange={(v) => set("type", v)}
+                options={[["", t.filters.anyType], ...PROPERTY_TYPES.map((p): [string, string] => [p, t.results.typePlural[p]])]}
+              />
+              <Field
+                id={`${id}-beds`}
+                label={t.filters.beds}
+                value={beds ? String(beds) : ""}
+                onChange={(v) => set("beds", v)}
+                options={[["", t.filters.anyBeds], ...[1, 2, 3, 4, 5].map((n): [string, string] => [String(n), `${n}${t.filters.bedsPlus}`])]}
+              />
+              <Field id={`${id}-min`} label={t.filters.min} value={min ? String(min) : ""} onChange={(v) => set("min", v)} options={[["", t.filters.noMin], ...prices]} />
+              <Field id={`${id}-max`} label={t.filters.max} value={max ? String(max) : ""} onChange={(v) => set("max", v)} options={[["", t.filters.noMax], ...prices]} />
+              <Field
+                id={`${id}-sort`}
+                label={t.filters.sort}
+                value={sort}
+                onChange={(v) => set("sort", v === "featured" ? "" : v)}
+                options={[
+                  ["featured", t.filters.featured],
+                  ["price-asc", t.filters.priceAsc],
+                  ["price-desc", t.filters.priceDesc],
+                ]}
+              />
+              <div className="field">
+                <span className="label">{t.filters.active}</span>
+                {active ? (
+                  <button type="button" className="clear" onClick={clear}>
+                    {t.filters.clear} ({setCount})
+                  </button>
+                ) : (
+                  <span>{t.filters.none}</span>
+                )}
+              </div>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      </section>
+
+      <section className="sec tight" aria-labelledby={`${id}-results`}>
+        <div className="wrap">
+          <div className="sec-head">
+            <H id={`${id}-results`}>{heading}</H>
+            <p className="results-bar" aria-live="polite">
+              {homeCount(locale, list.length)}
+            </p>
+          </div>
+          {list.length > 0 ? (
+            <div className="ledger">
+              <LedgerHead locale={locale} />
+              {list.map((l, i) => (
+                <ListingRow key={l.slug} l={l} locale={locale} priority={i < 3 && level === "h1"} />
+              ))}
+            </div>
+          ) : (
+            <div className="empty">
+              <h2>{t.results.emptyH}</h2>
+              <p>{t.results.emptyP}</p>
+              <div className="btns">
+                <button type="button" className="btn btn-ghost" onClick={clear}>
+                  {t.filters.clear}
+                </button>
+                <Link href={`${lp(locale, "/contact/")}#brief`} className="btn">
+                  {t.results.sendBrief}
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
     </>
   );
 }

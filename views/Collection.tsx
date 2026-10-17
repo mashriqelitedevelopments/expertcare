@@ -2,11 +2,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Rich } from "@/components/Blocks";
 import { Arrow } from "@/components/Icons";
-import { ListingCard } from "@/components/ListingCard";
+import { LedgerHead, ListingRow } from "@/components/ListingCard";
 import { Hero } from "@/components/Sections";
 import { areaFaqs, getArea, getListings, type ListingView } from "@/lib/content";
 import { collectionBySlug, collectionCopy, collections, type Collection } from "@/lib/collections";
-import { aedShort, plainText } from "@/lib/format";
+import { aedShort, homeCount, plainText } from "@/lib/format";
 import { lp } from "@/lib/i18n";
 import type { Locale } from "@/lib/locale";
 import { JsonLd, absL, breadcrumbs } from "@/lib/seo";
@@ -71,6 +71,16 @@ export function CollectionPage({ locale, slug }: { locale: Locale; slug: string 
         };
   const faqs = area ? [priceFaq, ...areaFaqs(locale, area).slice(0, 1), areaFaqs(locale, area).at(-1)!] : [priceFaq];
 
+  const cl = t.collection;
+  const devCount = new Set(homes.map((h) => h.developer)).size;
+  const offPlan = homes.filter((h) => h.status === "off-plan").length;
+  const figs: [React.ReactNode, string][] = [
+    [homes.length, cl.figProjects],
+    prices.length ? [from, cl.figFrom] : [t.detail.onRequest, cl.figOnRequest],
+    prices.length > 1 && from !== to ? [to, cl.figTo] : [devCount, cl.figDevelopers],
+    area ? [area.developer, t.areas.developerLabel] : [offPlan, cl.figOffPlan],
+  ];
+
   const itemList = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -93,58 +103,43 @@ export function CollectionPage({ locale, slug }: { locale: Locale; slug: string 
       <JsonLd data={breadcrumbs(locale, crumbs)} />
       <Hero small image={image} crumbs={crumbs} h1={copy.h1} lede={copy.lede} locale={locale} />
 
-      <section className="sec">
+      <section className="wrap figs" aria-label={cl.figsAria}>
+        {figs.map(([n, label]) => (
+          <div key={label}>
+            <strong className="num">{n}</strong>
+            <span>{label}</span>
+          </div>
+        ))}
+      </section>
+
+      <section className="sec tight" aria-label={copy.h1}>
         <div className="wrap">
-          <div className="grid">
+          <div className="results-bar">
+            <p>{homeCount(locale, homes.length)}</p>
+            {area ? (
+              <Link href={lp(locale, `/areas/${area.slug}/`)} className="more">
+                {t.areas.livingIn} {area.name} <Arrow />
+              </Link>
+            ) : (
+              <Link href={lp(locale, "/properties/")} className="more">
+                {cl.browseAll} <Arrow />
+              </Link>
+            )}
+          </div>
+          <div className="ledger">
+            <LedgerHead locale={locale} />
             {homes.map((l, i) => (
-              <ListingCard key={l.slug} l={l} locale={locale} priority={i < 3} />
+              <ListingRow key={l.slug} l={l} locale={locale} priority={i < 3} />
             ))}
           </div>
         </div>
       </section>
 
-      {area && (
-        <section className="sec stone" aria-labelledby="area-h">
-          <div className="wrap split top">
-            <div>
-              <h2 id="area-h" className="rv">
-                {t.areas.livingIn} {area.name}
-              </h2>
-              <div className="stack">
-                <p className="lede rv">{area.overview[0]}</p>
-              </div>
-              <Link href={lp(locale, `/areas/${area.slug}/`)} className="more">
-                {t.detail.areaGuide} {area.name} <Arrow />
-              </Link>
-            </div>
-            <div className="area-facts rv">
-              <div>
-                <h3>{t.areas.transportLabel}</h3>
-                <ul>
-                  {area.transport.map((x) => (
-                    <li key={x}>{x}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3>{t.areas.ownershipLabel}</h3>
-                <ul>
-                  <li>{t.areas.freehold}</li>
-                  <li>
-                    {t.areas.developerLabel}: {area.developer}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
       <section className="sec" aria-labelledby="faq-h">
         <div className="wrap narrow">
-          <h2 id="faq-h" className="rv">
-            {t.common.questions}
-          </h2>
+          <div className="sec-head">
+            <h2 id="faq-h">{t.common.questions}</h2>
+          </div>
           <div className="faq">
             {faqs.map((f) => (
               <details key={f.q}>
@@ -158,22 +153,20 @@ export function CollectionPage({ locale, slug }: { locale: Locale; slug: string 
         </div>
       </section>
 
-      <section className="sec" aria-labelledby="other-h">
+      <section className="sec sand" aria-labelledby="other-h">
         <div className="wrap">
           <div className="sec-head">
-            <h2 id="other-h">{t.collection.other}</h2>
+            <h2 id="other-h">{cl.other}</h2>
             <Link href={lp(locale, "/properties/")} className="more">
-              {t.collection.browseAll} <Arrow />
+              {cl.browseAll} <Arrow />
             </Link>
           </div>
-          <ul className="links">
-            {related(slug).map((x) => {
-              return (
-                <li key={x.slug}>
-                  <Link href={lp(locale, `/buy/${x.slug}/`)}>{collectionH1(locale, x, all)}</Link>
-                </li>
-              );
-            })}
+          <ul className="chips">
+            {related(slug).map((x) => (
+              <li key={x.slug}>
+                <Link href={lp(locale, `/buy/${x.slug}/`)}>{collectionH1(locale, x, all)}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </section>

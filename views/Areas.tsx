@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AreaTile, Hero } from "@/components/Sections";
+import { AtlasTile, Eyebrow, Hero } from "@/components/Sections";
 import { getAreas } from "@/lib/content";
 import { lp } from "@/lib/i18n";
 import { ogImage } from "@/lib/images";
@@ -15,7 +15,7 @@ export function Areas({ locale }: { locale: Locale }) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: a.h1,
-    inLanguage: locale === "ar" ? "ar-AE" : "en-AE",
+    inLanguage: "en-AE",
     itemListElement: areas.map((x, i) => ({ "@type": "ListItem", position: i + 1, name: x.name, url: absL(locale, `/areas/${x.slug}/`), image: abs(ogImage(x.image)) })),
   };
   return (
@@ -31,18 +31,24 @@ export function Areas({ locale }: { locale: Locale }) {
         ]}
         h1={a.h1}
         lede={a.lede}
+        caption="Dubai Marina"
+        foot={
+          <ul className="chips">
+            {areas.map((x) => (
+              <li key={x.slug}>
+                <Link href={lp(locale, `/areas/${x.slug}/`)}>{x.name}</Link>
+              </li>
+            ))}
+          </ul>
+        }
       />
-      <section className="sec">
-        <div className="wrap tiles">
-          {areas.map((x, i) => (
-            <AreaTile key={x.slug} a={x} locale={locale} sizes={i === 0 ? "(max-width: 560px) 100vw, 66vw" : "(max-width: 560px) 100vw, 33vw"} />
-          ))}
-        </div>
-      </section>
-      <section className="sec stone" aria-labelledby="compare-h">
+      <section className="sec tight" aria-labelledby="compare-h">
         <div className="wrap">
-          <div className="sec-head">
-            <h2 id="compare-h">{a.compareH}</h2>
+          <div className="sec-head rv">
+            <div>
+              <Eyebrow n={1}>{a.compareEyebrow}</Eyebrow>
+              <h2 id="compare-h">{a.compareH}</h2>
+            </div>
           </div>
           <div className="tbl-wrap">
             <table className="tbl tbl-left tbl-wide">
@@ -69,6 +75,21 @@ export function Areas({ locale }: { locale: Locale }) {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+      <section className="sec" aria-labelledby="atlas-h">
+        <div className="wrap">
+          <div className="sec-head rv">
+            <div>
+              <Eyebrow n={2}>{a.atlasEyebrow}</Eyebrow>
+              <h2 id="atlas-h">{a.atlasH}</h2>
+            </div>
+          </div>
+          <div className="atlas">
+            {areas.map((x, i) => (
+              <AtlasTile key={x.slug} a={x} locale={locale} idx={i} />
+            ))}
           </div>
         </div>
       </section>

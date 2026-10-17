@@ -5,17 +5,18 @@ import { aed, num } from "@/lib/format";
 import type { Locale } from "@/lib/locale";
 
 /**
- * Single-series charts for the price pages, following the site's dataviz rules: one validated
- * series colour (--chart, #9b2c3f: in the lightness band, 3:1+ on ivory), 2px lines, a 10% area
- * wash, columns capped at 24px with a 4px rounded top and a square baseline, hairline grid, one
- * y-axis starting at zero, the latest value labelled at the line end, a crosshair tooltip, arrow-key
- * navigation, and a table view next to every chart (rendered by the page, so no value is gated).
- * Time runs left to right in both editions.
+ * Single-series charts for the price pages. Colour comes from the `.chart` custom properties in
+ * app/globals.css (--chart for the series, --chart-active for the picked point, --chart-grid for
+ * the hairlines), so nothing here names a colour. 2px lines, a 10% area wash, square columns capped
+ * at 24px, a hairline grid, one y-axis starting at zero, the latest value labelled at the line end,
+ * a crosshair tooltip, arrow-key navigation, and a table view next to every chart (rendered by the
+ * page, so no value is gated). Time runs left to right in both editions.
  */
 export type Point = { key: string; label: string; value: number | null };
 
 const H = 260;
 const PAD = { l: 64, r: 72, t: 16, b: 30 };
+const MONO: React.CSSProperties = { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.04em" };
 
 function useWidth() {
   const ref = useRef<HTMLDivElement>(null);
@@ -95,32 +96,51 @@ function Frame({
       onBlur={() => setActive(null)}
       onPointerMove={(e) => pick(e.clientX)}
       onPointerLeave={() => setActive(null)}
+      style={{ position: "relative", touchAction: "pan-y" }}
     >
       {w > 0 && (
-        <svg width={w} height={H} aria-hidden="true">
+        <svg width={w} height={H} aria-hidden="true" style={{ display: "block" }}>
           {ticks.map((t) => (
             <g key={t}>
-              <line className={t === 0 ? "base" : "grid"} x1={PAD.l} x2={w - PAD.r} y1={y(t)} y2={y(t)} />
-              <text className="tick" x={PAD.l - 10} y={y(t)} dy="0.32em" textAnchor="end">
+              <line x1={PAD.l} x2={w - PAD.r} y1={y(t)} y2={y(t)} stroke={t === 0 ? "var(--chart)" : "var(--chart-grid)"} strokeWidth={1} />
+              <text x={PAD.l - 10} y={y(t)} dy="0.32em" textAnchor="end" fill="var(--muted)" style={MONO}>
                 {axisFormat(t)}
               </text>
             </g>
           ))}
           {points.map((pt, i) =>
             pt.key.endsWith("-Q1") && Number(pt.key.slice(0, 4)) % yearEvery === 0 ? (
-              <text key={pt.key} className="tick" x={PAD.l + band * i} y={H - 8} textAnchor="start">
+              <text key={pt.key} x={PAD.l + band * i} y={H - 8} textAnchor="start" fill="var(--muted)" style={MONO}>
                 {pt.key.slice(0, 4)}
               </text>
             ) : null,
           )}
-          {active != null && <line className="cross" x1={x(active)} x2={x(active)} y1={PAD.t} y2={base} />}
+          {active != null && <line x1={x(active)} x2={x(active)} y1={PAD.t} y2={base} stroke="var(--chart-active)" strokeWidth={1} strokeDasharray="3 3" />}
           {children({ x, y, band, base, active, w })}
         </svg>
       )}
       {p && (
-        <div className="tip" style={{ left: x(active!), top: p.value != null ? y(p.value) - 12 : PAD.t }}>
-          <strong>{p.value != null ? format(p.value) : "—"}</strong>
-          <span>{p.label}</span>
+        <div
+          role="presentation"
+          style={{
+            position: "absolute",
+            left: x(active!),
+            top: p.value != null ? y(p.value) - 12 : PAD.t,
+            transform: "translate(-50%, -100%)",
+            padding: "6px 8px",
+            background: "var(--bone)",
+            border: "1px solid var(--ink)",
+            color: "var(--ink)",
+            fontFamily: "var(--mono)",
+            fontSize: 12,
+            lineHeight: 1.3,
+            whiteSpace: "nowrap",
+            pointerEvents: "none",
+            zIndex: 1,
+          }}
+        >
+          <strong style={{ display: "block", fontWeight: 600 }}>{p.value != null ? format(p.value) : "n/a"}</strong>
+          <span style={{ color: "var(--muted)" }}>{p.label}</span>
         </div>
       )}
     </div>
@@ -156,20 +176,20 @@ export function LineChart({ points, unit, locale, ariaLabel }: ChartProps) {
               const area = `${d} L${x(r[r.length - 1].i)},${base} L${x(r[0].i)},${base} Z`;
               return (
                 <g key={k}>
-                  <path className="wash" d={area} />
-                  <path className="line" d={d} />
+                  <path d={area} fill="var(--chart)" fillOpacity={0.1} stroke="none" />
+                  <path d={d} fill="none" stroke="var(--chart)" strokeWidth={2} strokeLinejoin="round" strokeLinecap="round" />
                 </g>
               );
             })}
             {last != null && (
               <>
-                <circle className="dot" cx={x(last)} cy={y(points[last].value!)} r={4} />
-                <text className="endlabel" x={x(last) + 10} y={y(points[last].value!)} dy="0.32em">
+                <circle cx={x(last)} cy={y(points[last].value!)} r={4} fill="var(--chart)" />
+                <text x={x(last) + 10} y={y(points[last].value!)} dy="0.32em" fill="var(--chart)" style={{ ...MONO, fontSize: 12 }}>
                   {format(points[last].value!)}
                 </text>
               </>
             )}
-            {active != null && points[active].value != null && active !== last && <circle className="dot" cx={x(active)} cy={y(points[active].value!)} r={4} />}
+            {active != null && points[active].value != null && <circle cx={x(active)} cy={y(points[active].value!)} r={4} fill="var(--chart-active)" />}
           </>
         );
       }}
@@ -188,11 +208,8 @@ export function ColumnChart({ points, unit, locale, ariaLabel }: ChartProps) {
           <>
             {points.map((p, i) => {
               if (!p.value) return null;
-              const left = x(i) - bw / 2;
               const topY = y(p.value);
-              const r = Math.min(4, bw / 2, base - topY);
-              const d = `M${left},${base} V${topY + r} Q${left},${topY} ${left + r},${topY} H${left + bw - r} Q${left + bw},${topY} ${left + bw},${topY + r} V${base} Z`;
-              return <path key={p.key} className={i === active ? "col is-active" : "col"} d={d} />;
+              return <rect key={p.key} x={x(i) - bw / 2} y={topY} width={bw} height={Math.max(0, base - topY)} fill={i === active ? "var(--chart-active)" : "var(--chart)"} />;
             })}
           </>
         );

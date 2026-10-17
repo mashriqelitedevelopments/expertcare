@@ -17,7 +17,7 @@ function PriceInput({ id, value, onChange, label }: { id: string; value: number;
     <div className="input">
       <label htmlFor={id}>{label}</label>
       <div className="affix">
-        <span>AED</span>
+        <span className="unit">AED</span>
         <input
           id={id}
           inputMode="numeric"
@@ -33,24 +33,11 @@ function PriceInput({ id, value, onChange, label }: { id: string; value: number;
   );
 }
 
-function Toggle<T extends string>({
-  legend,
-  name,
-  value,
-  onChange,
-  options,
-  full = false,
-}: {
-  legend: string;
-  name: string;
-  value: T;
-  onChange: (v: T) => void;
-  options: [T, string][];
-  full?: boolean;
-}) {
+/** A radio pair drawn as two cells; the legend is styled as the row's label. */
+function Toggle<T extends string>({ legend, name, value, onChange, options }: { legend: string; name: string; value: T; onChange: (v: T) => void; options: [T, string][] }) {
   return (
-    <fieldset className={`input${full ? " full" : ""}`}>
-      <legend>{legend}</legend>
+    <fieldset className="input">
+      <legend className="label">{legend}</legend>
       <div className="toggle">
         {options.map(([v, label]) => (
           <label key={v}>
@@ -60,6 +47,39 @@ function Toggle<T extends string>({
         ))}
       </div>
     </fieldset>
+  );
+}
+
+/** A slider row: label, the live value on the right, the slider, and the floor or cap under it. */
+function Range({
+  id,
+  label,
+  value,
+  min,
+  max,
+  onChange,
+  output,
+  foot,
+}: {
+  id: string;
+  label: string;
+  value: number;
+  min: number;
+  max: number;
+  onChange: (n: number) => void;
+  output: React.ReactNode;
+  foot: string;
+}) {
+  return (
+    <div className="range-row">
+      <label htmlFor={id}>{label}</label>
+      <output htmlFor={id}>{output}</output>
+      <input id={id} type="range" min={min} max={max} step={1} value={value} onChange={(e) => onChange(Number(e.target.value))} />
+      <div className="ticks">
+        <span>{min}%</span>
+        <span>{foot}</span>
+      </div>
+    </div>
   );
 }
 
@@ -93,7 +113,7 @@ function BuyerInputs({
           ))}
         </select>
       </div>
-      {status === "ready" && buyer !== "nonresident" ? (
+      {status === "ready" && buyer !== "nonresident" && (
         <Toggle
           legend={t.thisWillBe}
           name={`${id}-first`}
@@ -104,8 +124,6 @@ function BuyerInputs({
             ["second", t.secondHome],
           ]}
         />
-      ) : (
-        <div className="input" aria-hidden="true" />
       )}
     </>
   );
@@ -136,51 +154,49 @@ export function CostCalculator({
   const r = buyingCosts({ price, status, loan, locale });
 
   return (
-    <div className="panel">
-      <div className="inputs">
-        {!fixed && <PriceInput id={`${id}-price`} value={price} onChange={setPrice} label={t.price} />}
-        {!fixed && (
-          <Toggle
-            legend={t.homeIs}
-            name={`${id}-status`}
-            value={status}
-            onChange={setStatus}
-            options={[
-              ["ready", t.ready],
-              ["off-plan", t.offPlan],
-            ]}
-          />
-        )}
+    <div className="calc">
+      {!fixed && <PriceInput id={`${id}-price`} value={price} onChange={setPrice} label={t.price} />}
+      {!fixed && (
         <Toggle
-          legend={t.paying}
-          name={`${id}-finance`}
-          value={finance}
-          onChange={setFinance}
-          full={fixed}
+          legend={t.homeIs}
+          name={`${id}-status`}
+          value={status}
+          onChange={setStatus}
           options={[
-            ["cash", t.cash],
-            ["mortgage", t.mortgage],
+            ["ready", t.ready],
+            ["off-plan", t.offPlan],
           ]}
         />
-        {!fixed && <div className="input" aria-hidden="true" />}
-        {finance === "mortgage" && (
-          <>
-            <BuyerInputs id={id} locale={locale} buyer={buyer} setBuyer={setBuyer} first={first} setFirst={setFirst} status={status} />
-            <div className="input full">
-              <label htmlFor={`${id}-ltv`}>{t.loanShare}</label>
-              <input id={`${id}-ltv`} type="range" min={10} max={cap} step={1} value={ltv} onChange={(e) => setLtv(Number(e.target.value))} />
-              <div className="range-row">
-                <span>
-                  {ltv}%, <strong className="num">{aed(loan, locale)}</strong>
-                </span>
-                <span>
-                  {t.upTo} {cap}%
-                </span>
-              </div>
-            </div>
-          </>
-        )}
-      </div>
+      )}
+      <Toggle
+        legend={t.paying}
+        name={`${id}-finance`}
+        value={finance}
+        onChange={setFinance}
+        options={[
+          ["cash", t.cash],
+          ["mortgage", t.mortgage],
+        ]}
+      />
+      {finance === "mortgage" && (
+        <>
+          <BuyerInputs id={id} locale={locale} buyer={buyer} setBuyer={setBuyer} first={first} setFirst={setFirst} status={status} />
+          <Range
+            id={`${id}-ltv`}
+            label={t.loanShare}
+            value={ltv}
+            min={10}
+            max={cap}
+            onChange={setLtv}
+            output={
+              <>
+                {ltv}%, <strong className="num">{aed(loan, locale)}</strong>
+              </>
+            }
+            foot={`${t.upTo} ${cap}%`}
+          />
+        </>
+      )}
       <div className="calc-out" aria-live="polite">
         <div className="tbl-wrap">
           <table className="tbl">
@@ -198,7 +214,7 @@ export function CostCalculator({
                 <tr key={l.label}>
                   <td>
                     {l.label}
-                    {l.note && <span className="note">{l.note}</span>}
+                    {l.note && <span className="fine" style={{ display: "block" }}>{l.note}</span>}
                   </td>
                   <td>{aed(l.amount, locale)}</td>
                 </tr>
@@ -213,7 +229,7 @@ export function CostCalculator({
           </table>
         </div>
         <dl className="calc-sum">
-          <div>
+          <div className="total">
             <dt>{t.pricePlusFees}</dt>
             <dd>{aed(r.total, locale)}</dd>
           </div>
@@ -267,62 +283,62 @@ export function MortgageCalculator({
     .reduce((s, l) => s + l.amount, 0);
 
   return (
-    <div className="panel">
-      <div className="inputs">
-        {!fixed && <PriceInput id={`${id}-price`} value={price} onChange={setPrice} label={t.price} />}
-        {!fixed && (
-          <Toggle
-            legend={t.homeIs}
-            name={`${id}-status`}
-            value={status}
-            onChange={setStatus}
-            options={[
-              ["ready", t.ready],
-              ["off-plan", t.offPlan],
-            ]}
+    <div className="calc">
+      {!fixed && <PriceInput id={`${id}-price`} value={price} onChange={setPrice} label={t.price} />}
+      {!fixed && (
+        <Toggle
+          legend={t.homeIs}
+          name={`${id}-status`}
+          value={status}
+          onChange={setStatus}
+          options={[
+            ["ready", t.ready],
+            ["off-plan", t.offPlan],
+          ]}
+        />
+      )}
+      <BuyerInputs id={id} locale={locale} buyer={buyer} setBuyer={setBuyer} first={first} setFirst={setFirst} status={status} />
+      <Range
+        id={`${id}-deposit`}
+        label={t.deposit}
+        value={deposit}
+        min={minDeposit}
+        max={90}
+        onChange={setDeposit}
+        output={
+          <>
+            {deposit}%, <strong className="num">{aed((price * deposit) / 100, locale)}</strong>
+          </>
+        }
+        foot={`${t.atLeast} ${minDeposit}%`}
+      />
+      <div className="input">
+        <label htmlFor={`${id}-rate`}>{t.rate}</label>
+        <div className="affix">
+          <input id={`${id}-rate`} type="number" inputMode="decimal" dir="ltr" min={0} max={15} step={0.05} value={rate} onChange={(e) => setRate(Math.max(0, Number(e.target.value)))} />
+          <span className="unit">{t.perYear}</span>
+        </div>
+      </div>
+      <div className="input">
+        <label htmlFor={`${id}-years`}>{t.term}</label>
+        <div className="affix">
+          <input
+            id={`${id}-years`}
+            type="number"
+            inputMode="numeric"
+            dir="ltr"
+            min={1}
+            max={MAX_TERM}
+            step={1}
+            value={years}
+            onChange={(e) => setYears(Math.min(MAX_TERM, Math.max(1, Math.round(Number(e.target.value)) || 1)))}
           />
-        )}
-        <BuyerInputs id={id} locale={locale} buyer={buyer} setBuyer={setBuyer} first={first} setFirst={setFirst} status={status} />
-        <div className="input full">
-          <label htmlFor={`${id}-deposit`}>{t.deposit}</label>
-          <input id={`${id}-deposit`} type="range" min={minDeposit} max={90} step={1} value={deposit} onChange={(e) => setDeposit(Number(e.target.value))} />
-          <div className="range-row">
-            <span>
-              {deposit}%, <strong className="num">{aed((price * deposit) / 100, locale)}</strong>
-            </span>
-            <span>
-              {t.atLeast} {minDeposit}%
-            </span>
-          </div>
-        </div>
-        <div className="input">
-          <label htmlFor={`${id}-rate`}>{t.rate}</label>
-          <div className="affix end-only">
-            <input id={`${id}-rate`} type="number" inputMode="decimal" dir="ltr" min={0} max={15} step={0.05} value={rate} onChange={(e) => setRate(Math.max(0, Number(e.target.value)))} />
-            <span className="end">{t.perYear}</span>
-          </div>
-        </div>
-        <div className="input">
-          <label htmlFor={`${id}-years`}>{t.term}</label>
-          <div className="affix end-only">
-            <input
-              id={`${id}-years`}
-              type="number"
-              inputMode="numeric"
-              dir="ltr"
-              min={1}
-              max={MAX_TERM}
-              step={1}
-              value={years}
-              onChange={(e) => setYears(Math.min(MAX_TERM, Math.max(1, Math.round(Number(e.target.value)) || 1)))}
-            />
-            <span className="end">{t.years}</span>
-          </div>
+          <span className="unit">{t.years}</span>
         </div>
       </div>
       <div className="calc-out" aria-live="polite">
         <dl className="calc-sum">
-          <div>
+          <div className="total">
             <dt>{t.monthly}</dt>
             <dd>{aed(monthly, locale)}</dd>
           </div>
