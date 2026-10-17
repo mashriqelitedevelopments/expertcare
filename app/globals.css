@@ -2336,3 +2336,10 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   color: var(--ink);
   border-color: var(--line-2);
 }
+
+/* Inner-page heroes carry bright photographs more often: a fuller wash so the type always reads. */
+.hero-sm::before {
+  background:
+    linear-gradient(to bottom, rgba(var(--scrim), 0.4), rgba(var(--scrim), 0) 160px),
+    linear-gradient(to top, rgba(var(--scrim), 0.86), rgba(var(--scrim), 0.5) 55%, rgba(var(--scrim), 0.34));
+}
