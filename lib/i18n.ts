@@ -10,7 +10,7 @@ export function pageMeta({
   title,
   description,
   path,
-  image = "/img/hero-1280.jpg",
+  image = "/img/hero2-1280.jpg",
   absolute = false,
   noindex = false,
 }: {

@@ -26,7 +26,7 @@ export const orgLd = {
   ],
   url: site.url,
   logo: abs("/icon.svg"),
-  image: abs("/img/hero-1280.jpg"),
+  image: abs("/img/hero2-1280.jpg"),
   description: site.description,
   areaServed: { "@type": "City", name: "Dubai" },
   address: { "@type": "PostalAddress", addressLocality: "Dubai", addressCountry: "AE" },

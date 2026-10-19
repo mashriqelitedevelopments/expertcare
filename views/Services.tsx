@@ -35,7 +35,7 @@ export function Services({ locale }: { locale: Locale }) {
       <JsonLd data={list} />
       <JsonLd data={offers} />
       <JsonLd data={breadcrumbs(locale, crumbs)} />
-      <Hero small image="viewing" locale={locale} crumbs={crumbs} h1={s.h1} lede={s.lede} caption={s.heroCaption} />
+      <Hero small image="viewing-2" locale={locale} crumbs={crumbs} h1={s.h1} lede={s.lede} caption={s.heroCaption} />
       <section className="sec tight">
         <div className="wrap">
           <div className="tbl-wrap">

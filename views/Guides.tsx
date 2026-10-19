@@ -28,7 +28,7 @@ export function Guides({ locale }: { locale: Locale }) {
       <JsonLd data={list} />
       <Hero
         small
-        image="guide-keys"
+        image="desk"
         locale={locale}
         crumbs={[
           { name: t.chrome.home, path: "/" },

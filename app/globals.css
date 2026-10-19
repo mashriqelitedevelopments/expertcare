@@ -74,6 +74,16 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: calc(var(--hdr) + 16px);
+  scroll-behavior: smooth;
+}
+::selection {
+  background: var(--ink);
+  color: var(--bone);
+}
+.ink ::selection,
+.on-photo ::selection {
+  background: var(--bone);
+  color: var(--ink);
 }
 html.menu-open {
   overflow: hidden;
@@ -176,6 +186,7 @@ h4 {
 }
 h1 {
   font-size: clamp(34px, 4.6vw, 66px);
+  font-weight: 330;
   line-height: 1.04;
 }
 h2 {
@@ -489,11 +500,17 @@ h4 {
 html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) {
   color: var(--bone);
 }
-.hdr.is-scrolled,
-.hdr.is-open {
+.hdr.is-scrolled {
   background: rgba(244, 244, 241, 0.92);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
+}
+/* No backdrop filter while the menu is open: a filter would turn the header into the containing
+ * block of the fixed menu panel and collapse it. */
+.hdr.is-open {
+  background: var(--bone);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 .hdr-in {
   display: grid;
@@ -742,6 +759,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
     linear-gradient(to bottom, rgba(var(--scrim), 0.35), rgba(var(--scrim), 0) 150px),
     linear-gradient(to top, rgba(var(--scrim), 0.84), rgba(var(--scrim), 0.4) 50%, rgba(var(--scrim), 0.22));
@@ -749,7 +767,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 }
 .hero-copy {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: min(100% - 2 * var(--gut), var(--wrap));
   margin-inline: auto;
   padding-top: calc(var(--hdr) + 48px);
@@ -784,7 +802,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   position: absolute;
   right: var(--gut);
   bottom: 24px;
-  z-index: 1;
+  z-index: 2;
   color: rgba(244, 244, 241, 0.7);
 }
 .hero .contact-list {
@@ -1210,11 +1228,12 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(to top, rgba(var(--scrim), 0.7), rgba(var(--scrim), 0.1) 58%, rgba(var(--scrim), 0));
 }
 .plate-card {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: min(100% - 2 * var(--gut), var(--wrap));
   margin-inline: auto;
   padding: 0 0 clamp(40px, 6vw, 88px);
@@ -1255,7 +1274,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   position: absolute;
   right: var(--gut);
   top: 24px;
-  z-index: 1;
+  z-index: 2;
   color: rgba(244, 244, 241, 0.7);
 }
 
@@ -2342,4 +2361,13 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   background:
     linear-gradient(to bottom, rgba(var(--scrim), 0.4), rgba(var(--scrim), 0) 160px),
     linear-gradient(to top, rgba(var(--scrim), 0.86), rgba(var(--scrim), 0.5) 55%, rgba(var(--scrim), 0.34));
+}
+
+/* The fee line under a service hero: a short quiet band, not a full-width strip. */
+.hero .note {
+  max-width: 560px;
+  padding: 14px 18px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(244, 244, 241, 0.9);
 }

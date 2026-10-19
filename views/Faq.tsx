@@ -28,7 +28,7 @@ export function Faq({ locale }: { locale: Locale }) {
       <JsonLd data={breadcrumbs(locale, crumbs)} />
       <Hero
         small
-        image="guide-keys"
+        image="keys-bowl"
         locale={locale}
         crumbs={crumbs}
         h1={f.h1}

@@ -28,6 +28,14 @@ const SITE_IMAGES = {
   "area-business-bay": { ratio: [16, 9], widths: WIDE, alt: "Towers around the water in Business Bay" },
   "area-dubai-creek-harbour": { ratio: [16, 9], widths: WIDE, alt: "The Downtown skyline across the water from Dubai Creek Harbour" },
   "band-marina": { ratio: [2560, 1097], widths: [960, 1920, 2560], alt: "The Dubai Marina skyline from the sea" },
+  hero2: { ratio: [16, 9], widths: WIDE, alt: "A living room in pale stone and oak opening onto a terrace, with the Marina skyline at golden hour" },
+  "hero2-m": { ratio: [4, 5], widths: [640, 960, 1280], alt: "A living room in pale stone and oak opening onto a terrace, with the Marina skyline at golden hour" },
+  handover: { ratio: [3, 2], widths: PHOTO, alt: "Keys handed over at the open door of a bright apartment" },
+  desk: { ratio: [3, 2], widths: PHOTO, alt: "A contract and a fountain pen on an oak desk by a window over the city" },
+  "keys-bowl": { ratio: [3, 2], widths: PHOTO, alt: "Apartment keys in a stone bowl on a travertine console" },
+  "family-balcony": { ratio: [3, 2], widths: PHOTO, alt: "A family on their balcony looking out over the city at sunset" },
+  "terrace-dusk": { ratio: [3, 2], widths: PHOTO, alt: "A rooftop pool terrace at blue hour above a lit waterfront" },
+  "viewing-2": { ratio: [3, 2], widths: PHOTO, alt: "An adviser showing a couple the view from an empty new apartment" },
 } satisfies Record<string, Spec>;
 
 type ProjectSpec = Spec & { src: string; altAr: string };
@@ -55,6 +63,14 @@ const SITE_ALT_AR: Record<keyof typeof SITE_IMAGES, string> = {
   "area-business-bay": "أبراج الخليج التجاري حول الماء",
   "area-dubai-creek-harbour": "أفق وسط مدينة دبي من خور دبي عبر الماء",
   "band-marina": "أفق دبي مارينا من جهة البحر",
+  hero2: "غرفة معيشة بالحجر الفاتح والبلوط تفتح على تراس مع أفق المارينا عند الغروب",
+  "hero2-m": "غرفة معيشة بالحجر الفاتح والبلوط تفتح على تراس مع أفق المارينا عند الغروب",
+  handover: "تسليم المفاتيح عند باب شقة مضيئة",
+  desk: "عقد وقلم حبر على مكتب من البلوط قرب نافذة تطل على المدينة",
+  "keys-bowl": "مفاتيح شقة في وعاء حجري على طاولة من الترافرتين",
+  "family-balcony": "عائلة على شرفتها تنظر إلى المدينة عند الغروب",
+  "terrace-dusk": "تراس مسبح على السطح عند الساعة الزرقاء فوق واجهة مائية مضاءة",
+  "viewing-2": "مستشار يعرض على زوجين الإطلالة من شقة جديدة فارغة",
 };
 
 export const ALT_AR: Record<ImgKey, string> = {

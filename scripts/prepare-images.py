@@ -31,6 +31,15 @@ SPECS = {
     "area-business-bay": {"aspect": (16, 9), "y": 0.5, "widths": WIDE},
     "area-dubai-creek-harbour": {"aspect": (16, 9), "y": 0.55, "widths": WIDE},
     "band-marina": {"aspect": (2560, 1097), "y": 0.55, "widths": [960, 1920, 2560]},
+    # 19 Oct 2026, Higgsfield gpt_image_2_5 (max, 4K): the ExpertCare set.
+    "hero2": {"aspect": (16, 9), "widths": WIDE},
+    "hero2-m": {"src": "hero2", "aspect": (4, 5), "x": 0.42, "widths": [640, 960, 1280]},
+    "handover": {"aspect": (3, 2), "widths": PHOTO},
+    "desk": {"aspect": (3, 2), "widths": PHOTO},
+    "keys-bowl": {"aspect": (3, 2), "widths": PHOTO},
+    "family-balcony": {"aspect": (3, 2), "widths": PHOTO},
+    "terrace-dusk": {"aspect": (3, 2), "widths": PHOTO},
+    "viewing-2": {"aspect": (3, 2), "widths": PHOTO},
 }
 
 

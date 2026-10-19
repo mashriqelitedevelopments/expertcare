@@ -810,7 +810,7 @@ export const GUIDES_B: Guide[] = [
       "How to sell a home in Dubai: Form A, the Trakheesi permit, Form F, the developer NOC, releasing a mortgage, the DLD transfer, and who pays which fee by custom.",
     title: "How to sell property in Dubai, step by step",
     dek: "From the listing agreement to the transfer at the trustee office: the forms you sign, the certificates you need, the fees by custom, and how an off-plan unit is sold before handover.",
-    image: "guide-keys",
+    image: "desk",
     updated: "2026-10-17",
     summary: [
       "A sale in Dubai runs through three RERA forms: Form A appoints your broker, Form F is the sale contract with the buyer, and the broker's Form B binds the buyer to them.",
@@ -989,7 +989,7 @@ export const GUIDES_B: Guide[] = [
       "What a Dubai tenant should know: Ejari, the deposit and agency fee by custom, rent cheques, rent increase bands, notice rules and the Rental Disputes Center.",
     title: "Renting a home in Dubai: what every tenant should know",
     dek: "The law behind a Dubai tenancy, what you pay up front, how much the rent can rise, the notice you are entitled to, and where to go when something goes wrong.",
-    image: "l-jvc",
+    image: "handover",
     updated: "2026-10-17",
     summary: [
       "Dubai tenancies are governed by Law No. 26 of 2007, as amended by Law No. 33 of 2008. Every contract must be registered with RERA through Ejari.",
@@ -1175,7 +1175,7 @@ export const GUIDES_B: Guide[] = [
       "How to evaluate a Dubai investment property: gross and net yield, the costs that reduce rent, tax, holiday lets, DLD price data, risks and the Golden Visa link.",
     title: "Investing in Dubai property: how to judge a deal",
     dek: "A method, not a forecast: work out the yield that is left after costs, read the price data, weigh off-plan against ready, and understand the tax and visa rules that apply.",
-    image: "area-business-bay",
+    image: "terrace-dusk",
     updated: "2026-10-17",
     summary: [
       "Gross yield is the annual rent divided by the price. Net yield takes off service charges, management, vacancy and the buying costs before it divides, and it is the number that matters.",
@@ -1356,7 +1356,7 @@ export const GUIDES_B: Guide[] = [
       "How to verify a Dubai broker: the RERA card and BRN, the brokerage ORN, the Dubai REST app, permits and QR codes on adverts, the forms and the cold-calling ban.",
     title: "How to choose a real estate broker in Dubai",
     dek: "The checks that take five minutes, the forms a licensed broker must use, what commission is by custom, the 2026 ban on cold contact, and the questions worth asking before you sign.",
-    image: "viewing",
+    image: "viewing-2",
     updated: "2026-10-17",
     summary: [
       "Every broker in Dubai must hold a RERA broker card with a broker registration number (BRN), and work for a brokerage with an office registration number (ORN). Both can be checked in the Dubai REST app.",

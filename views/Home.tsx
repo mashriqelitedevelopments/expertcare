@@ -55,7 +55,7 @@ export function Home({ locale }: { locale: Locale }) {
   return (
     <>
       <JsonLd data={faqLd} />
-      <Hero image="hero" mobile="hero-m" h1={h.h1} lede={h.sub} locale={locale} foot={<HomeSearch locale={locale} />} />
+      <Hero image="hero2" mobile="hero2-m" h1={h.h1} lede={h.sub} locale={locale} foot={<HomeSearch locale={locale} />} />
 
       <section className="sec" aria-labelledby="doors-h">
         <div className="wrap">

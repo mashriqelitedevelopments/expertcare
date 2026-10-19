@@ -42,6 +42,21 @@ export function Areas({ locale }: { locale: Locale }) {
           </ul>
         }
       />
+      <section className="sec" aria-labelledby="atlas-h">
+        <div className="wrap">
+          <div className="sec-head rv">
+            <div>
+              <Eyebrow n={2}>{a.atlasEyebrow}</Eyebrow>
+              <h2 id="atlas-h">{a.atlasH}</h2>
+            </div>
+          </div>
+          <div className="atlas">
+            {areas.map((x, i) => (
+              <AtlasTile key={x.slug} a={x} locale={locale} idx={i} />
+            ))}
+          </div>
+        </div>
+      </section>
       <section className="sec tight" aria-labelledby="compare-h">
         <div className="wrap">
           <div className="sec-head rv">
@@ -75,21 +90,6 @@ export function Areas({ locale }: { locale: Locale }) {
                 ))}
               </tbody>
             </table>
-          </div>
-        </div>
-      </section>
-      <section className="sec" aria-labelledby="atlas-h">
-        <div className="wrap">
-          <div className="sec-head rv">
-            <div>
-              <Eyebrow n={2}>{a.atlasEyebrow}</Eyebrow>
-              <h2 id="atlas-h">{a.atlasH}</h2>
-            </div>
-          </div>
-          <div className="atlas">
-            {areas.map((x, i) => (
-              <AtlasTile key={x.slug} a={x} locale={locale} idx={i} />
-            ))}
           </div>
         </div>
       </section>

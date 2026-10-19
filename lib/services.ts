@@ -40,7 +40,7 @@ export const SERVICES: Service[] = [
       "ExpertCare acts for buyers of ready and off-plan homes in Dubai: the shortlist, the checks, the offer and the transfer, with every fee shown before you view.",
     title: "Buying a home in Dubai with ExpertCare",
     dek: "A buyer's broker who shortlists, checks every advert, negotiates the price and stays with you to the title deed.",
-    image: "viewing",
+    image: "viewing-2",
     summary: [
       "ExpertCare acts for buyers of ready and off-plan homes in Dubai's freehold areas, whether you live in the UAE or abroad.",
       "On a resale the customary agency fee is 2% of the price plus VAT, paid by the buyer. On an off-plan purchase from a developer, the developer pays the broker and you pay nothing extra for our work.",
@@ -174,7 +174,7 @@ export const SERVICES: Service[] = [
       "ExpertCare sells homes in Dubai from a valuation built on real sales data to the transfer: Form A, Trakheesi permit, viewings, offers, Form F, NOC and trustee.",
     title: "Selling your Dubai property with ExpertCare",
     dek: "A valuation from real sales data, a permitted listing, qualified buyers and a transfer handled from the first viewing to the trustee office.",
-    image: "l-downtown",
+    image: "desk",
     summary: [
       "ExpertCare values your home against recent sales in the same building or community, markets it under a Trakheesi permit, and handles offers, Form F, the developer's NOC and the transfer.",
       "The process runs from Form A, the listing agreement, to the registration trustee office where the buyer pays and the title deed changes hands.",
@@ -310,7 +310,7 @@ export const SERVICES: Service[] = [
       "ExpertCare finds rental homes for tenants in Dubai, negotiates the rent, cheques and deposit, checks the landlord's title deed and registers the Ejari.",
     title: "Renting a home in Dubai with ExpertCare",
     dek: "A tenant's adviser who shortlists, checks the landlord, negotiates the terms and registers the contract on Ejari.",
-    image: "l-jvc",
+    image: "handover",
     summary: [
       "ExpertCare finds rental homes for tenants across Dubai, negotiates the rent and the number of cheques, checks the landlord's title deed and registers the tenancy on Ejari.",
       "Every tenancy contract must be registered with RERA through Ejari; online registration costs AED 177.75.",
@@ -440,7 +440,7 @@ export const SERVICES: Service[] = [
       "ExpertCare lets and manages homes for Dubai owners: tenant finding, Ejari, rent collection, maintenance, lawful renewals, inspections and an annual statement.",
     title: "Letting and managing your Dubai property",
     dek: "Tenants found and vetted, rent collected, maintenance handled and renewals kept within the law, with one statement a year.",
-    image: "l-marina",
+    image: "keys-bowl",
     summary: [
       "ExpertCare lets and manages homes for owners in Dubai: finding and vetting tenants, Ejari registration, rent collection, maintenance, renewals within the bands of Decree No. 43 of 2013, inspections and an annual statement.",
       "Our fee is a share of the annual rent, agreed in writing before we market the home.",
@@ -848,7 +848,7 @@ export const SERVICES: Service[] = [
       "ExpertCare helps investors meet the AED 2 million Golden Visa threshold with Dubai property, prepares the document pack and books the visa appointment.",
     title: "The Golden Visa through property, with ExpertCare",
     dek: "What qualifies, where the official sources disagree, and how we prepare the purchase and the paperwork around it.",
-    image: "area-downtown-dubai",
+    image: "terrace-dusk",
     summary: [
       "Property worth AED 2 million or more, in one property or several, lets an investor in Dubai apply for a Golden Visa, which the Dubai Land Department and GDRFA describe as ten years and renewable.",
       "ExpertCare helps you choose and buy property that meets the threshold, assembles the document pack and books the appointment with the authority.",
@@ -1072,7 +1072,7 @@ export const SERVICES: Service[] = [
       "ExpertCare helps families and companies moving to Dubai rent or buy, shortlist areas by commute, secure a home, register the Ejari and connect DEWA.",
     title: "Moving to Dubai with ExpertCare",
     dek: "Rent first or buy, which areas fit your commute, what a non-resident needs, and a home ready on the day you land.",
-    image: "l-hills",
+    image: "family-balcony",
     summary: [
       "ExpertCare helps families and companies moving to Dubai find a home before they arrive: rent or buy, areas chosen by commute, viewings by video, Ejari and utilities handled.",
       "Most people rent first, because a tenancy can be in place within weeks and a purchase carries about 7% in fees on a ready home.",

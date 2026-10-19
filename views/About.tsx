@@ -25,7 +25,7 @@ export function About({ locale }: { locale: Locale }) {
       <JsonLd data={aboutLd} />
       <Hero
         small
-        image="viewing"
+        image="viewing-2"
         locale={locale}
         crumbs={[
           { name: t.chrome.home, path: "/" },
