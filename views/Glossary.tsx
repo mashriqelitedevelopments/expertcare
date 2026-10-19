@@ -77,7 +77,7 @@ export function Glossary({ locale }: { locale: Locale }) {
       </section>
 
       {groups.map((g) => (
-        <section className="sec tight" id={g.id} key={g.L} aria-labelledby={`${g.id}-h`}>
+        <section className="sec tight glossary-letter" id={g.id} key={g.L} aria-labelledby={`${g.id}-h`}>
           <div className="wrap">
             <div className="sec-head">
               <h2 id={`${g.id}-h`}>{g.L}</h2>

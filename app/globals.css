@@ -2751,3 +2751,55 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Glossary: letters as a dense two-column run ──────────── */
+.sec.tight.glossary-letter {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.glossary-letter .sec-head {
+  margin-bottom: 4px;
+}
+.glossary-letter .sec-head h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--dim);
+}
+.glossary-letter .index.no-thumb {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 48px;
+}
+.glossary-letter .index.no-thumb .index-row {
+  padding: 16px 0;
+}
+.glossary-letter .index.no-thumb .index-row .row-title h3 {
+  font-size: 18px;
+}
+@media (max-width: 800px) {
+  .glossary-letter .index.no-thumb {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Wide tables scroll sideways on phones instead of squeezing ── */
+@media (max-width: 800px) {
+  .tbl-wrap .tbl.tbl-wide,
+  .tbl-wrap .tbl.tbl-left {
+    min-width: 720px;
+  }
+  .tbl-wrap {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+}
+
+/* ── Fixed buttons clear the mobile action bar ─────────────── */
+@media (max-width: 900px) {
+  body:has(.mbar) .wa {
+    bottom: 86px;
+  }
+  body:has(.mbar) .cons {
+    bottom: 86px;
+  }
+}

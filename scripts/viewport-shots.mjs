@@ -67,7 +67,7 @@ try {
     const { sessionId } = await send("Target.attachToTarget", { targetId, flatten: true });
     await send("Page.enable", {}, sessionId);
     // The consent notice is answered before any page loads, so it never hides the review.
-    await send("Page.addScriptToEvaluateOnNewDocument", { source: "try{localStorage.setItem('hp-consent','{\"analytics\":false,\"at\":\"review\"}')}catch{}" }, sessionId);
+    await send("Page.addScriptToEvaluateOnNewDocument", { source: "try{localStorage.setItem('ec-consent','{\"analytics\":false,\"at\":\"review\"}')}catch{}" }, sessionId);
     await send("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile }, sessionId);
     for (const route of ROUTES) {
       const name = route.replace(/^\/|\/$/g, "").replace(/\//g, "-") || "home";
