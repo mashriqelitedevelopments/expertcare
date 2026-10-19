@@ -492,18 +492,19 @@ h4 {
   right: 0;
   z-index: 50;
   color: var(--ink);
-  transition:
-    background 0.4s var(--ease),
-    color 0.4s var(--ease),
-    box-shadow 0.4s;
-}
-html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) {
-  color: var(--bone);
-}
-.hdr.is-scrolled {
   background: rgba(244, 244, 241, 0.92);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
+  transition:
+    background 0.4s var(--ease),
+    color 0.4s var(--ease);
+}
+/* Over a hero photograph, before the page scrolls: no ground, bone type. */
+html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) {
+  color: var(--bone);
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 /* No backdrop filter while the menu is open: a filter would turn the header into the containing
  * block of the fixed menu panel and collapse it. */
@@ -597,6 +598,10 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) {
   color: var(--bone);
   border-color: var(--ink);
 }
+html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .count {
+  background: var(--bone);
+  color: var(--ink);
+}
 html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta:hover {
   background: var(--bone);
   color: var(--ink);
@@ -658,10 +663,10 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   width: min(100%, 560px);
   z-index: 40;
   overflow: auto;
-  background: rgba(12, 12, 10, 0.6);
+  background: rgba(244, 244, 241, 0.9);
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
-  color: var(--bone);
+  color: var(--ink);
   transform: translateX(100%);
   transition: transform 0.5s var(--ease);
 }
@@ -681,7 +686,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   font-weight: 300;
   letter-spacing: -0.01em;
   line-height: 1.15;
-  color: var(--bone);
+  color: var(--ink);
   opacity: 0;
   transform: translateX(16px);
   transition:
@@ -704,7 +709,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(244, 244, 241, 0.6);
+  color: var(--dim);
   margin-bottom: 10px;
 }
 .menu-side ul {
@@ -721,14 +726,14 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   flex-wrap: wrap;
 }
 .menu .btn {
-  background: var(--bone);
-  color: var(--ink);
-  border-color: var(--bone);
+  background: var(--ink);
+  color: var(--bone);
+  border-color: var(--ink);
 }
 .menu .btn-ghost {
   background: transparent;
-  color: var(--bone);
-  border-color: rgba(244, 244, 241, 0.5);
+  color: var(--ink);
+  border-color: var(--ink);
 }
 
 /* ── Hero: a full-bleed photograph with the type on it ─────── */
@@ -1440,9 +1445,6 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   padding: 28px;
   background: var(--paper);
 }
-.panel.ink {
-  background: var(--dark);
-}
 .aside-h {
   font-size: 22px;
   font-weight: 300;
@@ -2072,7 +2074,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   }
 }
 
-/* ── Consent notice ───────────────────────────────────────── */
+/* ── Consent notice: a light card, so it reads over the hero and over the footer alike ── */
 .cons {
   position: fixed;
   left: 16px;
@@ -2080,16 +2082,14 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   z-index: 60;
   max-width: 380px;
   padding: 20px 22px;
-  background: var(--ink);
+  background: var(--paper);
   color: var(--body);
   font-size: 13px;
   line-height: 1.6;
-}
-.cons {
-  --body: #d9d9d4;
+  box-shadow: 0 24px 48px -24px rgba(12, 12, 10, 0.45);
 }
 .cons a {
-  color: var(--bone);
+  color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -2101,14 +2101,6 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 .cons-b .btn {
   min-height: 38px;
   padding: 0 14px;
-  background: var(--bone);
-  color: var(--ink);
-  border-color: var(--bone);
-}
-.cons-b .btn-ghost {
-  background: transparent;
-  color: var(--bone);
-  border-color: rgba(244, 244, 241, 0.5);
 }
 .cons-choice {
   display: flex;
@@ -2116,15 +2108,6 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   gap: 10px;
   align-items: center;
   font-size: 14px;
-}
-.cons-choice .cons-b .btn {
-  background: var(--ink);
-  color: var(--bone);
-  border-color: var(--ink);
-}
-.cons-choice .cons-b .btn-ghost {
-  background: transparent;
-  color: var(--ink);
 }
 @media (max-width: 560px) {
   .cons {

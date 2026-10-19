@@ -11,7 +11,7 @@ import type { Locale } from "@/lib/locale";
 import { servicePath } from "@/lib/paths";
 import { ui } from "@/lib/ui";
 
-/** Transparent over the hero photograph, bone once the page scrolls; the menu is a half-width panel. */
+/** Bone glass by default; transparent over a hero photograph until the page scrolls. The menu is a half-width light panel. */
 export function Header({ locale }: { locale: Locale }) {
   const t = ui(locale);
   const raw = usePathname() || "/";
@@ -93,7 +93,7 @@ export function Header({ locale }: { locale: Locale }) {
             </button>
           </div>
         </div>
-        <div id="site-menu" className="menu ink" aria-hidden={!open} inert={!open}>
+        <div id="site-menu" className="menu" aria-hidden={!open} inert={!open}>
           <div className="wrap menu-in">
             <nav className="menu-main" aria-label={t.chrome.menuNav}>
               {[{ label: t.chrome.home, href: "/" }, ...t.nav, { label: t.footer.about, href: "/about/" }, { label: t.faq.crumb, href: "/faq/" }].map((n, i) => (

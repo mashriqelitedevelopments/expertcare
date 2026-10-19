@@ -5,9 +5,10 @@
  * - every JSON-LD block parses
  * - every page has exactly one <h1>, a <title>, a meta description and a canonical
  * - every internal link resolves to an exported page
+ * - then scripts/darkscan.mjs: no dark element, type or block on a dark ground, in headless Chrome
  * Exit code is the number of failing pages, capped at 1; never mask it.
  */
-import { execSync } from "node:child_process";
+import { execSync, spawnSync } from "node:child_process";
 import { readdirSync, readFileSync, statSync, existsSync } from "node:fs";
 import { join, relative } from "node:path";
 
@@ -60,4 +61,8 @@ for (const f of pages) {
   }
 }
 console.log(`${pages.length} pages, ${failed} failing`);
-process.exit(failed ? 1 : 0);
+if (failed) process.exit(1);
+
+// Then the colour rule: no dark on dark, checked in a real browser at two widths.
+const dark = spawnSync("node", ["scripts/darkscan.mjs", dist], { stdio: "inherit" });
+process.exit(dark.status === 0 ? 0 : 1);

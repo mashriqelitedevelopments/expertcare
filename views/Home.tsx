@@ -242,7 +242,7 @@ export function Home({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="sec ink" aria-labelledby="brief-h">
+      <section className="sec sand" aria-labelledby="brief-h">
         <div className="wrap twin">
           <div className="rv">
             <h2 id="brief-h">{h.briefH}</h2>

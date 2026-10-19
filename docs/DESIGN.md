@@ -21,6 +21,7 @@ with no picture is a candidate for cutting, not for a box.
 - `<Eyebrow/>` renders nothing: headings carry sections on their own.
 
 ## Rules
+- **No dark on dark, ever.** A dark element (box, button, badge, border, type) sits on a light ground; a light element sits on a photograph or a dark section. Two dark blocks never touch (no `.ink` section directly before another or before the footer). `npm run check` runs `scripts/darkscan.mjs`, which loads every template at desktop and phone width in headless Chrome and fails on any hit.
 - Plan the image per section before the copy. Images: lib/images.ts keys, developer renders under `p/`.
 - No `.card`, `.tile`, `.rail`, `.split`, `.stone`, `.band`, `.stats`, `.market`, `.promises`, `.guide-list`, `.services`, `.service-pair`, `.chips` as pills, `.stamp` as a tag.
 - Copy rules in docs/STYLE.md apply to every string in lib/ui.ts.

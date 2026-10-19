@@ -90,7 +90,7 @@ export function Contact({ locale }: { locale: Locale }) {
           ))}
         </div>
       </section>
-      <section className="sec ink">
+      <section className="sec sand">
         <div className="wrap twin">
           <div>
             <Eyebrow n={5}>{c.briefEyebrow}</Eyebrow>
