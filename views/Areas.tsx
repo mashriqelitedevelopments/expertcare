@@ -50,7 +50,7 @@ export function Areas({ locale }: { locale: Locale }) {
               <h2 id="atlas-h">{a.atlasH}</h2>
             </div>
           </div>
-          <div className="atlas">
+          <div className="atlas stagger rv">
             {areas.map((x, i) => (
               <AtlasTile key={x.slug} a={x} locale={locale} idx={i} />
             ))}

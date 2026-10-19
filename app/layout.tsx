@@ -5,6 +5,7 @@ import { ConsentNotice } from "@/components/Consent";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Reveal } from "@/components/Reveal";
+import { WhatsApp } from "@/components/WhatsApp";
 import { orgLd, websiteLd } from "@/lib/orgLd";
 import { JsonLd } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header locale={LOCALE} />
         <main id="main">{children}</main>
         <Footer locale={LOCALE} />
+        <WhatsApp locale={LOCALE} />
         <ConsentNotice locale={LOCALE} />
         <Analytics />
         <Reveal />

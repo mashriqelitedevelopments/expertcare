@@ -85,7 +85,9 @@ export function Hero({
 export function Plate({ image, h2, lede, line, caption, locale, children, after }: { image: ImgKey; h2: string; lede?: string; line?: string; caption?: string; locale: Locale; children?: React.ReactNode; after?: React.ReactNode }) {
   return (
     <section className="plate on-photo">
-      <Pic name={image} sizes="100vw" locale={locale} />
+      <div className="plate-media" data-parallax="0.1">
+        <Pic name={image} sizes="100vw" locale={locale} />
+      </div>
       {caption && <span className="caption">{caption}</span>}
       <div className="plate-card rv">
         <h2>{h2}</h2>

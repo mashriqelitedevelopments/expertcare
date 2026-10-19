@@ -19,9 +19,18 @@ export function Header({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
   const [saved, setSaved] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let last = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      // Tucks away while reading down, returns on the first scroll up; never hidden near the top.
+      setHidden(y > 360 && y > last + 4);
+      if (y < last - 4 || y <= 360) setHidden(false);
+      last = y;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -62,7 +71,7 @@ export function Header({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <header className={["hdr", scrolled ? "is-scrolled" : "", open ? "is-open" : ""].filter(Boolean).join(" ")}>
+      <header className={["hdr", scrolled ? "is-scrolled" : "", open ? "is-open" : "", hidden && !open ? "is-hidden" : ""].filter(Boolean).join(" ")}>
         <div className="wrap hdr-in">
           <Link href={home} aria-label={t.chrome.homeAria}>
             <Logo />

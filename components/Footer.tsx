@@ -27,9 +27,17 @@ export function Footer({ locale }: { locale: Locale }) {
   return (
     <footer className="ftr ink">
       <div className="wrap">
-        <p className="ftr-line" aria-hidden="true">
-          {site.name}
-        </p>
+        <div className="marquee-line" aria-hidden="true">
+          <div className="marquee-track-line">
+            {Array.from({ length: 2 }).map((_, k) => (
+              <span key={k}>
+                {[site.name, f.mq1, f.mq2, f.mq3, f.mq4].map((w) => (
+                  <em key={w}>{w}</em>
+                ))}
+              </span>
+            ))}
+          </div>
+        </div>
         <div className="ftr-top">
           <div className="ftr-brand">
             <Link href={L("/")} aria-label={t.chrome.homeAria}>

@@ -6,6 +6,8 @@ import { Arrow } from "@/components/Icons";
 import { ListingRow } from "@/components/ListingCard";
 import { Partners } from "@/components/Partners";
 import { Pic } from "@/components/Pic";
+import { Rail } from "@/components/Rail";
+import { Story } from "@/components/Story";
 import { AtlasTile, Hero, IndexRow, Plate } from "@/components/Sections";
 import { areaName, getAreas, getGuides, getListings, getServices } from "@/lib/content";
 import { aed, num, plainText } from "@/lib/format";
@@ -59,25 +61,11 @@ export function Home({ locale }: { locale: Locale }) {
 
       <section className="sec" aria-labelledby="doors-h">
         <div className="wrap">
-          <div className="offset rv" style={{ marginBottom: "clamp(32px, 4vw, 56px)" }}>
-            <h2 id="doors-h">{h.doorsH}</h2>
-          </div>
-          <div className="doors">
-            {doors.map((x) => (
-              <Link key={x.slug} href={lp(locale, servicePath(x.slug))} className="door rv">
-                <div className="door-media">
-                  <Pic name={x.s.image} sizes="(max-width: 560px) 100vw, (max-width: 1000px) 50vw, 25vw" locale={locale} />
-                </div>
-                <div className="door-in">
-                  <h3>{x.copy.h}</h3>
-                  <p>{x.copy.p}</p>
-                  <span className="more">
-                    {x.copy.cta} <Arrow />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <Story
+            h2={h.doorsH}
+            locale={locale}
+            items={doors.map((x) => ({ key: x.slug, title: x.copy.h, text: x.copy.p, cta: x.copy.cta, href: servicePath(x.slug), image: x.s.image }))}
+          />
         </div>
       </section>
 
@@ -89,13 +77,13 @@ export function Home({ locale }: { locale: Locale }) {
               {h.allHomes} {all.length} {h.homesWord} <Arrow />
             </Link>
           </div>
-          <div className="ledger">
+          <Rail prevLabel={h.railPrev} nextLabel={h.railNext}>
             {featured.map((l, i) => (
               <div key={l.slug} className="rv">
-                <ListingRow l={l} locale={locale} priority={i === 0} sizes="(max-width: 560px) 100vw, (max-width: 1000px) 50vw, 33vw" />
+                <ListingRow l={l} locale={locale} priority={i === 0} sizes="(max-width: 600px) 84vw, (max-width: 1000px) 50vw, 33vw" />
               </div>
             ))}
-          </div>
+          </Rail>
           <div className="wrap" style={{ marginTop: "clamp(40px, 5vw, 72px)" }}>
             <Partners locale={locale} />
           </div>
@@ -135,7 +123,7 @@ export function Home({ locale }: { locale: Locale }) {
               {t.common.allAreas} <Arrow />
             </Link>
           </div>
-          <div className="atlas">
+          <div className="atlas stagger rv">
             {areas.slice(0, 6).map((a, i) => (
               <AtlasTile key={a.slug} a={a} locale={locale} idx={i} />
             ))}
@@ -206,11 +194,11 @@ export function Home({ locale }: { locale: Locale }) {
               {t.common.allGuides} <Arrow />
             </Link>
           </div>
-          <div className="ledger">
+          <div className="ledger stagger rv">
             {getGuides(locale)
               .slice(0, 3)
               .map((g) => (
-                <article key={g.slug} className="row rv">
+                <article key={g.slug} className="row">
                   <div className="row-media">
                     <Pic name={g.image} sizes="(max-width: 560px) 100vw, (max-width: 1000px) 50vw, 33vw" locale={locale} />
                   </div>

@@ -63,7 +63,7 @@ export function Guides({ locale }: { locale: Locale }) {
                     <h2 id={id}>{g.topics[topic]}</h2>
                   </div>
                 </div>
-                <div className="index">
+                <div className="index stagger rv">
                   {inTopic.map((x) => (
                     <IndexRow key={x.slug} idx={n++} title={x.title} text={x.dek} meta={`${t.common.updated} ${x.updated}`} href={`/guides/${x.slug}/`} image={x.image} locale={locale} />
                   ))}
@@ -81,7 +81,7 @@ export function Guides({ locale }: { locale: Locale }) {
                 {t.home.allFaq} <Arrow />
               </Link>
             </div>
-            <div className="index">
+            <div className="index stagger rv">
               {g.tools.map((x) => (
                 <IndexRow key={x.slug} idx={n++} title={x.title} text={x.dek} meta={x.cta} href={x.href} image={x.image as ImgKey} locale={locale} />
               ))}

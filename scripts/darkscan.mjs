@@ -135,7 +135,7 @@ try {
     const { sessionId } = await send("Target.attachToTarget", { targetId, flatten: true });
     await send("Page.enable", {}, sessionId);
     // Consent unanswered on purpose: the notice is part of what must be checked. Reveal animations off.
-    await send("Page.addScriptToEvaluateOnNewDocument", { source: "try{localStorage.removeItem('ec-consent')}catch{};document.addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='.js .rv{opacity:1!important;transform:none!important}';document.head.appendChild(s)})" }, sessionId);
+    await send("Page.addScriptToEvaluateOnNewDocument", { source: "try{localStorage.removeItem('ec-consent')}catch{};document.addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='.js .rv,.js .stagger>*,.story-step,.js .rv .row-media,.js .rv .thumb,.js .rv .atlas-media,.js .rv .door-media,.js .rv .story-step-media{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}.js .hero-media img,.js .hero-copy>div>*,.js .hero-copy>.ticket,.js .hero-copy>.note,.js .hero-copy>.chips,.js .hero-copy>.contact-list{animation:none!important;opacity:1!important}';document.head.appendChild(s)})" }, sessionId);
     await send("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile }, sessionId);
     for (const route of ROUTES) {
       await send("Page.navigate", { url: `http://127.0.0.1:${PORT}${route}` }, sessionId);

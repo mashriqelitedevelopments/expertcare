@@ -497,7 +497,11 @@ h4 {
   backdrop-filter: blur(14px);
   transition:
     background 0.4s var(--ease),
-    color 0.4s var(--ease);
+    color 0.4s var(--ease),
+    transform 0.5s var(--ease);
+}
+.hdr.is-hidden {
+  transform: translateY(-100%);
 }
 /* Over a hero photograph, before the page scrolls: no ground, bone type. */
 html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) {
@@ -759,6 +763,45 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.js .hero-media img {
+  animation: settle 2.6s var(--ease) both;
+}
+@keyframes settle {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: none;
+  }
+}
+.js .hero-copy > div > * {
+  animation: rise 0.9s var(--ease) both;
+}
+.js .hero-copy > div > :nth-child(2) {
+  animation-delay: 0.12s;
+}
+.js .hero-copy > div > :nth-child(3) {
+  animation-delay: 0.24s;
+}
+.js .hero-copy > div > :nth-child(n + 4) {
+  animation-delay: 0.34s;
+}
+.js .hero-copy > .ticket,
+.js .hero-copy > .contact-list,
+.js .hero-copy > .chips,
+.js .hero-copy > .note {
+  animation: rise 0.9s var(--ease) 0.45s both;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 .hero::before {
   content: "";
@@ -1229,8 +1272,13 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   color: var(--bone);
   overflow: hidden;
 }
-.plate > picture,
-.plate > picture img {
+.plate-media {
+  position: absolute;
+  inset: -12% 0;
+  will-change: transform;
+}
+.plate-media picture,
+.plate-media img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -2285,7 +2333,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   text-transform: uppercase;
 }
 
-/* ── Reveal: fade up, and photographs settle from a slight zoom ── */
+/* ── Motion: sections fade up, photographs clip in and settle, lists follow one another ── */
 .js .rv {
   opacity: 0;
   transform: translateY(18px);
@@ -2297,6 +2345,21 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   opacity: 1;
   transform: none;
 }
+.js .rv .row-media,
+.js .rv .thumb,
+.js .rv .atlas-media,
+.js .rv .door-media,
+.js .rv .story-step-media {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.1s var(--ease);
+}
+.js .rv.in .row-media,
+.js .rv.in .thumb,
+.js .rv.in .atlas-media,
+.js .rv.in .door-media,
+.js .rv.in .story-step-media {
+  clip-path: inset(0);
+}
 .js .rv img {
   transform: scale(1.06);
   transition: transform 1.6s var(--ease);
@@ -2304,15 +2367,308 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 .js .rv.in img {
   transform: none;
 }
+.js .stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.8s var(--ease),
+    transform 0.8s var(--ease);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.js .stagger.in > * {
+  opacity: 1;
+  transform: none;
+}
 @media (prefers-reduced-motion: reduce) {
   .js .rv,
-  .js .rv img {
+  .js .rv img,
+  .js .stagger > *,
+  .js .rv .row-media,
+  .js .rv .thumb,
+  .js .rv .atlas-media,
+  .js .rv .door-media,
+  .js .rv .story-step-media,
+  .js .hero-media img,
+  .js .hero-copy > div > *,
+  .js .hero-copy > .ticket {
     opacity: 1;
     transform: none;
+    clip-path: none;
     transition: none;
+    animation: none;
+  }
+  .hdr.is-hidden {
+    transform: none;
+  }
+  .marquee-track-line {
+    animation: none;
   }
 }
 
+/* ── Story: chapters on the left, one photograph that changes on the right ── */
+.story {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(32px, 6vw, 120px);
+  align-items: start;
+}
+.story-copy h2 {
+  margin-bottom: clamp(24px, 4vw, 56px);
+  max-width: 14ch;
+}
+.story-step {
+  padding: clamp(28px, 4vw, 56px) 0;
+  border-top: 1px solid var(--line);
+  transition: opacity 0.5s var(--ease);
+}
+.story-step h3 {
+  font-size: clamp(26px, 2.6vw, 38px);
+  font-weight: 300;
+  color: var(--ink);
+}
+.story-step p {
+  margin-top: 12px;
+  max-width: 40ch;
+  color: var(--body);
+}
+.story-step .more {
+  margin-top: 18px;
+}
+.story-step .row-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.story-step {
+  position: relative;
+}
+.story-step-media {
+  display: none;
+}
+.story-media {
+  position: sticky;
+  top: calc(var(--hdr) + 24px);
+}
+.story-frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  max-height: calc(100vh - var(--hdr) - 48px);
+  overflow: hidden;
+  background: var(--mist);
+}
+.story-img,
+.story-img picture,
+.story-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.story-img {
+  opacity: 0;
+  transform: scale(1.04);
+  transition:
+    opacity 0.9s var(--ease),
+    transform 1.4s var(--ease);
+}
+.story-img.is-active {
+  opacity: 1;
+  transform: none;
+}
+@media (min-width: 901px) {
+  .story-step:not(.is-active) {
+    opacity: 0.55;
+  }
+  .js .story-step.rv:not(.in) {
+    opacity: 0;
+  }
+}
+@media (max-width: 900px) {
+  .story {
+    grid-template-columns: 1fr;
+  }
+  .story-media {
+    display: none;
+  }
+  .story-step-media {
+    display: block;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    margin-bottom: 18px;
+    background: var(--mist);
+  }
+  .story-step-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .story-step {
+    border-top: 0;
+    padding: 0 0 48px;
+  }
+}
+
+/* ── Rail: a horizontal, snapping row of photographs ─────── */
+.rail-wrap {
+  position: relative;
+}
+.rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 48px) / 3);
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}
+.rail > * {
+  scroll-snap-align: start;
+}
+.rail-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+}
+.rail-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    opacity 0.3s;
+}
+.rail-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.rail-btn .flip {
+  display: inline-flex;
+  transform: scaleX(-1);
+}
+.rail-btn:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--bone);
+}
+.rail-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+@media (max-width: 1000px) {
+  .rail {
+    grid-auto-columns: calc((100% - 24px) / 2);
+  }
+}
+@media (max-width: 600px) {
+  .rail {
+    grid-auto-columns: 84%;
+  }
+}
+
+/* ── WhatsApp ─────────────────────────────────────────────── */
+.wa {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 55;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 18px 0 14px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 18px 40px -18px rgba(12, 12, 10, 0.5);
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s;
+}
+.wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 44px -18px rgba(12, 12, 10, 0.55);
+}
+.wa svg {
+  width: 24px;
+  height: 24px;
+}
+@media (max-width: 560px) {
+  .wa {
+    width: 52px;
+    padding: 0;
+    justify-content: center;
+  }
+  .wa span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+}
+.cons {
+  left: 16px;
+  right: auto;
+  max-width: min(380px, calc(100% - 100px));
+}
+
+/* ── Footer marquee ───────────────────────────────────────── */
+.marquee-line {
+  overflow: hidden;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--line);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track-line {
+  display: flex;
+  width: max-content;
+  animation: marquee 48s linear infinite;
+}
+.marquee-track-line > span {
+  display: flex;
+  flex-shrink: 0;
+}
+.marquee-track-line em {
+  font-style: normal;
+  font-weight: 300;
+  font-size: clamp(44px, 7vw, 110px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--bone);
+  padding-right: clamp(32px, 4vw, 72px);
+  white-space: nowrap;
+}
+.marquee-track-line em::after {
+  content: "·";
+  margin-left: clamp(32px, 4vw, 72px);
+  color: var(--dim);
+}
+.marquee-line:hover .marquee-track-line {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Blocks that sit on the page regardless of the section around them ── */
 /* A white panel inside a dark section is a light surface again. */
 .ink .panel:not(.ink) {
   --body: #2a2a27;
@@ -2343,14 +2699,6 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 .ink .panel:not(.ink) .more {
   color: var(--ink);
   border-color: var(--line-2);
-}
-
-/* Inner-page heroes carry bright photographs more often: a fuller wash so the type always reads. */
-.hero-sm::before {
-  background:
-    linear-gradient(to bottom, rgba(var(--scrim), 0.4), rgba(var(--scrim), 0) 160px),
-    linear-gradient(to right, rgba(var(--scrim), 0.66), rgba(var(--scrim), 0.4) 50%, rgba(var(--scrim), 0.1)),
-    linear-gradient(to top, rgba(var(--scrim), 0.88), rgba(var(--scrim), 0.56) 55%, rgba(var(--scrim), 0.38));
 }
 
 /* The fee line under a service hero: a short light card with ink type, readable on any photograph. */

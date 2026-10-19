@@ -74,7 +74,7 @@ export function Services({ locale }: { locale: Locale }) {
               {t.chrome.adviser} <Arrow />
             </Link>
           </div>
-          <div className="index">
+          <div className="index stagger rv">
             {services.map((x, i) => (
               <ServiceRow key={x.slug} s={x} locale={locale} idx={i} />
             ))}
