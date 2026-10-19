@@ -9,7 +9,8 @@ NEXT_DIST_DIR=.next-deploy npx next build
 WORK=$(mktemp -d)
 git worktree add --detach "$WORK" >/dev/null 2>&1 || { rm -rf "$WORK"; exit 1; }
 cd "$WORK"
-git checkout -q --orphan hostinger
+TMP="hostinger-build-$$"
+git checkout -q --orphan "$TMP"
 git rm -rfq . >/dev/null 2>&1 || true
 rsync -a --exclude 'index.txt' "$ROOT/.next-deploy/" ./
 cat > .htaccess <<'HT'
@@ -37,8 +38,9 @@ AddType font/woff2 .woff2
 HT
 git add -A
 git -c user.name="ExpertCare deploy" -c user.email="deploy@expertcare.local" commit -qm "Static export of main $(git -C "$ROOT" rev-parse --short HEAD), built $(date -u +%Y-%m-%dT%H:%MZ)"
-git push -f origin hostinger
+git push -f origin "HEAD:hostinger"
 cd "$ROOT"
 git worktree remove --force "$WORK"
+git branch -D "$TMP" >/dev/null 2>&1 || true
 rm -rf .next-deploy
 echo "hostinger branch updated"
