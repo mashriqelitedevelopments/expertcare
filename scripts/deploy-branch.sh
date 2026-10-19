@@ -5,14 +5,21 @@
 set -e
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 cd "$ROOT"
-NEXT_DIST_DIR=.next-deploy npx next build
+# EXPORT_DIR=<dir> publishes an export built elsewhere (for example in a copy of the repo, which
+# keeps a running dev server's .next untouched); otherwise the site is built here.
+if [ -n "$EXPORT_DIR" ]; then
+  SRC="$EXPORT_DIR"
+else
+  NEXT_DIST_DIR=.next-deploy npx next build
+  SRC="$ROOT/.next-deploy"
+fi
 WORK=$(mktemp -d)
 git worktree add --detach "$WORK" >/dev/null 2>&1 || { rm -rf "$WORK"; exit 1; }
 cd "$WORK"
 TMP="hostinger-build-$$"
 git checkout -q --orphan "$TMP"
 git rm -rfq . >/dev/null 2>&1 || true
-rsync -a --exclude 'index.txt' "$ROOT/.next-deploy/" ./
+rsync -a --exclude 'index.txt' "$SRC/" ./
 cat > .htaccess <<'HT'
 # Static Next.js export on Apache: pretty URLs resolve to their folder, 404 is the exported page.
 Options -Indexes
@@ -42,5 +49,5 @@ git push -f origin "HEAD:hostinger"
 cd "$ROOT"
 git worktree remove --force "$WORK"
 git branch -D "$TMP" >/dev/null 2>&1 || true
-rm -rf .next-deploy
+rm -rf "$ROOT/.next-deploy"
 echo "hostinger branch updated"

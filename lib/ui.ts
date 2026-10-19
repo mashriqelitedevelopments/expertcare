@@ -476,7 +476,7 @@ const EN = {
     marketEyebrow: "The numbers",
     marketH: "What Dubai homes sell for",
     marketLede: "Median prices by area, calculated from the Dubai Land Department's open transaction records.",
-    marketLine: "Across Dubai: {psf} per sq ft over the last twelve months, {change} on the year before, from {sales} residential sales.",
+    marketLine: "Dubai, last twelve months: {psf} per sq ft, {change} on the year before, {sales} residential sales.",
     marketCaption: "DLD residential sales, last four quarters",
     marketColArea: "Area",
     marketColPsf: "Median AED/sq ft",

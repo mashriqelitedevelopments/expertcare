@@ -767,7 +767,8 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   z-index: 1;
   background:
     linear-gradient(to bottom, rgba(var(--scrim), 0.35), rgba(var(--scrim), 0) 150px),
-    linear-gradient(to top, rgba(var(--scrim), 0.84), rgba(var(--scrim), 0.4) 50%, rgba(var(--scrim), 0.22));
+    linear-gradient(to right, rgba(var(--scrim), 0.62), rgba(var(--scrim), 0.34) 46%, rgba(var(--scrim), 0.08)),
+    linear-gradient(to top, rgba(var(--scrim), 0.86), rgba(var(--scrim), 0.5) 50%, rgba(var(--scrim), 0.26));
   pointer-events: none;
 }
 .hero-copy {
@@ -803,12 +804,17 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 .hero .byline {
   margin-top: 18px;
 }
-.hero-media .caption {
+.hero-media .caption,
+.plate .caption {
   position: absolute;
   right: var(--gut);
-  bottom: 24px;
   z-index: 2;
-  color: rgba(244, 244, 241, 0.7);
+  padding: 5px 9px;
+  background: rgba(244, 244, 241, 0.88);
+  color: var(--ink);
+}
+.hero-media .caption {
+  bottom: 24px;
 }
 .hero .contact-list {
   color: var(--bone);
@@ -826,17 +832,27 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   .hero {
     min-height: 92svh;
   }
+  /* On a phone the copy fills the width and sits mid-frame, so the wash is even and deeper. */
+  .hero::before,
+  .hero-sm::before {
+    background:
+      linear-gradient(to bottom, rgba(var(--scrim), 0.45), rgba(var(--scrim), 0.3) 120px),
+      linear-gradient(to top, rgba(var(--scrim), 0.92), rgba(var(--scrim), 0.74) 50%, rgba(var(--scrim), 0.5));
+  }
 }
 
-/* Search: a quiet row of underlined fields on the hero. */
+/* Search: a light glass panel on the hero, so its fields never depend on what the photograph does. */
 .ticket {
   display: grid;
   grid-template-columns: auto repeat(4, minmax(0, 1fr)) auto;
-  gap: 0 28px;
+  gap: 0 26px;
   align-items: end;
   max-width: 1180px;
-  padding: 18px 0 0;
-  border-top: 1px solid rgba(244, 244, 241, 0.3);
+  padding: 20px 24px 24px;
+  background: rgba(244, 244, 241, 0.94);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  color: var(--ink);
 }
 .ticket-head {
   display: contents;
@@ -851,10 +867,10 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   display: grid;
   gap: 6px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(244, 244, 241, 0.4);
+  border-bottom: 1px solid var(--line-2);
 }
 .ticket .field label {
-  color: rgba(244, 244, 241, 0.65);
+  color: var(--dim);
 }
 .ticket select,
 .ticket input {
@@ -863,24 +879,38 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   background: transparent;
   padding: 0;
   font-size: 15px;
-  color: var(--bone);
+  color: var(--ink);
   appearance: none;
   -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23f4f4f1' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-image: var(--chev);
   background-repeat: no-repeat;
   background-position: right 2px center;
+  padding-right: 20px;
+}
+.ticket input {
+  background-image: none;
 }
 .ticket select option {
   color: var(--ink);
 }
+.on-photo .ticket .btn,
 .ticket .btn {
   min-height: 46px;
   margin-bottom: 4px;
+  background: var(--ink);
+  color: var(--bone);
+  border-color: var(--ink);
+}
+.on-photo .ticket .btn:hover,
+.ticket .btn:hover {
+  background: transparent;
+  color: var(--ink);
 }
 .seg {
   display: flex;
   gap: 18px;
   padding-bottom: 12px;
+  color: var(--ink);
 }
 .seg label,
 .seg button {
@@ -895,7 +925,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: inherit;
-  opacity: 0.6;
+  opacity: 0.55;
   border-bottom: 1px solid transparent;
 }
 .seg input {
@@ -913,6 +943,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   .ticket {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px 20px;
+    padding: 16px 18px 18px;
   }
   .seg,
   .ticket .btn {
@@ -924,23 +955,13 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px 28px;
   max-width: none;
-  border-top: 0;
-  padding-top: 0;
-}
-.ticket.wide .field {
-  border-color: var(--line-2);
-}
-.ticket.wide .field label {
-  color: var(--dim);
-}
-.ticket.wide select,
-.ticket.wide input {
-  color: var(--ink);
-  background-image: var(--chev);
+  padding: 0;
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 .ticket.wide .seg {
   grid-column: 1 / -1;
-  color: var(--ink);
 }
 @media (max-width: 800px) {
   .ticket.wide {
@@ -948,24 +969,25 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   }
 }
 
-/* ── Doors: photographs with the service name on them ─────── */
+/* ── Doors: a photograph each, the words beneath it on the page ground ── */
 .doors {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 6px;
+  gap: 40px 24px;
 }
 .door {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  color: var(--ink);
+}
+.door-media {
   position: relative;
-  display: block;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  color: var(--bone);
+  background: var(--mist);
 }
-.door-media,
 .door-media picture,
 .door-media img {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -977,31 +999,24 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   transform: scale(1.05);
 }
 .door-in {
-  position: absolute;
-  inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  gap: 10px;
-  padding: 28px;
-  background: linear-gradient(to top, rgba(var(--scrim), 0.72), rgba(var(--scrim), 0.1) 55%, rgba(var(--scrim), 0));
+  gap: 8px;
+  padding-top: 20px;
 }
 .door-in h3 {
-  color: var(--bone);
-  font-size: clamp(24px, 2.2vw, 32px);
+  font-size: clamp(22px, 2vw, 28px);
   font-weight: 300;
 }
 .door-in p {
-  color: rgba(244, 244, 241, 0.85);
-  font-size: 14px;
-  line-height: 1.55;
+  color: var(--body);
+  font-size: 14.5px;
+  line-height: 1.6;
   max-width: 30ch;
 }
 .door-in .more {
-  color: var(--bone);
-  border-color: rgba(244, 244, 241, 0.5);
   align-self: flex-start;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 @media (max-width: 1000px) {
   .doors {
@@ -1012,7 +1027,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   .doors {
     grid-template-columns: 1fr;
   }
-  .door {
+  .door-media {
     aspect-ratio: 4 / 3;
   }
 }
@@ -1143,24 +1158,25 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   }
 }
 
-/* ── Atlas: areas as photographs with the name on them ────── */
+/* ── Atlas: a photograph for each area, the name and a line beneath it ── */
 .atlas {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 6px;
+  gap: 40px 24px;
 }
 .atlas > a {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  color: var(--ink);
+}
+.atlas-media {
   position: relative;
-  display: block;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  color: var(--bone);
+  background: var(--mist);
 }
-.atlas-media,
 .atlas-media picture,
 .atlas-media img {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1172,31 +1188,23 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   transform: scale(1.05);
 }
 .atlas-in {
-  position: absolute;
-  inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   gap: 6px;
-  padding: 24px;
-  background: linear-gradient(to top, rgba(var(--scrim), 0.7), rgba(var(--scrim), 0.05) 55%, rgba(var(--scrim), 0));
+  padding-top: 18px;
 }
 .atlas-in h3 {
-  color: var(--bone);
-  font-size: clamp(22px, 2vw, 28px);
+  font-size: clamp(22px, 1.9vw, 27px);
   font-weight: 300;
 }
 .atlas-in .m {
-  color: rgba(244, 244, 241, 0.7);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  color: var(--dim);
 }
 .atlas-in p {
-  color: rgba(244, 244, 241, 0.85);
-  font-size: 14px;
-  line-height: 1.5;
-  max-width: 34ch;
+  color: var(--body);
+  font-size: 14.5px;
+  line-height: 1.55;
+  max-width: 36ch;
 }
 .atlas-in .idx {
   display: none;
@@ -1234,7 +1242,9 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(to top, rgba(var(--scrim), 0.7), rgba(var(--scrim), 0.1) 58%, rgba(var(--scrim), 0));
+  background:
+    linear-gradient(to right, rgba(var(--scrim), 0.72), rgba(var(--scrim), 0.42) 48%, rgba(var(--scrim), 0.08)),
+    linear-gradient(to top, rgba(var(--scrim), 0.7), rgba(var(--scrim), 0.15) 58%, rgba(var(--scrim), 0));
 }
 .plate-card {
   position: relative;
@@ -1276,11 +1286,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   color: var(--ink);
 }
 .plate .caption {
-  position: absolute;
-  right: var(--gut);
   top: 24px;
-  z-index: 2;
-  color: rgba(244, 244, 241, 0.7);
 }
 
 /* ── Index: image and text, with space, no rules ──────────── */
@@ -2343,14 +2349,57 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 .hero-sm::before {
   background:
     linear-gradient(to bottom, rgba(var(--scrim), 0.4), rgba(var(--scrim), 0) 160px),
-    linear-gradient(to top, rgba(var(--scrim), 0.86), rgba(var(--scrim), 0.5) 55%, rgba(var(--scrim), 0.34));
+    linear-gradient(to right, rgba(var(--scrim), 0.66), rgba(var(--scrim), 0.4) 50%, rgba(var(--scrim), 0.1)),
+    linear-gradient(to top, rgba(var(--scrim), 0.88), rgba(var(--scrim), 0.56) 55%, rgba(var(--scrim), 0.38));
 }
 
-/* The fee line under a service hero: a short quiet band, not a full-width strip. */
+/* The fee line under a service hero: a short light card with ink type, readable on any photograph. */
 .hero .note {
   max-width: 560px;
   padding: 14px 18px;
+  background: rgba(244, 244, 241, 0.92);
   font-size: 13.5px;
   line-height: 1.6;
-  color: rgba(244, 244, 241, 0.9);
+  color: var(--body);
+}
+.hero .note a {
+  color: var(--ink);
+}
+
+/* A short list of figures inside a plate: two columns, hairlines, tabular numerals. */
+.plate-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 32px;
+  margin-top: 28px;
+  max-width: 520px;
+}
+.plate-list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 0;
+  border-top: 1px solid rgba(244, 244, 241, 0.28);
+  font-size: 14px;
+}
+.plate-list dt {
+  color: rgba(244, 244, 241, 0.85);
+}
+.plate-list dd {
+  color: var(--bone);
+  font-variant-numeric: tabular-nums;
+}
+.plate-list a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.plate-card .figline {
+  margin-top: 14px;
+  font-size: 14px;
+  color: rgba(244, 244, 241, 0.85);
+}
+@media (max-width: 560px) {
+  .plate-list {
+    grid-template-columns: 1fr;
+  }
 }

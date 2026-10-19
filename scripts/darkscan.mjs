@@ -5,7 +5,9 @@
  *  - a dark background or dark border must sit on a light ground: the ground is whatever paints
  *    beneath the element's centre once the element itself is hidden (so fixed notices, badges and
  *    buttons over heroes, plates and dark sections are caught, not just nested ones);
- *  - dark type must sit on a light ground;
+ *  - dark type must sit on a light ground, and light type over a photograph must sit on a dark
+ *    enough part of it: the composited pixels under each light text block are sampled from a
+ *    screenshot of the same scroll position (threshold: mean luminance 0.32, about 2.6:1 for bone);
  *  - two dark blocks may not touch: no dark section directly before another dark section or
  *    before the footer.
  * Photographs count as dark ground (type and chrome over them must be light).
@@ -42,7 +44,7 @@ const SCAN = String.raw`(() => {
     return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
   const DARK = 0.2;
   const name = (el) => el.tagName.toLowerCase() + (el.className && typeof el.className === "string" ? "." + el.className.trim().split(/\s+/).slice(0, 3).join(".") : "");
-  const isPhoto = (el) => el.matches("img, picture, video") || el.matches(".hero, .plate, .door, .atlas > a, .hero-media, .door-media, .atlas-media");
+  const isPhoto = (el) => el.matches("img, picture, video") || el.matches(".hero, .plate, .hero-media, .door-media, .atlas-media");
   const groundOf = (el) => { // what paints beneath the element at its centre (overlays above it are not ground)
     const r = el.getBoundingClientRect(); const cx = Math.min(innerWidth - 1, Math.max(0, r.left + r.width / 2)); const cy = Math.min(innerHeight - 1, Math.max(0, r.top + r.height / 2));
     const stack = document.elementsFromPoint(cx, cy); let i = stack.indexOf(el); if (i < 0) i = stack.findIndex((g) => el.contains(g));
@@ -74,6 +76,37 @@ const SCAN = String.raw`(() => {
   const darkBlock = (b) => { const l = lum(getComputedStyle(b).backgroundColor); return l !== null && l < DARK; };
   for (let i = 1; i < blocks.length; i++) if (darkBlock(blocks[i - 1]) && darkBlock(blocks[i])) out.add("dark block " + name(blocks[i - 1]) + " touches dark block " + name(blocks[i]));
   return [...out];
+})()`;
+
+// Light type over photographs: sample the screenshot beneath each on-screen light text block.
+const SAMPLE = (dataUrl) => String.raw`(async () => {
+  const lum = (c) => { const m = (c || "").match(/rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)/); if (!m) return null;
+    const a = m[4] === undefined ? 1 : +m[4]; if (a < 0.45) return null;
+    const [r, g, b] = [+m[1], +m[2], +m[3]].map((v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+  const name = (el) => el.tagName.toLowerCase() + (el.className && typeof el.className === "string" ? "." + el.className.trim().split(/\s+/).slice(0, 3).join(".") : "");
+  const img = new Image(); img.src = ${JSON.stringify(dataUrl)}; await img.decode();
+  const c = document.createElement("canvas"); c.width = img.naturalWidth; c.height = img.naturalHeight; const g = c.getContext("2d", { willReadFrequently: true }); g.drawImage(img, 0, 0);
+  const sx = img.naturalWidth / innerWidth, sy = img.naturalHeight / innerHeight;
+  const overlays = [...document.querySelectorAll(".cons, .mbar, .hdr")].filter((o) => { const cs = getComputedStyle(o); return cs.display !== "none" && lum(cs.backgroundColor) !== null; }).map((o) => o.getBoundingClientRect());
+  const out = [];
+  for (const el of document.querySelectorAll(".hero *, .plate *, .door-media *, .atlas-media *")) {
+    if (el.closest("nextjs-portal, script, style, svg, .ticket, .panel, .cons")) continue;
+    const hasText = [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()); if (!hasText) continue;
+    const cs = getComputedStyle(el); if (cs.display === "none" || cs.visibility === "hidden" || +cs.opacity === 0) continue;
+    const col = lum(cs.color); if (col === null || col < 0.6) continue; // light type only
+    const r = el.getBoundingClientRect(); if (r.width < 8 || r.height < 8 || r.bottom < 0 || r.top > innerHeight || r.right < 0 || r.left > innerWidth) continue;
+    // under a fixed overlay (the consent card, the scrolled header, the mobile bar) the pixels are the overlay's, not the photograph's
+    if (overlays.some((o) => r.left < o.right && r.right > o.left && r.top < o.bottom && r.bottom > o.top)) continue;
+    const x0 = Math.max(0, Math.round(r.left * sx)), y0 = Math.max(0, Math.round(r.top * sy)), x1 = Math.min(c.width, Math.round(r.right * sx)), y1 = Math.min(c.height, Math.round(r.bottom * sy));
+    if (x1 - x0 < 4 || y1 - y0 < 4) continue;
+    // the text itself is light, so sample the darker half of the pixels: that is the ground between the glyphs
+    const d = g.getImageData(x0, y0, x1 - x0, y1 - y0).data; const ls = [];
+    for (let i = 0; i < d.length; i += 16) { const r1 = d[i] / 255, g1 = d[i + 1] / 255, b1 = d[i + 2] / 255; ls.push(0.2126 * r1 + 0.7152 * g1 + 0.0722 * b1); }
+    ls.sort((a, b) => a - b); const ground = ls.slice(0, Math.max(1, Math.floor(ls.length * 0.5))); const mean = ground.reduce((a, b) => a + b, 0) / ground.length;
+    if (mean > 0.32) out.push("light text " + JSON.stringify(el.textContent.trim().slice(0, 28)) + " on a bright photo area (ground " + mean.toFixed(2) + ") in " + name(el.closest(".hero, .plate, .door-media, .atlas-media")));
+  }
+  return out;
 })()`;
 
 const server = createServer((req, res) => {
@@ -113,6 +146,9 @@ try {
         await send("Runtime.evaluate", { expression: `window.scrollTo(0, ${y})` }, sessionId); await sleep(450);
         const { result } = await send("Runtime.evaluate", { expression: SCAN, returnByValue: true }, sessionId);
         for (const h of result.value || []) found.add(h);
+        const shot = await send("Page.captureScreenshot", { format: "jpeg", quality: 70 }, sessionId);
+        const sampled = await send("Runtime.evaluate", { expression: SAMPLE(`data:image/jpeg;base64,${shot.data}`), awaitPromise: true, returnByValue: true }, sessionId);
+        for (const h of sampled.result.value || []) found.add(h);
       }
       // the open menu, at phone width where it is the navigation
       if (mobile) {

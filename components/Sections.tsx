@@ -82,7 +82,7 @@ export function Hero({
 }
 
 /** A full-bleed photograph with a bone card sitting on its lower edge. */
-export function Plate({ image, h2, lede, caption, locale, children }: { image: ImgKey; h2: string; lede?: string; caption?: string; locale: Locale; children?: React.ReactNode }) {
+export function Plate({ image, h2, lede, line, caption, locale, children, after }: { image: ImgKey; h2: string; lede?: string; line?: string; caption?: string; locale: Locale; children?: React.ReactNode; after?: React.ReactNode }) {
   return (
     <section className="plate on-photo">
       <Pic name={image} sizes="100vw" locale={locale} />
@@ -90,7 +90,9 @@ export function Plate({ image, h2, lede, caption, locale, children }: { image: I
       <div className="plate-card rv">
         <h2>{h2}</h2>
         {lede && <p>{lede}</p>}
+        {line && <p className="figline">{line}</p>}
         {children && <div className="btns">{children}</div>}
+        {after}
       </div>
     </section>
   );

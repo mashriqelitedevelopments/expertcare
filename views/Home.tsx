@@ -102,17 +102,29 @@ export function Home({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <Plate image="area-downtown-dubai" h2={h.marketH} lede={`${h.marketLede} ${h.marketLine.replace("{psf}", aed(d.medianPsf ?? 0, locale)).replace("{change}", d.changePct != null ? signedPct(d.changePct) : "").replace("{sales}", num(d.sales))}`} caption="Downtown Dubai" locale={locale}>
+      <Plate
+        image="area-downtown-dubai"
+        h2={h.marketH}
+        lede={h.marketLede}
+        line={h.marketLine.replace("{psf}", aed(d.medianPsf ?? 0, locale)).replace("{change}", d.changePct != null ? signedPct(d.changePct) : "").replace("{sales}", num(d.sales))}
+        caption="Downtown Dubai"
+        locale={locale}
+        after={
+          <dl className="plate-list">
+            {top.map(([slug, a]) => (
+              <div key={slug}>
+                <dt>
+                  <Link href={lp(locale, `/dubai-property-prices/${slug}/`)}>{areaName(locale, slug)}</Link>
+                </dt>
+                <dd>{aed(a.last12.medianPsf ?? 0, locale)}</dd>
+              </div>
+            ))}
+          </dl>
+        }
+      >
         <Link href={lp(locale, "/dubai-property-prices/")} className="btn">
           {h.marketCta}
         </Link>
-        <span className="chips" style={{ gap: "6px 18px" }}>
-          {top.map(([slug, a]) => (
-            <Link key={slug} href={lp(locale, `/dubai-property-prices/${slug}/`)}>
-              {areaName(locale, slug)} {aed(a.last12.medianPsf ?? 0, locale)}
-            </Link>
-          ))}
-        </span>
       </Plate>
 
       <section className="sec" aria-labelledby="areas-h">
