@@ -11,7 +11,7 @@ import type { Locale } from "@/lib/locale";
 import { servicePath } from "@/lib/paths";
 import { ui } from "@/lib/ui";
 
-/** Bone glass by default; transparent over a hero photograph until the page scrolls. The menu is a half-width light panel. */
+/** Always in view: blurred glass that turns dark over photographs and dark sections, light over the page ground. The menu is a half-width light panel. */
 export function Header({ locale }: { locale: Locale }) {
   const t = ui(locale);
   const raw = usePathname() || "/";
@@ -19,40 +19,57 @@ export function Header({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
   const [saved, setSaved] = useState(0);
   const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
+  const [dark, setDark] = useState(false);
 
+  // The header is always in view; its glass follows what sits beneath it: dark over photographs
+  // and dark sections, light over the page ground.
   useEffect(() => {
-    let last = window.scrollY;
-    const onScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 24);
-      // Tucks away while reading down, returns on the first scroll up; never hidden near the top.
-      setHidden(y > 360 && y > last + 4);
-      if (y < last - 4 || y <= 360) setHidden(false);
-      last = y;
+    const lum = (c: string) => {
+      const m = c.match(/rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)/);
+      if (!m) return null;
+      const a = m[4] === undefined ? 1 : +m[4];
+      if (a < 0.4) return null;
+      const [r, g, b] = [+m[1], +m[2], +m[3]].map((v) => {
+        v /= 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+      });
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
     };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
+    let pending = false;
     const read = () => {
-      try {
-        const v = JSON.parse(localStorage.getItem("ec-shortlist") || "[]");
-        setSaved(Array.isArray(v) ? v.length : 0);
-      } catch {
-        setSaved(0);
+      pending = false;
+      setScrolled(window.scrollY > 24);
+      const y = 76 + 6;
+      const stack = document.elementsFromPoint(window.innerWidth / 2, y);
+      let isDark = false;
+      for (const el of stack) {
+        if (el.closest(".hdr, nextjs-portal, .cons, .wa")) continue;
+        if (el.matches("img, picture, video") || el.closest(".hero, .plate, .door-media, .atlas-media, .story-media, .tile-media")) {
+          isDark = true;
+          break;
+        }
+        const l = lum(getComputedStyle(el).backgroundColor);
+        if (l !== null) {
+          isDark = l < 0.2;
+          break;
+        }
       }
+      setDark(isDark);
+    };
+    const onScroll = () => {
+      if (pending) return;
+      pending = true;
+      requestAnimationFrame(read);
+      setTimeout(read, 80);
     };
     read();
-    window.addEventListener("ec-shortlist", read);
-    window.addEventListener("storage", read);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
     return () => {
-      window.removeEventListener("ec-shortlist", read);
-      window.removeEventListener("storage", read);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
     };
-  }, []);
+  }, [raw]);
 
   useEffect(() => setOpen(false), [raw]);
 
@@ -71,7 +88,7 @@ export function Header({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <header className={["hdr", scrolled ? "is-scrolled" : "", open ? "is-open" : "", hidden && !open ? "is-hidden" : ""].filter(Boolean).join(" ")}>
+      <header className={["hdr", scrolled ? "is-scrolled" : "", open ? "is-open" : "", dark && !open ? "is-dark" : ""].filter(Boolean).join(" ")}>
         <div className="wrap hdr-in">
           <Link href={home} aria-label={t.chrome.homeAria}>
             <Logo />

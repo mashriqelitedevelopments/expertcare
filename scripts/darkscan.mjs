@@ -65,6 +65,7 @@ const SCAN = String.raw`(() => {
     const hasText = [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim());
     const col = hasText ? lum(cs.color) : null; const darkText = col !== null && col < DARK;
     if (!darkBg && !darkBorder && !darkText) continue;
+    if (el.matches(".hdr")) continue; // blurred glass, light or dark to match what it covers
     if (darkBg || darkBorder) { const g = groundOf(el); if (g.dark) out.add((darkBg ? "dark background " : "dark border ") + name(el) + " on " + g.name); }
     if (darkText && !darkBg) { // the text's own ground: nearest painted ancestor or photo
       let p = el, found = null; while (p && p !== document.body) { if (isPhoto(p)) { found = { dark: true, name: name(p) }; break; }
@@ -143,7 +144,7 @@ try {
       const total = (await send("Runtime.evaluate", { expression: "document.documentElement.scrollHeight", returnByValue: true }, sessionId)).result.value;
       const found = new Set();
       for (let y = 0; y < total; y += Math.round(height * 0.8)) {
-        await send("Runtime.evaluate", { expression: `window.scrollTo(0, ${y})` }, sessionId); await sleep(450);
+        await send("Runtime.evaluate", { expression: `window.scrollTo(0, ${y})` }, sessionId); await sleep(650);
         const { result } = await send("Runtime.evaluate", { expression: SCAN, returnByValue: true }, sessionId);
         for (const h of result.value || []) found.add(h);
         const shot = await send("Page.captureScreenshot", { format: "jpeg", quality: 70 }, sessionId);

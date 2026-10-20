@@ -7,7 +7,7 @@ import { ListingRow } from "@/components/ListingCard";
 import { Partners } from "@/components/Partners";
 import { Pic } from "@/components/Pic";
 import { Rail } from "@/components/Rail";
-import { AtlasTile, Hero, IndexRow, Plate } from "@/components/Sections";
+import { AtlasTile, Hero, Plate } from "@/components/Sections";
 import { areaName, getAreas, getGuides, getListings, getServices } from "@/lib/content";
 import { aed, num, plainText } from "@/lib/format";
 import { HOME_FAQS } from "@/lib/guides";
@@ -163,11 +163,20 @@ export function Home({ locale }: { locale: Locale }) {
               </Link>
             </div>
           </div>
-          <div className="index">
+          <div className="bento stagger rv">
             {services.slice(4, 9).map((s, i) => (
-              <div key={s.slug} className="rv">
-                <IndexRow idx={i} title={s.short} text={s.dek} href={servicePath(s.slug)} image={s.image} locale={locale} sizes="(max-width: 800px) 100vw, 45vw" />
-              </div>
+              <Link key={s.slug} href={lp(locale, servicePath(s.slug))} className={`tile${i === 0 ? " tile-big" : ""}`}>
+                <div className="tile-media">
+                  <Pic name={s.image} sizes={i === 0 ? "(max-width: 900px) 100vw, 50vw" : "(max-width: 900px) 100vw, 25vw"} locale={locale} />
+                </div>
+                <div className="tile-body">
+                  <h3>{s.short}</h3>
+                  <p>{s.dek}</p>
+                  <span className="tile-more">
+                    {t.common.readMore} <Arrow />
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
