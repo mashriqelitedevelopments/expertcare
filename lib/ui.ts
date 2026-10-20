@@ -458,7 +458,7 @@ const EN = {
   home: {
     eyebrow: "Real estate brokerage, Dubai",
     h1: "Dubai property, with the numbers first.",
-    sub: "Buying, selling, renting or letting. Every home we handle comes with its full cost before you commit, and one adviser from the first call to the keys.",
+    sub: "Buy, sell, rent or let. The full cost before you commit, and one adviser to the keys.",
     heroCaption: "Dubai, United Arab Emirates",
     statsAria: "ExpertCare in numbers",
     statProjects: "Off-plan projects selling now",

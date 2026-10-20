@@ -850,12 +850,20 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 .hero h1 {
   color: var(--bone);
   margin-top: 18px;
+  max-width: 12ch;
+  font-size: clamp(44px, 6.4vw, 96px);
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+.hero-sm h1 {
+  font-size: clamp(38px, 5vw, 76px);
   max-width: 14ch;
 }
 .hero .lede {
-  color: rgba(244, 244, 241, 0.88);
-  margin-top: 22px;
-  max-width: 46ch;
+  color: rgba(244, 244, 241, 0.9);
+  margin-top: 24px;
+  max-width: 40ch;
+  font-size: clamp(17px, 1.3vw, 21px);
 }
 .hero .byline,
 .hero .caption,
