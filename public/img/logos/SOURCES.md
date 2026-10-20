@@ -18,3 +18,22 @@ developers whose projects the brokerage sells), not an endorsement.
 
 Not obtained: nothing missing, but Ellington is only 500px wide and DAMAC is a
 Commons contributor's vector rather than a file from damacproperties.com.
+
+Collected 20 Oct 2026, same method: user agent `Claude-User (logo collection
+for a brokerage site)`, each site's robots.txt read first, then only the home
+page and the logo asset it links. SVGs were stripped of comments, XML
+declarations, `<title>`, `data-name` and editor attributes; PNGs were given a
+2% transparent margin around the mark. The same nominative-use note applies.
+
+| File | Developer | Source | Licence / terms | Notes |
+|---|---|---|---|---|
+| aldar.png | Aldar Properties | https://images4.cmp.optimizely.com/assets/Aldar+Logo/Zz1jZmI0NWMwYTQxMTQxMWYwYjc0YTRhNGM1NjkzY2YwMw== (`twitter:image` on the aldar.com home page; the header `<img>` and schema.org logo are the same framed mark at 160x160) | Trademark of Aldar; robots.txt `User-Agent: *` with no Disallow | PNG 1296x1296 RGBA (source 1246x1246 plus 25px margin), transparent background, black only: the square "frame" lockup (mark + Arabic + ALDAR). Commons also has File:Aldar_Properties_Logo_2016.png (Public domain, 299x331, unframed) but it is below the 600px target |
+| arada.svg | Arada | https://aradawebcontent.blob.core.windows.net/arada-com/2022/06/arada-logo.svg (header `<img>` and schema.org logo on the arada.com home page; the footer file arada-footer-logo.svg is the same path with a white fill) | Trademark of Arada; robots.txt disallows only /wp-admin/, /wp-includes/, trackback and login paths | viewBox 0 0 141.187 21.236; 1 path with no fill (renders black) inside a clipPath; single-colour silhouette (mark + ARADA) |
+| wasl.png | wasl Asset Management Group | https://www.wasl.ae/sites/default/files/waslEnglishWhiteLogo1.png (header `<img>` and schema.org logo on the wasl.ae home page) | Trademark of wasl; robots.txt disallows only /core/, /profiles/, admin and user paths | PNG 118x46 RGBA (source 114x42 plus 2px margin), transparent background, single dark colour. Far below the 600px target: the home page exposes no larger raster, no SVG and no og:image, and Commons has no wasl logo. waslproperties.com could not be fetched: its TLS certificate is for another host name (curl error 60) and port 80 refuses connections, so nothing was fetched from it |
+| omniyat.svg | Omniyat | https://cdn.prod.website-files.com/64cd0df1806781d956403b26/64d0f5a02c9c892bbd0bd804_omniyat-logo.svg (header `<img>` on the omniyat.com home page) | Trademark of Omniyat; robots.txt disallows only /broker-form/ | viewBox 0 0 150 20; 1 path, fill #FFFFFE; single-colour silhouette (OMNIYAT wordmark). The footer file (824x200) adds the tagline "THE ART OF ELEVATION" and was not used |
+| nshama.svg | Nshama | https://nshama.ae/wp-content/themes/nshama/img/nashama-logo.svg (header `<img>` on the nshama.ae home page) | Trademark of Nshama; robots.txt disallows only /wp-admin/ | viewBox 0 0 266.69 28.51; 6 paths + 2 polygons, fill #212621 via a `<style>` class, inside a clipPath; single-colour silhouette (NSHAMA wordmark + boxed N) |
+| imtiaz.svg | Imtiaz Developments | https://imtiaz.ae/layout/image/logo_new_png.svg (header and footer `<img>` on the imtiaz.ae home page; logo-red.svg is the same lockup in #8C2E47 at 145x39 and is the schema.org image) | Trademark of Imtiaz Developments; robots.txt `Allow: /` | viewBox 0 0 1092 299; 18 paths, fill white, inside a clipPath; single-colour silhouette (IMTIAZ + DEVELOPMENTS) |
+| samana.png | Samana Developers | https://www.samanadevelopers.com/assets/img/updated-logo/black.png (header `<img id="light-logo">` on the home page; white.png is the same file in white) | Trademark of Samana Developers; robots.txt `Allow: /` for `*` and for `Claude-User` | PNG 2581x834 RGBA (source 2481x734 plus 50px margin), transparent background, black only; single-colour silhouette (SAMANA + DEVELOPERS) |
+
+Not obtained: a usable wasl logo. wasl.png is the real asset but only 118px
+wide; a larger file would need the brand's own download or a different page.

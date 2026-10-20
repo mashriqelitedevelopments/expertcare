@@ -481,7 +481,7 @@ const EN = {
     homesH: "Selling now",
     allHomes: "All",
     homesWord: "projects",
-    partnersH: "Projects listed from",
+    partnersH: "Our partners",
     marketEyebrow: "The numbers",
     marketH: "What Dubai homes sell for",
     marketLede: "Median prices by area, calculated from the Dubai Land Department's open transaction records.",

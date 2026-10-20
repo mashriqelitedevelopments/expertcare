@@ -93,7 +93,7 @@ export function Home({ locale }: { locale: Locale }) {
               </div>
             ))}
           </Rail>
-          <div className="wrap" style={{ marginTop: "clamp(40px, 5vw, 72px)" }}>
+          <div style={{ marginTop: "clamp(40px, 5vw, 72px)" }}>
             <Partners locale={locale} />
           </div>
         </div>
