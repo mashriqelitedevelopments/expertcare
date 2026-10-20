@@ -29,7 +29,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-AE" dir="ltr">
       <head>
-        <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="preload" href="/fonts/jakarta.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="preload" href="/fonts/urbanist.woff2" as="font" type="font/woff2" crossOrigin="" />
                 <JsonLd data={orgLd} />
         <JsonLd data={websiteLd(LOCALE)} />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="ExpertCare for AI assistants" />

@@ -1,23 +1,36 @@
 /* ═══════════════════════════════════════════════════════════════
    ExpertCare. Photography first.
    Images run full-bleed and carry the type; text sits in a narrow offset column, never a
-   centred slab. Sections are separated by space, not rules. One family, Archivo, light for
-   headlines and regular for text. Few labels. No cards with borders, no pills, no tiles.
+   centred slab. Sections are separated by space, not rules. Urbanist (geometric) for headlines,
+   Plus Jakarta Sans for text and interface. Few labels. No cards with borders, no pills, no tiles.
    Ground #F4F4F1, ink #131311, dark #0C0C0A, dim #86867E. No accent colour.
    ═══════════════════════════════════════════════════════════════ */
 
 @font-face {
-  font-family: "Archivo";
-  src: url("/fonts/archivo.woff2") format("woff2");
+  font-family: "Urbanist";
+  src: url("/fonts/urbanist.woff2") format("woff2");
   font-weight: 100 900;
-  font-stretch: 62% 125%;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Archivo";
-  src: url("/fonts/archivo-italic.woff2") format("woff2");
+  font-family: "Urbanist";
+  src: url("/fonts/urbanist-italic.woff2") format("woff2");
   font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jakarta";
+  src: url("/fonts/jakarta.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jakarta";
+  src: url("/fonts/jakarta-italic.woff2") format("woff2");
+  font-weight: 200 800;
   font-style: italic;
   font-display: swap;
 }
@@ -37,9 +50,9 @@
   --wrap: 1480px;
   --gut: clamp(20px, 4vw, 72px);
   --hdr: 76px;
-  --sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --display: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --mono: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sans: "Jakarta", "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --display: "Urbanist", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "Jakarta", "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
   --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23131311' stroke-width='1.2'/%3E%3C/svg%3E");
   color-scheme: light;
@@ -94,8 +107,7 @@ body {
   color: var(--body);
   font-family: var(--sans);
   font-size: 15px;
-  line-height: 1.8;
-  font-variation-settings: "wdth" 100;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -179,36 +191,39 @@ h3,
 h4 {
   color: var(--ink);
   font-family: var(--display);
-  font-weight: 300;
-  letter-spacing: -0.01em;
-  line-height: 1.08;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
   text-wrap: balance;
 }
 h1 {
-  font-size: clamp(34px, 4.6vw, 66px);
-  font-weight: 330;
-  line-height: 1.04;
+  font-size: clamp(36px, 4.8vw, 70px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 h2 {
-  font-size: clamp(26px, 3vw, 44px);
+  font-size: clamp(28px, 3.2vw, 48px);
 }
 h3 {
-  font-size: 19px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.3;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
 }
 h4 {
   font-size: 15px;
-  font-weight: 500;
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: 0;
   line-height: 1.4;
 }
 .lede {
   max-width: 52ch;
   color: var(--body);
   font-size: clamp(16px, 1.15vw, 18px);
-  line-height: 1.65;
-  font-weight: 300;
+  line-height: 1.6;
+  font-weight: 400;
 }
 .fine {
   color: var(--dim);
@@ -240,7 +255,7 @@ h4 {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--dim);
-  font-weight: 500;
+  font-weight: 600;
 }
 .eyebrow {
   margin-bottom: 14px;
@@ -255,8 +270,9 @@ h4 {
 }
 .num {
   color: var(--ink);
+  font-family: var(--display);
   font-size: clamp(26px, 2.6vw, 40px);
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -535,9 +551,10 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) {
   height: 18px;
 }
 .logo-word {
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   line-height: 1;
 }
@@ -686,9 +703,10 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 .menu-main a {
   display: block;
   padding: 10px 0;
+  font-family: var(--display);
   font-size: clamp(26px, 3.4vw, 34px);
-  font-weight: 300;
-  letter-spacing: -0.01em;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   line-height: 1.15;
   color: var(--ink);
   opacity: 0;
@@ -908,9 +926,15 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 }
 .ticket .field {
   display: grid;
-  gap: 6px;
+  gap: 4px;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--line-2);
+}
+.ticket .field select,
+.ticket .field input {
+  border: 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 .ticket .field label {
   color: var(--dim);
@@ -1049,7 +1073,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 }
 .door-in h3 {
   font-size: clamp(22px, 2vw, 28px);
-  font-weight: 300;
+  font-weight: 500;
 }
 .door-in p {
   color: var(--body);
@@ -1238,7 +1262,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 }
 .atlas-in h3 {
   font-size: clamp(22px, 1.9vw, 27px);
-  font-weight: 300;
+  font-weight: 500;
 }
 .atlas-in .m {
   color: var(--dim);
@@ -1381,7 +1405,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 }
 .index-row .row-title h3 {
   font-size: clamp(24px, 2.4vw, 34px);
-  font-weight: 300;
+  font-weight: 500;
 }
 .index-row .row-title .m {
   margin-top: 10px;
@@ -1501,7 +1525,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 }
 .aside-h {
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 500;
   margin-bottom: 8px;
 }
 .aside-p {
@@ -1742,8 +1766,10 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   padding: 20px 0;
   cursor: pointer;
   list-style: none;
-  font-size: 17px;
-  font-weight: 400;
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   line-height: 1.35;
   color: var(--ink);
 }
@@ -1957,7 +1983,7 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 .calc-sum .big dd {
   color: var(--ink);
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 500;
 }
 .calc-sum .total {
   border-top: 1px solid var(--line-2);
@@ -2405,54 +2431,84 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   }
 }
 
-/* ── Story: chapters on the left, one photograph that changes on the right ── */
+/* ── Story: chapters on the left, a pinned full-height photograph on the right ── */
 .story {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: clamp(32px, 6vw, 120px);
   align-items: start;
 }
+.story-copy {
+  padding: clamp(56px, 7vw, 120px) clamp(32px, 5vw, 96px) clamp(56px, 7vw, 120px) var(--gut);
+}
 .story-copy h2 {
-  margin-bottom: clamp(24px, 4vw, 56px);
   max-width: 14ch;
 }
+.story-copy .lede {
+  margin-top: 18px;
+  max-width: 40ch;
+}
+.story-steps {
+  margin-top: clamp(32px, 4vw, 64px);
+}
 .story-step {
-  padding: clamp(28px, 4vw, 56px) 0;
+  position: relative;
+  padding: clamp(28px, 3.5vw, 48px) 0;
   border-top: 1px solid var(--line);
   transition: opacity 0.5s var(--ease);
 }
+.story-step:last-child {
+  border-bottom: 1px solid var(--line);
+}
 .story-step h3 {
-  font-size: clamp(26px, 2.6vw, 38px);
-  font-weight: 300;
+  font-size: clamp(32px, 3.4vw, 52px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
   color: var(--ink);
+  transition: transform 0.6s var(--ease);
+}
+.story-step.is-active h3 {
+  transform: translateX(12px);
 }
 .story-step p {
   margin-top: 12px;
   max-width: 40ch;
   color: var(--body);
 }
+.story-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 0;
+  margin-top: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.story-tags li + li::before {
+  content: "·";
+  margin: 0 10px;
+  opacity: 0.6;
+}
 .story-step .more {
-  margin-top: 18px;
+  margin-top: 20px;
 }
 .story-step .row-link::after {
   content: "";
   position: absolute;
   inset: 0;
 }
-.story-step {
-  position: relative;
-}
 .story-step-media {
   display: none;
 }
 .story-media {
   position: sticky;
-  top: calc(var(--hdr) + 24px);
+  top: 0;
+  height: 100svh;
 }
 .story-frame {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  max-height: calc(100vh - var(--hdr) - 48px);
+  position: absolute;
+  inset: 0;
   overflow: hidden;
   background: var(--mist);
 }
@@ -2467,18 +2523,68 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 }
 .story-img {
   opacity: 0;
-  transform: scale(1.04);
+  transform: scale(1.06);
   transition:
-    opacity 0.9s var(--ease),
-    transform 1.4s var(--ease);
+    opacity 1s var(--ease),
+    transform 1.8s var(--ease);
 }
 .story-img.is-active {
   opacity: 1;
   transform: none;
 }
+.story-inset {
+  position: absolute;
+  left: clamp(-40px, -3vw, -24px);
+  bottom: clamp(48px, 8vh, 96px);
+  width: min(36%, 320px);
+  aspect-ratio: 3 / 2;
+  border: 6px solid var(--bone);
+  background: var(--mist);
+  box-shadow: 0 30px 60px -30px rgba(12, 12, 10, 0.5);
+  overflow: hidden;
+}
+.story-inset .story-img {
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s var(--ease),
+    transform 0.9s var(--ease);
+}
+.story-inset .story-img.is-active {
+  transform: none;
+}
+.story-caption {
+  position: absolute;
+  right: var(--gut);
+  top: calc(var(--hdr) + 24px);
+  padding: 6px 10px;
+  background: rgba(244, 244, 241, 0.9);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.story-progress {
+  position: absolute;
+  left: var(--gut);
+  right: var(--gut);
+  bottom: 24px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 6px;
+}
+.story-progress i {
+  display: block;
+  height: 2px;
+  background: rgba(244, 244, 241, 0.35);
+  transition: background 0.4s;
+}
+.story-progress i.is-active {
+  background: var(--bone);
+}
 @media (min-width: 901px) {
   .story-step:not(.is-active) {
-    opacity: 0.55;
+    opacity: 0.45;
   }
   .js .story-step.rv:not(.in) {
     opacity: 0;
@@ -2487,6 +2593,9 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 @media (max-width: 900px) {
   .story {
     grid-template-columns: 1fr;
+  }
+  .story-copy {
+    padding-right: var(--gut);
   }
   .story-media {
     display: none;
@@ -2506,6 +2615,12 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   .story-step {
     border-top: 0;
     padding: 0 0 48px;
+  }
+  .story-step:last-child {
+    border-bottom: 0;
+  }
+  .story-step.is-active h3 {
+    transform: none;
   }
 }
 
@@ -2645,8 +2760,9 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   flex-shrink: 0;
 }
 .marquee-track-line em {
+  font-family: var(--display);
   font-style: normal;
-  font-weight: 300;
+  font-weight: 500;
   font-size: clamp(44px, 7vw, 110px);
   line-height: 1;
   letter-spacing: -0.02em;

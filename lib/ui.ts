@@ -467,6 +467,7 @@ const EN = {
     marketPsf: "DLD median per sq ft, 12 months",
     doorsEyebrow: "Start here",
     doorsH: "Whatever you need from a home in Dubai, start here.",
+    doorsLede: "Four ways in. The same team, the same rule on each: the full cost on the table before you commit.",
     railPrev: "Previous projects",
     railNext: "More projects",
     doors: {

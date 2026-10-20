@@ -28,10 +28,10 @@ function pickFeatured<T extends { developer: string }>(all: T[]) {
 }
 
 const DOORS = [
-  { slug: "buying-property-in-dubai", key: "buy" },
-  { slug: "selling-property-in-dubai", key: "sell" },
-  { slug: "renting-a-home-in-dubai", key: "rent" },
-  { slug: "property-management-in-dubai", key: "let" },
+  { slug: "buying-property-in-dubai", key: "buy", inset: "handover" },
+  { slug: "selling-property-in-dubai", key: "sell", inset: "area-downtown-dubai" },
+  { slug: "renting-a-home-in-dubai", key: "rent", inset: "l-jvc" },
+  { slug: "property-management-in-dubai", key: "let", inset: "l-marina" },
 ] as const;
 
 export function Home({ locale }: { locale: Locale }) {
@@ -59,14 +59,23 @@ export function Home({ locale }: { locale: Locale }) {
       <JsonLd data={faqLd} />
       <Hero image="hero2" mobile="hero2-m" h1={h.h1} lede={h.sub} locale={locale} foot={<HomeSearch locale={locale} />} />
 
-      <section className="sec" aria-labelledby="doors-h">
-        <div className="wrap">
-          <Story
-            h2={h.doorsH}
-            locale={locale}
-            items={doors.map((x) => ({ key: x.slug, title: x.copy.h, text: x.copy.p, cta: x.copy.cta, href: servicePath(x.slug), image: x.s.image }))}
-          />
-        </div>
+      <section className="story-sec" aria-labelledby="doors-h">
+        <Story
+          id="doors-h"
+          h2={h.doorsH}
+          lede={h.doorsLede}
+          locale={locale}
+          items={doors.map((x) => ({
+            key: x.slug,
+            title: x.copy.h,
+            text: x.copy.p,
+            cta: x.copy.cta,
+            href: servicePath(x.slug),
+            image: x.s.image,
+            inset: x.inset,
+            tags: x.s.steps.slice(0, 3).map((st) => st.t.replace(/\.$/, "")),
+          }))}
+        />
       </section>
 
       <section className="sec tight" aria-labelledby="homes-h">
