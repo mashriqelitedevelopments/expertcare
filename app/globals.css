@@ -895,17 +895,20 @@ h4 {
   }
 }
 
-/* Search: a light glass panel on the hero, so its fields never depend on what the photograph does. */
+/* Search: a rounded glass bar on the hero. A pill switcher, four cells split by hairlines, a pill
+   button. Its fields never depend on what the photograph does. */
 .ticket {
   display: grid;
   grid-template-columns: auto repeat(4, minmax(0, 1fr)) auto;
-  gap: 0 26px;
-  align-items: end;
+  gap: 0;
+  align-items: center;
   max-width: 1180px;
-  padding: 20px 24px 24px;
-  background: rgba(244, 244, 241, 0.94);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  padding: 10px 10px 10px 12px;
+  border-radius: 999px;
+  background: rgba(244, 244, 241, 0.92);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.55);
   color: var(--ink);
 }
 .ticket-head {
@@ -919,9 +922,18 @@ h4 {
 }
 .ticket .field {
   display: grid;
-  gap: 4px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--line-2);
+  gap: 2px;
+  min-width: 0;
+  padding: 6px 18px 7px;
+  border-left: 1px solid var(--line-2);
+  transition: background 0.25s var(--ease);
+}
+.ticket .field:first-child {
+  border-left: 0;
+}
+.ticket .field:hover,
+.ticket .field:focus-within {
+  background: rgba(19, 19, 17, 0.04);
 }
 .ticket .field select,
 .ticket .field input {
@@ -931,6 +943,7 @@ h4 {
 }
 .ticket .field label {
   color: var(--dim);
+  letter-spacing: 0.12em;
 }
 .ticket select,
 .ticket input {
@@ -938,7 +951,8 @@ h4 {
   border: 0;
   background: transparent;
   padding: 0;
-  font-size: 15px;
+  font-size: 15.5px;
+  font-weight: 500;
   color: var(--ink);
   appearance: none;
   -webkit-appearance: none;
@@ -946,47 +960,79 @@ h4 {
   background-repeat: no-repeat;
   background-position: right 2px center;
   padding-right: 20px;
+  cursor: pointer;
 }
 .ticket input {
   background-image: none;
+}
+.ticket select:focus-visible,
+.ticket input:focus-visible {
+  outline: none;
 }
 .ticket select option {
   color: var(--ink);
 }
 .on-photo .ticket .btn,
 .ticket .btn {
-  min-height: 46px;
-  margin-bottom: 4px;
+  min-height: 52px;
+  margin: 0 0 0 10px;
+  padding: 0 26px;
+  border-radius: 999px;
   background: var(--ink);
   color: var(--bone);
   border-color: var(--ink);
+  white-space: nowrap;
 }
 .on-photo .ticket .btn:hover,
 .ticket .btn:hover {
-  background: transparent;
-  color: var(--ink);
+  background: var(--dark);
+  color: var(--bone);
+  border-color: var(--dark);
 }
+.ticket .btn::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.3s var(--ease);
+}
+.ticket .btn:hover::after {
+  transform: translateX(3px) rotate(45deg);
+}
+/* The mode switcher: a pill track, the chosen mode filled. */
 .seg {
-  display: flex;
-  gap: 18px;
-  padding-bottom: 12px;
+  display: inline-flex;
+  gap: 2px;
+  padding: 4px;
+  margin-right: 8px;
+  border-radius: 999px;
+  background: rgba(19, 19, 17, 0.06);
   color: var(--ink);
 }
 .seg label,
 .seg button {
   position: relative;
-  padding: 0 0 2px;
+  padding: 10px 14px;
   border: 0;
+  border-radius: 999px;
   background: none;
   cursor: pointer;
   font: inherit;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  line-height: 1;
   color: inherit;
-  opacity: 0.55;
-  border-bottom: 1px solid transparent;
+  opacity: 0.6;
+  white-space: nowrap;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease), opacity 0.25s var(--ease);
+}
+.seg label:hover,
+.seg button:hover {
+  opacity: 1;
 }
 .seg input {
   position: absolute;
@@ -997,31 +1043,80 @@ h4 {
 .seg label:has(input:checked),
 .seg [aria-pressed="true"] {
   opacity: 1;
-  border-color: currentColor;
+  background: var(--ink);
+  color: var(--bone);
+}
+.seg label:has(input:focus-visible) {
+  box-shadow: 0 0 0 2px var(--bone), 0 0 0 3.5px var(--ink);
+}
+@media (max-width: 1100px) {
+  .ticket {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px 0;
+    padding: 14px;
+    border-radius: 28px;
+  }
+  .ticket .seg {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin: 0 0 2px;
+  }
+  .ticket .btn {
+    grid-column: 1 / -1;
+    margin: 6px 0 0;
+  }
 }
 @media (max-width: 900px) {
   .ticket {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px 20px;
-    padding: 16px 18px 18px;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 24px;
   }
-  .seg,
+  .ticket .seg {
+    display: flex;
+    justify-self: stretch;
+  }
+  .ticket .seg label {
+    flex: 1;
+    text-align: center;
+    padding: 11px 6px;
+  }
+  .ticket .field {
+    border-left: 0;
+    border-radius: 16px;
+    background: rgba(19, 19, 17, 0.045);
+    padding: 10px 14px 11px;
+  }
   .ticket .btn {
-    grid-column: 1 / -1;
+    margin: 4px 0 0;
   }
 }
-/* The same control on a bone page (search pages). */
+/* The same control on a bone page (search pages): no shell, underlined fields, the pill switcher. */
 .ticket.wide {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px 28px;
   max-width: none;
   padding: 0;
+  border-radius: 0;
   background: transparent;
+  box-shadow: none;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
 .ticket.wide .seg {
   grid-column: 1 / -1;
+  justify-self: start;
+  margin: 0;
+}
+.ticket.wide .field,
+.ticket.wide .field:hover,
+.ticket.wide .field:focus-within {
+  padding: 0 0 10px;
+  border-left: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--line-2);
+  background: transparent;
 }
 @media (max-width: 800px) {
   .ticket.wide {
