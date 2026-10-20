@@ -29,8 +29,8 @@ function pickFeatured<T extends { developer: string }>(all: T[]) {
 const DOORS = [
   { slug: "buying-property-in-dubai", key: "buy", inset: "handover" },
   { slug: "selling-property-in-dubai", key: "sell", inset: "area-downtown-dubai" },
-  { slug: "renting-a-home-in-dubai", key: "rent", inset: "l-jvc" },
-  { slug: "property-management-in-dubai", key: "let", inset: "l-marina" },
+  { slug: "property-management-in-dubai", key: "manage", inset: "l-marina" },
+  { slug: "investor-services", key: "invest", inset: "terrace-dusk" },
 ] as const;
 
 export function Home({ locale }: { locale: Locale }) {

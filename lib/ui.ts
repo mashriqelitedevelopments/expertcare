@@ -473,8 +473,8 @@ const EN = {
     doors: {
       buy: { h: "Buying", p: "Permitted listings only, the whole cost before a viewing, one adviser to the title deed.", cta: "Buy with us" },
       sell: { h: "Selling", p: "A valuation from DLD sales records, Form A, a permitted advert, qualified buyers, the transfer.", cta: "Get a valuation" },
-      rent: { h: "Renting", p: "A shortlist that fits the budget, Ejari in your name, cheques and deposit explained before you sign.", cta: "Find a rental" },
-      let: { h: "Letting", p: "Tenant finding, rent collection, maintenance and renewals inside the legal caps. One statement a month.", cta: "Let your home" },
+      manage: { h: "Management", p: "Tenant finding, rent collection, maintenance and renewals inside the legal caps. One statement a month.", cta: "Manage my home" },
+      invest: { h: "Investment", p: "Homes sourced from the data, returns worked out the same way every time, the letting handled after.", cta: "Invest with us" },
     },
     allServices: "All nine services",
     homesEyebrow: "Selling now",
