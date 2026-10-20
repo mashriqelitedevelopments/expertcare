@@ -466,8 +466,8 @@ const EN = {
     statSales: "DLD sales records analysed",
     marketPsf: "DLD median per sq ft, 12 months",
     doorsEyebrow: "Start here",
-    doorsH: "Whatever you need from a home in Dubai, start here.",
-    doorsLede: "Four ways in. The same team, the same rule on each: the full cost on the table before you commit.",
+    doorsH: "What would you like to do?",
+    doorsLede: "Pick a door. The same team is behind all four, and the full cost is on the table before you commit.",
     railPrev: "Previous projects",
     railNext: "More projects",
     doors: {

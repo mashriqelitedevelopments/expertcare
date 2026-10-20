@@ -1036,25 +1036,34 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   }
 }
 
-/* ── Doors: a photograph each, the words beneath it on the page ground ── */
+/* ── Doors: four photo cards, a light panel at the foot of each ── */
 .doors {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 40px 24px;
+  gap: 20px;
 }
 .door {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  color: var(--ink);
-}
-.door-media {
   position: relative;
-  aspect-ratio: 4 / 5;
+  display: block;
+  aspect-ratio: 3 / 4;
+  border-radius: 22px;
   overflow: hidden;
   background: var(--mist);
+  color: var(--ink);
+  transform: translateY(0);
+  transition:
+    transform 0.5s var(--ease),
+    box-shadow 0.5s var(--ease);
 }
+.door:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px -30px rgba(12, 12, 10, 0.45);
+}
+.door-media,
 .door-media picture,
 .door-media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1063,27 +1072,52 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
   transition: transform 1.2s var(--ease);
 }
 .door:hover .door-media img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
-.door-in {
+.door-panel {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding-top: 20px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 18px 18px 20px;
+  border-radius: 14px;
+  background: rgba(244, 244, 241, 0.92);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
-.door-in h3 {
-  font-size: clamp(22px, 2vw, 28px);
-  font-weight: 500;
+.door-panel h3 {
+  font-size: clamp(20px, 1.7vw, 26px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
-.door-in p {
+.door-panel p {
+  margin-top: 6px;
+  font-size: 13.5px;
+  line-height: 1.5;
   color: var(--body);
-  font-size: 14.5px;
-  line-height: 1.6;
-  max-width: 30ch;
+  max-width: 26ch;
 }
-.door-in .more {
-  align-self: flex-start;
-  margin-top: 10px;
+.door-arrow {
+  flex: 0 0 auto;
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--bone);
+  transition: transform 0.4s var(--ease);
+}
+.door-arrow svg {
+  width: 16px;
+  height: 16px;
+}
+.door:hover .door-arrow {
+  transform: translateX(4px);
 }
 @media (max-width: 1000px) {
   .doors {
@@ -1092,10 +1126,27 @@ html:has(main > .hero:first-child) .hdr:not(.is-scrolled):not(.is-open) .hdr-cta
 }
 @media (max-width: 560px) {
   .doors {
-    grid-template-columns: 1fr;
+    gap: 12px;
   }
-  .door-media {
-    aspect-ratio: 4 / 3;
+  .door {
+    border-radius: 16px;
+  }
+  .door-panel {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    padding: 12px 12px 12px 14px;
+    border-radius: 10px;
+  }
+  .door-panel p {
+    display: none;
+  }
+  .door-panel h3 {
+    font-size: 18px;
+  }
+  .door-arrow {
+    width: 34px;
+    height: 34px;
   }
 }
 

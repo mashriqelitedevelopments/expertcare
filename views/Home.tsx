@@ -7,7 +7,6 @@ import { ListingRow } from "@/components/ListingCard";
 import { Partners } from "@/components/Partners";
 import { Pic } from "@/components/Pic";
 import { Rail } from "@/components/Rail";
-import { Story } from "@/components/Story";
 import { AtlasTile, Hero, IndexRow, Plate } from "@/components/Sections";
 import { areaName, getAreas, getGuides, getListings, getServices } from "@/lib/content";
 import { aed, num, plainText } from "@/lib/format";
@@ -59,23 +58,37 @@ export function Home({ locale }: { locale: Locale }) {
       <JsonLd data={faqLd} />
       <Hero image="hero2" mobile="hero2-m" h1={h.h1} lede={h.sub} locale={locale} foot={<HomeSearch locale={locale} />} />
 
-      <section className="story-sec" aria-labelledby="doors-h">
-        <Story
-          id="doors-h"
-          h2={h.doorsH}
-          lede={h.doorsLede}
-          locale={locale}
-          items={doors.map((x) => ({
-            key: x.slug,
-            title: x.copy.h,
-            text: x.copy.p,
-            cta: x.copy.cta,
-            href: servicePath(x.slug),
-            image: x.s.image,
-            inset: x.inset,
-            tags: x.s.steps.slice(0, 3).map((st) => st.t.replace(/\.$/, "")),
-          }))}
-        />
+      <section className="sec tight partners-sec">
+        <Partners locale={locale} />
+      </section>
+
+      <section className="sec" aria-labelledby="doors-h">
+        <div className="wrap">
+          <div className="sec-head rv">
+            <div>
+              <h2 id="doors-h">{h.doorsH}</h2>
+              <p className="lede">{h.doorsLede}</p>
+            </div>
+          </div>
+          <div className="doors stagger rv">
+            {doors.map((x) => (
+              <Link key={x.slug} href={lp(locale, servicePath(x.slug))} className="door">
+                <div className="door-media">
+                  <Pic name={x.s.image} sizes="(max-width: 560px) 50vw, (max-width: 1000px) 50vw, 25vw" locale={locale} />
+                </div>
+                <div className="door-panel">
+                  <div>
+                    <h3>{x.copy.h}</h3>
+                    <p>{x.copy.p}</p>
+                  </div>
+                  <span className="door-arrow" aria-hidden="true">
+                    <Arrow />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="sec tight" aria-labelledby="homes-h">
@@ -93,9 +106,6 @@ export function Home({ locale }: { locale: Locale }) {
               </div>
             ))}
           </Rail>
-          <div style={{ marginTop: "clamp(40px, 5vw, 72px)" }}>
-            <Partners locale={locale} />
-          </div>
         </div>
       </section>
 
