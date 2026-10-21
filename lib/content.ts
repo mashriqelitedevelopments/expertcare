@@ -54,8 +54,27 @@ export function getGuides(_locale: Locale = "en"): Guide[] {
 }
 export const getGuide = (locale: Locale, slug: string) => getGuides(locale).find((g) => g.slug === slug);
 
+/** The order services appear in everywhere (menu, footer, services page): the resale and off-plan
+ * work first, renting and relocation last. Any slug not listed keeps its place at the end. */
+const SERVICE_ORDER = [
+  "buying-property-in-dubai",
+  "off-plan-advisory",
+  "selling-property-in-dubai",
+  "investor-services",
+  "golden-visa-through-property",
+  "mortgage-advisory",
+  "property-management-in-dubai",
+  "renting-a-home-in-dubai",
+  "relocation-to-dubai",
+];
+const rank = (slug: string) => {
+  const i = SERVICE_ORDER.indexOf(slug);
+  return i === -1 ? SERVICE_ORDER.length : i;
+};
+const ORDERED = [...SERVICES].sort((a, b) => rank(a.slug) - rank(b.slug));
+
 export function getServices(_locale: Locale = "en"): Service[] {
-  return SERVICES;
+  return ORDERED;
 }
 export const getService = (locale: Locale, slug: string) => getServices(locale).find((s) => s.slug === slug);
 

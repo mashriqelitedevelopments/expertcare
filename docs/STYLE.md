@@ -1,7 +1,9 @@
 # ExpertCare: content rules
 
-ExpertCare is a full-service real estate brokerage in Dubai: buying, selling, renting, off-plan
-advice, mortgage help, Golden Visa guidance and property management. The site is English only.
+ExpertCare is a real estate brokerage in Dubai focused on higher-ticket resale homes and off-plan
+projects (the focus since 20 Oct 2026). Selling, investor advice, mortgages, the Golden Visa and
+property management support that; renting and relocation stay as services but never lead the copy.
+Say "prime resale" or "upper end of the market", never "luxury" as a boast. The site is English only.
 
 ## Voice
 - Plain, short sentences. One idea per sentence. No clever phrasing, no metaphors.

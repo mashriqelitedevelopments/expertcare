@@ -39,7 +39,7 @@ export const SERVICES: Service[] = [
     seoDescription:
       "ExpertCare acts for buyers of ready and off-plan homes in Dubai: the shortlist, the checks, the offer and the transfer, with every fee shown before you view.",
     title: "Buying a home in Dubai with ExpertCare",
-    dek: "A buyer's broker who shortlists, checks every advert, negotiates the price and stays with you to the title deed.",
+    dek: "A buyer's broker for resale and off-plan homes: the shortlist, every advert checked, the price negotiated, one adviser to the title deed.",
     image: "viewing-2",
     summary: [
       "ExpertCare acts for buyers of ready and off-plan homes in Dubai's freehold areas, whether you live in the UAE or abroad.",

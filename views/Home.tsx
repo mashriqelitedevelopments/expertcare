@@ -30,6 +30,9 @@ function pickFeatured<T extends { developer: string; price: number | null }>(lis
   return [...first, ...all.filter((l) => !first.includes(l))].slice(0, 6);
 }
 
+/** "Beyond buying and selling": off-plan leads as the large tile. */
+const BENTO = ["off-plan-advisory", "investor-services", "golden-visa-through-property", "mortgage-advisory", "relocation-to-dubai"];
+
 const DOORS = [
   { slug: "buying-property-in-dubai", key: "buy", inset: "handover" },
   { slug: "selling-property-in-dubai", key: "sell", inset: "area-downtown-dubai" },
@@ -168,7 +171,7 @@ export function Home({ locale }: { locale: Locale }) {
             </div>
           </div>
           <div className="bento stagger rv">
-            {services.slice(4, 9).map((s, i) => (
+            {BENTO.map((slug) => services.find((s) => s.slug === slug)!).filter(Boolean).map((s, i) => (
               <Link key={s.slug} href={lp(locale, servicePath(s.slug))} className={`tile${i === 0 ? " tile-big" : ""}`}>
                 <div className="tile-media">
                   <Pic name={s.image} sizes={i === 0 ? "(max-width: 900px) 100vw, 50vw" : "(max-width: 900px) 100vw, 25vw"} locale={locale} />

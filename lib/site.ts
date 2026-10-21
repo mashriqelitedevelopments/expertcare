@@ -8,7 +8,7 @@ export const site = {
   // While false the whole site is noindex and robots.txt disallows crawling.
   live: false,
   description:
-    "ExpertCare is a full-service real estate brokerage in Dubai: buying, selling, renting, off-plan advice and property management, with the full cost of every move explained before you commit.",
+    "ExpertCare is a real estate brokerage in Dubai focused on prime resale homes and off-plan projects, with selling, investment advice, mortgages and property management from the same team. The full cost of every move is explained before you commit.",
   email: "",
   phone: "",
   whatsapp: "", // digits only, with country code, e.g. 9715XXXXXXXX
@@ -49,8 +49,7 @@ export const NAV: NavLink[] = [
   { label: "Buy", href: "/properties/" },
   { label: "Off-plan", href: "/off-plan/" },
   { label: "Sell", href: "/sell/" },
-  { label: "Rent", href: "/rent/" },
-  { label: "Landlords", href: "/landlords/" },
+  { label: "Investors", href: "/services/investor-services/" },
   { label: "Areas", href: "/areas/" },
   { label: "Guides", href: "/guides/" },
 ];
