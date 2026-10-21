@@ -64,6 +64,5 @@ the webhook URL it shows on the same screen (add it under GitHub Settings → We
   app URL into `NEWSLETTER_ENDPOINT` in `lib/newsletter.ts`. Until then sign-ups go to the email or WhatsApp
   in `lib/site.ts`. Someone has to write and send the note: the sign-up promises one email a month.
 - Every listing needs a developer marketing agreement, a Trakheesi permit number and image permission.
-- Replace the placeholder photographs noted in `lib/areas.ts` (`TODO photo`) and `public/img/CREDITS.md`.
 - Wire the enquiry forms: they hand the message to WhatsApp or email from `lib/site.ts`.
 - Add the GA4 measurement id in `lib/analytics.ts` if measurement is wanted (consent-gated).

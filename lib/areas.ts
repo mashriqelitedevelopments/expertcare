@@ -264,7 +264,7 @@ export const AREAS: Area[] = [
   {
     slug: "jumeirah-lake-towers",
     name: "Jumeirah Lake Towers",
-    image: "band-marina", // TODO photo
+    image: "area-jlt",
     card: "Towers around three lakes, across the road from the Marina.",
     intro: "A freehold district of towers in 26 clusters around three lakes and a park, with two Red Line stations and the Marina across Sheikh Zayed Road.",
     overview: [
@@ -348,7 +348,7 @@ export const AREAS: Area[] = [
   {
     slug: "dubai-south",
     name: "Dubai South",
-    image: "l-downtown", // TODO photo
+    image: "area-dubai-south",
     card: "Low-rise homes beside Expo City and Al Maktoum airport.",
     intro: "The planned city around Al Maktoum International Airport and Expo City Dubai, with townhouses, villas and low-rise apartments and the Expo station at the end of the Red Line.",
     overview: [
@@ -384,7 +384,7 @@ export const AREAS: Area[] = [
   {
     slug: "arjan",
     name: "Arjan",
-    image: "l-jvc", // TODO photo
+    image: "area-arjan",
     card: "Low-rise apartments next to Miracle Garden, at a lower entry point.",
     intro: "A freehold district in Dubailand beside Dubai Miracle Garden, with low- and mid-rise apartment buildings between Al Barsha South and Motor City.",
     overview: [

@@ -30,6 +30,9 @@ SPECS = {
     "area-palm-jumeirah": {"aspect": (16, 9), "y": 0.4, "widths": WIDE},
     "area-business-bay": {"aspect": (16, 9), "y": 0.5, "widths": WIDE},
     "area-dubai-creek-harbour": {"aspect": (16, 9), "y": 0.55, "widths": WIDE},
+    "area-jlt": {"aspect": (16, 9), "y": 0.5, "widths": WIDE},
+    "area-dubai-south": {"aspect": (16, 9), "y": 0.5, "widths": WIDE},
+    "area-arjan": {"aspect": (16, 9), "y": 0.5, "widths": WIDE},
     "band-marina": {"aspect": (2560, 1097), "y": 0.55, "widths": [960, 1920, 2560]},
     # 19 Oct 2026, Higgsfield gpt_image_2_5 (max, 4K): the ExpertCare set.
     "hero2": {"aspect": (16, 9), "widths": WIDE},
