@@ -1658,6 +1658,21 @@ h4 {
   display: grid;
   gap: 32px;
 }
+/* On a listing the column runs the length of the article: the enquiry form sits at its top and
+   the price and adviser stick while the page scrolls, so the column never outgrows the screen. */
+.article:has(.aside-stick) {
+  align-items: stretch;
+}
+.aside:has(.aside-stick) {
+  position: static;
+  align-content: start;
+}
+.aside-stick {
+  position: sticky;
+  top: calc(var(--hdr) + 24px);
+  display: grid;
+  gap: 24px;
+}
 .panel {
   padding: 28px;
   background: var(--paper);
@@ -1703,7 +1718,8 @@ h4 {
   .article {
     grid-template-columns: 1fr;
   }
-  .aside {
+  .aside,
+  .aside-stick {
     position: static;
   }
 }
@@ -3257,5 +3273,635 @@ h4 {
   }
   body:has(.mbar) .cons {
     bottom: 86px;
+  }
+}
+
+/* ── Listing cards: a paper card, the photograph with its status, a way to act ── */
+.lcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--paper);
+  border-radius: 20px;
+  overflow: hidden;
+  color: var(--ink);
+  transition:
+    box-shadow 0.5s var(--ease),
+    transform 0.5s var(--ease);
+}
+.lcard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 50px -28px rgba(19, 19, 17, 0.35);
+}
+.lcard-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--mist);
+}
+.lcard-media picture,
+.lcard-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lcard-media img {
+  transition: transform 1.2s var(--ease);
+}
+.lcard:hover .lcard-media img {
+  transform: scale(1.04);
+}
+.lcard-tags {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  pointer-events: none;
+}
+.lcard-tags li,
+.lhero-chips li {
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(244, 244, 241, 0.94);
+  color: var(--ink);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.lcard-save {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+}
+.lcard-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px 20px 20px;
+}
+.lcard h3 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+.lcard-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.lcard-place {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--dim);
+}
+.lcard-place svg {
+  flex: none;
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+}
+.lcard-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--body);
+}
+.lcard-specs li + li::before {
+  content: "·";
+  margin: 0 8px;
+  color: var(--dim);
+}
+.lcard-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.lcard-specs {
+  margin-bottom: 18px;
+}
+.lcard-price {
+  display: grid;
+  gap: 2px;
+}
+.lcard-price span {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.lcard-price strong {
+  font-family: var(--display);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.lcard-plan {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--mist);
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.lcard-cta {
+  position: relative;
+  z-index: 2;
+}
+
+/* Call / WhatsApp pills, used on cards, the listing hero and the adviser card. */
+.cta-pair {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+.cta {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    background 0.3s var(--ease),
+    color 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+.cta svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+}
+.cta:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bone);
+}
+.cta-solid {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bone);
+}
+.cta-solid:hover {
+  border-color: var(--dark);
+  background: var(--dark);
+}
+.cta-wide {
+  display: flex;
+  width: 100%;
+  min-height: 50px;
+  margin-top: 18px;
+}
+
+/* ── Listing hero: the photograph, the trail, the facts as chips, thumbnails and the price ── */
+.lhero {
+  min-height: min(88svh, 860px);
+}
+.lhero-copy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  align-items: end;
+  gap: 32px clamp(32px, 5vw, 80px);
+}
+.lhero .hero-copy > div:first-child {
+  max-width: 760px;
+}
+.lhero h1 {
+  max-width: 18ch;
+  font-size: clamp(36px, 4.6vw, 72px);
+}
+.lhero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+.lhero-chips li {
+  padding: 8px 13px;
+}
+.gal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+.gal-thumbs {
+  display: flex;
+  gap: 8px;
+}
+.gal-thumbs button {
+  display: block;
+  width: 96px;
+  height: 66px;
+  padding: 0;
+  border: 2px solid rgba(244, 244, 241, 0.75);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--mist);
+  cursor: pointer;
+  transition:
+    border-color 0.3s,
+    transform 0.3s var(--ease);
+}
+.gal-thumbs button:hover {
+  border-color: var(--bone);
+  transform: translateY(-2px);
+}
+.gal-thumbs picture,
+.gal-thumbs img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gal-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(244, 244, 241, 0.94);
+  color: var(--ink);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.gal-all svg {
+  width: 14px;
+  height: 14px;
+}
+.gal-all:hover {
+  background: var(--bone);
+}
+.lhero-card {
+  padding: 26px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.55);
+  color: var(--ink);
+}
+.lhero-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.lhero-price {
+  margin-top: 4px;
+  font-family: var(--display);
+  font-size: clamp(28px, 2.4vw, 36px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.lhero-fees {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--body);
+}
+.lhero-fees a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.lhero-card .cta-pair {
+  margin-top: 8px;
+}
+@media (max-width: 900px) {
+  .lhero-copy {
+    grid-template-columns: 1fr;
+  }
+  .lhero-card {
+    padding: 22px;
+  }
+}
+@media (max-width: 560px) {
+  .gal-thumbs button {
+    width: 72px;
+    height: 52px;
+  }
+  .gal {
+    gap: 10px;
+  }
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(12, 12, 10, 0.97);
+  color: var(--bone);
+}
+.lightbox[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+.lightbox::backdrop {
+  background: rgba(12, 12, 10, 0.6);
+}
+.lightbox-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px var(--gut);
+}
+.lightbox-count {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244, 244, 241, 0.85);
+}
+.lightbox-stage {
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding: 0 var(--gut);
+}
+.lightbox-slide {
+  grid-area: 1 / 1;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease);
+}
+.lightbox-slide.is-on {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lightbox-slide picture {
+  display: contents;
+}
+.lightbox-slide img {
+  max-width: 100%;
+  max-height: calc(100dvh - 176px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+.lightbox-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+}
+.lightbox-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(244, 244, 241, 0.94);
+  color: var(--ink);
+  cursor: pointer;
+}
+.lightbox-btn svg {
+  width: 18px;
+  height: 18px;
+}
+.lightbox-btn .flip {
+  display: inline-flex;
+  transform: scaleX(-1);
+}
+.lightbox-btn:hover {
+  background: var(--bone);
+}
+html.has-modal {
+  overflow: hidden;
+}
+
+/* ── Adviser card ── */
+.adviser-who {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 16px 0 4px;
+}
+.adviser-face {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--mist);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 600;
+  object-fit: cover;
+}
+.adviser-name {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.adviser-title {
+  font-size: 13px;
+  color: var(--dim);
+}
+.adviser-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.adviser-wa svg {
+  width: 16px;
+  height: 16px;
+}
+.mbar-wa {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 50px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--bone);
+}
+.mbar-wa svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Reviews ── */
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  padding: 26px;
+  border-radius: 20px;
+  background: var(--paper);
+}
+.review blockquote p {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--body);
+}
+.review figcaption {
+  display: grid;
+  gap: 2px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.review figcaption strong {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.review figcaption span {
+  font-size: 12px;
+  color: var(--dim);
+}
+.stars {
+  display: inline-flex;
+  gap: 2px;
+  color: rgba(19, 19, 17, 0.18);
+}
+.stars svg {
+  width: 15px;
+  height: 15px;
+}
+.stars .on {
+  color: var(--ink);
+}
+.reviews-sum {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 13.5px;
+  color: var(--body);
+}
+
+/* ── Footer: popular searches, grouped ── */
+.ftr-popular {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+}
+.ftr-popular h2 {
+  margin-bottom: 22px;
+}
+.ftr-popular-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 28px;
+}
+.ftr-popular-col.is-wide {
+  grid-column: span 2;
+}
+.ftr-popular-col.is-wide ul {
+  columns: 2;
+  column-gap: 28px;
+}
+.ftr-popular h3 {
+  margin-bottom: 12px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.ftr-popular li {
+  padding: 3px 0;
+  font-size: 13px;
+  color: var(--body);
+  break-inside: avoid;
+}
+@media (max-width: 1100px) {
+  .ftr-popular-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .ftr-popular-grid {
+    grid-template-columns: 1fr;
+  }
+  .ftr-popular-col.is-wide {
+    grid-column: auto;
+  }
+  .ftr-popular-col.is-wide ul {
+    columns: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lcard,
+  .lcard-media img,
+  .gal-thumbs button,
+  .lightbox-slide {
+    transition: none;
+  }
+  .lcard:hover,
+  .gal-thumbs button:hover {
+    transform: none;
+  }
+  .lcard:hover .lcard-media img {
+    transform: none;
+  }
+}
+/* The bottom bar on a listing carries its own WhatsApp button; one is enough. */
+@media (max-width: 900px) {
+  body:has(.mbar-wa) .wa {
+    display: none;
   }
 }

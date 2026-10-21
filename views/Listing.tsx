@@ -3,12 +3,16 @@ import { notFound } from "next/navigation";
 import { PaymentPlan } from "@/components/Blocks";
 import { CostCalculator, MortgageCalculator } from "@/components/Calculators";
 import { EnquiryForm } from "@/components/EnquiryForm";
-import { Arrow } from "@/components/Icons";
+import { AdviserCard } from "@/components/AdviserCard";
+import { ContactButtons } from "@/components/ContactButtons";
+import { Gallery } from "@/components/Gallery";
+import { Arrow, WhatsAppIcon } from "@/components/Icons";
 import { LedgerHead, ListingRow, bedRange, priceLine } from "@/components/ListingCard";
 import { Pic } from "@/components/Pic";
 import { SaveButton } from "@/components/SaveButton";
 import { Crumbs } from "@/components/Sections";
 import { getArea, getListing, getListings } from "@/lib/content";
+import { contactFor, waLink } from "@/lib/contact";
 import { buyingCosts } from "@/lib/costs";
 import { aed, num } from "@/lib/format";
 import { formatDate } from "@/lib/guides";
@@ -67,6 +71,7 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
       : {}),
   };
   const calcPrice = l.price ?? NO_PRICE_DEFAULT;
+  const c = contactFor(l);
   const refs = [
     [d.reference, l.ref],
     [d.projectNo, l.projectNumber],
@@ -80,13 +85,51 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
       <JsonLd data={ld} />
       <JsonLd data={breadcrumbs(locale, crumbs)} />
 
-      <section className="sec tight">
-        <div className="wrap">
-          <Crumbs items={crumbs} locale={locale} />
-          <div className="gallery" style={{ marginTop: 18 }}>
-            {l.images.slice(0, 3).map((k, i) => (
-              <Pic key={k} name={k} priority={i === 0} sizes={i === 0 ? "(max-width: 700px) 100vw, 66vw" : "(max-width: 700px) 100vw, 33vw"} locale={locale} />
-            ))}
+      <section className="hero hero-sm on-photo lhero">
+        <div className="hero-media">
+          <Pic name={l.images[0]} priority sizes="100vw" locale={locale} />
+        </div>
+        <div className="hero-copy lhero-copy">
+          <div className="lhero-main">
+            <Crumbs items={crumbs} locale={locale} />
+            <h1>{l.title}</h1>
+            <ul className="lhero-chips">
+              <li>{l.status === "off-plan" ? t.card.offPlan : t.card.ready}</li>
+              <li>{l.typeLabel}</li>
+              <li>{bedRange(locale, l)}</li>
+              {l.size && (
+                <li>
+                  {t.card.fromSize} {num(l.size)} {sqft}
+                </li>
+              )}
+              {l.handover && (
+                <li>
+                  {d.handover} {l.handover}
+                </li>
+              )}
+            </ul>
+            <Gallery
+              labels={t.gallery}
+              thumbs={l.images.map((k) => (
+                <Pic key={k} name={k} sizes="120px" locale={locale} />
+              ))}
+              slides={l.images.map((k) => (
+                <Pic key={k} name={k} sizes="100vw" locale={locale} />
+              ))}
+            />
+          </div>
+          <div className="lhero-card">
+            <p className="lhero-label">{l.price ? t.card.startingFrom : t.card.price}</p>
+            <p className="lhero-price">{l.price ? aed(l.price, locale) : d.onRequest}</p>
+            {allIn && (
+              <p className="lhero-fees">
+                {aed(allIn, locale)} {d.withFeesShort} · <a href="#costs">{d.breakdown}</a>
+              </p>
+            )}
+            <a href="#enquire" className="cta cta-solid cta-wide">
+              {d.askAvailability}
+            </a>
+            <ContactButtons phone={c.phone} whatsapp={c.whatsapp} message={c.message} locale={locale} />
           </div>
         </div>
       </section>
@@ -94,7 +137,6 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
       <section className="sec tight">
         <div className="wrap article">
           <div className="prose">
-            <h1>{l.title}</h1>
             <p className="byline">
               {l.typeLabel} {d.inArea} {area ? <Link href={lp(locale, `/areas/${area.slug}/`)}>{area.name}</Link> : l.community}
               {comma}
@@ -232,42 +274,45 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
           </div>
 
           <aside className="aside" aria-label={d.priceAndViewing}>
-            <div className="panel">
-              <dl className="calc-sum">
-                <div className="big">
-                  <dt>{d.startingPrice}</dt>
-                  <dd className="num">{priceLine(locale, l)}</dd>
-                </div>
-                {allIn && (
-                  <div>
-                    <dt>
-                      {d.withFees} <a href="#costs">{d.breakdown}</a>
-                    </dt>
-                    <dd className="num">{aed(allIn, locale)}</dd>
-                  </div>
-                )}
-              </dl>
-              <p className="aside-p" style={{ marginTop: 14 }}>
-                {l.typeLabel} · {bedRange(locale, l)}
-                {l.size ? ` · ${d.smallest} ${num(l.size)} ${sqft}` : ""}
-              </p>
-              <div className="btns">
-                <a href="#enquire" className="btn btn-clay">
-                  {d.askAvailability}
-                </a>
-                <SaveButton slug={l.slug} title={l.title} locale={locale} wide />
-              </div>
-              <ul className="aside-ref" style={{ marginTop: 18 }}>
-                {refs.map(([label, value]) => (
-                  <li key={label}>
-                    {label} {value}
-                  </li>
-                ))}
-              </ul>
-            </div>
             <div className="panel" id="enquire">
               <h2 className="aside-h">{d.enquireProject}</h2>
               <EnquiryForm locale={locale} intent="viewing" context={`${l.ref}, ${l.title}, ${l.developer}, ${l.place}`} />
+            </div>
+            <div className="aside-stick">
+              <div className="panel">
+                <dl className="calc-sum">
+                  <div className="big">
+                    <dt>{d.startingPrice}</dt>
+                    <dd className="num">{priceLine(locale, l)}</dd>
+                  </div>
+                  {allIn && (
+                    <div>
+                      <dt>
+                        {d.withFees} <a href="#costs">{d.breakdown}</a>
+                      </dt>
+                      <dd className="num">{aed(allIn, locale)}</dd>
+                    </div>
+                  )}
+                </dl>
+                <p className="aside-p" style={{ marginTop: 14 }}>
+                  {l.typeLabel} · {bedRange(locale, l)}
+                  {l.size ? ` · ${d.smallest} ${num(l.size)} ${sqft}` : ""}
+                </p>
+                <div className="btns">
+                  <a href="#enquire" className="btn btn-clay">
+                    {d.askAvailability}
+                  </a>
+                  <SaveButton slug={l.slug} title={l.title} locale={locale} wide />
+                </div>
+                <ul className="aside-ref" style={{ marginTop: 18 }}>
+                  {refs.map(([label, value]) => (
+                    <li key={label}>
+                      {label} {value}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {c.adviser && <AdviserCard a={c.adviser} message={c.message} locale={locale} />}
             </div>
           </aside>
         </div>
@@ -302,6 +347,11 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
         <a href="#enquire" className="btn btn-clay">
           {d.askAvailability}
         </a>
+        {c.whatsapp && (
+          <a href={waLink(c.whatsapp, c.message)} className="mbar-wa" target="_blank" rel="noopener noreferrer" aria-label={t.contactButtons.whatsapp}>
+            <WhatsAppIcon />
+          </a>
+        )}
       </div>
     </>
   );

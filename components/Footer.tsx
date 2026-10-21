@@ -16,11 +16,13 @@ export function Footer({ locale }: { locale: Locale }) {
   const guides = getGuides(locale).slice(0, 7);
   const services = getServices(locale);
   const all = getListings(locale);
-  const order = ["developer", "type", "community", "budget"];
-  const popular = collections()
-    .filter((c) => order.includes(c.kind))
-    .sort((a, b) => order.indexOf(a.kind) - order.indexOf(b.kind))
-    .slice(0, 16);
+  const cols = collections();
+  const popular = [
+    { key: "area", h: t.popular.byArea, items: cols.filter((c) => c.kind === "type-area" || c.kind === "beds-area" || c.kind === "community") },
+    { key: "type", h: t.popular.byType, items: cols.filter((c) => c.kind === "type") },
+    { key: "budget", h: t.popular.byBudget, items: cols.filter((c) => c.kind === "budget") },
+    { key: "developer", h: t.popular.byDeveloper, items: cols.filter((c) => c.kind === "developer") },
+  ].filter((g) => g.items.length > 0);
   const L = (path: string) => lp(locale, path);
   const social = Object.entries(site.social).filter(([, url]) => url);
 
@@ -142,15 +144,22 @@ export function Footer({ locale }: { locale: Locale }) {
             </ul>
           </nav>
         </div>
-        <nav className="ftr-links links" aria-labelledby="f-popular">
-          <h2 id="f-popular">{t.collection.popular}</h2>
-          <ul className="chips">
-            {popular.map((c) => (
-              <li key={c.slug}>
-                <Link href={L(`/buy/${c.slug}/`)}>{collectionH1(locale, c, all)}</Link>
-              </li>
+        <nav className="ftr-popular" aria-labelledby="f-popular">
+          <h2 id="f-popular">{t.popular.h}</h2>
+          <div className="ftr-popular-grid">
+            {popular.map((g) => (
+              <div key={g.key} className={`ftr-popular-col${g.key === "area" ? " is-wide" : ""}`}>
+                <h3>{g.h}</h3>
+                <ul>
+                  {g.items.map((c) => (
+                    <li key={c.slug}>
+                      <Link href={L(`/buy/${c.slug}/`)}>{collectionH1(locale, c, all)}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </nav>
         <div className="ftr-base">
           <span>{f.rights}</span>

@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { Arrow } from "./Icons";
+import { ContactButtons } from "./ContactButtons";
+import { Pin } from "./Icons";
 import { Pic } from "./Pic";
 import { SaveButton } from "./SaveButton";
 import type { ListingView } from "@/lib/content";
-import { aed } from "@/lib/format";
+import { contactFor } from "@/lib/contact";
+import { aed, num } from "@/lib/format";
 import { lp } from "@/lib/i18n";
 import type { Locale } from "@/lib/locale";
 import { ui } from "@/lib/ui";
@@ -26,44 +28,61 @@ export function LedgerHead(_props: { locale: Locale }) {
   return null;
 }
 
-/** A listing: the photograph, then project, homes, status and price. */
-export function ListingRow({ l, locale, sizes = "140px", priority = false }: { l: ListingView; locale: Locale; sizes?: string; priority?: boolean }) {
+/**
+ * A listing card: the photograph with its status, then the project, where it is, what it offers,
+ * the starting price and a way to act without opening the page (call and WhatsApp, or the
+ * enquiry form until those numbers exist).
+ */
+export function ListingRow({ l, locale, sizes = "(max-width: 560px) 100vw, (max-width: 1000px) 50vw, 33vw", priority = false }: { l: ListingView; locale: Locale; sizes?: string; priority?: boolean }) {
   const t = ui(locale).card;
+  const href = lp(locale, `/properties/${l.slug}/`);
+  const c = contactFor(l);
   return (
-    <article className="row">
-      <div className="row-media">
+    <article className="lcard">
+      <div className="lcard-media">
         <Pic name={l.images[0]} sizes={sizes} priority={priority} locale={locale} />
+        <ul className="lcard-tags">
+          <li>{l.status === "off-plan" ? t.offPlan : t.ready}</li>
+          {l.handover && (
+            <li>
+              {t.handover} {l.handover}
+            </li>
+          )}
+        </ul>
+        <div className="lcard-save">
+          <SaveButton slug={l.slug} title={l.title} locale={locale} />
+        </div>
       </div>
-      <div className="row-title">
+      <div className="lcard-body">
         <h3>
-          <Link href={lp(locale, `/properties/${l.slug}/`)} className="row-link">
+          <Link href={href} className="lcard-link">
             {l.title}
           </Link>
         </h3>
-        <p className="m">
-          <span dir="ltr">{l.developer}</span> · {l.place}
+        <p className="lcard-place">
+          <Pin />
+          <span>
+            {l.place} · <span dir="ltr">{l.developer}</span>
+          </span>
         </p>
+        <ul className="lcard-specs">
+          <li>{l.typeLabel}</li>
+          <li>{bedRange(locale, l)}</li>
+          {l.size && (
+            <li>
+              {t.fromSize} {num(l.size)} {t.sqft}
+            </li>
+          )}
+        </ul>
+        <div className="lcard-foot">
+          <p className="lcard-price">
+            <span>{l.price ? t.startingFrom : t.price}</span>
+            <strong>{l.price ? aed(l.price, locale) : t.onRequest}</strong>
+          </p>
+          {l.planLabel && <span className="lcard-plan">{l.planLabel}</span>}
+        </div>
+        <ContactButtons phone={c.phone} whatsapp={c.whatsapp} message={c.message} fallback={{ href: `${href}#enquire`, label: t.ask }} locale={locale} className="cta-pair lcard-cta" />
       </div>
-      <div className="row-meta">
-        <p className="m">{l.typeLabel}</p>
-        <p className="m">{bedRange(locale, l)}</p>
-      </div>
-      <div className="row-meta">
-        <p className="m">{l.status === "off-plan" ? `${t.offPlan}${l.handover ? ` · ${l.handover}` : ""}` : t.ready}</p>
-        {l.planLabel && <p className="m">{l.planLabel}</p>}
-      </div>
-      <div className="row-price">
-        <p className="price">
-          {l.price ? aed(l.price, locale) : t.onRequest}
-          {l.price && <small>{t.from}</small>}
-        </p>
-      </div>
-      <div className="row-save">
-        <SaveButton slug={l.slug} title={l.title} locale={locale} />
-      </div>
-      <span className="row-arrow" aria-hidden="true">
-        <Arrow />
-      </span>
     </article>
   );
 }

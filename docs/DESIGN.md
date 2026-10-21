@@ -11,7 +11,10 @@ with no picture is a candidate for cutting, not for a box.
 - `<Hero image h1 lede crumbs byline caption small foot locale/>`: full-bleed photograph, type in the lower left over a scrim.
 - `<Plate image h2 lede caption locale>` buttons `</Plate>`: full-bleed photograph with the copy in its lower left.
 - `.doors > a.door`: photographs with the service name on them (home page).
-- `.ledger` / `.grid` + `<ListingRow/>`: listings as photographs with three lines of text beneath. `<LedgerHead/>` renders nothing.
+- `.ledger` / `.grid` + `<ListingRow/>`: `.lcard` paper cards: photograph with status and handover chips, project, place and developer, specs, starting price, then `<ContactButtons/>` (call and WhatsApp when the numbers exist, else "Ask about availability"). `<LedgerHead/>` renders nothing. `.row` is now only the guide rows.
+- Listing page: `.hero.lhero` full-bleed photograph with crumbs, h1, `.lhero-chips`, `<Gallery/>` (thumbnails, "View gallery (n)", a `<dialog>` lightbox) and a light `.lhero-card` with the price. Below, the `.aside` starts with the enquiry form and `.aside-stick` keeps the price and `<AdviserCard/>` in view.
+- `<Reviews/>`: a rail of `.review` cards from `lib/reviews.ts`; renders nothing below three reviews.
+- Footer `.ftr-popular`: every `/buy/` collection page, grouped by area, type, budget and developer.
 - `.atlas` + `<AtlasTile/>`: areas as photographs with the name on them.
 - `.index` + `<IndexRow idx title text href image locale/>`: image and text side by side, alternating; `.index.no-thumb` is a plain spaced list.
 - `.ladder`: steps with space between, no numbers. `.figs`: a quiet line of numbers, no tiles.

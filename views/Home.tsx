@@ -7,6 +7,7 @@ import { ListingRow } from "@/components/ListingCard";
 import { Partners } from "@/components/Partners";
 import { Pic } from "@/components/Pic";
 import { Rail } from "@/components/Rail";
+import { Reviews } from "@/components/Reviews";
 import { AtlasTile, Hero, Plate } from "@/components/Sections";
 import { areaName, getAreas, getGuides, getListings, getServices } from "@/lib/content";
 import { aed, num, plainText } from "@/lib/format";
@@ -19,8 +20,10 @@ import { JsonLd } from "@/lib/seo";
 import { PROMISES } from "@/lib/site";
 import { ui } from "@/lib/ui";
 
-/** One project per developer, in inventory order, up to six. */
-function pickFeatured<T extends { developer: string }>(all: T[]) {
+/** One project per developer, up to six, highest starting price first: the focus is the upper end
+ * of the market. Projects priced on request follow the priced ones. */
+function pickFeatured<T extends { developer: string; price: number | null }>(list: T[]) {
+  const all = [...list].sort((a, b) => (b.price ?? -1) - (a.price ?? -1));
   const seen = new Set<string>();
   const first = all.filter((l) => (seen.has(l.developer) ? false : (seen.add(l.developer), true)));
   return [...first, ...all.filter((l) => !first.includes(l))].slice(0, 6);
@@ -213,6 +216,8 @@ export function Home({ locale }: { locale: Locale }) {
           </div>
         </div>
       </section>
+
+      <Reviews locale={locale} />
 
       <section className="sec tight sand" aria-labelledby="guides-h">
         <div className="wrap">
