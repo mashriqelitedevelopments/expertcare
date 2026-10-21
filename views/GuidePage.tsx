@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewsletterSection } from "@/components/NewsletterSection";
 import { notFound } from "next/navigation";
 import { Blocks, Rich } from "@/components/Blocks";
 import { EnquiryForm } from "@/components/EnquiryForm";
@@ -163,6 +164,8 @@ export function GuidePage({ locale, slug }: { locale: Locale; slug: string }) {
           </div>
         </div>
       </section>
+
+      <NewsletterSection locale={locale} />
     </>
   );
 }

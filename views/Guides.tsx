@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewsletterSection } from "@/components/NewsletterSection";
 import { Arrow } from "@/components/Icons";
 import { Eyebrow, Hero, IndexRow } from "@/components/Sections";
 import { getGuides } from "@/lib/content";
@@ -89,6 +90,7 @@ export function Guides({ locale }: { locale: Locale }) {
           </section>
         </div>
       </section>
+      <NewsletterSection locale={locale} />
     </>
   );
 }

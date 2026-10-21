@@ -120,6 +120,24 @@ const EN = {
     dubai: "Dubai",
     typePlural: { Apartment: "apartments", Penthouse: "penthouses", Villa: "villas", Townhouse: "townhouses" },
   },
+  newsletter: {
+    h: "The Dubai market, once a month",
+    lede: "What sold and for how much, area by area, from Dubai Land Department records. The off-plan launches worth a look, with their payment plans. One short email, and you can leave at any time.",
+    label: "Email address",
+    placeholder: "Your email address",
+    submit: "Subscribe",
+    topicsLegend: "What interests you",
+    topics: { offPlan: "Off-plan launches", resale: "Homes for resale", prices: "Prices by area" },
+    consent: "By subscribing you agree to receive the ExpertCare market note. Read the",
+    privacy: "privacy notice",
+    done: "Thank you. The next market note goes to {email}.",
+    sentEmail: "Your email app has opened with the request. Press send and we will add you.",
+    sentWhatsapp: "WhatsApp has opened with the request. Press send and we will add you.",
+    subject: "Please add me to the ExpertCare market note",
+    request: "Please add me to the ExpertCare market note.",
+    topicsLine: "Topics",
+    offline: "Sign-ups are not connected yet: add the sheet's address in lib/newsletter.ts, or an email or WhatsApp number in lib/site.ts.",
+  },
   contactButtons: {
     call: "Call",
     whatsapp: "WhatsApp",
@@ -767,7 +785,7 @@ const EN = {
   },
   privacy: {
     h1: "Privacy notice",
-    updated: "Updated 17 October 2026.",
+    updated: "Updated 21 October 2026.",
     crumb: "Privacy",
     blocks: [
       {
@@ -781,6 +799,14 @@ const EN = {
         h: "How we use it",
         p: ["We do not sell your information, and we share it with a buyer, seller, tenant, landlord, developer or bank only to progress a sale, a letting or a purchase you have asked us to help with."],
         ul: ["To reply to you and arrange viewings or a valuation visit", "To find and send you homes that match your brief, or tenants and buyers for a home you own", "To see a sale, purchase or tenancy through with the other party, the registration trustee, Ejari and, if you ask us to, a bank"],
+      },
+      {
+        h: "The market note",
+        p: [
+          "If you subscribe, we keep your email address, the topics you pick and the page you signed up on. We use them only to send the market note. They are stored in a Google Sheet, hosted for us by Google, that only ExpertCare staff can open.",
+          "You can unsubscribe at any time by replying to any note or writing to us. We then mark you as unsubscribed and send nothing more.",
+        ],
+        ul: [],
       },
       {
         h: "Your shortlist",

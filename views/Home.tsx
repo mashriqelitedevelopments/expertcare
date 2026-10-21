@@ -4,6 +4,7 @@ import { EnquiryForm } from "@/components/EnquiryForm";
 import { HomeSearch } from "@/components/HomeSearch";
 import { Arrow } from "@/components/Icons";
 import { ListingRow } from "@/components/ListingCard";
+import { NewsletterSection } from "@/components/NewsletterSection";
 import { Partners } from "@/components/Partners";
 import { Pic } from "@/components/Pic";
 import { Rail } from "@/components/Rail";
@@ -251,6 +252,8 @@ export function Home({ locale }: { locale: Locale }) {
           </div>
         </div>
       </section>
+
+      <NewsletterSection locale={locale} />
 
       <section className="sec" aria-labelledby="faq-h">
         <div className="wrap twin">

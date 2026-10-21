@@ -34,6 +34,7 @@ npm run check      # builds into .next-build and gates every page (see scripts/c
 | DLD price pages | `npm run market` → `lib/data/market.json` (Dubai Open Data Licence; attribution kept on the page) |
 | Advisers (named on listings, call and WhatsApp routing) | `lib/team.ts` |
 | Client reviews (word for word from Google, hidden under three) | `lib/reviews.ts` |
+| Newsletter sign-ups (market note) | `lib/newsletter.ts` → Google Sheet via `scripts/newsletter-sheet.gs` |
 | Interface strings and page copy | `lib/ui.ts` |
 | Content rules for writers | `docs/STYLE.md` |
 
@@ -59,6 +60,9 @@ the webhook URL it shows on the same screen (add it under GitHub Settings → We
   cards and pages use the brokerage's own numbers from `lib/site.ts`, and the adviser card stays hidden.
 - Copy at least three real reviews from the Google Business Profile into `lib/reviews.ts`, word for word,
   with the profile link, rating and count. The home-page section appears once there are three.
+- Connect the newsletter: follow the set-up at the top of `scripts/newsletter-sheet.gs`, then paste the web
+  app URL into `NEWSLETTER_ENDPOINT` in `lib/newsletter.ts`. Until then sign-ups go to the email or WhatsApp
+  in `lib/site.ts`. Someone has to write and send the note: the sign-up promises one email a month.
 - Every listing needs a developer marketing agreement, a Trakheesi permit number and image permission.
 - Replace the placeholder photographs noted in `lib/areas.ts` (`TODO photo`) and `public/img/CREDITS.md`.
 - Wire the enquiry forms: they hand the message to WhatsApp or email from `lib/site.ts`.
