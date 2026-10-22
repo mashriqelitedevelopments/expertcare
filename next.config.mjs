@@ -8,5 +8,7 @@ const nextConfig = {
   distDir: process.env.NEXT_DIST_DIR || ".next",
   trailingSlash: true,
   images: { unoptimized: true },
+  // The "N" badge Next.js shows in development sat on top of the consent card in previews.
+  devIndicators: false,
 };
 export default nextConfig;

@@ -2310,46 +2310,12 @@ h4 {
   }
 }
 
-/* ── Consent notice: a light card, so it reads over the hero and over the footer alike ── */
-.cons {
-  position: fixed;
-  left: 16px;
-  bottom: 16px;
-  z-index: 60;
-  max-width: 380px;
-  padding: 20px 22px;
-  background: var(--paper);
-  color: var(--body);
-  font-size: 13px;
-  line-height: 1.6;
-  box-shadow: 0 24px 48px -24px rgba(12, 12, 10, 0.45);
-}
-.cons a {
-  color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.cons-b {
-  display: flex;
-  gap: 10px;
-  margin-top: 14px;
-}
-.cons-b .btn {
-  min-height: 38px;
-  padding: 0 14px;
-}
 .cons-choice {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   font-size: 14px;
-}
-@media (max-width: 560px) {
-  .cons {
-    right: 16px;
-    max-width: none;
-  }
 }
 
 /* ── Charts ───────────────────────────────────────────────── */
@@ -2913,11 +2879,6 @@ h4 {
     clip: rect(0 0 0 0);
   }
 }
-.cons {
-  left: 16px;
-  right: auto;
-  max-width: min(380px, calc(100% - 100px));
-}
 
 /* ── Footer marquee ───────────────────────────────────────── */
 .marquee-line {
@@ -3222,12 +3183,15 @@ h4 {
   }
 }
 
-/* ── Consent notice: a rounded card, one pill button and a text choice ── */
+/* ── Consent notice: a rounded light card, two pill choices of equal weight. Labels never wrap:
+   the pills sit side by side when they fit and stack full width when they do not. ── */
 .cons {
+  position: fixed;
   left: 20px;
   bottom: 20px;
-  max-width: 360px;
-  padding: 22px 22px 20px;
+  z-index: 60;
+  width: min(380px, calc(100vw - 40px));
+  padding: 22px;
   border-radius: 18px;
   background: var(--paper);
   color: var(--body);
@@ -3242,34 +3206,39 @@ h4 {
 }
 .cons-b {
   display: flex;
-  align-items: center;
-  gap: 18px;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-top: 16px;
 }
 .cons-b .btn {
-  min-height: 42px;
-  padding: 0 20px;
+  flex: 1 1 auto;
+  min-height: 44px;
+  padding: 0 18px;
   border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
 }
 .cons-b .btn-ghost {
-  border: 0;
-  padding: 0;
-  min-height: 0;
-  background: none;
-  color: var(--dim);
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  border: 1px solid var(--line-2);
+  background: transparent;
+  color: var(--ink);
 }
 .cons-b .btn-ghost:hover {
-  color: var(--ink);
-  background: none;
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bone);
 }
 @media (max-width: 560px) {
   .cons {
     left: 10px;
     right: 10px;
     bottom: 10px;
-    max-width: none;
+    width: auto;
+    padding: 20px;
+  }
+  .cons-b .btn {
+    flex-basis: 100%;
   }
   body:has(.mbar) .cons {
     bottom: 86px;
