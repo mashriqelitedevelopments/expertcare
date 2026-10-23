@@ -5,6 +5,7 @@ import { Pic } from "./Pic";
 import { SaveButton } from "./SaveButton";
 import type { ListingView } from "@/lib/content";
 import { contactFor } from "@/lib/contact";
+import { unitsFor } from "@/lib/units";
 import { aed, num } from "@/lib/format";
 import { lp } from "@/lib/i18n";
 import type { Locale } from "@/lib/locale";
@@ -37,6 +38,8 @@ export function ListingRow({ l, locale, sizes = "(max-width: 560px) 100vw, (max-
   const t = ui(locale).card;
   const href = lp(locale, `/properties/${l.slug}/`);
   const c = contactFor(l);
+  const units = unitsFor(l.slug);
+  const u = ui(locale).units;
   return (
     <article className="lcard">
       <div className="lcard-media">
@@ -48,6 +51,7 @@ export function ListingRow({ l, locale, sizes = "(max-width: 560px) 100vw, (max-
               {t.handover} {l.handover}
             </li>
           )}
+          {units && units.length > 0 && <li>{units.length === 1 ? u.chipOne : u.chipMany.replace("{n}", String(units.length))}</li>}
         </ul>
         <div className="lcard-save">
           <SaveButton slug={l.slug} title={l.title} locale={locale} />

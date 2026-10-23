@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { track } from "@/lib/analytics";
 import { lp } from "@/lib/i18n";
 import type { Locale } from "@/lib/locale";
@@ -19,6 +19,14 @@ export function EnquiryForm({ locale, intent = "general", context }: { locale: L
   const t = ui(locale).form;
   const id = useId();
   const [sent, setSent] = useState<"" | "whatsapp" | "email" | "offline">("");
+  // A unit picked in a listing's availability table: from the page address, or the table's event.
+  const [unit, setUnit] = useState("");
+  useEffect(() => {
+    setUnit(new URLSearchParams(window.location.search).get("unit")?.slice(0, 20) ?? "");
+    const on = (e: Event) => setUnit(String((e as CustomEvent).detail ?? "").slice(0, 20));
+    window.addEventListener("ec-unit", on);
+    return () => window.removeEventListener("ec-unit", on);
+  }, []);
   const f = (k: string) => `${id}-${k}`;
   const keys = ["name", "phone", "email", "address", "sellWhen", "sellWhy", "units", "tenanted", "rentBudget", "moveIn", "when", "format", "budget", "areas", "type", "beds", "status", "finance", "timing", "message"] as const;
 
@@ -26,7 +34,7 @@ export function EnquiryForm({ locale, intent = "general", context }: { locale: L
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const rows = keys.map((k) => [t.labels[k], String(data.get(k) ?? "").trim()] as const).filter(([, v]) => v);
-    const text = [`${t.subjects[intent]} ${t.from}`, context ? `${t.labels.home}: ${context}` : "", ...rows.map(([k, v]) => `${k}: ${v}`)].filter(Boolean).join("\n");
+    const text = [`${t.subjects[intent]} ${t.from}`, context ? `${t.labels.home}: ${context}` : "", unit ? `${t.labels.unit}: ${unit}` : "", ...rows.map(([k, v]) => `${k}: ${v}`)].filter(Boolean).join("\n");
     if (site.whatsapp) {
       window.open(`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
       setSent("whatsapp");
@@ -54,6 +62,11 @@ export function EnquiryForm({ locale, intent = "general", context }: { locale: L
 
   return (
     <form className="form" onSubmit={submit}>
+      {unit && (
+        <p className="form-unit">
+          {t.labels.unit} {unit}
+        </p>
+      )}
       <div className="inputs">
         <div className="input full">
           <label htmlFor={f("name")}>{t.name}</label>

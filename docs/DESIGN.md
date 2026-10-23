@@ -13,6 +13,7 @@ with no picture is a candidate for cutting, not for a box.
 - `.doors > a.door`: photographs with the service name on them (home page).
 - `.ledger` / `.grid` + `<ListingRow/>`: `.lcard` paper cards: photograph with status and handover chips, project, place and developer, specs, starting price, then `<ContactButtons/>` (call and WhatsApp when the numbers exist, else "Ask about availability"). `<LedgerHead/>` renders nothing. `.row` is now only the guide rows.
 - Listing page: `.hero.lhero` full-bleed photograph with crumbs, h1, `.lhero-chips`, `<Gallery/>` (thumbnails, "View gallery (n)", a `<dialog>` lightbox) and a light `.lhero-card` with the price. Below, the `.aside` starts with the enquiry form and `.aside-stick` keeps the price and `<AdviserCard/>` in view.
+- `<UnitTable/>` on Mashriq Elite listings: "Homes available now", one row per available unit (unit, unit type, type, view, size, parking, plans, "Ask"); "Ask" scrolls to the form and tags the message with the unit. Snapshot at build, live refresh in the browser.
 - `<Reviews/>`: a rail of `.review` cards from `lib/reviews.ts`; renders nothing below three reviews.
 - `<NewsletterSection/>` / `.news`: a photograph beside a paper panel with a pill email field and topic toggles (home, guides index, every guide).
 - Footer `.ftr-popular`: every `/buy/` collection page, grouped by area, type, budget and developer.

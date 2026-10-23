@@ -124,5 +124,54 @@
     "sources": ["Mashriq Elite sales presentation, August 2026", "Mashriq Elite project brief, 25 July 2026", "DLD Real Estate Projects open data (project 4061)"],
     "checked": "2026-09-16",
     "uncertain": ["Prices and handover date are not published: Mashriq Elite quotes prices on request and shows no handover dates (company decision, 12 Sep 2026).", "The draft sale agreement sets a 40/60 schedule; the sales team quotes 30/70 (re-confirmed 1 Sep 2026)."]
+  },
+  {
+    "slug": "mashriq-elite-floarea-grande",
+    "name": "Floareá Grandé",
+    "developer": "Mashriq Elite",
+    "developerUrl": "https://mashriqelite.com",
+    "projectUrl": "https://mashriqelite.com/",
+    "community": "Arjan",
+    "district": "Arjan",
+    "unitTypes": ["Apartment"],
+    "bedrooms": { "min": 0, "max": 3 },
+    "priceFrom": null,
+    "priceFromUnit": null,
+    "sizeFrom": 422,
+    "handover": null,
+    "paymentPlan": [
+      { "stage": "During construction", "pct": 30 },
+      { "stage": "On handover", "pct": 70 }
+    ],
+    "paymentPlanLabel": "30/70",
+    "launched": "2025-Q1",
+    "availability": "One home remains",
+    "highlights": [
+      "222 homes on nine residential floors, with a basement, ground floor and roof",
+      "Studios to three-bedroom apartments; one studio is still available",
+      "A garden atrium with an olive tree at its centre, and a vertical garden with a water feature",
+      "District cooling, with the charge billed inside the DEWA bill",
+      "Across from Floareá Residence, which Mashriq Elite has handed over in Arjan"
+    ],
+    "amenities": ["Grand swimming pool", "Kids' pool", "Natural garden atrium", "Vertical garden with water feature", "Fully equipped indoor gym", "Steam room and sauna", "Yoga studio", "Clubhouse with indoor games"],
+    "description": [
+      "Floareá Grandé is a 222-apartment building in Arjan, inside Dubai Properties' master community. Homes run from studios of about 422 sq ft to three-bedroom apartments of about 1,499 sq ft, on nine residential floors above a basement and ground floor.",
+      "The building is planned around a garden atrium with an olive tree at its centre. Seventeen amenities include a large pool, a kids' pool, a gym, a steam room and sauna, and a clubhouse. It sits across from Floareá Residence, the developer's handed-over building in Arjan."
+    ],
+    "images": [
+      { "file": "img/mashriq-elite-floarea-grande/1.jpg", "sourceUrl": "Mashriq Elite sales kit (exterior render)", "alt": "Floareá Grandé at dusk, with lit balconies over the street", "kind": "exterior" },
+      { "file": "img/mashriq-elite-floarea-grande/2.jpg", "sourceUrl": "Mashriq Elite sales kit (entrance lobby render)", "alt": "The garden atrium at Floareá Grandé, an olive tree under a glass roof", "kind": "interior" },
+      { "file": "img/mashriq-elite-floarea-grande/3.jpg", "sourceUrl": "Mashriq Elite sales kit (pool render)", "alt": "The pool with fountains and palms at the foot of Floareá Grandé", "kind": "amenity" }
+    ],
+    "sources": [
+      "Mashriq Elite sales presentation, August 2026",
+      "Mashriq Elite project brief, 25 July 2026",
+      "Mashriq Elite inventory sheet, 22 October 2026 (one unit available)"
+    ],
+    "checked": "2026-10-22",
+    "uncertain": [
+      "Prices and handover date are not published: Mashriq Elite quotes prices on request and shows no handover dates (company decision, 12 Sep 2026).",
+      "Mashriq Elite's own site lists Grandé as sold out; its inventory sheet still shows one studio available."
+    ]
   }
 ]

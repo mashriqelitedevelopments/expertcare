@@ -44,6 +44,8 @@ AREA_MATCH = [
     (r"\bbusiness bay\b", "business-bay"),
     (r"\bjumeirah village circle\b|\bjvc\b", "jumeirah-village-circle"),
     (r"\bdubai creek harbour\b|\bcreek harbour\b", "dubai-creek-harbour"),
+    (r"\bdubai islands\b", "dubai-islands"),
+    (r"\barjan\b", "arjan"),
 ]
 
 
@@ -77,13 +79,21 @@ def images_for(p, credits):
     keys, specs = [], {}
     for n, img in enumerate(p["images"][:MAX_IMAGES], start=1):
         master = MASTERS / p["slug"] / Path(img["file"]).name
+        key = f"p/{p['slug']}-{n}"
         if not master.exists():
-            fail(f"{p['slug']}: missing image {master}")
+            # Masters are not in git. When one is missing, keep the sizes already built from it.
+            built = sorted(int(f.stem.rsplit("-", 1)[1]) for f in OUT_IMG.glob(f"{p['slug']}-{n}-*.jpg"))
+            if not built:
+                fail(f"{p['slug']}: missing image {master} and nothing built from it")
+            print(f"  reuse {key}: master not on this machine, {len(built)} sizes already built")
+            keys.append(key)
+            specs[key] = {"ratio": list(RATIO), "widths": built, "alt": img["alt"], "altAr": img.get("altAr") or img["alt"], "src": img["sourceUrl"]}
+            credits.append(f"- `{key}`: {p['developer']}, {p['name']}. {img['sourceUrl']}")
+            continue
         im = crop(Image.open(master).convert("RGB"))
         if im.width < MIN_WIDTH:
             print(f"  skip {master.name}: {im.width}px after crop")
             continue
-        key = f"p/{p['slug']}-{n}"
         widths = [w for w in WIDTHS if w <= im.width]
         for w in widths:
             r = im.resize((w, round(w * RATIO[1] / RATIO[0])), Image.LANCZOS)
@@ -105,8 +115,6 @@ def main():
     for f in sorted(SRC.glob("ar*.json")):
         ar_text.update(json.loads(f.read_text()))
     OUT_IMG.mkdir(parents=True, exist_ok=True)
-    for old in OUT_IMG.glob("*"):
-        old.unlink()
 
     projects, image_specs, credits = [], {}, []
     for name in FILES:
@@ -180,6 +188,11 @@ def main():
             if t.get("alts") and i < len(t["alts"]):
                 image_specs[key]["altAr"] = t["alts"][i]
 
+    # Remove built images that no project uses any more (built ones are reused, so no blanket wipe).
+    keep = {k.split("/", 1)[1] for k in image_specs}
+    for f in OUT_IMG.glob("*-*-*.*"):
+        if f.stem.rsplit("-", 1)[0] not in keep:
+            f.unlink()
     (DATA / "projects.json").write_text(json.dumps(projects, ensure_ascii=False, indent=1) + "\n")
     (DATA / "projects-ar.json").write_text(json.dumps(ar_out, ensure_ascii=False, indent=1) + "\n")
     (DATA / "project-images.json").write_text(json.dumps(image_specs, ensure_ascii=False, indent=1) + "\n")

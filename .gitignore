@@ -5,3 +5,5 @@ out
 masters
 *.tsbuildinfo
 .DS_Store
+# written by scripts/offplan/build.py, unused by the site (English only)
+lib/data/projects-ar.json

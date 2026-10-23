@@ -6,6 +6,7 @@ import { EnquiryForm } from "@/components/EnquiryForm";
 import { AdviserCard } from "@/components/AdviserCard";
 import { ContactButtons } from "@/components/ContactButtons";
 import { Gallery } from "@/components/Gallery";
+import { UnitTable } from "@/components/UnitTable";
 import { Arrow, WhatsAppIcon } from "@/components/Icons";
 import { LedgerHead, ListingRow, bedRange, priceLine } from "@/components/ListingCard";
 import { Pic } from "@/components/Pic";
@@ -13,6 +14,7 @@ import { SaveButton } from "@/components/SaveButton";
 import { Crumbs } from "@/components/Sections";
 import { getArea, getListing, getListings } from "@/lib/content";
 import { contactFor, waLink } from "@/lib/contact";
+import { UNITS_CHECKED, unitsFor } from "@/lib/units";
 import { buyingCosts } from "@/lib/costs";
 import { aed, num } from "@/lib/format";
 import { formatDate } from "@/lib/guides";
@@ -72,6 +74,8 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
   };
   const calcPrice = l.price ?? NO_PRICE_DEFAULT;
   const c = contactFor(l);
+  const units = unitsFor(l.slug);
+  const unitChip = units && units.length > 0 ? (units.length === 1 ? t.units.chipOne : t.units.chipMany.replace("{n}", String(units.length))) : "";
   const refs = [
     [d.reference, l.ref],
     [d.projectNo, l.projectNumber],
@@ -107,6 +111,7 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
                   {d.handover} {l.handover}
                 </li>
               )}
+              {unitChip && <li>{unitChip}</li>}
             </ul>
             <Gallery
               labels={t.gallery}
@@ -210,6 +215,14 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
                 )}
               </div>
             </section>
+
+            {units && (
+              <section id="units" aria-labelledby="units-h">
+                <h2 id="units-h">{t.units.h}</h2>
+                <p className="units-lede">{t.units.lede}</p>
+                <UnitTable slug={l.slug} initial={units} checked={formatDate(UNITS_CHECKED, locale)} labels={t.units} />
+              </section>
+            )}
 
             {l.plan && (
               <section id="payment-plan" aria-labelledby="plan-h">

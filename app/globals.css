@@ -1716,7 +1716,7 @@ h4 {
 }
 @media (max-width: 1000px) {
   .article {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .aside,
   .aside-stick {
@@ -1856,6 +1856,7 @@ h4 {
 
 /* ── Tables: quiet rows ───────────────────────────────────── */
 .tbl-wrap {
+  position: relative; /* keeps visually hidden captions inside the scroll box, not widening the page */
   overflow-x: auto;
 }
 .tbl {
@@ -4043,4 +4044,63 @@ html.has-modal {
   .news-bar .cta {
     padding: 0 18px;
   }
+}
+
+/* ── Mashriq Elite units: the availability table on a listing ── */
+.tbl.units {
+  min-width: 720px;
+}
+.tbl.units th[scope="row"] {
+  font-weight: 500;
+  color: var(--ink);
+}
+.unit-ask {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 14px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+  transition:
+    background 0.25s var(--ease),
+    color 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+}
+.unit-ask:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bone);
+}
+.tbl.units .tnum {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.units-lede {
+  color: var(--body);
+}
+.units-note {
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: var(--dim);
+}
+.form-unit {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bone);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+#enquire {
+  scroll-margin-top: calc(var(--hdr) + 16px);
 }

@@ -11,6 +11,9 @@ Developer renders and photographs, used to present each developer's project. Wri
 - `p/mashriq-elite-floarea-breeze-1`: Mashriq Elite, Floareá Breeze. Mashriq Elite sales kit (hero render, January 2026)
 - `p/mashriq-elite-floarea-breeze-2`: Mashriq Elite, Floareá Breeze. Mashriq Elite sales kit (facade render, February 2026)
 - `p/mashriq-elite-floarea-breeze-3`: Mashriq Elite, Floareá Breeze. Mashriq Elite sales kit (podium render, February 2026)
+- `p/mashriq-elite-floarea-grande-1`: Mashriq Elite, Floareá Grandé. Mashriq Elite sales kit (exterior render)
+- `p/mashriq-elite-floarea-grande-2`: Mashriq Elite, Floareá Grandé. Mashriq Elite sales kit (entrance lobby render)
+- `p/mashriq-elite-floarea-grande-3`: Mashriq Elite, Floareá Grandé. Mashriq Elite sales kit (pool render)
 - `p/sobha-sanctuary-the-woods-abode-1`: Sobha Realty, The Woods Abode. https://sobharealty.com/sites/default/files/2026-08/Desk%20banner.jpg
 - `p/sobha-sanctuary-the-woods-abode-2`: Sobha Realty, The Woods Abode. https://sobharealty.com/sites/default/files/2026-08/ID-01a_1.jpg
 - `p/sobha-sanctuary-the-woods-abode-3`: Sobha Realty, The Woods Abode. https://sobharealty.com/sites/default/files/2026-08/L-02%20-%20KIDS%20PLAY%20AREA_1.jpg

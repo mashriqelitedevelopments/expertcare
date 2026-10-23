@@ -125,6 +125,48 @@
   "altAr": "ممشى حدائقي مزروع على منصة Floareá Breeze",
   "src": "Mashriq Elite sales kit (podium render, February 2026)"
  },
+ "p/mashriq-elite-floarea-grande-1": {
+  "ratio": [
+   3,
+   2
+  ],
+  "widths": [
+   640,
+   960,
+   1600
+  ],
+  "alt": "Floareá Grandé at dusk, with lit balconies over the street",
+  "altAr": "Floareá Grandé at dusk, with lit balconies over the street",
+  "src": "Mashriq Elite sales kit (exterior render)"
+ },
+ "p/mashriq-elite-floarea-grande-2": {
+  "ratio": [
+   3,
+   2
+  ],
+  "widths": [
+   640,
+   960,
+   1600
+  ],
+  "alt": "The garden atrium at Floareá Grandé, an olive tree under a glass roof",
+  "altAr": "The garden atrium at Floareá Grandé, an olive tree under a glass roof",
+  "src": "Mashriq Elite sales kit (entrance lobby render)"
+ },
+ "p/mashriq-elite-floarea-grande-3": {
+  "ratio": [
+   3,
+   2
+  ],
+  "widths": [
+   640,
+   960,
+   1600
+  ],
+  "alt": "The pool with fountains and palms at the foot of Floareá Grandé",
+  "altAr": "The pool with fountains and palms at the foot of Floareá Grandé",
+  "src": "Mashriq Elite sales kit (pool render)"
+ },
  "p/sobha-sanctuary-the-woods-abode-1": {
   "ratio": [
    3,

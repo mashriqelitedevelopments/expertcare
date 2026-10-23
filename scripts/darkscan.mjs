@@ -25,7 +25,7 @@ const dist = process.argv[2] || ".next-build";
 const PORT = 4379;
 const DEBUG_PORT = 9463;
 const ROUTES = (process.env.ROUTES ? process.env.ROUTES.split(",") : [
-  "/", "/properties/", "/off-plan/", "/properties/sobha-orbis/", "/buy/apartments-for-sale-in-dubai/", "/shortlist/",
+  "/", "/properties/", "/off-plan/", "/properties/sobha-orbis/", "/properties/mashriq-elite-floarea-skies/", "/buy/apartments-for-sale-in-dubai/", "/shortlist/",
   "/sell/", "/rent/", "/landlords/", "/services/", "/services/mortgage-advisory/", "/areas/", "/areas/dubai-marina/",
   "/guides/", "/guides/selling-property-in-dubai/", "/faq/", "/dubai-property-facts/", "/dubai-property-glossary/",
   "/dubai-property-prices/", "/dubai-property-prices/dubai-marina/", "/buying-costs/", "/mortgage-calculator/",
@@ -119,52 +119,104 @@ const server = createServer((req, res) => {
   createReadStream(file).pipe(res);
 }).listen(PORT);
 
-const profile = mkdtempSync(join(tmpdir(), "ec-darkscan-"));
-const chrome = spawn(CHROME, ["--headless=new", "--disable-gpu", "--hide-scrollbars", "--no-first-run", "--disable-extensions",
-  "--force-color-profile=srgb", `--user-data-dir=${profile}`, `--remote-debugging-port=${DEBUG_PORT}`, "about:blank"], { stdio: "ignore" });
-let ws; let hits = 0; let pagesScanned = 0;
-try {
-  let url;
+/** One headless Chrome with a DevTools connection. Every command has a time limit: a stalled
+ * screenshot or evaluate used to hang the whole gate for hours. */
+async function launch() {
+  const profile = mkdtempSync(join(tmpdir(), "ec-darkscan-"));
+  const chrome = spawn(CHROME, ["--headless=new", "--disable-gpu", "--hide-scrollbars", "--no-first-run", "--disable-extensions",
+    "--force-color-profile=srgb", `--user-data-dir=${profile}`, `--remote-debugging-port=${DEBUG_PORT}`, "about:blank"], { stdio: "ignore" });
+  const close = async () => {
+    try { ws?.close(); } catch {}
+    chrome.kill("SIGKILL"); await sleep(300); rmSync(profile, { recursive: true, force: true });
+  };
+  let url; let ws;
   for (let i = 0; i < 100 && !url; i++) { try { url = (await (await fetch(`http://127.0.0.1:${DEBUG_PORT}/json/version`)).json()).webSocketDebuggerUrl; } catch { await sleep(100); } }
-  if (!url) throw new Error("Chrome never opened its debugging port");
+  if (!url) { await close(); throw new Error("Chrome never opened its debugging port"); }
   ws = new WebSocket(url); await new Promise((r, j) => { ws.onopen = r; ws.onerror = j; });
   let seq = 0; const pending = new Map();
   ws.onmessage = (e) => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { const { resolve, reject } = pending.get(m.id); pending.delete(m.id); m.error ? reject(new Error(m.error.message)) : resolve(m.result); } };
-  const send = (method, params = {}, sessionId) => new Promise((resolve, reject) => { const id = ++seq; pending.set(id, { resolve, reject }); ws.send(JSON.stringify({ id, method, params, sessionId })); });
-  for (const [device, { width, height, mobile }] of Object.entries(DEVICES)) {
-    const { targetId } = await send("Target.createTarget", { url: "about:blank" });
-    const { sessionId } = await send("Target.attachToTarget", { targetId, flatten: true });
-    await send("Page.enable", {}, sessionId);
-    // Consent unanswered on purpose: the notice is part of what must be checked. Reveal animations off.
-    await send("Page.addScriptToEvaluateOnNewDocument", { source: "try{localStorage.removeItem('ec-consent')}catch{};document.addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='.js .rv,.js .stagger>*,.story-step,.js .rv .row-media,.js .rv .thumb,.js .rv .atlas-media,.js .rv .door-media,.js .rv .story-step-media{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}.js .hero-media img,.js .hero-copy>div>*,.js .hero-copy>.ticket,.js .hero-copy>.note,.js .hero-copy>.chips,.js .hero-copy>.contact-list{animation:none!important;opacity:1!important}';document.head.appendChild(s)})" }, sessionId);
-    await send("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile }, sessionId);
+  const send = (method, params = {}, sessionId) =>
+    new Promise((resolve, reject) => {
+      const id = ++seq;
+      const timer = setTimeout(() => { pending.delete(id); reject(new Error(`${method} timed out after 30s`)); }, 30000);
+      pending.set(id, { resolve: (v) => (clearTimeout(timer), resolve(v)), reject: (e) => (clearTimeout(timer), reject(e)) });
+      ws.send(JSON.stringify({ id, method, params, sessionId }));
+    });
+  return { send, close };
+}
+
+/** A fresh tab at one device size. Consent unanswered on purpose: the notice is part of what must be
+ * checked. Reveal animations off. */
+async function openPage(b, { width, height, mobile }) {
+  const { targetId } = await b.send("Target.createTarget", { url: "about:blank" });
+  const { sessionId } = await b.send("Target.attachToTarget", { targetId, flatten: true });
+  await b.send("Page.enable", {}, sessionId);
+  await b.send("Page.addScriptToEvaluateOnNewDocument", { source: "try{localStorage.removeItem('ec-consent')}catch{};document.addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='.js .rv,.js .stagger>*,.story-step,.js .rv .row-media,.js .rv .thumb,.js .rv .atlas-media,.js .rv .door-media,.js .rv .story-step-media{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}.js .hero-media img,.js .hero-copy>div>*,.js .hero-copy>.ticket,.js .hero-copy>.note,.js .hero-copy>.chips,.js .hero-copy>.contact-list{animation:none!important;opacity:1!important}';document.head.appendChild(s)})" }, sessionId);
+  await b.send("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile }, sessionId);
+  return { targetId, sessionId };
+}
+
+/** Every check on one route; returns the hits. */
+async function scanRoute(b, { sessionId }, route, { height, mobile }) {
+  const send = (m, p) => b.send(m, p, sessionId);
+  await send("Page.navigate", { url: `http://127.0.0.1:${PORT}${route}` });
+  await sleep(1500);
+  const total = (await send("Runtime.evaluate", { expression: "document.documentElement.scrollHeight", returnByValue: true })).result.value;
+  const found = new Set();
+  for (let y = 0; y < total; y += Math.round(height * 0.8)) {
+    await send("Runtime.evaluate", { expression: `window.scrollTo(0, ${y})` }); await sleep(650);
+    const { result } = await send("Runtime.evaluate", { expression: SCAN, returnByValue: true });
+    for (const h of result.value || []) found.add(h);
+    const shot = await send("Page.captureScreenshot", { format: "jpeg", quality: 70 });
+    const sampled = await send("Runtime.evaluate", { expression: SAMPLE(`data:image/jpeg;base64,${shot.data}`), awaitPromise: true, returnByValue: true });
+    for (const h of sampled.result.value || []) found.add(h);
+  }
+  // the open menu, at phone width where it is the navigation
+  if (mobile) {
+    await send("Runtime.evaluate", { expression: "window.scrollTo(0,0); document.querySelector('.hdr-menu')?.click()" }); await sleep(700);
+    const { result } = await send("Runtime.evaluate", { expression: SCAN, returnByValue: true });
+    for (const h of result.value || []) found.add("menu open: " + h);
+  }
+  return found;
+}
+
+let hits = 0; let pagesScanned = 0;
+let browser = await launch();
+try {
+  for (const [device, size] of Object.entries(DEVICES)) {
+    let page = await openPage(browser, size);
     for (const route of ROUTES) {
-      await send("Page.navigate", { url: `http://127.0.0.1:${PORT}${route}` }, sessionId);
-      await sleep(1500);
-      const total = (await send("Runtime.evaluate", { expression: "document.documentElement.scrollHeight", returnByValue: true }, sessionId)).result.value;
-      const found = new Set();
-      for (let y = 0; y < total; y += Math.round(height * 0.8)) {
-        await send("Runtime.evaluate", { expression: `window.scrollTo(0, ${y})` }, sessionId); await sleep(650);
-        const { result } = await send("Runtime.evaluate", { expression: SCAN, returnByValue: true }, sessionId);
-        for (const h of result.value || []) found.add(h);
-        const shot = await send("Page.captureScreenshot", { format: "jpeg", quality: 70 }, sessionId);
-        const sampled = await send("Runtime.evaluate", { expression: SAMPLE(`data:image/jpeg;base64,${shot.data}`), awaitPromise: true, returnByValue: true }, sessionId);
-        for (const h of sampled.result.value || []) found.add(h);
+      let found = null; let lastError = null;
+      // A stalled page is retried in a fresh tab, then in a freshly launched browser; a third stall fails the gate.
+      for (let attempt = 1; attempt <= 3 && !found; attempt++) {
+        try {
+          found = await scanRoute(browser, page, route, size);
+        } catch (e) {
+          lastError = e;
+          if (attempt === 3) break;
+          console.log(`retry ${device} ${route}: ${e.message}`);
+          try {
+            if (attempt === 1) {
+              browser.send("Target.closeTarget", { targetId: page.targetId }).catch(() => {});
+              page = await openPage(browser, size);
+            } else throw new Error("relaunch");
+          } catch {
+            await browser.close();
+            browser = await launch();
+            page = await openPage(browser, size);
+          }
+        }
       }
-      // the open menu, at phone width where it is the navigation
-      if (mobile) {
-        await send("Runtime.evaluate", { expression: "window.scrollTo(0,0); document.querySelector('.hdr-menu')?.click()" }, sessionId); await sleep(700);
-        const { result } = await send("Runtime.evaluate", { expression: SCAN, returnByValue: true }, sessionId);
-        for (const h of result.value || []) found.add("menu open: " + h);
-      }
+      if (!found) { hits += 1; console.log(`FAIL ${device} ${route}: ${lastError?.message}`); continue; }
       pagesScanned += 1;
       for (const h of found) { hits += 1; console.log(`FAIL ${device} ${route}: ${h}`); }
+      if (process.env.DARKSCAN_VERBOSE) console.log(`ok ${device} ${route}`);
     }
-    await send("Target.closeTarget", { targetId });
+    await browser.send("Target.closeTarget", { targetId: page.targetId }).catch(() => {});
   }
 } finally {
-  try { ws?.close(); } catch {}
-  chrome.kill("SIGKILL"); server.close(); await sleep(300); rmSync(profile, { recursive: true, force: true });
+  await browser.close();
+  server.close();
 }
 console.log(`darkscan: ${pagesScanned} page views, ${hits} dark-on-dark hits`);
 process.exit(hits ? 1 : 0);
