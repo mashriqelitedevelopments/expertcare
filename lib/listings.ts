@@ -49,6 +49,8 @@ export type Listing = {
   escrow: string;
   source: string;
   checked: string;
+  /** Set on every entry when the file comes from the portal (scripts/portal/sync-listings.mjs). */
+  published?: boolean;
 };
 
 /**
@@ -64,9 +66,13 @@ export const ALL_LISTINGS = PROJECTS as Listing[];
 /** Single projects held back even when their developer is listed; the data stays. Floareá Oasis since 24 Oct 2026. */
 export const HIDDEN_LISTINGS: string[] = ["mashriq-elite-floarea-oasis"];
 
-export const LISTINGS = (LISTED_DEVELOPERS ? ALL_LISTINGS.filter((l) => LISTED_DEVELOPERS.includes(l.developer)) : ALL_LISTINGS).filter(
-  (l) => !HIDDEN_LISTINGS.includes(l.slug),
-);
+/** From the portal, the file holds only published listings and the admin decides what shows. Before the
+ * portal is connected, the two lists above decide. */
+const FROM_PORTAL = ALL_LISTINGS.length > 0 && ALL_LISTINGS.every((l) => l.published === true);
+
+export const LISTINGS = FROM_PORTAL
+  ? ALL_LISTINGS
+  : (LISTED_DEVELOPERS ? ALL_LISTINGS.filter((l) => LISTED_DEVELOPERS.includes(l.developer)) : ALL_LISTINGS).filter((l) => !HIDDEN_LISTINGS.includes(l.slug));
 export const SHOW_LISTINGS = LISTINGS.length > 0;
 
 export const listingBySlug = (slug: string) => LISTINGS.find((l) => l.slug === slug);

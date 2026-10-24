@@ -12,7 +12,8 @@
     "offplan": "python3 scripts/offplan/build.py",
     "deploy": "sh scripts/deploy-branch.sh",
     "units": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/mashriq/units.mjs",
-    "launch-check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/launch-check.mjs"
+    "launch-check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/launch-check.mjs",
+    "sync-listings": "node scripts/portal/sync-listings.mjs"
   },
   "dependencies": {
     "next": "15.5",
@@ -23,6 +24,7 @@
     "@types/node": "22.10.7",
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",
-    "typescript": "5.7.3"
+    "typescript": "5.7.3",
+    "sharp": "0.35.3"
   }
 }

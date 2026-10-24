@@ -1,7 +1,7 @@
 [
  {
   "slug": "mashriq-elite-floarea-skies",
-  "ref": "HP-2001",
+  "ref": "EC-2001",
   "title": "Floareá Skies",
   "developer": "Mashriq Elite",
   "developerUrl": "https://mashriqelite.com",
@@ -62,7 +62,7 @@
  },
  {
   "slug": "mashriq-elite-floarea-oasis",
-  "ref": "HP-2002",
+  "ref": "EC-2002",
   "title": "Floareá Oasis",
   "developer": "Mashriq Elite",
   "developerUrl": "https://mashriqelite.com",
@@ -123,7 +123,7 @@
  },
  {
   "slug": "mashriq-elite-floarea-breeze",
-  "ref": "HP-2003",
+  "ref": "EC-2003",
   "title": "Floareá Breeze",
   "developer": "Mashriq Elite",
   "developerUrl": "https://mashriqelite.com",
@@ -185,7 +185,7 @@
  },
  {
   "slug": "mashriq-elite-floarea-grande",
-  "ref": "HP-2004",
+  "ref": "EC-2004",
   "title": "Floareá Grandé",
   "developer": "Mashriq Elite",
   "developerUrl": "https://mashriqelite.com",
@@ -248,7 +248,7 @@
  },
  {
   "slug": "sobha-sanctuary-the-woods-abode",
-  "ref": "HP-2005",
+  "ref": "EC-2005",
   "title": "The Woods Abode",
   "developer": "Sobha Realty",
   "developerUrl": "https://www.sobharealty.com",
@@ -302,7 +302,7 @@
  },
  {
   "slug": "sobha-sanctuary-the-willows",
-  "ref": "HP-2006",
+  "ref": "EC-2006",
   "title": "The Willows",
   "developer": "Sobha Realty",
   "developerUrl": "https://www.sobharealty.com",
@@ -355,7 +355,7 @@
  },
  {
   "slug": "sobha-orbis",
-  "ref": "HP-2007",
+  "ref": "EC-2007",
   "title": "Sobha Orbis",
   "developer": "Sobha Realty",
   "developerUrl": "https://www.sobharealty.com",
@@ -407,7 +407,7 @@
  },
  {
   "slug": "sobha-central-the-eden",
-  "ref": "HP-2008",
+  "ref": "EC-2008",
   "title": "The Eden",
   "developer": "Sobha Realty",
   "developerUrl": "https://www.sobharealty.com",
@@ -459,7 +459,7 @@
  },
  {
   "slug": "sobha-hartland-ii-skyvue-stellar",
-  "ref": "HP-2009",
+  "ref": "EC-2009",
   "title": "Skyvue Stellar",
   "developer": "Sobha Realty",
   "developerUrl": "https://www.sobharealty.com",
@@ -513,7 +513,7 @@
  },
  {
   "slug": "sobha-elwood",
-  "ref": "HP-2010",
+  "ref": "EC-2010",
   "title": "Sobha Elwood",
   "developer": "Sobha Realty",
   "developerUrl": "https://www.sobharealty.com",
@@ -567,7 +567,7 @@
  },
  {
   "slug": "damac-islands-2",
-  "ref": "HP-2011",
+  "ref": "EC-2011",
   "title": "DAMAC Islands 2",
   "developer": "DAMAC Properties",
   "developerUrl": "https://www.damacproperties.com",
@@ -621,7 +621,7 @@
  },
  {
   "slug": "damac-chelsea-residences",
-  "ref": "HP-2012",
+  "ref": "EC-2012",
   "title": "Chelsea Residences",
   "developer": "DAMAC Properties",
   "developerUrl": "https://www.damacproperties.com",
@@ -674,7 +674,7 @@
  },
  {
   "slug": "damac-riverside-views-azure-2",
-  "ref": "HP-2013",
+  "ref": "EC-2013",
   "title": "Azure 2 at DAMAC Riverside Views",
   "developer": "DAMAC Properties",
   "developerUrl": "https://www.damacproperties.com",
@@ -727,7 +727,7 @@
  },
  {
   "slug": "damac-hills-2-violet-4",
-  "ref": "HP-2014",
+  "ref": "EC-2014",
   "title": "Violet 4",
   "developer": "DAMAC Properties",
   "developerUrl": "https://www.damacproperties.com",
@@ -778,7 +778,7 @@
  },
  {
   "slug": "damac-lagoons-district-valencia",
-  "ref": "HP-2015",
+  "ref": "EC-2015",
   "title": "Valencia at DAMAC Lagoons District",
   "developer": "DAMAC Properties",
   "developerUrl": "https://www.damacproperties.com",
@@ -831,7 +831,7 @@
  },
  {
   "slug": "damac-couture-by-cavalli",
-  "ref": "HP-2016",
+  "ref": "EC-2016",
   "title": "Couture by Cavalli",
   "developer": "DAMAC Properties",
   "developerUrl": "https://www.damacproperties.com",
@@ -883,7 +883,7 @@
  },
  {
   "slug": "emaar-montiva-by-vida",
-  "ref": "HP-2017",
+  "ref": "EC-2017",
   "title": "Montiva by Vida",
   "developer": "Emaar Properties",
   "developerUrl": "https://www.emaar.com",
@@ -937,7 +937,7 @@
  },
  {
   "slug": "emaar-palace-residences-hillside",
-  "ref": "HP-2018",
+  "ref": "EC-2018",
   "title": "Palace Residences Hillside",
   "developer": "Emaar Properties",
   "developerUrl": "https://www.emaar.com",
@@ -992,7 +992,7 @@
  },
  {
   "slug": "emaar-ovelle",
-  "ref": "HP-2019",
+  "ref": "EC-2019",
   "title": "Ovelle",
   "developer": "Emaar Properties",
   "developerUrl": "https://www.emaar.com",
@@ -1045,7 +1045,7 @@
  },
  {
   "slug": "emaar-salva",
-  "ref": "HP-2020",
+  "ref": "EC-2020",
   "title": "Salva",
   "developer": "Emaar Properties",
   "developerUrl": "https://www.emaar.com",
@@ -1098,7 +1098,7 @@
  },
  {
   "slug": "nakheel-palm-central-private-residences",
-  "ref": "HP-2021",
+  "ref": "EC-2021",
   "title": "Palm Central Private Residences",
   "developer": "Nakheel",
   "developerUrl": "https://www.nakheel.com",
@@ -1190,7 +1190,7 @@
  },
  {
   "slug": "ellington-everly-place",
-  "ref": "HP-2022",
+  "ref": "EC-2022",
   "title": "Everly Place",
   "developer": "Ellington Properties",
   "developerUrl": "https://ellingtonproperties.ae",
@@ -1244,7 +1244,7 @@
  },
  {
   "slug": "ellington-the-meriva-collection",
-  "ref": "HP-2023",
+  "ref": "EC-2023",
   "title": "The Meriva Collection",
   "developer": "Ellington Properties",
   "developerUrl": "https://ellingtonproperties.ae",
@@ -1299,7 +1299,7 @@
  },
  {
   "slug": "binghatti-etherea",
-  "ref": "HP-2024",
+  "ref": "EC-2024",
   "title": "Binghatti Etherea",
   "developer": "Binghatti Developers",
   "developerUrl": "https://www.binghatti.com",
@@ -1366,7 +1366,7 @@
  },
  {
   "slug": "binghatti-skyblade",
-  "ref": "HP-2025",
+  "ref": "EC-2025",
   "title": "Binghatti Skyblade",
   "developer": "Binghatti Developers",
   "developerUrl": "https://www.binghatti.com",
@@ -1433,7 +1433,7 @@
  },
  {
   "slug": "danube-bayz-102",
-  "ref": "HP-2026",
+  "ref": "EC-2026",
   "title": "BAYZ 102",
   "developer": "Danube Properties",
   "developerUrl": "https://danubeproperties.com",

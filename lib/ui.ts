@@ -368,6 +368,7 @@ const EN = {
     sentWhatsapp: "WhatsApp has opened with your message. Press send there and an adviser will reply.",
     sentEmail: "Your email app has opened with your message ready to send.",
     offline: "Online enquiries open shortly. Please try again soon.",
+    sentSaved: "Thank you. Your enquiry has reached us and an adviser will reply.",
     options: {
       when: ["This week", "Next week", "In the next month", "I'm flexible"],
       format: ["In person", "By video call"],

@@ -10,12 +10,16 @@
  * lib/site.ts instead, the same way the enquiry forms work. With neither, it says it is not
  * connected.
  */
+import { publicInsert } from "./backend";
+
 export const NEWSLETTER_ENDPOINT = "";
 
 export const NEWSLETTER_TOPICS = ["offPlan", "resale", "prices"] as const;
 export type NewsletterTopic = (typeof NEWSLETTER_TOPICS)[number];
 
 export function subscribe(email: string, topics: string[]): boolean {
+  // The portal database when it is connected (lib/backend.ts), else the Apps Script sheet below.
+  if (publicInsert("subscribers", { email: email.slice(0, 160), topics, page: typeof location === "undefined" ? "" : location.pathname.slice(0, 300) })) return true;
   if (!NEWSLETTER_ENDPOINT || typeof window === "undefined") return false;
   const body = new URLSearchParams();
   body.set("email", email);

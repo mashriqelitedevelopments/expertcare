@@ -143,7 +143,7 @@ def main():
             projects.append(
                 {
                     "slug": p["slug"],
-                    "ref": f"HP-{2001 + len(projects)}",
+                    "ref": f"EC-{2001 + len(projects)}",
                     "title": p["name"],
                     "developer": p["developer"],
                     "developerUrl": p["developerUrl"],

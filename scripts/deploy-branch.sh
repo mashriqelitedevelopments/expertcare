@@ -20,6 +20,8 @@ TMP="hostinger-build-$$"
 git checkout -q --orphan "$TMP"
 git rm -rfq . >/dev/null 2>&1 || true
 rsync -a --exclude 'index.txt' "$SRC/" ./
+# Which portal data this export was built from, so the scheduled rebuild can skip when nothing changed.
+[ -f "$ROOT/lib/data/listings-version.txt" ] && cp "$ROOT/lib/data/listings-version.txt" .listings-version
 cat > .htaccess <<'HT'
 # Static Next.js export on Apache: pretty URLs resolve to their folder, 404 is the exported page.
 Options -Indexes

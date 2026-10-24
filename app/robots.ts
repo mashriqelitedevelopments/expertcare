@@ -26,8 +26,8 @@ export default function robots(): MetadataRoute.Robots {
   if (!site.live) return { rules: { userAgent: "*", disallow: "/" } };
   return {
     rules: [
-      { userAgent: "*", allow: "/", disallow: ["/shortlist/"] },
-      { userAgent: AI_CRAWLERS, allow: "/", disallow: ["/shortlist/"] },
+      { userAgent: "*", allow: "/", disallow: ["/shortlist/", "/admin/"] },
+      { userAgent: AI_CRAWLERS, allow: "/", disallow: ["/shortlist/", "/admin/"] },
     ],
     sitemap: `${site.url}/sitemap.xml`,
     host: site.url,

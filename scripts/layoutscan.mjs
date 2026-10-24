@@ -29,7 +29,7 @@ const walk = (d) => readdirSync(d).flatMap((f) => (statSync(join(d, f)).isDirect
 const ROUTES = process.env.ROUTES
   ? process.env.ROUTES.split(",")
   : walk(dist)
-      .filter((f) => f.endsWith("index.html") && !f.includes("/_"))
+      .filter((f) => f.endsWith("index.html") && !f.includes("/_") && !/(^|\/)admin\//.test(relative(dist, f)))
       .map((f) => "/" + relative(dist, f).replace(/index\.html$/, ""))
       .sort();
 const WIDTHS = (process.env.WIDTHS || "390,768,1440").split(",").map(Number);

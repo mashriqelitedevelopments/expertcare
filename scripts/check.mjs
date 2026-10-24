@@ -18,7 +18,8 @@ if (!process.argv.includes("--no-build")) {
 }
 
 const walk = (d) => readdirSync(d).flatMap((f) => (statSync(join(d, f)).isDirectory() ? walk(join(d, f)) : [join(d, f)]));
-const pages = walk(dist).filter((f) => f.endsWith(".html") && !f.includes("/_"));
+// /admin is the portal: client-rendered, noindex and outside the public-page rules.
+const pages = walk(dist).filter((f) => f.endsWith(".html") && !f.includes("/_") && !/(^|\/)admin(\/|\.html)/.test(relative(dist, f)));
 const urls = new Set(pages.map((f) => "/" + relative(dist, f).replace(/index\.html$/, "").replace(/\.html$/, "")));
 const BAD = [
   [/[؀-ۿ]/, "Arabic script"],
@@ -64,5 +65,7 @@ console.log(`${pages.length} pages, ${failed} failing`);
 if (failed) process.exit(1);
 
 // Then the colour rule: no dark on dark, checked in a real browser at two widths.
+// SKIP_DARKSCAN=1 (the scheduled CI rebuild) skips it: listing edits do not change the design.
+if (process.env.SKIP_DARKSCAN) process.exit(0);
 const dark = spawnSync("node", ["scripts/darkscan.mjs", dist], { stdio: "inherit" });
 process.exit(dark.status === 0 ? 0 : 1);

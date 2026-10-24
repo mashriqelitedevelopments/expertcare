@@ -5,6 +5,7 @@ import { useEffect, useId, useState } from "react";
 import { track } from "@/lib/analytics";
 import { lp } from "@/lib/i18n";
 import type { Locale } from "@/lib/locale";
+import { publicInsert } from "@/lib/backend";
 import { site } from "@/lib/site";
 import { ui } from "@/lib/ui";
 
@@ -18,7 +19,7 @@ export type Intent = "viewing" | "brief" | "general" | "valuation" | "landlord" 
 export function EnquiryForm({ locale, intent = "general", context }: { locale: Locale; intent?: Intent; context?: string }) {
   const t = ui(locale).form;
   const id = useId();
-  const [sent, setSent] = useState<"" | "whatsapp" | "email" | "offline">("");
+  const [sent, setSent] = useState<"" | "whatsapp" | "email" | "offline" | "saved">("");
   // A unit picked in a listing's availability table: from the page address, or the table's event.
   const [unit, setUnit] = useState("");
   useEffect(() => {
@@ -35,6 +36,26 @@ export function EnquiryForm({ locale, intent = "general", context }: { locale: L
     const data = new FormData(e.currentTarget);
     const rows = keys.map((k) => [t.labels[k], String(data.get(k) ?? "").trim()] as const).filter(([, v]) => v);
     const text = [`${t.subjects[intent]} ${t.from}`, context ? `${t.labels.home}: ${context}` : "", unit ? `${t.labels.unit}: ${unit}` : "", ...rows.map(([k, v]) => `${k}: ${v}`)].filter(Boolean).join("\n");
+    // The record for the admin inbox: saved first, whatever route the visitor's message then takes.
+    const value = (k: string) => String(data.get(k) ?? "").trim();
+    const fields = Object.fromEntries(keys.filter((k) => !["name", "phone", "email"].includes(k) && value(k)).map((k) => [t.labels[k], value(k).slice(0, 1000)]));
+    let referrer = "";
+    try {
+      referrer = document.referrer ? new URL(document.referrer).hostname : "";
+    } catch {
+      /* opaque referrer */
+    }
+    const saved = publicInsert("enquiries", {
+      intent,
+      name: value("name").slice(0, 120) || "-",
+      phone: value("phone").slice(0, 40),
+      email: value("email").slice(0, 160),
+      context: (context ?? "").slice(0, 300),
+      unit,
+      fields,
+      page: window.location.pathname.slice(0, 300),
+      referrer: referrer.slice(0, 200),
+    });
     if (site.whatsapp) {
       window.open(`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
       setSent("whatsapp");
@@ -44,7 +65,7 @@ export function EnquiryForm({ locale, intent = "general", context }: { locale: L
       setSent("email");
       track("generate_lead", { method: "email", lead_source: `form_${intent}` });
     } else {
-      setSent("offline");
+      setSent(saved ? "saved" : "offline");
     }
   }
 
@@ -156,6 +177,7 @@ export function EnquiryForm({ locale, intent = "general", context }: { locale: L
         {sent === "whatsapp" && t.sentWhatsapp}
         {sent === "email" && t.sentEmail}
         {sent === "offline" && t.offline}
+        {sent === "saved" && t.sentSaved}
       </p>
     </form>
   );

@@ -1,0 +1,62 @@
+# Builds the static site and publishes it to the `hostinger` branch, which Hostinger deploys.
+#  - on every push to main;
+#  - every 15 minutes, when listings changed in /admin since the last export (else it stops early);
+#  - by hand from the Actions tab ("Run workflow").
+name: Build and publish
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install
+        run: npm install --no-audit --no-fund
+
+      - name: Pull published listings from the portal
+        run: node scripts/portal/sync-listings.mjs
+
+      - name: Anything new to publish?
+        id: gate
+        run: |
+          new="$(cat lib/data/listings-version.txt)"
+          old="$(git show origin/hostinger:.listings-version 2>/dev/null || echo none)"
+          echo "portal version: $new (live: $old)"
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$new" = "$old" ]; then
+            echo "skip=1" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build
+        if: steps.gate.outputs.skip != '1'
+        run: |
+          npx next build
+          NEXT_DIST_DIR=out node scripts/postbuild.mjs
+
+      - name: Page gate
+        if: steps.gate.outputs.skip != '1'
+        run: NEXT_DIST_DIR=out SKIP_DARKSCAN=1 node scripts/check.mjs --no-build
+
+      - name: Publish to the hostinger branch
+        if: steps.gate.outputs.skip != '1'
+        run: EXPORT_DIR=out sh scripts/deploy-branch.sh

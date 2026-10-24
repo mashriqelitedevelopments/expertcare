@@ -30,7 +30,8 @@ npm run check      # builds into .next-build and gates every page (see scripts/c
 | Fees, loan limits and calculators | `lib/costs.ts`, `components/Calculators.tsx` |
 | Reference page and glossary | `lib/facts.ts`, `lib/glossary.ts` |
 | FAQ page | `lib/faq.ts` |
-| Listings on or off (off since 23 Oct 2026: no project pages, /buy/ pages, rail, search or shortlist; data kept) | `SHOW_LISTINGS` in `lib/listings.ts` |
+| Listings on or off | Once the portal is connected, the admin's "On the site" switch; before that `LISTED_DEVELOPERS` and `HIDDEN_LISTINGS` in `lib/listings.ts` |
+| Admin portal (enquiries, listings, newsletter) | `/admin`: `components/admin/`, `lib/backend.ts`, `supabase/migrations/` (see Portal below) |
 | Off-plan inventory | `content/offplan/*.json` → `npm run offplan` → `lib/data/projects.json` (images whose masters are not on the machine are reused as built) |
 | Mashriq Elite units (available homes, unit by unit) | `npm run units` → `lib/data/mashriq-units.json`; each Mashriq project page refreshes it from the developer's sheet in the browser. Price and completion columns are never requested. |
 | DLD price pages | `npm run market` → `lib/data/market.json` (Dubai Open Data Licence; attribution kept on the page) |
@@ -43,7 +44,9 @@ npm run check      # builds into .next-build and gates every page (see scripts/c
 ## Deploying to Hostinger
 
 The `hostinger` branch holds the built site (plain HTML, CSS, JS, images and an `.htaccess`) and is
-what Hostinger's Git deployment clones into `public_html`. Rebuild it after every change to main:
+what Hostinger's Git deployment clones into `public_html`. The GitHub Action in
+`.github/workflows/publish.yml` rebuilds it on every push to main, every 15 minutes when listings
+changed in the portal, and by hand from the Actions tab. To publish from this machine instead:
 
 ```bash
 npm run deploy
@@ -53,6 +56,33 @@ In hPanel: Websites → Manage → Advanced → Git → repository `git@github.c
 branch `hostinger`, directory `public_html`. The repo is private, so add the deploy key hPanel shows
 under the GitHub repository's Settings → Deploy keys first. Hostinger can auto-deploy on push through
 the webhook URL it shows on the same screen (add it under GitHub Settings → Webhooks).
+
+## Portal
+
+`/admin` is the back office: enquiries from every form on the site, the listings (add, edit, photos,
+show or hide) and newsletter sign-ups. It is a client-side page over Supabase (Postgres, sign-in and
+photo storage), reached over its REST API with no client library. The public site stays static: the
+Action pulls the published listings into `lib/data/projects.json` before each build
+(`npm run sync-listings`), so an edit reaches the site within about 15 minutes.
+
+Until `lib/backend.ts` holds a project URL and key, the forms keep working as before (WhatsApp, email,
+the newsletter sheet), `/admin` shows set-up steps, and on localhost it opens a demo with sample data
+kept in the browser.
+
+Connecting it:
+
+1. Create a Supabase project. In the SQL editor run `supabase/migrations/0001_portal.sql`, then
+   `supabase/seed.sql` (the current listings; regenerate it with `node scripts/portal/seed-sql.mjs`).
+2. Put the project URL and the anon (publishable) key in `lib/backend.ts`. Both are public by design:
+   row-level security lets visitors read published listings and add enquiries and sign-ups, nothing else.
+3. Authentication → URL configuration: site URL `https://expertcarerealestate.com`, and add
+   `https://expertcarerealestate.com/admin/` to the redirect URLs (password-reset links land there).
+4. Authentication → Users → Add user for each admin, then in the SQL editor:
+   `insert into public.admins (user_id) select id from auth.users where email = 'name@example.com';`
+5. Push to main. The Action builds from the portal from then on.
+
+Photos uploaded in the portal are cropped to 3:2 and resized to 640, 960 and 1600 px (JPEG, WebP,
+AVIF) at build time, as `public/img/p/<slug>-u<hash>`.
 
 ## Before launch
 
