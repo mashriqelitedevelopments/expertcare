@@ -78,15 +78,15 @@ export function Footer({ locale }: { locale: Locale }) {
               <li>
                 <Link href={L("/off-plan/")}>{f.offPlanHomes}</Link>
               </li>
-              {SHOW_LISTINGS && (
-                <>
-                  <li>
-                    <Link href={L("/buy/apartments-for-sale-in-dubai/")}>{f.apartments}</Link>
-                  </li>
-                  <li>
-                    <Link href={L("/buy/villas-for-sale-in-dubai/")}>{f.villas}</Link>
-                  </li>
-                </>
+              {cols.some((c) => c.slug === "apartments-for-sale-in-dubai") && (
+                <li>
+                  <Link href={L("/buy/apartments-for-sale-in-dubai/")}>{f.apartments}</Link>
+                </li>
+              )}
+              {cols.some((c) => c.slug === "villas-for-sale-in-dubai") && (
+                <li>
+                  <Link href={L("/buy/villas-for-sale-in-dubai/")}>{f.villas}</Link>
+                </li>
               )}
               <li>
                 <Link href={L("/dubai-property-prices/")}>{f.prices}</Link>

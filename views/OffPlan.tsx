@@ -37,10 +37,12 @@ export function OffPlan({ locale }: { locale: Locale }) {
             <strong className="num">{all.length}</strong>
             <span>{o.figProjects}</span>
           </div>
-          <div>
-            <strong className="num">{developers().length}</strong>
-            <span>{o.figDevelopers}</span>
-          </div>
+          {developers().length > 1 && (
+            <div>
+              <strong className="num">{developers().length}</strong>
+              <span>{o.figDevelopers}</span>
+            </div>
+          )}
           <div>
             <strong className="num">{Math.round(FEES.transferPct * 100)}%</strong>
             <span>{o.figOqood}</span>

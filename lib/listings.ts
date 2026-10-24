@@ -52,14 +52,17 @@ export type Listing = {
 };
 
 /**
- * The listings switch. While false, no project appears anywhere on the site: no project pages, no
- * /buy/ landing pages, no rail, search, shortlist or sitemap entries. The research data above and in
- * lib/data stays untouched, so turning it back on restores everything (decision of 23 Oct 2026).
+ * Which developers' projects appear on the site; null shows every project in the inventory.
+ * Since 24 Oct 2026 only Mashriq Elite's projects are listed: the other developers' projects stay in
+ * the research data and lib/data, and come back by adding their names here or setting null.
+ * Everything built from LISTINGS follows: project pages, /buy/ pages, the rail, search, shortlist,
+ * area sections, sitemap. With no listings at all, those places show a brief form instead.
  */
-export const SHOW_LISTINGS = false;
+export const LISTED_DEVELOPERS: string[] | null = ["Mashriq Elite"];
 
 export const ALL_LISTINGS = PROJECTS as Listing[];
-export const LISTINGS = SHOW_LISTINGS ? ALL_LISTINGS : [];
+export const LISTINGS = LISTED_DEVELOPERS ? ALL_LISTINGS.filter((l) => LISTED_DEVELOPERS.includes(l.developer)) : ALL_LISTINGS;
+export const SHOW_LISTINGS = LISTINGS.length > 0;
 
 export const listingBySlug = (slug: string) => LISTINGS.find((l) => l.slug === slug);
 export const inArea = (area: string) => LISTINGS.filter((l) => l.area === area);

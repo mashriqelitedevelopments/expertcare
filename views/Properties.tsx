@@ -39,10 +39,12 @@ export function Properties({ locale }: { locale: Locale }) {
           <strong className="num">{all.length}</strong>
           <span>{p.figProjects}</span>
         </div>
-        <div>
-          <strong className="num">{developers().length}</strong>
-          <span>{p.figDevelopers}</span>
-        </div>
+        {developers().length > 1 && (
+          <div>
+            <strong className="num">{developers().length}</strong>
+            <span>{p.figDevelopers}</span>
+          </div>
+        )}
         <div>
           <strong className="num">{places(locale).length}</strong>
           <span>{p.figPlaces}</span>

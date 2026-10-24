@@ -902,7 +902,7 @@ const EN = {
     homeDesc:
       "Prime resale homes and off-plan projects in Dubai, with every fee explained before you commit and one adviser from the first call to the keys.",
     propertiesTitle: "Property for sale in Dubai: apartments, villas and off-plan homes",
-    propertiesDesc: "Search apartments, villas, penthouses and off-plan homes for sale in Dubai by area, type, bedrooms and budget, with the full cost of buying shown on every home.",
+    propertiesDesc: "Search homes for sale in Dubai by area, type and bedrooms, with the full cost of buying worked out for each home and one adviser from viewing to keys.",
     offPlanTitle: "Off-plan property for sale in Dubai: payment plans and handover",
     offPlanDesc:
       "Off-plan apartments and villas for sale in Dubai, each with its payment plan in dirhams, the Oqood registration fee and the expected handover, plus how escrow protects your payments.",
