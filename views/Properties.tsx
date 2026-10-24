@@ -4,7 +4,8 @@ import { Hero } from "@/components/Sections";
 import { collections } from "@/lib/collections";
 import { getListings, places } from "@/lib/content";
 import { lp } from "@/lib/i18n";
-import { developers } from "@/lib/listings";
+import { NoListings } from "@/components/NoListings";
+import { SHOW_LISTINGS, developers } from "@/lib/listings";
 import type { Locale } from "@/lib/locale";
 import { ui } from "@/lib/ui";
 import { collectionH1 } from "@/views/Collection";
@@ -21,6 +22,14 @@ export function Properties({ locale }: { locale: Locale }) {
     { name: t.chrome.home, path: "/" },
     { name: t.detail.crumbProperties, path: "/properties/" },
   ];
+  if (!SHOW_LISTINGS) {
+    return (
+      <>
+        <Hero small image="l-marina" crumbs={crumbs} h1={p.h1} lede={t.noListings.propertiesLede} locale={locale} />
+        <NoListings locale={locale} />
+      </>
+    );
+  }
   return (
     <>
       <Hero small image="l-marina" crumbs={crumbs} h1={p.h1} lede={t.meta.propertiesDesc} locale={locale} />

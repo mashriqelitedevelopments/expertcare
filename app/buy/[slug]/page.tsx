@@ -9,7 +9,13 @@ import { ui } from "@/lib/ui";
 const LOCALE = "en" as const;
 
 export const dynamicParams = false;
-export const generateStaticParams = () => collections().map((c) => ({ slug: c.slug }));
+// A static export cannot build a dynamic route with no pages. While listings are switched off
+// (lib/listings.ts SHOW_LISTINGS) one placeholder renders the 404 page; "/_" paths are outside the page
+// gate, the sitemap and every link.
+export const generateStaticParams = () => {
+  const all = collections();
+  return all.length ? all.map((c) => ({ slug: c.slug })) : [{ slug: "_none" }];
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;

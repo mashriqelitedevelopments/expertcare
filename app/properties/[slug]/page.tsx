@@ -9,7 +9,10 @@ import { LISTINGS } from "@/lib/listings";
 const LOCALE = "en" as const;
 
 export const dynamicParams = false;
-export const generateStaticParams = () => LISTINGS.map((x) => ({ slug: x.slug }));
+// A static export cannot build a dynamic route with no pages. While listings are switched off
+// (lib/listings.ts SHOW_LISTINGS) one placeholder renders the 404 page; "/_" paths are outside the page
+// gate, the sitemap and every link.
+export const generateStaticParams = () => (LISTINGS.length ? LISTINGS.map((x) => ({ slug: x.slug })) : [{ slug: "_none" }]);
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;

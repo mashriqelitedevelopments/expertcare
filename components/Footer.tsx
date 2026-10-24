@@ -6,6 +6,7 @@ import { collectionH1 } from "@/views/Collection";
 import { lp } from "@/lib/i18n";
 import type { Locale } from "@/lib/locale";
 import { servicePath } from "@/lib/paths";
+import { SHOW_LISTINGS } from "@/lib/listings";
 import { site } from "@/lib/site";
 import { ui } from "@/lib/ui";
 
@@ -77,18 +78,24 @@ export function Footer({ locale }: { locale: Locale }) {
               <li>
                 <Link href={L("/off-plan/")}>{f.offPlanHomes}</Link>
               </li>
-              <li>
-                <Link href={L("/buy/apartments-for-sale-in-dubai/")}>{f.apartments}</Link>
-              </li>
-              <li>
-                <Link href={L("/buy/villas-for-sale-in-dubai/")}>{f.villas}</Link>
-              </li>
+              {SHOW_LISTINGS && (
+                <>
+                  <li>
+                    <Link href={L("/buy/apartments-for-sale-in-dubai/")}>{f.apartments}</Link>
+                  </li>
+                  <li>
+                    <Link href={L("/buy/villas-for-sale-in-dubai/")}>{f.villas}</Link>
+                  </li>
+                </>
+              )}
               <li>
                 <Link href={L("/dubai-property-prices/")}>{f.prices}</Link>
               </li>
-              <li>
-                <Link href={L("/shortlist/")}>{f.yourShortlist}</Link>
-              </li>
+              {SHOW_LISTINGS && (
+                <li>
+                  <Link href={L("/shortlist/")}>{f.yourShortlist}</Link>
+                </li>
+              )}
             </ul>
           </nav>
           <nav aria-labelledby="f-areas">
@@ -144,6 +151,7 @@ export function Footer({ locale }: { locale: Locale }) {
             </ul>
           </nav>
         </div>
+        {popular.length > 0 && (
         <nav className="ftr-popular" aria-labelledby="f-popular">
           <h2 id="f-popular">{t.popular.h}</h2>
           <div className="ftr-popular-grid">
@@ -161,6 +169,7 @@ export function Footer({ locale }: { locale: Locale }) {
             ))}
           </div>
         </nav>
+        )}
         <div className="ftr-base">
           <span>{f.rights}</span>
           {site.orn && (

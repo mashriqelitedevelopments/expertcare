@@ -30,7 +30,7 @@ const ROUTES = (process.env.ROUTES ? process.env.ROUTES.split(",") : [
   "/guides/", "/guides/selling-property-in-dubai/", "/faq/", "/dubai-property-facts/", "/dubai-property-glossary/",
   "/dubai-property-prices/", "/dubai-property-prices/dubai-marina/", "/buying-costs/", "/mortgage-calculator/",
   "/about/", "/contact/", "/privacy/", "/nothing-here/",
-]);
+]).filter((r) => r === "/nothing-here/" || existsSync(join(dist, r, "index.html"))); // listings can be switched off
 const DEVICES = { desktop: { width: 1440, height: 900, mobile: false }, mobile: { width: 390, height: 844, mobile: true } };
 const TYPES = { ".html": "text/html", ".css": "text/css", ".js": "application/javascript", ".json": "application/json", ".svg": "image/svg+xml",
   ".png": "image/png", ".jpg": "image/jpeg", ".webp": "image/webp", ".avif": "image/avif", ".woff2": "font/woff2", ".txt": "text/plain", ".xml": "application/xml" };

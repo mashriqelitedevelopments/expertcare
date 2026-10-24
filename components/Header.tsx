@@ -7,6 +7,7 @@ import { Heart } from "./Icons";
 import { Logo } from "./Mark";
 import { getAreas, getServices } from "@/lib/content";
 import { lp } from "@/lib/i18n";
+import { SHOW_LISTINGS } from "@/lib/listings";
 import type { Locale } from "@/lib/locale";
 import { servicePath } from "@/lib/paths";
 import { ui } from "@/lib/ui";
@@ -101,11 +102,13 @@ export function Header({ locale }: { locale: Locale }) {
             ))}
           </nav>
           <div className="hdr-right">
+            {SHOW_LISTINGS && (
             <Link href={lp(locale, "/shortlist/")} className="hdr-saved" aria-label={`${t.chrome.shortlistAria}, ${saved} ${t.chrome.saved}`}>
               <Heart />
               <span className="hdr-saved-label">{t.chrome.shortlist}</span>
               {saved > 0 && <span className="count">{saved}</span>}
             </Link>
+            )}
             <Link href={lp(locale, "/contact/")} className="btn hdr-cta">
               {t.chrome.adviser}
             </Link>
@@ -154,10 +157,12 @@ export function Header({ locale }: { locale: Locale }) {
                 <Link href={lp(locale, "/contact/")} className="btn">
                   {t.chrome.adviser}
                 </Link>
+                {SHOW_LISTINGS && (
                 <Link href={lp(locale, "/shortlist/")} className="btn btn-ghost">
                   {t.chrome.shortlist}
                   {saved > 0 && <span className="count">{saved}</span>}
                 </Link>
+                )}
               </div>
             </div>
           </div>

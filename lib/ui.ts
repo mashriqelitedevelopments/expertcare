@@ -119,6 +119,15 @@ const EN = {
     dubai: "Dubai",
     typePlural: { Apartment: "apartments", Penthouse: "penthouses", Villa: "villas", Townhouse: "townhouses" },
   },
+  noListings: {
+    h: "Tell us what you are looking for",
+    p: "We are refreshing our listings. Send a short brief: your budget, the areas you like, resale or off-plan, and how you will pay. An adviser replies with homes that fit and the full cost of each.",
+    propertiesLede: "Prime resale homes and off-plan projects across Dubai, each with the full cost of buying worked out before you view.",
+    propertiesDesc: "Buy prime resale and off-plan property in Dubai with ExpertCare. Send your brief and an adviser replies with homes that fit and the full cost of each.",
+    offPlanLede: "New homes from Dubai's developers, sold before completion. We check the payment plan, the registration fee and the escrow account with you.",
+    offPlanDesc: "Off-plan property in Dubai: how payment plans, the 4% Oqood fee and escrow work, and an adviser to shortlist new projects that fit your brief.",
+    offPlanCta: "Send an off-plan brief",
+  },
   units: {
     h: "Homes available now",
     lede: "Every home Mashriq Elite still has for sale in this project. Prices are on request.",

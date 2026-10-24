@@ -51,7 +51,15 @@ export type Listing = {
   checked: string;
 };
 
-export const LISTINGS = PROJECTS as Listing[];
+/**
+ * The listings switch. While false, no project appears anywhere on the site: no project pages, no
+ * /buy/ landing pages, no rail, search, shortlist or sitemap entries. The research data above and in
+ * lib/data stays untouched, so turning it back on restores everything (decision of 23 Oct 2026).
+ */
+export const SHOW_LISTINGS = false;
+
+export const ALL_LISTINGS = PROJECTS as Listing[];
+export const LISTINGS = SHOW_LISTINGS ? ALL_LISTINGS : [];
 
 export const listingBySlug = (slug: string) => LISTINGS.find((l) => l.slug === slug);
 export const inArea = (area: string) => LISTINGS.filter((l) => l.area === area);

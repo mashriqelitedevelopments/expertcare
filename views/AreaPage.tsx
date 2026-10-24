@@ -12,6 +12,7 @@ import { lp } from "@/lib/i18n";
 import { ogImage } from "@/lib/images";
 import type { Locale } from "@/lib/locale";
 import { JsonLd, abs, absL, breadcrumbs } from "@/lib/seo";
+import { SHOW_LISTINGS } from "@/lib/listings";
 import { ui } from "@/lib/ui";
 
 export function AreaPage({ locale, slug }: { locale: Locale; slug: string }) {
@@ -47,7 +48,7 @@ export function AreaPage({ locale, slug }: { locale: Locale; slug: string }) {
   const facts: [string, string][] = [
     [t.areas.developerLabel, a.developer],
     [t.areas.ownershipLabel, t.areas.freehold],
-    [t.common.homesForSale, String(homes.length)],
+    ...(SHOW_LISTINGS ? ([[t.common.homesForSale, String(homes.length)]] as [string, string][]) : []),
     ...(market ? ([[t.areas.medianPsf, market.last12.medianPsf != null ? aed(market.last12.medianPsf, locale) : "n/a"]] as [string, string][]) : []),
     ...(market && market.last12.changePct != null ? ([[t.areas.onYear, signedPct(market.last12.changePct)]] as [string, string][]) : []),
   ];
@@ -135,6 +136,7 @@ export function AreaPage({ locale, slug }: { locale: Locale; slug: string }) {
         </div>
       </section>
 
+      {SHOW_LISTINGS && (
       <section className="sec tight" id="homes" aria-labelledby="homes-h">
         <div className="wrap">
           <div className="sec-head rv">
@@ -169,6 +171,7 @@ export function AreaPage({ locale, slug }: { locale: Locale; slug: string }) {
           )}
         </div>
       </section>
+      )}
 
       {(a.rentNote || a.sellNote) && (
         <section className="sec ink" aria-label={`${t.areas.rentH} ${t.areas.sellH}`}>

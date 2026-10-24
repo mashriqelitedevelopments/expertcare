@@ -30,6 +30,7 @@ npm run check      # builds into .next-build and gates every page (see scripts/c
 | Fees, loan limits and calculators | `lib/costs.ts`, `components/Calculators.tsx` |
 | Reference page and glossary | `lib/facts.ts`, `lib/glossary.ts` |
 | FAQ page | `lib/faq.ts` |
+| Listings on or off (off since 23 Oct 2026: no project pages, /buy/ pages, rail, search or shortlist; data kept) | `SHOW_LISTINGS` in `lib/listings.ts` |
 | Off-plan inventory | `content/offplan/*.json` → `npm run offplan` → `lib/data/projects.json` (images whose masters are not on the machine are reused as built) |
 | Mashriq Elite units (available homes, unit by unit) | `npm run units` → `lib/data/mashriq-units.json`; each Mashriq project page refreshes it from the developer's sheet in the browser. Price and completion columns are never requested. |
 | DLD price pages | `npm run market` → `lib/data/market.json` (Dubai Open Data Licence; attribution kept on the page) |

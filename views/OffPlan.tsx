@@ -5,7 +5,8 @@ import { Eyebrow, Hero, Plate } from "@/components/Sections";
 import { getGuide, getListings } from "@/lib/content";
 import { FEES } from "@/lib/costs";
 import { lp } from "@/lib/i18n";
-import { developers } from "@/lib/listings";
+import { NoListings } from "@/components/NoListings";
+import { SHOW_LISTINGS, developers } from "@/lib/listings";
 import type { Locale } from "@/lib/locale";
 import { ui } from "@/lib/ui";
 
@@ -26,29 +27,35 @@ export function OffPlan({ locale }: { locale: Locale }) {
           { name: t.footer.offPlanHomes, path: "/off-plan/" },
         ]}
         h1={o.h1}
-        lede={o.lede}
+        lede={SHOW_LISTINGS ? o.lede : t.noListings.offPlanLede}
       />
 
-      <section className="wrap figs" aria-label={o.figsAria}>
-        <div>
-          <strong className="num">{all.length}</strong>
-          <span>{o.figProjects}</span>
-        </div>
-        <div>
-          <strong className="num">{developers().length}</strong>
-          <span>{o.figDevelopers}</span>
-        </div>
-        <div>
-          <strong className="num">{Math.round(FEES.transferPct * 100)}%</strong>
-          <span>{o.figOqood}</span>
-        </div>
-        <div>
-          <strong className="num">{all.filter((l) => l.plan).length}</strong>
-          <span>{o.figPlans}</span>
-        </div>
-      </section>
+      {SHOW_LISTINGS ? (
+        <>
+        <section className="wrap figs" aria-label={o.figsAria}>
+          <div>
+            <strong className="num">{all.length}</strong>
+            <span>{o.figProjects}</span>
+          </div>
+          <div>
+            <strong className="num">{developers().length}</strong>
+            <span>{o.figDevelopers}</span>
+          </div>
+          <div>
+            <strong className="num">{Math.round(FEES.transferPct * 100)}%</strong>
+            <span>{o.figOqood}</span>
+          </div>
+          <div>
+            <strong className="num">{all.filter((l) => l.plan).length}</strong>
+            <span>{o.figPlans}</span>
+          </div>
+        </section>
 
-      <PropertySearch locale={locale} fixedStatus="off-plan" level="h2" />
+        <PropertySearch locale={locale} fixedStatus="off-plan" level="h2" />
+        </>
+      ) : (
+        <NoListings locale={locale} />
+      )}
 
       <section className="sec sand" aria-labelledby="how-h">
         <div className="wrap twin">

@@ -19,6 +19,7 @@ import type { Locale } from "@/lib/locale";
 import { servicePath } from "@/lib/paths";
 import { JsonLd } from "@/lib/seo";
 import { PROMISES } from "@/lib/site";
+import { SHOW_LISTINGS } from "@/lib/listings";
 import { ui } from "@/lib/ui";
 
 /** One project per developer, up to six, highest starting price first: the focus is the upper end
@@ -63,7 +64,7 @@ export function Home({ locale }: { locale: Locale }) {
   return (
     <>
       <JsonLd data={faqLd} />
-      <Hero image="hero2" mobile="hero2-m" h1={h.h1} lede={h.sub} locale={locale} foot={<HomeSearch locale={locale} />} />
+      <Hero image="hero2" mobile="hero2-m" h1={h.h1} lede={h.sub} locale={locale} foot={SHOW_LISTINGS ? <HomeSearch locale={locale} /> : undefined} />
 
       <section className="sec tight partners-sec">
         <Partners locale={locale} />
@@ -98,6 +99,7 @@ export function Home({ locale }: { locale: Locale }) {
         </div>
       </section>
 
+      {SHOW_LISTINGS && (
       <section className="sec tight" aria-labelledby="homes-h">
         <div className="wrap">
           <div className="sec-head rv">
@@ -115,6 +117,7 @@ export function Home({ locale }: { locale: Locale }) {
           </Rail>
         </div>
       </section>
+      )}
 
       <Plate
         image="area-downtown-dubai"
@@ -190,8 +193,8 @@ export function Home({ locale }: { locale: Locale }) {
       </section>
 
       <Plate image="l-creek" h2={h.offPlanH} lede={h.offPlanLede} caption={h.offPlanCaption} locale={locale}>
-        <Link href={lp(locale, "/off-plan/")} className="btn">
-          {h.offPlanCta}
+        <Link href={lp(locale, SHOW_LISTINGS ? "/off-plan/" : "/off-plan/#brief")} className="btn">
+          {SHOW_LISTINGS ? h.offPlanCta : t.noListings.offPlanCta}
         </Link>
         <Link href={lp(locale, "/guides/buying-off-plan-in-dubai/")} className="btn btn-ghost">
           {h.offPlanCta2}
