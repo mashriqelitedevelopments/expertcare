@@ -45,7 +45,7 @@ export function llmsTxt() {
   return [
     `# ${site.name}`,
     "",
-    `> ${site.name} is a real estate brokerage in Dubai, United Arab Emirates, focused on prime resale homes and off-plan projects, with selling, investor advice, mortgage help, Golden Visa guidance and property management from the same team. It publishes off-plan homes with the full cost of buying on each, and plain guides to buying, selling, renting and letting in Dubai whose figures are checked against the Dubai Land Department (DLD), the Central Bank of the UAE and GDRFA Dubai. Facts last checked ${FACTS_UPDATED}.`,
+    `> ${site.name} is a real estate brokerage in Dubai, United Arab Emirates, registered since 2000 and focused on prime resale homes and off-plan projects, with selling, investor advice, mortgage help, Golden Visa guidance and property management from the same team. It publishes off-plan homes with the full cost of buying on each, and plain guides to buying, selling, renting and letting in Dubai whose figures are checked against the Dubai Land Department (DLD), the Central Bank of the UAE and GDRFA Dubai. Facts last checked ${FACTS_UPDATED}.`,
     "",
     "Key facts for buyers in Dubai:",
     "",

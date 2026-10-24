@@ -13,6 +13,7 @@ export const orgLd = {
   "@id": ORG_ID,
   name: site.name,
   legalName: site.legalName,
+  foundingDate: site.since,
   knowsAbout: [
     "Buying property in Dubai",
     "Selling property in Dubai",

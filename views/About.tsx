@@ -15,6 +15,7 @@ export function About({ locale }: { locale: Locale }) {
   const aboutLd = { "@context": "https://schema.org", "@type": "AboutPage", name: t.meta.aboutTitle, description: t.meta.aboutDesc, about: { "@id": ORG_ID } };
   const register: [string, string][] = [
     [a.regName, site.legalName],
+    [a.regSince, site.since.slice(0, 4)],
     [a.regOrn, site.orn || a.pending],
     [a.regLicence, site.licence || a.pending],
     [a.regOffice, site.address],

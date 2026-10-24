@@ -34,7 +34,7 @@ const EN = {
     otherLangCode: "ar",
   },
   footer: {
-    note: "A Dubai real estate brokerage for prime resale homes and off-plan projects, with every cost explained first. Selling, investment and property management from the same team.",
+    note: "A Dubai real estate brokerage since 2000, for prime resale homes and off-plan projects, with every cost explained first. Selling, investment and property management from the same team.",
     homes: "Homes",
     propertyForSale: "Property for sale",
     offPlanHomes: "Off-plan homes",
@@ -607,13 +607,14 @@ const EN = {
     regLicence: "Trade licence",
     regOffice: "Office",
     regRegulator: "Regulator",
+    regSince: "Registered since",
     pending: "Pending",
     nameEyebrow: "The name",
     expertH: "Expert",
     careH: "Care",
     promiseEyebrow: "The commitments",
     stepsEyebrow: "The process",
-    lede: "ExpertCare is a Dubai real estate brokerage focused on prime resale homes and off-plan projects. We help people buy, sell and invest, and we explain every cost before anyone signs.",
+    lede: "ExpertCare has been a Dubai real estate brokerage since 2000. Today it focuses on prime resale homes and off-plan projects. We help people buy, sell and invest, and we explain every cost before anyone signs.",
     nameH: "Why the name.",
     nameP1:
       "Expert is the standard for the advice: every figure checked against the Dubai Land Department, the Central Bank of the UAE and the law, and every step explained in plain words.",
@@ -899,7 +900,7 @@ const EN = {
   meta: {
     homeTitle: "ExpertCare | Prime resale and off-plan property in Dubai",
     homeDesc:
-      "Prime resale homes and off-plan projects in Dubai, with every fee explained before you commit and one adviser from the first call to the keys.",
+      "A Dubai brokerage since 2000 for prime resale homes and off-plan projects, with every fee explained before you commit and one adviser to the keys.",
     propertiesTitle: "Property for sale in Dubai: resale and off-plan homes",
     propertiesDesc: "Search homes for sale in Dubai by area, type and bedrooms, and get the full cost of buying from one adviser before you view.",
     offPlanTitle: "Off-plan property in Dubai: payment plans and escrow",
@@ -924,7 +925,7 @@ const EN = {
     mortgageDesc:
       "Estimate your monthly mortgage repayment in Dubai, the minimum deposit under the Central Bank's loan limits, and the income a bank will expect.",
     aboutTitle: "About ExpertCare: resale and off-plan brokerage in Dubai",
-    aboutDesc: "ExpertCare helps people buy prime resale and off-plan homes in Dubai, sell them and invest, with every cost explained first and one adviser to the keys.",
+    aboutDesc: "A Dubai brokerage since 2000. ExpertCare helps people buy prime resale and off-plan homes, sell them and invest, with every cost explained first.",
     contactTitle: "Contact ExpertCare: speak to a Dubai property adviser",
     contactDesc: "Send your brief or ask about a home. Tell us your budget, the areas you like and when you want to move, and an adviser will come back with homes that fit.",
     privacyTitle: "Privacy notice",

@@ -11,8 +11,10 @@ Say "prime resale" or "upper end of the market", never "luxury" as a boast. The 
 - No filler: no sentence that only announces what the next sentence says.
 - No em-dashes. No exclamation marks. No "artist's impression". No "endure", no "finished".
 - No superlatives about the company (no "leading", "trusted by thousands", "award-winning").
-- Do not invent company facts: no team names, no years in business, no deal counts, no office address,
-  no licence numbers. The site's details live in lib/site.ts and are empty until real.
+- Do not invent company facts: no team names, no deal counts, no claims a document does not support. The
+  site's details live in lib/site.ts (ORN, licence, office, contacts, `since`). "Since 2000" is the registration
+  date on the RERA and DET documents and may be used as "since 2000" or "registered since 2000"; never more
+  (no "25 years of experience", no history before it).
 
 ## Facts
 - Every figure, fee, percentage, law, date and rule must come from lib/costs.ts, lib/facts.ts,
