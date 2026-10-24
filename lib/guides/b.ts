@@ -16,7 +16,7 @@ export const GUIDES_B: Guide[] = [
       "With a ready home you pay the price at transfer and can move in or let it the same day. With an off-plan home you pay in instalments while the developer builds it.",
       "The Dubai Land Department takes 4% on both. On a ready home that is the transfer fee; on an off-plan home it is the Oqood registration fee.",
       "A bank may lend an expatriate up to 80% on a first ready home worth AED 5 million or less. On an off-plan home the limit is 50%.",
-      "Every dirham you pay on an off-plan home goes into the project's escrow account under Dubai Law No. 8 of 2007.",
+      "Every instalment you pay the developer goes into the project's escrow account under Dubai Law No. 8 of 2007.",
     ],
     sections: [
       {
@@ -27,7 +27,7 @@ export const GUIDES_B: Guide[] = [
             p: "A ready home exists. It has a title deed, a service charge history and, often, a tenant or a previous owner. You buy it from that owner, through a Dubai Land Department registration trustee, and you own it from the day of transfer.",
           },
           {
-            p: "An off-plan home does not exist yet, or is still being built. You buy it from the developer against plans and a specification. The sale is recorded on the Dubai Land Department's Oqood register, and a title deed is issued only once the building is complete and you have paid in full.",
+            p: "An off-plan home does not exist yet, or is still being built. You buy it from the developer against plans and a specification. The sale is recorded on the Dubai Land Department's Oqood register, and a title deed is issued once the building has its completion certificate and you have met your obligations under the sale agreement.",
           },
         ],
       },
@@ -50,7 +50,7 @@ export const GUIDES_B: Guide[] = [
             },
           },
           {
-            p: "Two rows decide most cases: the mortgage limit and the timing. If you need to borrow more than half the price, or need the home this year, the table has answered the question.",
+            p: "Two rows decide most cases: the mortgage limit and the timing. If you need to borrow more than half the price, or need the home this year, a ready home is the better fit.",
           },
         ],
       },
@@ -129,7 +129,7 @@ export const GUIDES_B: Guide[] = [
             ul: [
               "You want to live in it, or earn rent from it, within weeks",
               "You need to borrow more than half the price",
-              "You want to walk through the exact home, and meet the building, before you commit",
+              "You want to walk through the exact home, and see the building, before you commit",
             ],
           },
           { p: "An off-plan home fits when:" },
@@ -153,7 +153,7 @@ export const GUIDES_B: Guide[] = [
               { t: "On either: the total cost, not the price.", d: "Fees differ between the two, and the [buying costs calculator](/buying-costs/) puts them side by side. [Buying off-plan in Dubai](/guides/buying-off-plan-in-dubai/) lists the off-plan checks in full." },
             ],
           },
-          { p: "If you cannot answer one of these for a home you like, that gap is the risk you would be buying." },
+          { p: "If you cannot answer one of these for a home you like, find the answer before you commit." },
         ],
       },
     ],
@@ -187,7 +187,7 @@ export const GUIDES_B: Guide[] = [
         a: "The drawings, the specification and, where the developer has built one, a show apartment. On a ready home you inspect the home itself, so a ready purchase carries less uncertainty about what you get.",
       },
     ],
-    sources: [S.dldSale, S.dldInitial, S.cbuae, S.kt, S.escrow, S.formF],
+    sources: [S.dldSale, S.dldInitial, S.cbuae, S.kt, S.escrow, S.formF, S.pfFees],
   },
   {
     slug: "buying-property-in-dubai-from-abroad",
@@ -332,14 +332,14 @@ export const GUIDES_B: Guide[] = [
       },
       {
         q: "Does owning property in Dubai give me a residence visa?",
-        a: "It can. DLD lists a two-year investor residence visa for a sole owner of property of any value, or a joint owner with a share of at least AED 400,000, and a ten-year Golden Visa for property worth AED 2 million or more.",
+        a: "It can. DLD lists a two-year investor residence visa for a sole owner of property of any value, or a joint owner with a share of at least AED 400,000, and a Golden Visa, which DLD and GDRFA Dubai describe as ten years, for property worth AED 2 million or more.",
       },
       {
         q: "Will I pay UAE tax on rent from a Dubai property?",
         a: "No personal income tax applies in the UAE, and rental income from property held in your own name is outside corporate tax when no licence is needed. Your country of residence may tax the income.",
       },
     ],
-    sources: [S.freeholdList, S.law7, S.dldSale, S.poa, S.poa2, S.digitalSale, S.dubaiRest, S.nonRes, S.investorVisa, S.dldVisa, S.gdrfaMove, S.ftaRei, S.uaeTax],
+    sources: [S.freeholdList, S.law7, S.dldSale, S.poa, S.poa2, S.digitalSale, S.dubaiRest, S.nonRes, S.investorVisa, S.dldVisa, S.gdrfaMove, S.ftaRei, S.uaeTax, S.cbuae],
   },
   {
     slug: "service-charges-in-dubai",
@@ -389,7 +389,7 @@ export const GUIDES_B: Guide[] = [
               "The reserve fund contribution for future replacement of major plant",
             ],
           },
-          { p: "Ask which lines rose in the last budget and why. A jump in insurance or a new maintenance contract explains most increases." },
+          { p: "Ask which lines rose in the last budget and why. Insurance and maintenance contracts are common reasons for an increase." },
         ],
       },
       {
@@ -428,7 +428,7 @@ export const GUIDES_B: Guide[] = [
               },
             ],
           },
-          { p: "If the seller cannot show a service charge statement, ask the manager directly before you sign Form F. The lien attaches to the unit, not to the seller, so arrears become the buyer's problem at transfer unless the NOC confirms they are clear." },
+          { p: "If the seller cannot show a service charge statement, ask the manager directly before you sign Form F. The lien attaches to the unit, not to the seller: the trustee will not transfer without the NOC, and the developer will not issue it while charges are unpaid." },
         ],
       },
       {
@@ -450,7 +450,7 @@ export const GUIDES_B: Guide[] = [
           {
             ul: [
               "The management entity holds a lien over the unit, and the unit cannot be sold until the charges are paid (Article 32)",
-              "After a written notice approved by RERA, the owner has 30 days to pay before the entity can enforce the claim through the execution judge at the Rental Dispute Settlement Centre",
+              "After a written notice approved by RERA, the owner has 30 days to pay before the entity can enforce the claim through the execution judge at the Rental Disputes Center",
               "The judge can order the unit sold at public auction, with the court and legal fees falling on the owner",
             ],
           },
@@ -464,13 +464,13 @@ export const GUIDES_B: Guide[] = [
         h: "If you disagree with the budget",
         blocks: [
           {
-            p: "The audit and RERA approval exist to keep budgets honest, but they do not make every budget right for every owner. The owners committee is the first route. It can ask the manager for the detail behind any line, and it can take concerns to RERA through Mollak. Disputes over jointly owned property go to the Rental Dispute Settlement Centre, which has handled them since Law No. 6 of 2019.",
+            p: "The audit and RERA approval exist to keep budgets honest, but they do not make every budget right for every owner. The owners committee is the first route. It can ask the manager for the detail behind any line, and it can take concerns to RERA through Mollak. Disputes over jointly owned property go to the Rental Disputes Center, which has handled them since Law No. 6 of 2019.",
           },
           {
             ul: [
               "Ask the manager for the line-by-line budget and the audit firm's approval",
               "Raise it through the owners committee, which can take it to RERA through Mollak",
-              "For a claim, file at the Rental Dispute Settlement Centre",
+              "For a claim, file at the Rental Disputes Center",
             ],
           },
         ],
@@ -487,7 +487,7 @@ export const GUIDES_B: Guide[] = [
       },
       {
         q: "How do I find the service charge for a building in Dubai?",
-        a: "On the Dubai Land Department's Service Charge Index, available on the DLD website through Mollak and in the Dubai REST app. It gives the approved rate per square foot, which you multiply by the unit's area.",
+        a: "On the Dubai Land Department's Service Charge Index, available on the DLD website, through Mollak and in the Dubai REST app. It gives the approved rate per square foot, which you multiply by the unit's area.",
       },
       {
         q: "Does the tenant or the owner pay service charges?",
@@ -499,14 +499,14 @@ export const GUIDES_B: Guide[] = [
       },
       {
         q: "What happens if an owner refuses to pay service charges?",
-        a: "After a RERA-approved written notice and 30 days to pay, the management entity can enforce through the execution judge at the Rental Dispute Settlement Centre, who may order the unit sold at auction with the costs on the owner.",
+        a: "After a RERA-approved written notice and 30 days to pay, the management entity can enforce through the execution judge at the Rental Disputes Center, who may order the unit sold at auction with the costs on the owner.",
       },
       {
         q: "Can service charges go up?",
         a: "Yes, but only through a new budget approved by a certified audit firm and then by RERA. Ask for the last two approved budgets to see the trend before you buy.",
       },
     ],
-    sources: [S.law6, S.sci, S.mollak, S.dubaiRest, S.pfNoc],
+    sources: [S.law6, S.sci, S.mollak, S.dubaiRest, S.pfNoc, S.rdc, S.decree26],
   },
   {
     slug: "renting-out-property-in-dubai",
@@ -531,14 +531,14 @@ export const GUIDES_B: Guide[] = [
         h: "Register the contract on Ejari",
         blocks: [
           {
-            p: "Article 4 of Dubai Law No. 26 of 2007, as amended by Law No. 33 of 2008, requires every lease to be registered with RERA. The system is Ejari. Without it the tenant cannot connect DEWA in their name and neither side can file a case at the Rental Dispute Settlement Centre. The landlord, the tenant or a holder of a power of attorney can register.",
+            p: "Article 4 of Dubai Law No. 26 of 2007, as amended by Law No. 33 of 2008, requires every lease to be registered with RERA. The system is Ejari. Without it the tenant cannot connect DEWA in their name and neither side can file a case at the Rental Disputes Center. The landlord, the tenant or a holder of a power of attorney can register.",
           },
           {
             table: {
               head: ["Where you register", "Fee"],
               rows: [
                 ["Dubai REST app or the DLD website", "AED 177.75: AED 100 registration, AED 10 knowledge fee, AED 10 innovation fee, AED 55 service fee and VAT"],
-                ["A registration trustee centre", "AED 100, AED 10 and AED 10, plus a AED 95 service fee and VAT"],
+                ["A registration trustee centre", "AED 100, AED 10 and AED 10, plus an AED 95 service fee and VAT"],
               ],
             },
           },
@@ -567,7 +567,7 @@ export const GUIDES_B: Guide[] = [
             },
           },
           {
-            p: "Since January 2025 the Dubai Land Department's Smart Rental Index has set that average. It classifies every building by its specification, finishes, location and facilities, so two buildings on the same street can carry different averages. The bands themselves did not change. Check the index in the Dubai REST app before you propose a new rent, because a tenant can take an increase outside the bands to the Rental Dispute Settlement Centre.",
+            p: "Since January 2025 the Dubai Land Department's Smart Rental Index has set that average. It classifies every building by its specification, finishes, location and facilities, so two buildings on the same street can carry different averages. The bands themselves did not change. Check the index in the Dubai REST app before you propose a new rent, because a tenant can take an increase outside the bands to the Rental Disputes Center.",
           },
         ],
       },
@@ -582,7 +582,7 @@ export const GUIDES_B: Guide[] = [
             ],
           },
           {
-            p: "The moving-in ground applies when you or a first-degree relative need the home and have no other suitable property. A notice sent by email or WhatsApp does not meet the 12-month rule. If a tenant does not leave after valid notice, the Rental Dispute Settlement Centre decides.",
+            p: "The moving-in ground applies when you or a first-degree relative need the home and have no other suitable property. A notice sent by email or WhatsApp does not meet the 12-month rule. If a tenant does not leave after valid notice, the Rental Disputes Center decides.",
           },
         ],
       },
@@ -592,14 +592,14 @@ export const GUIDES_B: Guide[] = [
         blocks: [
           {
             ol: [
-              { t: "The rent and how it is paid.", d: "The number of cheques and their dates. Fewer cheques is a stronger position for the landlord, and the market usually prices it." },
+              { t: "The rent and how it is paid.", d: "The number of cheques and their dates. Fewer cheques usually suits the landlord, so ask whether it changes the rent." },
               { t: "The security deposit.", d: "How much, what it covers and when it is returned. A dated inventory with photographs avoids the argument at the end." },
               { t: "Maintenance.", d: "Who pays for what. By custom the landlord carries major items such as air conditioning and the tenant carries minor wear, but write it down." },
               { t: "Service charges and chiller.", d: "Service charges are the owner's cost under Law No. 6 of 2019. Say in the contract who pays any district cooling charges." },
               { t: "Subletting and use.", d: "Whether the tenant may sublet, and that the home is for residential use only." },
             ],
           },
-          { p: "Register exactly what you both signed. Extra terms go in an addendum signed by both sides, because the Rental Dispute Settlement Centre reads the registered contract, not the messages around it." },
+          { p: "Register exactly what you both signed. Extra terms go in an addendum signed by both sides, because the Rental Disputes Center reads the registered contract, not the messages around it." },
         ],
       },
       {
@@ -632,7 +632,7 @@ export const GUIDES_B: Guide[] = [
     faqs: [
       {
         q: "Do I have to register a tenancy on Ejari?",
-        a: "Yes. Article 4 of Dubai Law No. 26 of 2007 requires every lease to be registered with RERA, through Ejari. Online registration costs AED 177.75 and a registration trustee centre charges a AED 95 service fee in place of the AED 55 online fee.",
+        a: "Yes. Article 4 of Dubai Law No. 26 of 2007 requires every lease to be registered with RERA, through Ejari. Online registration costs AED 177.75 and a registration trustee centre charges an AED 95 service fee in place of the AED 55 online fee.",
       },
       {
         q: "How much can I raise the rent in Dubai?",
@@ -659,14 +659,14 @@ export const GUIDES_B: Guide[] = [
         a: "The UAE has no personal income tax, and under Cabinet Decision No. 49 of 2023 rent from property held in your own name is outside corporate tax when no licence is required. Residential leases are generally exempt from VAT.",
       },
     ],
-    sources: [S.law26, S.law33, S.ejari, S.decree43, S.smartRent, S.holidayHomes, S.sharedHousing, S.ftaRei, S.uaeTax, S.mofVat],
+    sources: [S.law26, S.law33, S.ejari, S.decree43, S.smartRent, S.holidayHomes, S.sharedHousing, S.ftaRei, S.uaeTax, S.mofVat, S.rdc, S.decree26],
   },
   {
     slug: "handover-and-snagging-in-dubai",
     topic: "Off-plan",
     seoTitle: "Handover and snagging in Dubai: what happens at completion",
     seoDescription:
-      "At completion your Oqood registration becomes a title deed, you inspect the home for defects, and the developer stays liable for one year and for ten years.",
+      "At completion Oqood becomes a title deed. You inspect for defects, and the developer stays liable one year for installations and ten years for the structure.",
     title: "Handover and snagging: taking the keys to a new Dubai home",
     dek: "The completion certificate, your title deed, the inspection before you accept, and the years the developer stays responsible for defects.",
     image: "viewing",
@@ -683,10 +683,10 @@ export const GUIDES_B: Guide[] = [
         h: "The completion certificate and your deed",
         blocks: [
           {
-            p: "A building is complete when its planning authority says so by issuing a completion certificate. Depending on the area that authority is the Dubai Development Authority, Trakhees or Dubai Municipality. Until the certificate exists the developer cannot hand over, whatever the marketing says.",
+            p: "A building is complete when its planning authority says so by issuing a completion certificate. Depending on the area that authority is the Dubai Development Authority, Trakhees or Dubai Municipality. Until the certificate exists the developer cannot hand over.",
           },
           {
-            p: "Once it exists, Article 8 of Law No. 13 of 2008 requires the developer to enter the project in the property register and to register each sold unit in the name of the buyer who has met their obligations. That is the moment your Oqood registration gives way to a title deed. DLD's fee for issuing the deed is AED 250. If you still owe an instalment, settle it first, because the registration waits for buyers who have paid.",
+            p: "Once it exists, Article 8 of Law No. 13 of 2008 requires the developer to enter the project in the property register and to register each sold unit in the name of the buyer who has met their obligations. That is the moment your Oqood registration gives way to a title deed. DLD charges a fee to issue the deed; ask the developer for the amount. If you still owe an instalment, settle it first, because the registration waits for buyers who have paid.",
           },
         ],
       },
@@ -710,7 +710,7 @@ export const GUIDES_B: Guide[] = [
         h: "The snagging inspection",
         blocks: [
           {
-            p: "Snagging is market practice rather than a legal step, so nothing in the law forces the developer to wait for it. The developer's handover documents usually include an acceptance form, and once you sign it the leverage shifts. Inspect first. Walk every room with a checklist, or hire an inspector who does this for a living, and hand the developer a written, dated list with photographs.",
+            p: "Snagging is market practice rather than a legal step, so nothing in the law forces the developer to wait for it. The developer's handover documents usually include an acceptance form, and once you sign it, the developer can treat the home as accepted. Inspect first. Walk every room with a checklist, or hire an inspector who does this for a living, and hand the developer a written, dated list with photographs.",
           },
           {
             ol: [
@@ -722,7 +722,7 @@ export const GUIDES_B: Guide[] = [
             ],
           },
           {
-            p: "Agree a date for the developer to clear the list and a second visit to confirm it. Keep copies of everything. The one-year installation liability starts at handover, so the clock is already running once you take the keys.",
+            p: "Agree a date for the developer to clear the list and a second visit to confirm it. Keep copies of everything. The one-year installation liability starts at handover, so it has already started once you take the keys.",
           },
         ],
       },
@@ -740,7 +740,7 @@ export const GUIDES_B: Guide[] = [
             },
           },
           {
-            p: "Both periods come from Article 40 of Dubai Law No. 6 of 2019, and the same article makes any agreement to the contrary void. A clause in your sale agreement that shortens them has no effect. Separately, the UAE's Civil Transactions Law, Federal Decree-Law No. 25 of 2025, holds contractors and engineers jointly liable for ten years for collapse or for defects that threaten a building's stability or safety, in Articles 821 to 824, in force from 1 June 2026.",
+            p: "Both periods come from Article 40 of Dubai Law No. 6 of 2019, and the same article makes any agreement to the contrary void. A clause in your sale agreement that shortens them has no effect. Separately, the UAE's Civil Transactions Law covers contractors and engineers. Federal Decree-Law No. 25 of 2025 holds them jointly liable for ten years for collapse or for defects that threaten a building's stability or safety, in Articles 821 to 824, in force from 1 June 2026.",
           },
           {
             p: "Report defects in writing as soon as you find them, with dates, so that a claim inside the period is easy to prove.",
@@ -752,7 +752,7 @@ export const GUIDES_B: Guide[] = [
         h: "Delays, defaults and cancelled projects",
         blocks: [
           {
-            p: "If the delay is yours, Law No. 13 of 2008 as amended by Law No. 19 of 2020 applies. After a 30-day notice served through DLD, the developer may terminate and keep up to 40% of the unit's value where the project is more than 60% complete, or up to 25% below that, and must refund the rest within a year or within 60 days of reselling the unit, whichever comes first.",
+            p: "If the delay is yours, Law No. 13 of 2008 as amended by Law No. 19 of 2020 applies. After a 30-day notice served through DLD, the developer may terminate. It may keep up to 40% of the unit's value where the project is more than 60% complete, or up to 25% below that. It must refund the rest within a year, or within 60 days of reselling the unit, whichever comes first.",
           },
           {
             p: "If the delay is the developer's, the sale and purchase agreement governs. Read the clause on late completion before you sign, because it sets whatever compensation you are entitled to. If a project never starts for reasons outside the developer's control, or RERA cancels it, the developer must refund buyers' payments under the escrow law.",
@@ -773,7 +773,7 @@ export const GUIDES_B: Guide[] = [
     faqs: [
       {
         q: "When does an off-plan buyer get the title deed?",
-        a: "After the project's completion certificate is issued. Article 8 of Law No. 13 of 2008 then requires the developer to register each sold unit in the name of the buyer who has met their obligations. DLD's deed issuance fee is AED 250.",
+        a: "After the project's completion certificate is issued. Article 8 of Law No. 13 of 2008 then requires the developer to register each sold unit in the name of the buyer who has met their obligations. DLD charges a fee to issue the deed; the developer can tell you the amount.",
       },
       {
         q: "What is snagging?",
@@ -843,7 +843,7 @@ export const GUIDES_B: Guide[] = [
         h: "Agree the sale with Form F",
         blocks: [
           {
-            p: "When a buyer's offer is accepted, both of you sign Form F, the sale contract RERA calls the memorandum of understanding. It records the price, the deposit, the completion date, the fees and who pays each, and the commission due to each side's broker. It is valid only once the seller and the buyer have both signed and the broker has witnessed and dated it.",
+            p: "When a buyer's offer is accepted, both of you sign Form F, the sale contract RERA calls the memorandum of understanding. It records the price, the deposit, the transfer date, the fees and who pays each, and the commission due to each side's broker. It is valid only once the seller and the buyer have both signed and the broker has witnessed and dated it.",
           },
           {
             p: "By custom the buyer pays a 10% deposit on signing. The broker usually holds the deposit cheque until transfer. Form F also sets the consequences if either side withdraws, so read that clause as carefully as the price.",
@@ -952,7 +952,7 @@ export const GUIDES_B: Guide[] = [
       },
       {
         q: "What is Form F?",
-        a: "The RERA sale contract between buyer and seller, often called the MOU. It records the price, deposit, completion date, fees and commissions, and it is valid once both parties have signed and the broker has witnessed and dated it.",
+        a: "The RERA sale contract between buyer and seller, often called the MOU. It records the price, deposit, transfer date, fees and commissions, and it is valid once both parties have signed and the broker has witnessed and dated it.",
       },
       {
         q: "Who pays the 4% DLD transfer fee, the buyer or the seller?",
@@ -1049,7 +1049,7 @@ export const GUIDES_B: Guide[] = [
         h: "Register the contract on Ejari",
         blocks: [
           {
-            p: "Article 4 of Law No. 26 of 2007 requires every lease to be registered with RERA. The system is Ejari, and either side can register, though the tenant usually pays. Registration online through the Dubai REST app or the DLD website costs AED 177.75: AED 100 registration, AED 10 knowledge fee, AED 10 innovation fee, AED 55 service fee and VAT. A registration trustee centre charges a AED 95 service fee instead of AED 55.",
+            p: "Article 4 of Law No. 26 of 2007 requires every lease to be registered with RERA. The system is Ejari, and either side can register, though the tenant usually pays. Registration online through the Dubai REST app or the DLD website costs AED 177.75: AED 100 registration, AED 10 knowledge fee, AED 10 innovation fee, AED 55 service fee and VAT. A registration trustee centre charges an AED 95 service fee instead of AED 55.",
           },
           {
             p: "You need the signed contract, your passport, visa and Emirates ID, and the landlord's title deed and identification. The Ejari certificate is what DEWA asks for to connect water and electricity, what your employer or school may ask for as proof of address, and what the Rental Disputes Center requires before it hears a case. Renew it with each renewal of the contract.",
@@ -1180,7 +1180,7 @@ export const GUIDES_B: Guide[] = [
     summary: [
       "Gross yield is the annual rent divided by the price. Net yield takes off service charges, management, vacancy and the buying costs before it divides, and it is the number that matters.",
       "The UAE levies no income tax on individuals, and rent from property held in your own name is outside corporate tax when no licence is required.",
-      "A ready home earns from the day of transfer and can be borrowed against at up to 60% for a second home. An off-plan home earns nothing until handover and can be borrowed against at 50%.",
+      "A ready home earns from the day of transfer and can be borrowed against at up to 60% for an expatriate's second home, or 65% for a UAE national. An off-plan home earns nothing until handover and can be borrowed against at 50%.",
       "Property worth AED 2 million or more can support a Golden Visa application.",
     ],
     sections: [
@@ -1192,7 +1192,7 @@ export const GUIDES_B: Guide[] = [
             p: "Gross yield is the simplest measure and the one adverts use. Divide the annual rent by the purchase price and multiply by 100. It ignores every cost.",
           },
           {
-            p: "Net yield is the measure to decide on. Start with the annual rent. Take off the service charge, the management fee if an agent runs the tenancy, an allowance for the weeks the home may sit empty between tenants, insurance and maintenance. Divide what is left by the full cost of buying: the price plus the DLD fee, the trustee fee, the agency fee and the NOC. Multiply by 100.",
+            p: "Net yield is the measure to decide on. Start with the annual rent. Take off the service charge, the management fee if an agent runs the tenancy, an allowance for the weeks the home may sit empty between tenants, insurance and maintenance. Divide what is left by the full cost of buying: the price plus the DLD transfer and title deed fees, the trustee fee, the agency fee and the NOC. Multiply by 100.",
           },
           {
             table: {
@@ -1223,7 +1223,7 @@ export const GUIDES_B: Guide[] = [
               "**Mortgage costs.** Mortgage registration at 0.25% of the loan plus AED 270, a bank valuation of typically AED 2,500 to 3,500 plus VAT, and an arrangement fee of up to 1% of the loan plus VAT.",
             ],
           },
-          { p: "A lower service charge or a shorter void can outweigh a higher gross yield." },
+          { p: "A lower service charge or a shorter vacancy can outweigh a higher gross yield." },
         ],
       },
       {
@@ -1253,7 +1253,7 @@ export const GUIDES_B: Guide[] = [
         h: "Reading the price data",
         blocks: [
           {
-            p: "The Dubai Land Department publishes every registered transaction as an open dataset on Data.Dubai. Our [Dubai property prices](/dubai-property-prices/) pages are built from it. They show, for Dubai and for each of our areas, the number of sales, the median price and the median price per square foot by quarter, the change over the last twelve months and the share of sales that were off-plan. The analysis is ours, not DLD's.",
+            p: "The Dubai Land Department publishes every registered transaction as an open dataset on Data.Dubai. Our [Dubai property prices](/dubai-property-prices/) pages are built from it. They show, for Dubai and for seven of its main communities, the number of sales, the median price and the median price per square foot by quarter, the change over the last twelve months and the share of sales that were off-plan. The analysis is ours, not DLD's.",
           },
           {
             ol: [
@@ -1335,11 +1335,11 @@ export const GUIDES_B: Guide[] = [
       },
       {
         q: "Where can I see Dubai property prices by area?",
-        a: "On our Dubai property prices pages, built from the Dubai Land Department's open transactions dataset on Data.Dubai. They show sales counts, median prices and price per square foot by quarter for Dubai and for each area we cover.",
+        a: "On our Dubai property prices pages, built from the Dubai Land Department's open transactions dataset on Data.Dubai. They show sales counts, median prices and price per square foot by quarter for Dubai and for seven of its main communities.",
       },
       {
         q: "Is off-plan or ready better for investment in Dubai?",
-        a: "A ready home earns rent at once and can be borrowed against at up to 60% as a second home. An off-plan home earns nothing until handover and is capped at 50% lending, but spreads the payments and holds them in escrow. The choice depends on when you need the income.",
+        a: "A ready home earns rent at once and can be borrowed against at up to 60% as an expatriate's second home, or 65% for a UAE national. An off-plan home earns nothing until handover and is capped at 50% lending, but spreads the payments and holds them in escrow. The choice depends on when you need the income.",
       },
       {
         q: "Does a Dubai investment property qualify me for a Golden Visa?",
@@ -1355,14 +1355,14 @@ export const GUIDES_B: Guide[] = [
     seoDescription:
       "How to verify a Dubai broker: the RERA card and BRN, the brokerage ORN, the Dubai REST app, permits and QR codes on adverts, the forms and the cold-calling ban.",
     title: "How to choose a real estate broker in Dubai",
-    dek: "The checks that take five minutes, the forms a licensed broker must use, what commission is by custom, the 2026 ban on cold contact, and the questions worth asking before you sign.",
+    dek: "The checks to run before you sign, the forms a licensed broker must use, what commission is by custom, the 2026 ban on cold contact, and the questions worth asking before you sign.",
     image: "viewing-2",
     updated: "2026-10-17",
     summary: [
       "Every broker in Dubai must hold a RERA broker card with a broker registration number (BRN), and work for a brokerage with an office registration number (ORN). Both can be checked in the Dubai REST app.",
       "A genuine advert carries a Trakheesi permit number, the broker's and office's registration numbers and, on printed and video adverts, a Madmoun QR code.",
       "Licensed brokers work on RERA's standard contracts: Form A with the seller, Form B with the buyer, Form F between buyer and seller.",
-      "Since February 2026 a DLD circular bars brokerages from contacting owners or investors to offer, market or buy property; brokers may contact only owners who have registered on RERA's green list. RERA's stated penalty for cold calling is a AED 50,000 fine and a card suspension of at least three months.",
+      "Since February 2026 a DLD circular bars brokerages from contacting owners or investors to offer, market or buy property; brokers may contact only owners who have registered on RERA's green list. In 2022 RERA set the penalty for cold calling at an AED 50,000 fine, a card suspension of at least three months, or both.",
     ],
     sections: [
       {
@@ -1370,7 +1370,7 @@ export const GUIDES_B: Guide[] = [
         h: "Check the broker card and BRN",
         blocks: [
           {
-            p: "Bylaw No. 85 of 2006 regulates the register of real estate brokers in Dubai. A person may not act as a broker without being on it. The Dubai Land Department's brokerage practice guide sets out the route: the brokerage obtains a licence, registers it on DLD's Trakheesi system, and applies there for each broker's card, which is issued electronically once the fees are paid.",
+            p: "Regulation No. 85 of 2006 regulates the register of real estate brokers in Dubai. A person may not act as a broker without being on it. The Dubai Land Department's brokerage practice guide sets out the route: the brokerage obtains a licence, registers it on DLD's Trakheesi system, and applies there for each broker's card, which is issued electronically once the fees are paid.",
           },
           {
             p: "Ask the broker for the card. It names the broker and the brokerage and carries the broker registration number (BRN). Then check it yourself. The Dubai REST app, which RERA requires every broker to use, holds the register of brokers and their performance levels. Search by name or BRN and confirm the card is active, the photograph matches and the brokerage named is the one you are dealing with.",
@@ -1382,7 +1382,7 @@ export const GUIDES_B: Guide[] = [
         h: "Check the brokerage and ORN",
         blocks: [
           {
-            p: "The brokerage holds its own registration, the office registration number (ORN), issued through Trakheesi with its registration certificate. Both the BRN and the ORN must appear on the firm's adverts. A valid broker card is worth nothing if the office behind it is suspended, so check the firm as well as the person, in the same app. RERA also classifies brokerages and brokers, and the guide says every broker should aim for a five-star rating or the golden category; the rating shows in the app.",
+            p: "The brokerage holds its own registration, the office registration number (ORN), issued through Trakheesi with its registration certificate. Both the BRN and the ORN must appear on the firm's adverts. A valid broker card does not help if the office behind it is suspended, so check the firm as well as the person, in the same app. RERA also classifies brokerages and brokers, and the guide says every broker should aim for a five-star rating or the golden category; the rating shows in the app.",
           },
           {
             ul: [
@@ -1399,14 +1399,14 @@ export const GUIDES_B: Guide[] = [
         blocks: [
           {
             ul: [
-              "**Trakheesi permit number.** The brokerage must obtain a permit for every advert through Trakheesi and show the number on it. The permit is tied to a Form A signed by the owner, so a permit means the owner has agreed to the sale.",
+              "**Trakheesi permit number.** The brokerage must obtain a permit for every advert through Trakheesi and show the number on it. The permit is tied to a Form A signed by the owner, so a permit means the owner has agreed to have the home marketed.",
               "**Madmoun QR code.** Printed and video adverts must carry a QR code, mandatory since 24 April 2023, which opens the permit details so you can confirm the advert is genuine.",
               "**ORN and BRN.** Both registration numbers must appear on the advert.",
               "**Off-plan adverts.** These must also show the developer, the project's escrow account number and the expected completion date, and the broker must hold a marketing agreement with the developer. You can check that a project is registered in the Dubai REST app's Mashrooi section.",
             ],
           },
           {
-            p: "An advert without a permit number is either unlicensed or an invitation to contact someone who is not the listing broker. Either way, walk on.",
+            p: "An advert without a permit number is either unlicensed or an invitation to contact someone who is not the listing broker. Either way, do not deal with it.",
           },
         ],
       },
@@ -1449,10 +1449,10 @@ export const GUIDES_B: Guide[] = [
         h: "The ban on cold contact",
         blocks: [
           {
-            p: "The brokerage practice guide describes RERA's green list: owners who register on it agree to be contacted by brokers, and brokers may not contact owners who have not. On 27 February 2026 DLD issued a circular, listed on its rules and regulations page as the regulations governing communication with property owners and the prohibition of cold calling. It bars brokerages from obtaining owner or investor data by unlawful means and from contacting owners or investors by phone or any other channel to offer, market or buy property.",
+            p: "The brokerage practice guide describes RERA's green list: owners who register on it agree to be contacted by brokers, and brokers may not contact owners who have not. On 27 February 2026 DLD issued a circular on communication with property owners and the prohibition of cold calling. It is listed on DLD's rules and regulations page. It bars brokerages from obtaining owner or investor data by unlawful means and from contacting owners or investors by phone or any other channel to offer, market or buy property.",
           },
           {
-            p: "RERA's stated penalty for cold calling, set out when it fined a brokerage in April 2022, is AED 50,000 and/or suspension of the broker's card for no less than three months. That case suspended nine brokers. If a broker calls you about a home you never listed, you can report it through the Report Malicious Calls service in the Dubai REST app. A broker who found you that way has already shown how they work.",
+            p: "RERA's stated penalty for cold calling, set out when it fined a brokerage in April 2022, is AED 50,000 and/or suspension of the broker's card for no less than three months. That case suspended nine brokers. If a broker calls you about a home you never listed, you can report it through the Report Malicious Calls service in the Dubai REST app. ",
           },
         ],
       },
@@ -1470,7 +1470,7 @@ export const GUIDES_B: Guide[] = [
               "Keeps the deposit cheque safe and hands it over only on the terms in Form F",
             ],
           },
-          { p: "None of this is extra service. It is what the licence requires, and a broker who treats it as optional is telling you how the rest of the deal will go." },
+          { p: "None of this is extra service. It is what the licence requires." },
         ],
       },
       {

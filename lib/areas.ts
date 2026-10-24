@@ -72,7 +72,7 @@ export const AREAS: Area[] = [
     overview: [
       "Downtown Dubai is the block of the city around Burj Khalifa, The Dubai Mall and the Dubai Fountain. Mohammed Bin Rashid Boulevard loops through it, and Dubai Opera sits at one end.",
       "Buyers choose between compact one-bedrooms in the Boulevard buildings and large residences in the towers that face the fountain or Burj Khalifa itself. Everything is an apartment, and most buildings are complete and lived in.",
-      "For tenants, Downtown is the place to be if you work in DIFC or Business Bay and want to walk to the mall, the Metro and the restaurants on the Boulevard. Parking and service charges are higher than in outlying areas, so check both before you sign.",
+      "For tenants, Downtown is the place to be if you work in DIFC or Business Bay and want to walk to the mall, the Metro and the restaurants on the Boulevard. Check the parking and the service charge before you sign.",
       "For owners, the address itself does much of the selling. A fountain view or a direct line of sight to the tower is what separates a quick sale from a slow one, so lead with the view in your listing.",
     ],
     homes: ["One- to four-bedroom apartments", "Penthouses and large residences", "Burj Khalifa, fountain and boulevard views"],
@@ -223,16 +223,16 @@ export const AREAS: Area[] = [
   // https://www.nakheel.com/en/media-centre/blogs/detail/dubai-property-investment-for-foreigners-why-nakheel-remains-a-top-choice
   // (Bayut's area guide returned 503 on the check date). Bus SM1 and Gold Souq as nearest Metro:
   // dubizzle area overview https://www.dubizzle.com/blog/property/area-overview-dubai-islands/.
-  // Projects: Ellington's Meriva Collection and Mashriq Elite's Floareá Breeze (lib/data/projects.json).
+  // Projects listed: Mashriq Elite's Floareá Breeze (lib/data/projects.json).
   {
     slug: "dubai-islands",
     name: "Dubai Islands",
-    image: "p/ellington-the-meriva-collection-1",
+    image: "area-dubai-islands",
     card: "Five new islands off Deira, with beaches, marinas and golf.",
     intro: "Nakheel's five islands off the Deira coast, reached by the Infinity Bridge, with beachfront apartments and villas going up around long public beaches.",
     overview: [
       "Dubai Islands is a group of five man-made islands off the coast of Deira, developed by Nakheel. The islands are named Central, Marina, Shore, Golf and Elite, and they are linked to the city by the Infinity Bridge and to each other by smaller bridges.",
-      "If you are buying, most of what is on offer is off-plan: beachfront apartment buildings, branded residences and villa communities such as Bay Villas. Nakheel sells the land and builds the beaches and roads; the homes come from a growing list of developers, including Ellington's Meriva Collection and Mashriq Elite's Floareá Breeze. Check each project's escrow account and construction progress before you commit.",
+      "If you are buying, most of what is on offer is off-plan: beachfront apartment buildings, branded residences and villa communities such as Bay Villas. Nakheel sells the land and builds the beaches and roads; the homes come from a growing list of developers, including Mashriq Elite's Floareá Breeze. Check each project's escrow account and construction progress before you commit.",
       "If you plan to rent here, the islands are still being built, so ready homes are few and the shops and restaurants are mostly at Souk Al Marfa for now. The nearest Metro is Gold Souq on the Green Line, a short drive over the bridge, and there is no station on the islands.",
       "If you own a plot or an off-plan home here, your buyer is someone who wants a beach address that is not Palm Jumeirah. A direct beach view and a short walk to the sand are what buyers pay for, so show both.",
     ],
@@ -244,7 +244,7 @@ export const AREAS: Area[] = [
       "Road access over the Infinity Bridge from Deira",
     ],
     developer: "Nakheel",
-    landmarks: ["Infinity Bridge", "Souk Al Marfa", "The Blue Flag beach", "Rixos Dubai Islands", "Bay Villas", "The Meriva Collection by Ellington", "Floareá Breeze by Mashriq Elite"],
+    landmarks: ["Infinity Bridge", "Souk Al Marfa", "The Blue Flag beach", "Rixos Dubai Islands", "Bay Villas", "Floareá Breeze by Mashriq Elite"],
     rentNote: "The first tenants are couples and small families who want a beach apartment and do not mind that the islands are still being built around them.",
     sellNote: "Most resale here is off-plan, so your buyer will compare your payment plan and construction progress with the developer's own releases.",
     seoTitle: "Dubai Islands property for sale: area guide",
@@ -309,12 +309,12 @@ export const AREAS: Area[] = [
   {
     slug: "mohammed-bin-rashid-city",
     name: "Mohammed Bin Rashid City",
-    image: "p/sobha-hartland-ii-skyvue-stellar-1",
+    image: "area-mbr-city",
     card: "Lagoons, villas and new towers between Downtown and the creek.",
     intro: "A large master plan south of Downtown Dubai, home to District One and its Crystal Lagoon, Sobha Hartland, Sobha Hartland II and the Meydan racecourse.",
     overview: [
       "Mohammed Bin Rashid City, or MBR City, is a master plan by Meydan that stretches from Business Bay and Downtown Dubai towards the Ras Al Khor sanctuary and Al Khail Road. Inside it sit several communities with their own names: District One around the Crystal Lagoon, Sobha Hartland on the creek side, Sobha Hartland II next to it, Meydan Horizon and District 11.",
-      "Buyers have the widest range of home types of any area near the centre. District One is villas and mansions on the lagoon with some apartment phases. Sobha Hartland and Hartland II mix villas, townhouses and towers; Hartland II is sold off-plan around its own lagoon, with towers such as Skyvue Stellar. Ellington's Everly Place sits in Meydan Horizon.",
+      "Buyers have the widest range of home types of any area near the centre. District One is villas and mansions on the lagoon with some apartment phases. Sobha Hartland and Hartland II mix villas, townhouses and towers; Hartland II is sold off-plan around its own lagoon.",
       "For tenants, MBR City is a car area. There is no Metro station; Business Bay on the Red Line is the nearest, and most residents drive via Al Khail Road or Al Meydan Road. In return you get lagoons, parks and two international schools inside Sobha Hartland.",
       "If you are selling, your buyer is a family who wants a villa or a large apartment close to Downtown without the density. Off-plan supply in Hartland II and District One West competes with resale, so a ready home with a lagoon or skyline view is what stands out.",
     ],
@@ -378,7 +378,7 @@ export const AREAS: Area[] = [
   // Garden and Butterfly Garden, named schools and nurseries, nearest station Dubai Internet City:
   // Bayut area guide https://www.bayut.com/area-guides/arjan/. Bus routes F36 and F37, Mall of the
   // Emirates as the other nearby station: Binghatti area guide https://www.binghatti.com/en/area-guides/arjan.
-  // Floareá Residence (206 homes) handed over by August 2025: Khaleej Times
+  // Floareá Residence (206 homes) handed over (Khaleej Times). No dates on Mashriq Elite copy (rule of 12 Sep 2026).
   // https://www.khaleejtimes.com/business/property/mashriq-elite-announces-on-time-handover-of-floarea-residence-in-arjan
   // and Gulf News https://gulfnews.com/business/property/mashriq-elite-hands-over-floarea-residence-in-arjan-on-time-1.500295937.
   {
@@ -389,7 +389,7 @@ export const AREAS: Area[] = [
     intro: "A freehold district in Dubailand beside Dubai Miracle Garden, with low- and mid-rise apartment buildings between Al Barsha South and Motor City.",
     overview: [
       "Arjan is a district inside Dubailand, developed by Dubai Properties, at the junction of Sheikh Mohammed Bin Zayed Road and Umm Suqeim Street. Dubai Miracle Garden and Dubai Butterfly Garden sit on its edge, and Al Barsha South, Motor City and JVC are its neighbours.",
-      "Buyers get apartments, mostly studios to three-bedrooms, in low- and mid-rise buildings with shops on the ground floor. Villas are rare. Mashriq Elite's Floareá Residence, with 206 homes, was handed over here by August 2025, and its Floareá Grandé is in the same district.",
+      "Buyers get apartments, mostly studios to three-bedrooms, in low- and mid-rise buildings with shops on the ground floor. Villas are rare. Mashriq Elite's Floareá Residence, with 206 homes, is complete and lived in, and its Floareá Grandé is in the same district.",
       "For tenants, Arjan is one of the lower-rent addresses close to the schools of Al Barsha South, including Nord Anglia, Brighton College and Repton. There is no Metro station; RTA buses F36 and F37 serve the district, and Mall of the Emirates and Dubai Internet City are the nearest Red Line stations by car.",
       "If you are selling, your buyer is a first-time buyer or an investor who wants a tenant quickly. Buildings here are judged on their pool, gym and management before their finish, so a completed building with a good record and a garden view is what sells.",
     ],
@@ -404,7 +404,7 @@ export const AREAS: Area[] = [
     schools: [
       "Safa Community School",
       "Dubai Heights Academy",
-      "Nord Anglia International School Dubai",
+      "Nord Anglia International School Dubai (Al Barsha South, nearby)",
       "Brighton College Dubai (Al Barsha South, nearby)",
       "Repton School Dubai (Al Barsha South, nearby)",
       "Happy Bees Early Learning Centre",

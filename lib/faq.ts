@@ -17,11 +17,11 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "What deposit do I pay when I agree to buy?",
-        a: "By custom, 10% of the price when you sign Form F, the Dubai Land Department's standard sale contract between buyer and seller. It is market practice rather than a legal rule, and the deposit is held until the transfer.",
+        a: "By custom, 10% of the price when you sign Form F, RERA's standard sale contract between buyer and seller. It is market practice rather than a legal rule, and the deposit is held until the transfer.",
       },
       {
         q: "What is Form F?",
-        a: "The Dubai Land Department's standard sale contract between buyer and seller, often called the MOU. It records the price, the deposit, who pays the developer's NOC fee and the transfer date. Form A is the seller's contract with their broker and Form B the buyer's; the [glossary](/dubai-property-glossary/) defines each.",
+        a: "RERA's standard sale contract between buyer and seller, often called the MOU. It records the price, the deposit, who pays the developer's NOC fee and the transfer date. Form A is the seller's contract with their broker and Form B the buyer's; the [glossary](/dubai-property-glossary/) defines each.",
       },
       {
         q: "Can I buy without visiting Dubai?",
@@ -38,6 +38,44 @@ export const FAQ_GROUPS: FaqGroup[] = [
     ],
   },
   {
+    id: "off-plan",
+    h: "Off-plan",
+    faqs: [
+      {
+        q: "Is my money protected when I buy off-plan?",
+        a: "Dubai Law No. 8 of 2007 requires off-plan payments to go into an escrow account for the project, used only for its construction and out of reach of the developer's creditors. Pay only into the escrow account named on the advert and in your agreement. [Buying off-plan in Dubai](/guides/buying-off-plan-in-dubai/) lists the checks.",
+      },
+      {
+        q: "What is Oqood and what does it cost?",
+        a: "The Dubai Land Department's interim register for off-plan sales. It records you as the buyer before a title deed exists, for 4% of the price plus AED 20. Developers may add their own administration charge, so ask for it in writing.",
+      },
+      {
+        q: "What must an off-plan advert show?",
+        a: "A Trakheesi permit for the unit itself, which every off-plan unit has needed since April 2024, the developer's name, the project's escrow account number and the expected completion date. Printed and video adverts also carry a Madmoun QR code.",
+      },
+      {
+        q: "Can I get a mortgage on an off-plan home?",
+        a: "Yes, for up to 50% of the price under the Central Bank of the UAE's limits, subject to the bank's policy on the project. Some buyers pay the construction instalments themselves and arrange a mortgage for the balance at handover.",
+      },
+      {
+        q: "What does ExpertCare check before I reserve?",
+        a: "The developer, the project's registration with the Dubai Land Department, the escrow account number, the project's status in the Dubai REST app, every instalment in the payment plan, the delay clause in the sale agreement and the service charge after handover. When you buy from a developer, the developer pays our commission. [Off-plan advisory](/services/off-plan-advisory/) sets out the process.",
+      },
+      {
+        q: "How long is the developer liable for defects?",
+        a: "One year from handover for defective mechanical, electrical, sanitary and sewerage installations, and ten years from the completion certificate for structural defects, under Article 40 of Dubai Law No. 6 of 2019. Any agreement to the contrary is void. [Handover and snagging in Dubai](/guides/handover-and-snagging-in-dubai/) explains what to inspect.",
+      },
+      {
+        q: "What happens if I stop paying?",
+        a: "After a 30-day notice served through DLD, the developer may terminate under Law No. 13 of 2008 as amended by Law No. 19 of 2020. It may keep up to 40% of the unit's value if the project is more than 60% complete, or up to 25% below that. It refunds the rest within a year, or within 60 days of reselling the unit, whichever is sooner.",
+      },
+      {
+        q: "Can I sell an off-plan home before handover?",
+        a: "Yes, subject to the developer's conditions for a resale NOC. Under Article 3 of Law No. 13 of 2008 every such sale must be entered in DLD's interim register or it is void.",
+      },
+    ],
+  },
+  {
     id: "selling",
     h: "Selling",
     faqs: [
@@ -47,7 +85,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "What is Form A?",
-        a: "The Dubai Land Department's standard contract between a seller and the broker marketing the home. It records the asking price, the listing term and the commission, and it is signed before the home is advertised.",
+        a: "RERA's standard contract between a seller and the broker marketing the home. It records the asking price, the listing term and the commission, and it is signed before the home is advertised.",
       },
       {
         q: "Who pays the fees when I sell?",
@@ -55,7 +93,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "How is my home valued?",
-        a: "Against recent sales of similar homes in the same building or community, using our analysis of DLD's open transaction data on the [prices pages](/dubai-property-prices/), the sales we have handled and the homes competing with yours. The statistics are our analysis, not a DLD valuation.",
+        a: "Against recent sales of similar homes in the same building or community, using our analysis of DLD's open transaction data on the [prices pages](/dubai-property-prices/), and the homes competing with yours. The statistics are our analysis, not a DLD valuation.",
       },
       {
         q: "Can I sell with a tenant in place?",
@@ -140,50 +178,12 @@ export const FAQ_GROUPS: FaqGroup[] = [
     ],
   },
   {
-    id: "off-plan",
-    h: "Off-plan",
-    faqs: [
-      {
-        q: "Is my money protected when I buy off-plan?",
-        a: "Dubai Law No. 8 of 2007 requires off-plan payments to go into an escrow account for the project, used only for its construction and out of reach of the developer's creditors. Pay only into the escrow account named on the advert and in your agreement. [Buying off-plan in Dubai](/guides/buying-off-plan-in-dubai/) lists the checks.",
-      },
-      {
-        q: "What is Oqood and what does it cost?",
-        a: "The Dubai Land Department's interim register for off-plan sales. It records you as the buyer before a title deed exists, for 4% of the price plus AED 20. Developers may add their own administration charge, so ask for it in writing.",
-      },
-      {
-        q: "What must an off-plan advert show?",
-        a: "A Trakheesi permit for the unit itself, which every off-plan unit has needed since April 2024, the developer's name, the project's escrow account number and the expected completion date. Printed and video adverts also carry a Madmoun QR code.",
-      },
-      {
-        q: "Can I get a mortgage on an off-plan home?",
-        a: "Yes, for up to 50% of the price under the Central Bank of the UAE's limits, subject to the bank's policy on the project. Some buyers pay the construction instalments themselves and arrange a mortgage for the balance at handover.",
-      },
-      {
-        q: "What does ExpertCare check before I reserve?",
-        a: "The developer, the project's registration with the Dubai Land Department, the escrow account number, the project's status in the Dubai REST app, every instalment in the payment plan, the delay clause in the sale agreement and the service charge after handover. When you buy from a developer, the developer pays our commission. [Off-plan advisory](/services/off-plan-advisory/) sets out the process.",
-      },
-      {
-        q: "How long is the developer liable for defects?",
-        a: "One year from handover for defective mechanical, electrical, sanitary and sewerage installations, and ten years from the completion certificate for structural defects, under Article 40 of Dubai Law No. 6 of 2019. Any agreement to the contrary is void. [Handover and snagging in Dubai](/guides/handover-and-snagging-in-dubai/) explains what to inspect.",
-      },
-      {
-        q: "What happens if I stop paying?",
-        a: "After a 30-day notice served through DLD, the developer may terminate and keep up to 40% of the unit's value if the project is more than 60% complete, or up to 25% below that, refunding the rest within a year or within 60 days of reselling the unit, whichever is sooner, under Law No. 13 of 2008 as amended by Law No. 19 of 2020.",
-      },
-      {
-        q: "Can I sell an off-plan home before handover?",
-        a: "Yes, subject to the developer's conditions for a resale NOC. Under Article 3 of Law No. 13 of 2008 every such sale must be entered in DLD's interim register or it is void.",
-      },
-    ],
-  },
-  {
     id: "fees-visas-law",
     h: "Fees, visas and law",
     faqs: [
       {
         q: "What fees do I pay when buying a ready home?",
-        a: "About 7% of the price with cash: the 4% Dubai Land Department transfer fee, AED 520 in title deed fees, the registration trustee fee of AED 4,000 plus VAT (AED 2,000 plus VAT under AED 500,000), the customary 2% agency fee plus VAT and the developer's NOC fee of AED 500 to 5,000. The [buying costs calculator](/buying-costs/) works it out for any price.",
+        a: "About 7% of the price with cash. That covers the 4% Dubai Land Department transfer fee, AED 520 in title deed fees and the registration trustee fee of AED 4,000 plus VAT (AED 2,000 plus VAT under AED 500,000). It also covers the customary 2% agency fee plus VAT and the developer's NOC fee of AED 500 to 5,000. The [buying costs calculator](/buying-costs/) works it out for any price.",
       },
       {
         q: "What does a mortgage add to the fees?",

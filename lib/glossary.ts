@@ -27,13 +27,13 @@ const TERMS: Term[] = [
     def: "The bank account of a development project into which off-plan buyers' payments are made. Under Dubai Law No. 8 of 2007 the money may be used only to build that project.",
     link: "/guides/buying-off-plan-in-dubai/",
   },
-  { id: "form-a", term: "Form A", def: "The Dubai Land Department's standard contract between a seller and the broker marketing the property." },
-  { id: "form-b", term: "Form B", def: "The Dubai Land Department's standard contract between a buyer and the broker acting for them." },
+  { id: "form-a", term: "Form A", def: "RERA's standard contract between a seller and the broker marketing the property." },
+  { id: "form-b", term: "Form B", def: "RERA's standard contract between a buyer and the broker acting for them." },
   {
     id: "form-f",
     term: "Form F",
     full: "MOU",
-    def: "The Dubai Land Department's standard sale contract between buyer and seller, recording the price, the deposit and the transfer date. By custom the buyer pays a 10% deposit when it is signed.",
+    def: "RERA's standard sale contract between buyer and seller, recording the price, the deposit and the transfer date. By custom the buyer pays a 10% deposit when it is signed.",
     link: "/guides/how-to-buy-property-in-dubai/",
   },
   { id: "freehold", term: "Freehold", def: "Outright ownership with no time limit. Under Dubai Law No. 7 of 2006, non-UAE nationals can own freehold property in the areas designated for it." },
@@ -80,9 +80,9 @@ const TERMS: Term[] = [
     def: "The Dubai Land Department's rent index since January 2025, which classifies buildings by specification, finishes, location and facilities. Rent increases at renewal depend on how far a rent sits below its average.",
     link: "/guides/renting-out-property-in-dubai/",
   },
-  { id: "snagging", term: "Snagging", def: "Inspecting a new home before accepting it and listing defects and unfinished work for the developer to fix. It is an industry practice, not a legal procedure.", link: "/guides/handover-and-snagging-in-dubai/" },
+  { id: "snagging", term: "Snagging", def: "Inspecting a new home before accepting it and listing defects and incomplete work for the developer to fix. It is an industry practice, not a legal procedure.", link: "/guides/handover-and-snagging-in-dubai/" },
   { id: "spa", term: "SPA", full: "Sale and purchase agreement", def: "The developer's sale contract for an off-plan home, setting out the price, the payment plan and the completion terms. Every off-plan sale must be entered in DLD's interim register." },
-  { id: "title-deed", term: "Title deed", def: "The Dubai Land Department's certificate of ownership, issued when a sale is registered in the property register. The issuance fee is AED 250." },
+  { id: "title-deed", term: "Title deed", def: "The Dubai Land Department's certificate of ownership, issued when a sale is registered in the property register. Title deed fees on a sale total AED 520 for an apartment or villa." },
   { id: "trakheesi", term: "Trakheesi", def: "The Dubai Land Department's system for issuing property advertising permits. Every property advert must show its Trakheesi permit number." },
 ];
 

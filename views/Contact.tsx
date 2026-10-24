@@ -13,8 +13,8 @@ export function Contact({ locale }: { locale: Locale }) {
   const contactLd = { "@context": "https://schema.org", "@type": "ContactPage", name: t.meta.contactTitle, description: t.meta.contactDesc, about: { "@id": ORG_ID } };
   const routes: { h: string; p: string; href: string; cta: string }[] = [
     { h: c.routeBuyH, p: c.routeBuyP, href: "#brief", cta: t.about.briefCta },
+    { h: c.routeRentH, p: c.routeRentP, href: `${lp(locale, "/services/off-plan-advisory/")}#enquire`, cta: c.rentCta },
     { h: c.routeSellH, p: c.routeSellP, href: `${lp(locale, "/sell/")}#enquire`, cta: c.sellCta },
-    { h: c.routeRentH, p: c.routeRentP, href: `${lp(locale, "/rent/")}#enquire`, cta: c.rentCta },
     { h: c.routeLetH, p: c.routeLetP, href: `${lp(locale, "/landlords/")}#enquire`, cta: c.landlordCta },
   ];
   return (
@@ -67,10 +67,12 @@ export function Contact({ locale }: { locale: Locale }) {
               <dt>{c.office}</dt>
               <dd>{site.address}</dd>
             </div>
-            <div>
-              <dt>{c.hours}</dt>
-              <dd>{c.hoursValue}</dd>
-            </div>
+            {site.hours && (
+              <div>
+                <dt>{c.hours}</dt>
+                <dd>{site.hours}</dd>
+              </div>
+            )}
           </dl>
         }
       />

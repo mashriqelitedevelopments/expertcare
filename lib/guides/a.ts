@@ -66,7 +66,7 @@ export const GUIDES_A: Guide[] = [
             p: "The Central Bank of the UAE sets the ceiling. An expatriate buying a first home worth AED 5 million or less can borrow up to 80% of the price. A UAE national can borrow up to 85%. The limits are lower for homes over AED 5 million, for second homes and for off-plan homes, and non-residents borrow at each bank's discretion. [How mortgages work in Dubai](/guides/mortgages-in-dubai/) has the full table.",
           },
           {
-            p: "What ExpertCare does for you here: before a viewing you know the price plus the DLD, trustee, agency and bank fees, so the figure you take to the bank is the figure you will pay. If you want help with the mortgage, we work on the application alongside the search.",
+            p: "What ExpertCare does for you here: before a viewing, your adviser gives you the price and the DLD, trustee, agency and bank fees together, so the figure you take to the bank is the figure you will pay. If you want help with the mortgage, we work on the application alongside the search.",
           },
         ],
       },
@@ -75,13 +75,13 @@ export const GUIDES_A: Guide[] = [
         h: "Appointing a broker and checking adverts",
         blocks: [
           {
-            p: "Form B is the Dubai Land Department's standard contract between a buyer and a broker. It records what the broker will do for you and the commission you will pay. Sign it before the broker starts work, so the terms are on paper.",
+            p: "Form B is RERA's standard contract between a buyer and a broker. It records what the broker will do for you and the commission you will pay. Sign it before the broker starts work, so the terms are on paper.",
           },
           {
             p: "Every property advert in Dubai must carry a Trakheesi advertising permit number, together with the brokerage's office registration number (ORN) and the broker's registration number (BRN). Printed and video adverts have carried a Madmoun QR code since 24 April 2023. Scan it and the Dubai Land Department confirms whether the advert is valid.",
           },
           {
-            p: "What ExpertCare does for you here: every home on this site carries its permit number. If a home cannot be advertised legally, we do not show it. The adviser who shows you a home stays with you through the offer, the mortgage, the transfer and the handover.",
+            p: "What ExpertCare does for you here: if a home cannot be advertised legally, we do not show it. The adviser who shows you a home stays with you through the offer, the mortgage, the transfer and the handover.",
           },
         ],
       },
@@ -97,7 +97,7 @@ export const GUIDES_A: Guide[] = [
               },
               {
                 t: "Sign Form F.",
-                d: "Form F is the Dubai Land Department's standard sale contract between buyer and seller, often called the MOU. It records the price, the deposit and the date of transfer. By custom you pay a 10% deposit when you sign, and it is held until the transfer.",
+                d: "Form F is RERA's standard sale contract between buyer and seller, often called the MOU. It records the price, the deposit and the date of transfer. By custom you pay a 10% deposit when you sign, and it is held until the transfer.",
               },
               {
                 t: "Finalise the mortgage.",
@@ -157,14 +157,14 @@ export const GUIDES_A: Guide[] = [
         blocks: [
           {
             ul: [
-              "**Before you view:** the price plus the DLD, trustee, agency and bank fees on every home, so you know the whole number first",
-              "**During the search:** only homes with a valid advertising permit, and one adviser from the first viewing to the keys",
+              "**Before you view:** the price and every fee together, so you know the whole number first",
+              "**During the search:** only homes that can be advertised legally, and one adviser from the first viewing to the keys",
               "**At the offer:** the offer, Form F and the transfer date handled with the seller's side, and the mortgage application alongside",
               "**After the deal:** if you plan to let the home, the same team finds the tenant and handles rent collection, maintenance and renewals",
             ],
           },
           {
-            p: "Every figure in this guide names its source: the Dubai Land Department, the Central Bank of the UAE and the Dubai Legislation Portal. The [facts page](/dubai-property-facts/) gathers them in one place.",
+            p: "Every figure in this guide comes from the sources listed at the end. The [facts page](/dubai-property-facts/) gathers them in one place.",
           },
         ],
       },
@@ -176,7 +176,7 @@ export const GUIDES_A: Guide[] = [
       },
       {
         q: "What is Form F?",
-        a: "Form F is the Dubai Land Department's standard sale contract between a buyer and a seller, often called the MOU. It records the price, the deposit, the transfer date and who pays the developer's NOC fee.",
+        a: "Form F is RERA's standard sale contract between a buyer and a seller, often called the MOU. It records the price, the deposit, the transfer date and who pays the developer's NOC fee.",
       },
       {
         q: "How much deposit do I pay when I sign Form F?",
@@ -184,7 +184,7 @@ export const GUIDES_A: Guide[] = [
       },
       {
         q: "What is Form B?",
-        a: "Form B is the Dubai Land Department's standard contract between a buyer and a broker. It sets out what the broker does for you and the commission you pay.",
+        a: "Form B is RERA's standard contract between a buyer and a broker. It sets out what the broker does for you and the commission you pay.",
       },
       {
         q: "How much are the fees when buying property in Dubai?",
@@ -203,7 +203,7 @@ export const GUIDES_A: Guide[] = [
         a: "Look for the Trakheesi permit number and the brokerage's ORN and broker's BRN. Printed and video adverts carry a Madmoun QR code. Scan it to confirm the advert with the Dubai Land Department.",
       },
     ],
-    sources: [S.dldSale, S.freeholdReg, S.freeholdList, S.law7, S.poa, S.formF, S.legalSteps, S.trakheesi, S.dldMadmoun, S.dldMortgage, S.kt],
+    sources: [S.dldSale, S.freeholdReg, S.freeholdList, S.law7, S.poa, S.formF, S.legalSteps, S.trakheesi, S.dldMadmoun, S.dldMortgage, S.cbuae, S.kt],
   },
   {
     slug: "cost-of-buying-property-in-dubai",
@@ -269,7 +269,7 @@ export const GUIDES_A: Guide[] = [
             ],
           },
           {
-            p: "If you are selling, the same schedule applies from the other side of the table. By custom your buyer pays the transfer fee, and your own agency fee is agreed in writing before the home is listed.",
+            p: "If you are selling, the same fees apply. By custom your buyer pays the transfer fee, and your own agency fee is agreed in writing before the home is listed.",
           },
           {
             p: "The NOC matters to both sides. Under Dubai Law No. 6 of 2019 a home may not be sold while its service charges are unpaid, so a seller settles them before the developer issues the certificate. Agree in Form F who pays the NOC fee, and ask for the figure before you sign rather than at the transfer.",
@@ -355,7 +355,7 @@ export const GUIDES_A: Guide[] = [
         h: "How ExpertCare shows the cost",
         blocks: [
           {
-            p: "Every home on this site shows the price plus the Dubai Land Department, trustee, agency and bank fees before you book a viewing. The figures come from the same sources as this guide, and the [buying costs calculator](/buying-costs/) lets you run any price, ready or off-plan, with or without a loan. If a home needs a developer NOC, who pays it is settled before Form F is signed, not after.",
+            p: "When you ask about a home, we give you the price and the Dubai Land Department, trustee, agency and bank fees together, before you book a viewing. The figures come from the same sources as this guide, and the [buying costs calculator](/buying-costs/) lets you run any price, ready or off-plan, with or without a loan. If a home needs a developer NOC, who pays it is settled before Form F is signed, not after.",
           },
           {
             p: "Owners who let through us get the same approach after the purchase: rent collection, maintenance and renewals handled by the team that found the tenant, with the costs set out before you commit. [Renting out property in Dubai](/guides/renting-out-property-in-dubai/) explains the rules a landlord works under.",
@@ -393,7 +393,7 @@ export const GUIDES_A: Guide[] = [
         a: "DLD mortgage registration of 0.25% of the loan plus AED 270, a bank valuation of typically AED 2,500 to 3,500 plus VAT, and an arrangement fee of typically 0.5% to 1% of the loan plus VAT. Early settlement is capped at 1% of the balance or AED 10,000, whichever is lower.",
       },
       {
-        q: "Is there property tax in Dubai?",
+        q: "What tax do you pay on property you own in Dubai?",
         a: "The UAE does not levy income tax on individuals. Rental income from property held in your own name is not subject to corporate tax when the activity does not require a licence, under Cabinet Decision No. 49 of 2023. Residential leases are generally exempt from VAT.",
       },
     ],
@@ -449,7 +449,7 @@ export const GUIDES_A: Guide[] = [
         id: "deposit",
         h: "The deposit each limit implies",
         blocks: [
-          { p: "Whatever the bank does not lend, you pay. The minimum deposit is the mirror of the cap." },
+          { p: "Whatever the bank does not lend, you pay. The minimum deposit is the price less the most the bank can lend." },
           {
             table: {
               head: ["Home", "Expatriates", "UAE nationals"],
@@ -493,7 +493,7 @@ export const GUIDES_A: Guide[] = [
             ],
           },
           {
-            p: "The 50% rule is the one that limits most borrowers. A car loan or a credit card balance counts against it, so clearing smaller debts before you apply can raise what the bank will lend. The [mortgage calculator](/mortgage-calculator/) shows the repayment on any loan, rate and term, and the income that repayment needs.",
+            p: "The 50% rule often decides how much you can borrow. A car loan or a credit card balance counts against it, so clearing smaller debts before you apply can raise what the bank will lend. The [mortgage calculator](/mortgage-calculator/) shows the repayment on any loan, rate and term, and the income that repayment needs.",
           },
           {
             p: "A shorter term means a higher monthly repayment and less interest over the life of the loan. A longer term, up to the 25-year limit, lowers the repayment and makes the 50% rule easier to meet.",
@@ -704,7 +704,7 @@ export const GUIDES_A: Guide[] = [
             ],
           },
           {
-            p: "An advert missing any of these is a reason to stop and ask questions before you pay anything.",
+            p: "If an advert leaves out any of these, ask for them before you pay anything.",
           },
         ],
       },
@@ -741,7 +741,7 @@ export const GUIDES_A: Guide[] = [
             ],
           },
           {
-            p: "What ExpertCare does for you here: we show off-plan homes with their permit, developer and escrow details, and we set out the payment plan with the Oqood fee and the service charge beside it, so you see the whole number before you reserve. The same adviser stays with you to handover.",
+            p: "What ExpertCare does for you here: we give you the developer, permit and escrow details and the payment plan, with the Oqood fee and the service charge beside it, so you see the whole number before you reserve. The same adviser stays with you to handover.",
           },
         ],
       },
@@ -987,7 +987,7 @@ export const GUIDES_A: Guide[] = [
             ],
           },
           {
-            p: "What ExpertCare does for you here: when you tell us the visa matters, we search within the threshold, show the value of your share on any co-owned home, and point you to the published DLD and GDRFA rules. The application itself is yours to make with GDRFA Dubai.",
+            p: "What ExpertCare does for you here: when you tell us the visa matters, we search at or above the threshold, show the value of your share on any co-owned home, and point you to the published DLD and GDRFA rules. The application itself is yours to make with GDRFA Dubai.",
           },
         ],
       },
@@ -1022,6 +1022,6 @@ export const GUIDES_A: Guide[] = [
         a: "The Dubai Land Department has run the service and lists the fee for the main applicant as AED 9,884.75. In April 2026 GDRFA Dubai and DLD agreed to move property residency services into GDRFA Dubai's system, so check the current channel before you apply.",
       },
     ],
-    sources: [S.dldVisa, S.investorVisa, S.gdrfa, S.gdrfaMove, S.uae],
+    sources: [S.dldVisa, S.investorVisa, S.gdrfa, S.gdrfaMove, S.uae, S.dldSale, S.cbuae],
   },
 ];

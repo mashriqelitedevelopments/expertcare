@@ -33,7 +33,7 @@ export const HOME_FAQS = [
   },
   {
     q: "Which areas of Dubai are freehold?",
-    a: "Freehold areas were first designated in Regulation No. 3 of 2006 and more have been added since. They include every community in our [area guides](/areas/): Dubai Marina, Downtown Dubai, Palm Jumeirah, Dubai Hills Estate, Business Bay, Jumeirah Village Circle and Dubai Creek Harbour.",
+    a: "Freehold areas were first designated in Regulation No. 3 of 2006 and more have been added since. They include every community in our [area guides](/areas/), among them Dubai Marina, Downtown Dubai, Palm Jumeirah, Jumeirah Village Circle, Arjan and Dubai Islands.",
   },
 ];
 

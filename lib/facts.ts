@@ -129,7 +129,7 @@ export const FACTS: { id: string; h: string; blocks: Block[] }[] = [
           "Every tenancy contract must be registered with RERA through Ejari; online registration costs AED 177.75",
           "Rent may rise at renewal only when it is more than 10% below the rent index average for similar homes, by 5%, 10%, 15% or at most 20% (Decree No. 43 of 2013)",
           "Changing tenancy terms or not renewing requires at least 90 days' notice before the contract ends, unless the contract says otherwise",
-          "Ending a tenancy at expiry to sell, or for the owner or a first-degree relative to move in, requires 12 months' notice through a notary public or by registered mail",
+          "Ending a tenancy at expiry to sell, or for the owner or a first-degree relative to move in, requires at least 12 months' notice through a notary public or by registered mail",
         ],
       },
     ],
@@ -192,8 +192,8 @@ export const FACTS: { id: string; h: string; blocks: Block[] }[] = [
     blocks: [
       {
         ul: [
-          "The Dubai Metro Blue Line is due to open on 9 September 2029, with 14 stations including one at Dubai Creek Harbour",
-          "Two Red Line stations in Dubai Marina have new names: Sobha Realty (formerly Dubai Marina) and DMCC (formerly Jumeirah Lakes Towers)",
+          "The Dubai Metro Blue Line is due to open on 9 September 2029, with a station at Dubai Creek Harbour",
+          "Two Red Line stations near Dubai Marina were renamed: Sobha Realty (formerly Dubai Marina) and DMCC (formerly Jumeirah Lakes Towers)",
         ],
       },
     ],

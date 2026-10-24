@@ -18,3 +18,4 @@ Generated: hero, l-marina, l-palm, l-hills, l-jvc, l-downtown, l-creek, guide-ke
 Generated 19 Oct 2026 with Higgsfield (gpt_image_2_5, max quality, 4K), no real identifiable home or person: hero2, handover, desk, keys-bowl, family-balcony, terrace-dusk, viewing-2.
 
 Generated 21 Oct 2026 with Higgsfield (gpt_image_2_5, medium quality, 4K), representative scenes rather than photographs of specific buildings, licence plates blurred: area-jlt, area-dubai-south, area-arjan.
+Generated 24 Oct 2026 with Higgsfield (gpt_image_2_5, medium quality, 4K), representative scenes, replacing developer renders of projects no longer listed: area-dubai-islands, area-mbr-city.

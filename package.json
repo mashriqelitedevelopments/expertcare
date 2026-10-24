@@ -11,7 +11,8 @@
     "market": "sh scripts/dld/refresh.sh",
     "offplan": "python3 scripts/offplan/build.py",
     "deploy": "sh scripts/deploy-branch.sh",
-    "units": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/mashriq/units.mjs"
+    "units": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/mashriq/units.mjs",
+    "launch-check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/launch-check.mjs"
   },
   "dependencies": {
     "next": "15.5",

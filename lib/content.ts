@@ -33,8 +33,12 @@ export function getListings(locale: Locale = "en"): ListingView[] {
 }
 
 /** Search locations: the area guides first, then every other community in the inventory. */
+/** Search locations: only places with homes listed, so no search option leads to an empty page. */
 export function places(locale: Locale = "en"): { value: string; label: string }[] {
-  const guides = getAreas(locale).map((a) => ({ value: a.slug, label: a.name }));
+  const listed = new Set(getListings(locale).map((l) => l.area).filter(Boolean));
+  const guides = getAreas(locale)
+    .filter((a) => listed.has(a.slug))
+    .map((a) => ({ value: a.slug, label: a.name }));
   const seen = new Set(guides.map((g) => g.value));
   const others = getListings(locale)
     .filter((l) => !l.area)

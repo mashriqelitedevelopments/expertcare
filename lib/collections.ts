@@ -2,6 +2,7 @@ import { AREAS } from "./areas";
 import { aedShort } from "./format";
 import { LISTINGS, PROPERTY_TYPES, devSlug, hasBeds, type Listing } from "./listings";
 import type { Locale } from "./locale";
+import { fit } from "./meta";
 
 /**
  * Landing pages for the way buyers search: "apartments for sale in Dubai Marina",
@@ -129,10 +130,10 @@ export function collectionCopy(locale: Locale, c: Collection, placeName: string,
     const h1 = ar ? `${type}${c.beds ? ` ${bedsAr(c.beds)}` : ""} للبيع في ${placeName}` : cap(`${beds}${type} for sale in ${placeName}`);
     return {
       h1,
-      title: `${h1}: ${count}`,
+      title: `${h1}: ${count}`.length <= 60 ? `${h1}: ${count}` : h1,
       description: ar
         ? `${h1}: ${count} قيد البيع الآن${range}. مع خطة السداد وإجمالي تكلفة الشراء لكل مشروع. ${placeName} منطقة تمليك حر.`
-        : `${h1}: ${count} selling now${range}. Each shows its payment plan and the full cost of buying. ${placeName} is a freehold area.`,
+        : fit([`${h1}: ${count} selling now${range}.`, `${placeName} is a freehold area.`, "Each shows its payment plan and the full cost of buying."]),
       lede: ar
         ? `${count} قيد البيع في ${placeName}${range}. و${placeName} منطقة تمليك حر، فيمكن لمشترين من جميع الجنسيات التملّك فيها.`
         : `${cap(count)} selling now in ${placeName}${range}. ${placeName} is freehold, so buyers of any nationality can own here.`,
@@ -146,7 +147,7 @@ export function collectionCopy(locale: Locale, c: Collection, placeName: string,
       title: ar ? `${h1}: ${count} على المخطط` : `${h1}: ${count} off-plan`,
       description: ar
         ? `${h1}: ${count} على المخطط قيد البيع الآن${range}، في ${whereList}. مع خطة السداد وإجمالي تكلفة الشراء لكل مشروع.`
-        : `${h1}: ${count} off-plan and selling now${range}, in ${whereList}. Each shows its payment plan and the full cost of buying.`,
+        : fit([`${h1}: ${count} off-plan and selling now${range}, in ${whereList}.`, "Each shows its payment plan and the full cost of buying."]),
       lede: ar ? `${count} قيد البيع الآن في دبي${range}.` : `${cap(count)} selling now across Dubai${range}.`,
     };
   }
@@ -156,10 +157,10 @@ export function collectionCopy(locale: Locale, c: Collection, placeName: string,
     const h1 = ar ? `عقارات للبيع في دبي حتى ${capText}` : `Property for sale in Dubai under ${capText}`;
     return {
       h1,
-      title: `${h1}: ${count}`,
+      title: `${h1}: ${count}`.length <= 60 ? `${h1}: ${count}` : h1,
       description: ar
         ? `${h1}: ${count} على المخطط بوحدات يبدأ سعرها من ${capText} أو أقل. مع خطة السداد ورسم التسجيل 4% لكل مشروع.`
-        : `${h1}: ${count} off-plan with homes starting at ${capText} or less. Each shows its payment plan and the 4% Oqood registration fee.`,
+        : fit([`${h1}: ${count} off-plan with homes starting at ${capText} or less.`, "Each shows its payment plan and the 4% Oqood registration fee."]),
       lede: ar
         ? `${count} بوحدات يبدأ سعرها من ${capText} أو أقل${range}. ويُضاف رسم التسجيل في نظام عقود 4% إلى سعر العقار على المخطط.`
         : `${cap(count)} with homes starting at ${capText} or less${range}. Off-plan purchases add the 4% Oqood registration fee to the price.`,
@@ -174,7 +175,7 @@ export function collectionCopy(locale: Locale, c: Collection, placeName: string,
       title: ar ? `${h1}: ${count} على المخطط` : `${h1}: ${count} off-plan`,
       description: ar
         ? `${count} على المخطط من ${dev} قيد البيع في دبي، في ${whereList}${range}. مع خطة السداد وإجمالي تكلفة الشراء لكل مشروع.`
-        : `${cap(count)} by ${dev} selling now in Dubai, in ${whereList}${range}. Each shows its payment plan and the full cost of buying.`,
+        : fit([`${cap(count)} by ${dev} selling now in Dubai, in ${whereList}${range}.`, "Each shows its payment plan and the full cost of buying."]),
       lede: ar ? `${count} من ${dev} قيد البيع الآن في ${whereList}${range}.` : `${cap(count)} by ${dev} selling now in ${whereList}${range}.`,
     };
   }
@@ -182,10 +183,10 @@ export function collectionCopy(locale: Locale, c: Collection, placeName: string,
   const h1 = ar ? `مشاريع على المخطط في ${placeName}` : `Off-plan projects in ${placeName}`;
   return {
     h1,
-    title: `${h1}: ${count}`,
+    title: `${h1}: ${count}`.length <= 60 ? `${h1}: ${count}` : h1,
     description: ar
       ? `${count} على المخطط قيد البيع في ${placeName}، دبي${range}. مع خطة السداد وإجمالي تكلفة الشراء لكل مشروع.`
-      : `${cap(count)} selling off-plan in ${placeName}, Dubai${range}. Each shows its payment plan and the full cost of buying.`,
+      : fit([`${cap(count)} selling off-plan in ${placeName}, Dubai${range}.`, "Each shows its payment plan and the full cost of buying."]),
     lede: ar ? `${count} قيد البيع الآن في ${placeName}${range}.` : `${cap(count)} selling now in ${placeName}${range}.`,
   };
 }

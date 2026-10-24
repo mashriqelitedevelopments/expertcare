@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { consent, forgetAnalytics, onConsentChange, setConsent } from "@/lib/analytics";
+import { GA4, consent, forgetAnalytics, onConsentChange, setConsent } from "@/lib/analytics";
 import { lp } from "@/lib/i18n";
 import type { Locale } from "@/lib/locale";
 import { ui } from "@/lib/ui";
@@ -22,7 +22,7 @@ export function ConsentNotice({ locale }: { locale: Locale }) {
     return onConsentChange(sync);
   }, []);
 
-  if (!show) return null;
+  if (!show || !GA4) return null;
 
   return (
     <aside className="cons" role="region" aria-label={c.label}>
@@ -55,7 +55,7 @@ export function ConsentChoice({ locale }: { locale: Locale }) {
     return onConsentChange(sync);
   }, []);
 
-  if (state === null) return null;
+  if (state === null || !GA4) return null;
 
   const withdraw = () => {
     setConsent(false);

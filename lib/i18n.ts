@@ -22,8 +22,10 @@ export function pageMeta({
   absolute?: boolean;
   noindex?: boolean;
 }): Metadata {
+  // Search results show about 60 characters: keep the " | ExpertCare" suffix only when it fits.
+  const fits = `${title} | ${site.name}`.length <= 60;
   return {
-    title: absolute ? { absolute: title } : title,
+    title: absolute || !fits ? { absolute: title } : title,
     description,
     alternates: { canonical: path },
     ...(noindex ? { robots: { index: false, follow: true } } : {}),

@@ -57,7 +57,7 @@ export const SERVICES: Service[] = [
       },
       {
         t: "Form B.",
-        d: "Form B is the Dubai Land Department's standard contract between a buyer and a broker. It records what we do for you and our commission before any viewing takes place.",
+        d: "Form B is RERA's standard contract between a buyer and a broker. It records what we do for you and our commission before any viewing takes place.",
       },
       {
         t: "Shortlist and viewings.",
@@ -95,7 +95,7 @@ export const SERVICES: Service[] = [
         h: "What buying costs",
         blocks: [
           {
-            p: "On a ready home bought with cash, plan for about 7% on top of the price: the 4% DLD transfer fee, AED 520 in title deed fees, the trustee fee of AED 4,000 plus VAT (AED 2,000 plus VAT under AED 500,000), the customary 2% agency fee plus VAT and the developer's NOC fee of AED 500 to 5,000.",
+            p: "On a ready home bought with cash, plan for about 7% on top of the price. That covers the 4% DLD transfer fee, AED 520 in title deed fees and the trustee fee of AED 4,000 plus VAT (AED 2,000 plus VAT under AED 500,000). It also covers the customary 2% agency fee plus VAT and the developer's NOC fee of AED 500 to 5,000.",
           },
           {
             p: "By custom the buyer pays the whole 4% transfer fee, although a different split can be agreed in Form F. A mortgage adds 0.25% of the loan plus AED 270 at DLD, the bank's valuation and its arrangement fee.",
@@ -148,7 +148,7 @@ export const SERVICES: Service[] = [
       },
       {
         q: "What is Form B?",
-        a: "The Dubai Land Department's standard contract between a buyer and the broker acting for them. It sets out what the broker does and the commission, before any viewing.",
+        a: "RERA's standard contract between a buyer and the broker acting for them. It sets out what the broker does and the commission, before any viewing.",
       },
       {
         q: "What deposit do I pay when I agree to buy?",
@@ -183,11 +183,11 @@ export const SERVICES: Service[] = [
     steps: [
       {
         t: "Valuation.",
-        d: "We price the home from our analysis of DLD's open transaction data for the building or community, our own recent sales and the homes competing with yours. You get a written range and the reasons behind it.",
+        d: "We price the home from our analysis of DLD's open transaction data for the building or community and the homes competing with yours. You get a written range and the reasons behind it.",
       },
       {
         t: "Form A.",
-        d: "Form A is the Dubai Land Department's standard contract between a seller and the broker marketing the home. It records the asking price, the term and our commission.",
+        d: "Form A is RERA's standard contract between a seller and the broker marketing the home. It records the asking price, the term and our commission.",
       },
       {
         t: "Trakheesi permit.",
@@ -195,7 +195,7 @@ export const SERVICES: Service[] = [
       },
       {
         t: "Marketing.",
-        d: "Photography, a listing on the portals and on this site, and a direct approach to buyers already briefed with us. Every advert shows our ORN and the adviser's BRN.",
+        d: "Photography, a listing on the portals and a direct approach to buyers already briefed with us. Every advert shows our ORN and the adviser's BRN.",
       },
       {
         t: "Viewings and offers.",
@@ -216,7 +216,7 @@ export const SERVICES: Service[] = [
         h: "How we value your home",
         blocks: [
           {
-            p: "A valuation starts with what similar homes in the same building or community have sold for, using our analysis of the Dubai Land Department's open transaction data on the [prices pages](/dubai-property-prices/), the sales we have handled and the homes on the market now.",
+            p: "A valuation starts with what similar homes in the same building or community have sold for, using our analysis of the Dubai Land Department's open transaction data on the [prices pages](/dubai-property-prices/), and the homes on the market now.",
           },
           {
             ul: [
@@ -268,7 +268,7 @@ export const SERVICES: Service[] = [
     faqs: [
       {
         q: "What is Form A?",
-        a: "The Dubai Land Department's standard contract between a seller and the broker marketing the home. It records the asking price, the listing term and the commission, and it is signed before the home is advertised.",
+        a: "RERA's standard contract between a seller and the broker marketing the home. It records the asking price, the listing term and the commission, and it is signed before the home is advertised.",
       },
       {
         q: "Who pays the DLD transfer fee when selling?",
@@ -383,7 +383,7 @@ export const SERVICES: Service[] = [
         blocks: [
           {
             ul: [
-              "**Rent increases.** The rent can rise at renewal only when it is more than 10% below the Smart Rental Index average for similar homes: by 5% if it is 11% to 20% below, 10% if 21% to 30% below, 15% if 31% to 40% below, and at most 20% if more than 40% below (Decree No. 43 of 2013)",
+              "**Rent increases.** The rent can rise at renewal only when it is more than 10% below the Smart Rental Index average for similar homes (Decree No. 43 of 2013). The rise is 5% if it is 11% to 20% below, 10% if 21% to 30% below, 15% if 31% to 40% below, and at most 20% if more than 40% below",
               "**Notice.** Either side must give at least 90 days' notice before the contract ends to change its terms or not renew, unless the contract says otherwise",
               "**Eviction at expiry.** A landlord who wants the home back to sell it, or for themselves or a first-degree relative to live in, must give at least 12 months' notice through a notary public or by registered mail",
             ],
@@ -453,7 +453,7 @@ export const SERVICES: Service[] = [
       },
       {
         t: "Marketing.",
-        d: "The listing goes live under a Trakheesi permit, with our ORN and the adviser's BRN on every advert, on the portals and on this site.",
+        d: "The listing goes live under a Trakheesi permit, with our ORN and the adviser's BRN on every advert on the portals.",
       },
       {
         t: "Tenant vetting.",

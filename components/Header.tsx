@@ -91,7 +91,7 @@ export function Header({ locale }: { locale: Locale }) {
     <>
       <header className={["hdr", scrolled ? "is-scrolled" : "", open ? "is-open" : "", dark && !open ? "is-dark" : ""].filter(Boolean).join(" ")}>
         <div className="wrap hdr-in">
-          <Link href={home} aria-label={t.chrome.homeAria}>
+          <Link href={home} aria-label={t.chrome.homeAria} className="hdr-home">
             <Logo />
           </Link>
           <nav className="hdr-nav" aria-label={t.chrome.mainNav}>

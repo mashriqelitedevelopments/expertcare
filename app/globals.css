@@ -438,12 +438,12 @@ h4 {
 .count {
   display: inline-grid;
   place-items: center;
-  min-width: 18px;
-  height: 18px;
-  padding: 0 5px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
   background: var(--ink);
   color: var(--bone);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0;
 }
 .ink .count,
@@ -460,6 +460,7 @@ h4 {
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  padding-top: 12px;
   padding-bottom: 6px;
   border-bottom: 1px solid var(--line-2);
   transition:
@@ -579,10 +580,18 @@ h4 {
   align-items: center;
   gap: 24px;
 }
+.hdr-home {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
 .hdr-saved {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  min-width: 44px;
+  min-height: 44px;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -617,6 +626,7 @@ h4 {
   display: none;
   align-items: center;
   gap: 10px;
+  min-height: 44px;
   padding: 8px 0;
   border: 0;
   background: none;
@@ -948,6 +958,7 @@ h4 {
 .ticket select,
 .ticket input {
   width: 100%;
+  min-height: 34px;
   border: 0;
   background: transparent;
   padding: 0;
@@ -1014,13 +1025,13 @@ h4 {
 .seg label,
 .seg button {
   position: relative;
-  padding: 10px 14px;
+  padding: 12px 14px;
   border: 0;
   border-radius: 999px;
   background: none;
   cursor: pointer;
   font: inherit;
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2072,7 +2083,7 @@ h4 {
   grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
-  font-size: 10.5px;
+  font-size: 11px;
 }
 .affix {
   display: flex;
@@ -3299,7 +3310,7 @@ h4 {
   border-radius: 999px;
   background: rgba(244, 244, 241, 0.94);
   color: var(--ink);
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -3372,7 +3383,7 @@ h4 {
   gap: 2px;
 }
 .lcard-price span {
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -4103,4 +4114,26 @@ html.has-modal {
 }
 #enquire {
   scroll-margin-top: calc(var(--hdr) + 16px);
+}
+
+/* ── Tap targets: at least 32px for stand-alone links on phones ── */
+.toc li a {
+  display: inline-block;
+  padding: 6px 0;
+}
+.ftr-brand > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.chips a,
+.plate-list dt a,
+.hbar > a,
+.tbl th a {
+  display: inline-block;
+  padding: 7px 0;
+}
+.plate-list > div {
+  align-items: center;
+  padding: 2px 0;
 }

@@ -10,7 +10,9 @@
  * What is sent is the page and, for a lead, how it was made (WhatsApp, telephone, email) and
  * where on the site. Never a name, a number, an email address or a message.
  */
-export const GA4 = "G-GX0JR24HPJ";
+/** ExpertCare's own GA4 measurement ID ("G-…"). Empty until the property exists: nothing loads and the
+ * consent notice stays hidden. (G-GX0JR24HPJ, here before 24 Oct 2026, is Hamd Properties' tag.) */
+export const GA4 = "";
 
 const KEY = "ec-consent";
 
@@ -54,7 +56,7 @@ export function onConsentChange(fn: () => void): () => void {
 let started = false;
 
 export function startAnalytics(): void {
-  if (started || typeof window === "undefined" || consent()?.analytics !== true) return;
+  if (!GA4 || started || typeof window === "undefined" || consent()?.analytics !== true) return;
   started = true;
   window.dataLayer = window.dataLayer || [];
   window.gtag = function gtag() {

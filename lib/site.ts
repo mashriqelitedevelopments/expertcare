@@ -8,7 +8,7 @@ export const site = {
   // While false the whole site is noindex and robots.txt disallows crawling.
   live: false,
   description:
-    "ExpertCare is a real estate brokerage in Dubai focused on prime resale homes and off-plan projects, with selling, investment advice, mortgages and property management from the same team. The full cost of every move is explained before you commit.",
+    "ExpertCare is a real estate brokerage in Dubai focused on prime resale homes and off-plan projects, with selling, investor services, mortgages and property management from the same team. The full cost of every move is explained before you commit.",
   email: "",
   phone: "",
   whatsapp: "", // digits only, with country code, e.g. 9715XXXXXXXX
@@ -16,6 +16,8 @@ export const site = {
   orn: "",
   licence: "",
   address: "Dubai, United Arab Emirates",
+  // Office hours as the brokerage publishes them, e.g. "Monday to Saturday, 9am to 7pm". Hidden while empty.
+  hours: "",
   social: { instagram: "", linkedin: "", facebook: "", youtube: "", tiktok: "" },
 };
 
@@ -23,11 +25,11 @@ export const site = {
 export const PROMISES = [
   {
     title: "The whole number, first.",
-    text: "Before a viewing, you know the price plus the Dubai Land Department, trustee, agency and bank fees. Nothing arrives later as a surprise.",
+    text: "Before a viewing, your adviser gives you the price plus the Dubai Land Department, trustee, agency and bank fees. Nothing arrives later as a surprise.",
   },
   {
     title: "Only permitted adverts.",
-    text: "Every listing carries its Dubai Land Department permit number. If a home cannot be advertised legally, it is not on this site.",
+    text: "Every advert we run carries its Dubai Land Department permit number. If a home cannot be advertised legally, we do not advertise it.",
   },
   {
     title: "One adviser, start to keys.",

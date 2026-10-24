@@ -1,9 +1,8 @@
 import type { Locale } from "./locale";
 
 /**
- * Every word of interface and page copy, in both editions. `AR: typeof EN` makes TypeScript fail
- * the build if an Arabic string is missing, so the two editions cannot drift apart.
- * The Arabic is drafted in-house and needs a native review before launch.
+ * Every word of interface and page copy. The site is English only; `Locale` keeps its "ar" member
+ * so shared helpers still compile, and `ui()` always returns this edition.
  */
 const EN = {
   nav: [
@@ -46,7 +45,7 @@ const EN = {
     guides: "Guides",
     allGuides: "All guides",
     faq: "Questions and answers",
-    valuation: "Free valuation",
+    valuation: "Request a valuation",
     landlords: "Landlords",
     facts: "Dubai property facts",
     glossary: "Property glossary",
@@ -163,7 +162,7 @@ const EN = {
     subject: "Please add me to the ExpertCare market note",
     request: "Please add me to the ExpertCare market note.",
     topicsLine: "Topics",
-    offline: "Sign-ups are not connected yet: add the sheet's address in lib/newsletter.ts, or an email or WhatsApp number in lib/site.ts.",
+    offline: "Sign-ups for the market note open shortly. Please try again soon.",
   },
   contactButtons: {
     call: "Call",
@@ -316,7 +315,7 @@ const EN = {
     depositAndFees: "Your deposit and fees, due at transfer",
     feesShare: "Fees as a share of the price",
     feesCaption: "Fees on a home priced at",
-    note: "An estimate. Government fees are the Dubai Land Department's, checked 16 September 2026; agency, bank and developer fees vary and are shown at their customary or upper level.",
+    note: "An estimate. Government fees are the Dubai Land Department's, checked 15 September 2026; agency, bank and developer fees vary and are shown at their customary or upper level.",
     noteLink: "How each fee works",
     deposit: "Deposit",
     atLeast: "At least",
@@ -368,7 +367,7 @@ const EN = {
     tenanted: "Is the home tenanted now?",
     sentWhatsapp: "WhatsApp has opened with your message. Press send there and an adviser will reply.",
     sentEmail: "Your email app has opened with your message ready to send.",
-    offline: "Enquiries are not connected yet: add the brokerage's WhatsApp number or email address in lib/site.ts.",
+    offline: "Online enquiries open shortly. Please try again soon.",
     options: {
       when: ["This week", "Next week", "In the next month", "I'm flexible"],
       format: ["In person", "By video call"],
@@ -517,11 +516,11 @@ const EN = {
     down: "lower",
     faqOffQ: "How much of {area}'s market is off-plan?",
     faqOffA: "{pct}% of residential sales in {area} over the last four quarters were off-plan registrations.",
-    metaTitle: "Dubai property prices by area (2026): median price per sq ft",
+    metaTitle: "Dubai property prices by area (2026): price per sq ft",
     metaDesc:
-      "Median sale prices and price per sq ft for Dubai Marina, Downtown Dubai, Palm Jumeirah and more, quarter by quarter, calculated from the Dubai Land Department's open transaction data.",
-    metaAreaTitle: "{area} property prices: price per sq ft by quarter",
-    metaAreaDesc: "Median price per sq ft in {area} is AED {psf} over the last 12 months ({sales} sales). Quarterly prices, sales and off-plan share, from DLD open data.",
+      "Median price per sq ft for Dubai Marina, Downtown Dubai, Palm Jumeirah and more, quarter by quarter, from the Dubai Land Department's open sales data.",
+    metaAreaTitle: "{area} property prices by quarter",
+    metaAreaDesc: "Median price per sq ft in {area}: AED {psf} over the last 12 months ({sales} sales). Quarterly prices and off-plan share from DLD open data.",
   },
   collection: {
     popular: "Popular searches",
@@ -562,7 +561,7 @@ const EN = {
     doors: {
       buy: { h: "Buying", p: "Resale and off-plan homes at the upper end of the market. The whole cost before a viewing, one adviser to the title deed.", cta: "Buy with us" },
       sell: { h: "Selling", p: "For high-value homes and off-plan units before handover. A valuation from DLD sales records, a permitted advert, qualified buyers.", cta: "Get a valuation" },
-      manage: { h: "Management", p: "For owners who live abroad: tenants, rent, maintenance and renewals inside the legal caps. One statement a month.", cta: "Manage my home" },
+      manage: { h: "Management", p: "For owners who live abroad: tenants, rent, maintenance and renewals inside the legal caps. One statement a year.", cta: "Manage my home" },
       invest: { h: "Investment", p: "Off-plan and resale homes chosen from the data, the return worked out the same way every time, the letting handled after.", cta: "Invest with us" },
     },
     allServices: "All nine services",
@@ -582,14 +581,14 @@ const EN = {
     marketCta: "Prices by area",
     areasEyebrow: "The atlas",
     areasH: "Where to buy",
-    offPlanH: "Off-plan, with the payment plan in dirhams.",
-    offPlanLede: "Every project shows its payment plan, the 4% Oqood fee and the handover date the developer publishes. By law your payments go into the project's escrow account.",
+    offPlanH: "Off-plan, with the payment plan set out.",
+    offPlanLede: "Every project shows its payment plan and the 4% Oqood fee. By law your payments go into the project's escrow account.",
     offPlanCaption: "Dubai Creek Harbour",
     offPlanCta: "See off-plan projects",
     offPlanCta2: "How off-plan works",
     servicesEyebrow: "The services",
     servicesH: "Beyond buying and selling",
-    servicesLede: "Off-plan advice, mortgages, the Golden Visa, investor sourcing and relocation, handled by the same team, with the fee stated on every page.",
+    servicesLede: "Off-plan advice, mortgages, the Golden Visa, investor sourcing and relocation, handled by the same team, with how each fee works set out on every page.",
     howEyebrow: "The rules we work by",
     howH: "How we work",
     guidesEyebrow: "Read before you sign",
@@ -625,20 +624,20 @@ const EN = {
     stepsH: "How we work with you.",
     steps: [
       { t: "Your brief.", d: "Buying, selling or investing: budget, areas, resale or off-plan, how you will pay and when you want the keys." },
-      { t: "The numbers.", d: "Resale and off-plan homes that fit, each with its price, its fees and, for off-plan, its payment plan in dirhams. For sellers, a valuation and a plan." },
-      { t: "Viewings.", d: "In person, or by video call if you are abroad. Every advert we run carries its Dubai Land Department permit." },
+      { t: "The numbers.", d: "Resale and off-plan homes that fit, each with its price, its fees and, for off-plan, its payment plan. For sellers, a valuation and a plan." },
+      { t: "Viewings.", d: "In person, or by video call if you are abroad. Every advert we run carries its Dubai Land Department permit number." },
       { t: "The paperwork.", d: "Form F, the NOC, Ejari, the mortgage, the bank valuation and the transfer appointment, kept on one timeline." },
       { t: "Keys.", d: "We are with you at the registration trustee or the handover, and until the title deed or the tenancy contract is in your name." },
       { t: "After.", d: "Owners who let through us get rent collection, maintenance and renewals from the same team." },
     ],
     complianceH: "Licensed, permitted, checked.",
-    complianceP: "Dubai requires every brokerage to hold a Dubai Land Department licence and an office registration number (ORN), every broker to hold a RERA broker card, and every advert to carry a Trakheesi permit. Our details appear in the footer of every page as soon as they are issued, and every listing shows its permit number.",
+    complianceP: "Dubai requires every brokerage to hold a Dubai Land Department licence and an office registration number (ORN), every broker to hold a RERA broker card, and every advert to carry a Trakheesi permit. Our details, and each listing's permit number, appear on this site as soon as they are issued.",
     briefCta: "Send your brief",
     browseCta: "Browse homes",
   },
   contact: {
     h1: "Speak to an adviser",
-    lede: "Buying, selling, renting or letting: tell us what you need and an adviser will reply with the numbers, not a sales pitch.",
+    lede: "Buying, selling or investing: tell us what you need and an adviser will reply with the numbers, not a sales pitch.",
     briefH: "Your brief",
     briefLede: "Budget, areas, the home you want and when you want to move. We reply with homes that fit and the full cost of each.",
     findH: "Find us",
@@ -647,26 +646,25 @@ const EN = {
     email: "Email",
     office: "Office",
     hours: "Hours",
-    hoursValue: "Monday to Saturday, 9am to 7pm (Gulf Standard Time)",
     sellH: "Selling or letting?",
     sellP: "Owners have their own forms: a valuation request on the selling page and a management enquiry on the landlords page.",
     sellCta: "Request a valuation",
     landlordCta: "Ask about management",
-    rentCta: "Send a rental brief",
+    rentCta: "Ask about off-plan",
     routeEyebrow: "Route",
     routeBuyH: "Buying",
     routeBuyP: "Send a brief: budget, areas, timing. We reply with homes that fit and the full cost of each.",
     routeSellH: "Selling",
     routeSellP: "Request a valuation. It is built from Dubai Land Department sales records, not a guess.",
-    routeRentH: "Renting",
-    routeRentP: "Tell us the rent budget and the move-in date. We shortlist and handle Ejari.",
+    routeRentH: "Off-plan",
+    routeRentP: "Tell us the area and budget. We shortlist projects and check the plan, the permit and the escrow account.",
     routeLetH: "Letting",
     routeLetP: "Ask about management: tenant finding, rent collection, maintenance, renewals.",
     briefEyebrow: "The form",
   },
   offPlan: {
     h1: "Off-plan property for sale in Dubai",
-    lede: "New homes from Dubai's leading developers, sold before completion, each shown with its payment plan, the registration fee and the handover date the developer publishes.",
+    lede: "New homes sold before completion. Each shows its payment plan and the 4% registration fee, and your payments go into the project's escrow account.",
     howH: "How buying off-plan works",
     how: [
       { t: "You pay in stages.", d: "A first payment when you reserve, instalments while the building rises, and the balance at or after handover." },
@@ -810,6 +808,7 @@ const EN = {
     guides: "Read the guides",
     home: "Home",
     crumb: "Not found",
+    guidesH: "Start with a guide",
   },
   privacy: {
     h1: "Privacy notice",
@@ -819,7 +818,7 @@ const EN = {
       {
         h: "What we collect",
         p: [
-          "When you send an enquiry, a viewing request, a brief, a valuation request or a management enquiry, we receive what you choose to give us: your name, phone number, email address, and details of the home you are looking for or the home you own, such as your budget, the areas you like, how you plan to pay, or the building and whether it is tenanted.",
+          "When you send an enquiry, a viewing request, a brief, a valuation request or a management enquiry, we receive what you choose to give us. That is your name, phone number and email address. It can also include details of the home you want or own, such as your budget, the areas you like, how you plan to pay, or the building and whether it is tenanted.",
         ],
         ul: [],
       },
@@ -887,10 +886,10 @@ const EN = {
   },
   faq: {
     h1: "Questions about Dubai property, answered.",
-    lede: "Buying, selling, renting, letting, off-plan, fees, visas and the law. Every answer uses figures checked against the Dubai Land Department, the Central Bank of the UAE and the Dubai Legislation Portal.",
+    lede: "Buying, off-plan, selling, fees, visas, renting, letting and the law. Every answer uses figures checked against the Dubai Land Department, the Central Bank of the UAE and the Dubai Legislation Portal.",
     crumb: "FAQ",
-    metaTitle: "Dubai property FAQ: buying, selling, renting, fees and visas",
-    metaDesc: "Answers to the questions people ask about Dubai property: fees, mortgages, off-plan, selling, renting, letting, service charges, the Golden Visa and the rules brokers must follow.",
+    metaTitle: "Dubai property FAQ: buying, selling, fees and visas",
+    metaDesc: "Answers to the questions people ask about Dubai property: buying fees, mortgages, off-plan, selling, service charges, the Golden Visa and broker rules.",
     answersWord: "answers",
     groupsWord: "topics",
     groupWord: "Topic",
@@ -901,35 +900,35 @@ const EN = {
     homeTitle: "ExpertCare | Prime resale and off-plan property in Dubai",
     homeDesc:
       "Prime resale homes and off-plan projects in Dubai, with every fee explained before you commit and one adviser from the first call to the keys.",
-    propertiesTitle: "Property for sale in Dubai: apartments, villas and off-plan homes",
-    propertiesDesc: "Search homes for sale in Dubai by area, type and bedrooms, with the full cost of buying worked out for each home and one adviser from viewing to keys.",
-    offPlanTitle: "Off-plan property for sale in Dubai: payment plans and handover",
+    propertiesTitle: "Property for sale in Dubai: resale and off-plan homes",
+    propertiesDesc: "Search homes for sale in Dubai by area, type and bedrooms, and get the full cost of buying from one adviser before you view.",
+    offPlanTitle: "Off-plan property in Dubai: payment plans and escrow",
     offPlanDesc:
-      "Off-plan apartments and villas for sale in Dubai, each with its payment plan in dirhams, the Oqood registration fee and the expected handover, plus how escrow protects your payments.",
+      "Off-plan homes for sale in Dubai with the payment plan, the 4% Oqood fee and how escrow protects your payments, checked with your adviser before you reserve.",
     areasTitle: "Dubai area guides: where to buy and invest",
     areasDesc:
-      "Area guides to Dubai's leading freehold communities, from Dubai Marina and Downtown Dubai to Palm Jumeirah and Dubai Hills Estate: homes, who each suits, transport and master developers, side by side.",
-    guidesTitle: "Dubai property guides: buying, selling, renting, letting, off-plan and visas",
+      "Guides to Dubai's freehold areas, from Dubai Marina and Downtown to Palm Jumeirah and Arjan: the homes, who each suits, transport and where to buy.",
+    guidesTitle: "Dubai property guides: buying, selling, off-plan and visas",
     guidesDesc:
-      "Plain-English guides to buying, selling, renting and letting property in Dubai: the steps, every fee, mortgages, off-plan plans, service charges and the Golden Visa, each figure checked against official sources.",
-    factsTitle: "Dubai property buying facts (2026): fees, mortgage limits and rules",
+      "Plain guides to buying, selling and investing in Dubai property: the steps, every fee, mortgages, off-plan plans and the Golden Visa, with sources.",
+    factsTitle: "Dubai property buying facts (2026): fees, loans and rules",
     factsDesc:
-      "Every fee, mortgage limit and rule for buying property in Dubai on one sourced page: DLD transfer and title deed fees, Central Bank loan-to-value caps, escrow, advertising rules, the Golden Visa and area transport.",
-    glossaryTitle: "Dubai property glossary: Oqood, Ejari, Form F, NOC, RERA and more",
+      "Every fee, mortgage limit and rule for buying property in Dubai on one sourced page: DLD fees, Central Bank loan caps, escrow and the Golden Visa.",
+    glossaryTitle: "Dubai property glossary: Oqood, Ejari, Form F, NOC and RERA",
     glossaryDesc:
-      "Plain-English definitions of the terms you meet buying, owning or letting property in Dubai: DLD, RERA, Oqood, Ejari, Form F, NOC, Trakheesi, Mollak, escrow, snagging, service charges and more.",
+      "Plain definitions of the terms you meet buying or owning property in Dubai: DLD, RERA, Oqood, Ejari, Form F, NOC, Trakheesi, escrow and snagging.",
     costsTitle: "Dubai property buying costs calculator (2026)",
     costsDesc:
-      "Calculate the cost of buying property in Dubai: the 4% DLD transfer fee, title deed and trustee fees, agency commission, Oqood and mortgage fees, and the cash you need at transfer.",
-    mortgageTitle: "Dubai mortgage calculator: repayments, deposit and loan limits",
+      "Work out the cost of buying property in Dubai: the 4% DLD fee, title deed and trustee fees, agency commission, mortgage fees and the cash you need.",
+    mortgageTitle: "Dubai mortgage calculator: repayments and loan limits",
     mortgageDesc:
-      "Estimate your monthly mortgage repayment in Dubai, the minimum deposit under the Central Bank of the UAE's loan limits for expatriates, UAE nationals and non-residents, and the income you need.",
+      "Estimate your monthly mortgage repayment in Dubai, the minimum deposit under the Central Bank's loan limits, and the income a bank will expect.",
     aboutTitle: "About ExpertCare: resale and off-plan brokerage in Dubai",
     aboutDesc: "ExpertCare helps people buy prime resale and off-plan homes in Dubai, sell them and invest, with every cost explained first and one adviser to the keys.",
     contactTitle: "Contact ExpertCare: speak to a Dubai property adviser",
     contactDesc: "Send your brief or ask about a home. Tell us your budget, the areas you like and when you want to move, and an adviser will come back with homes that fit.",
     privacyTitle: "Privacy notice",
-    privacyDesc: "How ExpertCare collects, uses and protects the personal information you share through this website.",
+    privacyDesc: "How ExpertCare collects, uses and protects what you share through this website: enquiries, the market note, your shortlist, measurement and your rights.",
     shortlistTitle: "Your shortlist",
     shortlistDesc: "The homes you have saved on ExpertCare, side by side.",
   },

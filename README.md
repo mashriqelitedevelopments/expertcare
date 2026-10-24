@@ -56,6 +56,11 @@ the webhook URL it shows on the same screen (add it under GitHub Settings → We
 
 ## Before launch
 
+Run `npm run launch-check`: it lists every blocker (contacts, ORN, licence, listing permits, the domain,
+the `live` switch) and every warning, and exits 1 until no blocker remains. `node scripts/layoutscan.mjs out`
+loads every built page at 390, 768 and 1440 px and reports overflow, broken images, small text and small
+tap targets.
+
 - Fill `lib/site.ts`: domain, email, phone, WhatsApp, ORN, trade licence, social links; then set `live: true`
   (until then every page is `noindex` and robots.txt disallows crawling).
 - Add the advisers to `lib/team.ts` (name, title, phone, WhatsApp, email, BRN, photo). Until then listing
