@@ -46,6 +46,11 @@ HT
 git add -A
 git -c user.name="ExpertCare deploy" -c user.email="deploy@expertcare.local" commit -qm "Static export of main $(git -C "$ROOT" rev-parse --short HEAD), built $(date -u +%Y-%m-%dT%H:%MZ)"
 git push -f origin "HEAD:hostinger"
+# git push once exited 0 after "the remote end hung up", leaving the old export live: check the remote.
+if [ "$(git ls-remote origin refs/heads/hostinger | cut -f1)" != "$(git rev-parse HEAD)" ]; then
+  echo "deploy: the hostinger branch on GitHub does not match this export; the push did not land" >&2
+  exit 1
+fi
 cd "$ROOT"
 git worktree remove --force "$WORK"
 git branch -D "$TMP" >/dev/null 2>&1 || true
