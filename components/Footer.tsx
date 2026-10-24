@@ -183,6 +183,11 @@ export function Footer({ locale }: { locale: Locale }) {
             </span>
           )}
           <span>{site.address}</span>
+          {site.email && (
+            <a href={`mailto:${site.email}`} dir="ltr">
+              {site.email}
+            </a>
+          )}
         </div>
       </div>
     </footer>

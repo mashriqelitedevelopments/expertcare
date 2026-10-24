@@ -4137,3 +4137,8 @@ html.has-modal {
   align-items: center;
   padding: 2px 0;
 }
+.ftr-base a,
+.contact-list dd a {
+  display: inline-block;
+  padding: 6px 0;
+}

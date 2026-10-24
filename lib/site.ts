@@ -10,7 +10,7 @@ export const site = {
   live: false,
   description:
     "ExpertCare is a real estate brokerage in Dubai focused on prime resale homes and off-plan projects, with selling, investor services, mortgages and property management from the same team. The full cost of every move is explained before you commit.",
-  email: "",
+  email: "info@expertcarerealestate.com",
   phone: "+971 56 401 4835",
   whatsapp: "971564014835", // digits only, with country code
   // RERA requires the brokerage's office registration number (ORN) on its website and adverts.
