@@ -17,7 +17,8 @@ const projects = JSON.parse(readFileSync(new URL("../lib/data/projects.json", im
 const listingsSrc = readFileSync(new URL("../lib/listings.ts", import.meta.url), "utf8");
 const listed = (listingsSrc.match(/LISTED_DEVELOPERS: string\[\] \| null = (\[[^\]]*\]|null)/) || [])[1];
 const developers = listed && listed !== "null" ? JSON.parse(listed) : null;
-const shown = projects.filter((p) => !developers || developers.includes(p.developer));
+const hidden = JSON.parse((listingsSrc.match(/HIDDEN_LISTINGS: string\[\] = (\[[^\]]*\])/) || [])[1] || "[]");
+const shown = projects.filter((p) => (!developers || developers.includes(p.developer)) && !hidden.includes(p.slug));
 
 const blockers = [];
 const warnings = [];

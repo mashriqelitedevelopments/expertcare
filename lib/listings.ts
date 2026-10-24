@@ -61,7 +61,12 @@ export type Listing = {
 export const LISTED_DEVELOPERS: string[] | null = ["Mashriq Elite"];
 
 export const ALL_LISTINGS = PROJECTS as Listing[];
-export const LISTINGS = LISTED_DEVELOPERS ? ALL_LISTINGS.filter((l) => LISTED_DEVELOPERS.includes(l.developer)) : ALL_LISTINGS;
+/** Single projects held back even when their developer is listed; the data stays. Floareá Oasis since 24 Oct 2026. */
+export const HIDDEN_LISTINGS: string[] = ["mashriq-elite-floarea-oasis"];
+
+export const LISTINGS = (LISTED_DEVELOPERS ? ALL_LISTINGS.filter((l) => LISTED_DEVELOPERS.includes(l.developer)) : ALL_LISTINGS).filter(
+  (l) => !HIDDEN_LISTINGS.includes(l.slug),
+);
 export const SHOW_LISTINGS = LISTINGS.length > 0;
 
 export const listingBySlug = (slug: string) => LISTINGS.find((l) => l.slug === slug);
