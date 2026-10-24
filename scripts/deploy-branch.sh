@@ -8,7 +8,7 @@ cd "$ROOT"
 # EXPORT_DIR=<dir> publishes an export built elsewhere (for example in a copy of the repo, which
 # keeps a running dev server's .next untouched); otherwise the site is built here.
 if [ -n "$EXPORT_DIR" ]; then
-  SRC="$EXPORT_DIR"
+  SRC=$(cd "$EXPORT_DIR" && pwd)
 else
   NEXT_DIST_DIR=.next-deploy npx next build
   SRC="$ROOT/.next-deploy"
