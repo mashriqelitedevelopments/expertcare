@@ -409,7 +409,7 @@ const EN = {
       tenanted: "Tenanted",
       unit: "Unit",
     },
-    from: "from expertcare.ae",
+    from: "from expertcarerealestate.com",
   },
   shortlist: {
     title: "Your shortlist",

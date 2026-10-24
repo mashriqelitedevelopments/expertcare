@@ -4,15 +4,15 @@ export const site = {
   name: "ExpertCare",
   // As registered with DET (licence 516808) and RERA (ORN 33504); documents of 12 Feb 2026, valid to 19 Feb 2027.
   legalName: "Expert Care Real Estate L.L.C",
-  // Placeholder domain: confirm the registered domain before launch.
-  url: "https://expertcare.ae",
+  // The domain, chosen 24 Oct 2026. Canonicals, the sitemap and structured data are built from it.
+  url: "https://expertcarerealestate.com",
   // While false the whole site is noindex and robots.txt disallows crawling.
   live: false,
   description:
     "ExpertCare is a real estate brokerage in Dubai focused on prime resale homes and off-plan projects, with selling, investor services, mortgages and property management from the same team. The full cost of every move is explained before you commit.",
   email: "",
-  phone: "+971 4 263 9922",
-  whatsapp: "971505591729", // digits only, with country code: the mobile on the trade licence
+  phone: "+971 56 401 4835",
+  whatsapp: "971564014835", // digits only, with country code
   // RERA requires the brokerage's office registration number (ORN) on its website and adverts.
   orn: "33504",
   licence: "516808",
