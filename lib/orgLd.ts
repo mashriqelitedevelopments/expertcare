@@ -29,7 +29,11 @@ export const orgLd = {
   image: abs("/img/hero2-1280.jpg"),
   description: site.description,
   areaServed: { "@type": "City", name: "Dubai" },
-  address: { "@type": "PostalAddress", addressLocality: "Dubai", addressCountry: "AE" },
+  address: { "@type": "PostalAddress", streetAddress: site.postal.street, postOfficeBoxNumber: site.postal.poBox, addressLocality: "Dubai", addressCountry: "AE" },
+  identifier: [
+    ...(site.orn ? [{ "@type": "PropertyValue", name: "RERA office registration number (ORN)", value: site.orn }] : []),
+    ...(site.licence ? [{ "@type": "PropertyValue", name: "Dubai trade licence", value: site.licence }] : []),
+  ],
   availableLanguage: ["en"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",

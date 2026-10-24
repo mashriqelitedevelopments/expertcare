@@ -28,7 +28,19 @@ export type Adviser = {
   projects?: string[];
 };
 
-export const ADVISERS: Adviser[] = [];
+export const ADVISERS: Adviser[] = [
+  {
+    // RERA broker card 66981, three-star classification, valid 15 Feb 2024 to 15 Feb 2027. No photo yet:
+    // the card shows initials. Direct lines empty, so the buttons use the brokerage's numbers.
+    slug: "muhammad-arif-hanif",
+    name: "Muhammad Arif Muhammad Hanif",
+    title: "Real estate broker",
+    phone: "",
+    whatsapp: "",
+    email: "",
+    brn: "66981",
+  },
+];
 
 export function adviserFor(l: Pick<Listing, "slug" | "area">): Adviser | undefined {
   return (

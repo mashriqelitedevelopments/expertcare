@@ -325,7 +325,7 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
                   ))}
                 </ul>
               </div>
-              {c.adviser && <AdviserCard a={c.adviser} message={c.message} locale={locale} />}
+              {c.adviser && <AdviserCard a={c.adviser} phone={c.phone} whatsapp={c.whatsapp} message={c.message} locale={locale} />}
             </div>
           </aside>
         </div>

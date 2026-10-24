@@ -26,7 +26,7 @@ const nice = (ok, msg) => ok || warnings.push(msg);
 
 need(site.phone || site.whatsapp || site.email, "No way to reach the brokerage: set phone, WhatsApp or email in lib/site.ts (enquiry forms cannot send without one)");
 need(site.whatsapp, "WhatsApp number missing in lib/site.ts (the WhatsApp buttons and the forms' preferred route)");
-need(site.email, "Email address missing in lib/site.ts");
+nice(site.email, "No email address in lib/site.ts (the trade licence lists only a Gmail address; a company address is better)");
 need(site.phone, "Phone number missing in lib/site.ts");
 need(site.orn, "RERA office registration number (ORN) missing in lib/site.ts: required on the website and every advert");
 need(site.licence, "Trade licence number missing in lib/site.ts (the about page shows \"Pending\")");

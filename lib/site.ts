@@ -2,7 +2,8 @@
  * rather than showing an invented value. Fill every one before `live` goes true. */
 export const site = {
   name: "ExpertCare",
-  legalName: "ExpertCare Real Estate",
+  // As registered with DET (licence 516808) and RERA (ORN 33504); documents of 12 Feb 2026, valid to 19 Feb 2027.
+  legalName: "Expert Care Real Estate L.L.C",
   // Placeholder domain: confirm the registered domain before launch.
   url: "https://expertcare.ae",
   // While false the whole site is noindex and robots.txt disallows crawling.
@@ -10,12 +11,13 @@ export const site = {
   description:
     "ExpertCare is a real estate brokerage in Dubai focused on prime resale homes and off-plan projects, with selling, investor services, mortgages and property management from the same team. The full cost of every move is explained before you commit.",
   email: "",
-  phone: "",
-  whatsapp: "", // digits only, with country code, e.g. 9715XXXXXXXX
+  phone: "+971 4 263 9922",
+  whatsapp: "971505591729", // digits only, with country code: the mobile on the trade licence
   // RERA requires the brokerage's office registration number (ORN) on its website and adverts.
-  orn: "",
-  licence: "",
-  address: "Dubai, United Arab Emirates",
+  orn: "33504",
+  licence: "516808",
+  address: "Office 2901, Business Bay, Dubai, United Arab Emirates",
+  postal: { street: "Office 2901, Business Bay", poBox: "82449" },
   // Office hours as the brokerage publishes them, e.g. "Monday to Saturday, 9am to 7pm". Hidden while empty.
   hours: "",
   social: { instagram: "", linkedin: "", facebook: "", youtube: "", tiktok: "" },

@@ -4,6 +4,7 @@ import { Eyebrow, Hero } from "@/components/Sections";
 import { lp } from "@/lib/i18n";
 import type { Locale } from "@/lib/locale";
 import { JsonLd, ORG_ID } from "@/lib/seo";
+import { displayPhone } from "@/lib/contact";
 import { site } from "@/lib/site";
 import { ui } from "@/lib/ui";
 
@@ -38,7 +39,7 @@ export function Contact({ locale }: { locale: Locale }) {
                 <dt>{c.whatsapp}</dt>
                 <dd>
                   <a href={`https://wa.me/${site.whatsapp}`} dir="ltr">
-                    +{site.whatsapp}
+                    {displayPhone(site.whatsapp)}
                   </a>
                 </dd>
               </div>

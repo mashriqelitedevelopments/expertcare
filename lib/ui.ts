@@ -56,7 +56,7 @@ const EN = {
     about: "About",
     contact: "Contact",
     privacy: "Privacy",
-    rights: "© 2026 ExpertCare Real Estate",
+    rights: "© 2026 Expert Care Real Estate L.L.C",
     mq1: "Resale",
     mq2: "Off-plan",
     mq3: "Sell",
@@ -602,7 +602,7 @@ const EN = {
   about: {
     h1: "Expert advice. Real care.",
     heroCaption: "A viewing",
-    regName: "Trading as",
+    regName: "Registered name",
     regOrn: "RERA ORN",
     regLicence: "Trade licence",
     regOffice: "Office",

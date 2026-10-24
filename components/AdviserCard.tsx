@@ -5,7 +5,8 @@ import { initials, type Adviser } from "@/lib/team";
 import { ui } from "@/lib/ui";
 
 /** The named adviser for a listing, with direct lines. Rendered only when an adviser exists. */
-export function AdviserCard({ a, message, locale }: { a: Adviser; message: string; locale: Locale }) {
+/** `phone` and `whatsapp` are the lines to use: the adviser's own, or the brokerage's when the adviser has none. */
+export function AdviserCard({ a, phone, whatsapp, message, locale }: { a: Adviser; phone: string; whatsapp: string; message: string; locale: Locale }) {
   const t = ui(locale);
   return (
     <div className="panel adviser">
@@ -33,8 +34,8 @@ export function AdviserCard({ a, message, locale }: { a: Adviser; message: strin
         </div>
       </div>
       <div className="cta-pair">
-        {a.phone && (
-          <a href={telLink(a.phone)} className="cta cta-solid">
+        {phone && (
+          <a href={telLink(phone)} className="cta cta-solid">
             <Phone />
             {t.contactButtons.call}
           </a>
@@ -46,8 +47,8 @@ export function AdviserCard({ a, message, locale }: { a: Adviser; message: strin
           </a>
         )}
       </div>
-      {a.whatsapp && (
-        <a href={waLink(a.whatsapp, message)} className="adviser-wa" target="_blank" rel="noopener noreferrer">
+      {whatsapp && (
+        <a href={waLink(whatsapp, message)} className="adviser-wa" target="_blank" rel="noopener noreferrer">
           <WhatsAppIcon />
           {t.adviser.orWhatsapp}
         </a>
