@@ -1,7 +1,7 @@
 /**
  * The gate. Builds the site into .next-build, then checks every exported page:
  * - no Arabic script, no leftover "Hamd", no "artist's impression", no em-dash, no "endure"/"finished"
- * - no fee traps (AED 580 title deed, AED 290 mortgage admin)
+ * - no fee traps (AED 580 title deed), and no mortgage content (removed from the site 27 Oct 2026)
  * - every JSON-LD block parses
  * - every page has exactly one <h1>, a <title>, a meta description and a canonical
  * - every internal link resolves to an exported page
@@ -29,10 +29,17 @@ const BAD = [
   [/\bendure\b/i, "endure"],
   [/\bfinished\b/i, "finished"],
   [/AED 580\b/, "title deed AED 580 (it is 520)"],
-  [/AED 290\b/, "mortgage admin AED 290 (it is 270)"],
+  [/mortgag|loan-to-value|pre-approv/i, "mortgage content"],
   [/\bleading brokerage\b|\btrusted by thousands\b|\baward-winning\b/i, "superlative"],
 ];
 let failed = 0;
+for (const txt of ["llms.txt", "llms-full.txt"]) {
+  const file = join(dist, txt);
+  if (existsSync(file) && /mortgag|loan-to-value|pre-approv/i.test(readFileSync(file, "utf8"))) {
+    failed += 1;
+    console.log(`/${txt}: mortgage content`);
+  }
+}
 for (const f of pages) {
   const html = readFileSync(f, "utf8");
   const text = html.replace(/<script[\s\S]*?<\/script>/g, "").replace(/<style[\s\S]*?<\/style>/g, "");

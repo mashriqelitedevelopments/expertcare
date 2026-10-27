@@ -1,4 +1,4 @@
-import { CostCalculator, MortgageCalculator } from "@/components/Calculators";
+import { CostCalculator } from "@/components/Calculators";
 import { Eyebrow, GuideLink, Hero } from "@/components/Sections";
 import { getGuide } from "@/lib/content";
 import type { ImgKey } from "@/lib/images";
@@ -81,20 +81,6 @@ export function BuyingCosts({ locale }: { locale: Locale }) {
       copy={t.costsPage}
       calculator={<CostCalculator locale={locale} />}
       reading={[getGuide(locale, "cost-of-buying-property-in-dubai")!, t.guides.tools[3]]}
-    />
-  );
-}
-
-export function Mortgage({ locale }: { locale: Locale }) {
-  const t = ui(locale);
-  return (
-    <ToolPage
-      locale={locale}
-      image="l-downtown"
-      path="/mortgage-calculator/"
-      copy={t.mortgagePage}
-      calculator={<MortgageCalculator locale={locale} />}
-      reading={[getGuide(locale, "mortgages-in-dubai")!, t.guides.tools[2]]}
     />
   );
 }

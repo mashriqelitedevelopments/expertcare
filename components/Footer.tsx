@@ -143,9 +143,6 @@ export function Footer({ locale }: { locale: Locale }) {
                 <Link href={L("/buying-costs/")}>{f.buyingCosts}</Link>
               </li>
               <li>
-                <Link href={L("/mortgage-calculator/")}>{f.mortgage}</Link>
-              </li>
-              <li>
                 <Link href={L("/privacy/")}>{f.privacy}</Link>
               </li>
             </ul>

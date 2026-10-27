@@ -29,7 +29,7 @@ export function EnquiryForm({ locale, intent = "general", context }: { locale: L
     return () => window.removeEventListener("ec-unit", on);
   }, []);
   const f = (k: string) => `${id}-${k}`;
-  const keys = ["name", "phone", "email", "address", "sellWhen", "sellWhy", "units", "tenanted", "rentBudget", "moveIn", "when", "format", "budget", "areas", "type", "beds", "status", "finance", "timing", "message"] as const;
+  const keys = ["name", "phone", "email", "address", "sellWhen", "sellWhy", "units", "tenanted", "rentBudget", "moveIn", "when", "format", "budget", "areas", "type", "beds", "status", "timing", "message"] as const;
 
   function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -105,14 +105,12 @@ export function EnquiryForm({ locale, intent = "general", context }: { locale: L
           <>
             {select("when", t.when)}
             {select("format", t.format)}
-            {select("finance", t.finance)}
             {select("timing", t.timing)}
           </>
         )}
         {intent === "brief" && (
           <>
             {select("budget", t.budget)}
-            {select("finance", t.finance)}
             {select("type", t.type)}
             {select("beds", t.beds)}
             {select("status", t.status)}

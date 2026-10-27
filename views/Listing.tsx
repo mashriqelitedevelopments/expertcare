@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PaymentPlan } from "@/components/Blocks";
-import { CostCalculator, MortgageCalculator } from "@/components/Calculators";
+import { CostCalculator } from "@/components/Calculators";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { AdviserCard } from "@/components/AdviserCard";
 import { ContactButtons } from "@/components/ContactButtons";
@@ -238,11 +238,6 @@ export function Listing({ locale, slug }: { locale: Locale; slug: string }) {
               <h2 id="costs-h">{d.totalCost}</h2>
               <p className="note">{l.price ? d.atStartingPrice : d.noPrice}</p>
               <CostCalculator locale={locale} price={calcPrice} status={l.status} />
-            </section>
-
-            <section id="mortgage" aria-labelledby="mortgage-h">
-              <h2 id="mortgage-h">{d.monthly}</h2>
-              <MortgageCalculator locale={locale} price={calcPrice} status={l.status} />
             </section>
 
             {area && (

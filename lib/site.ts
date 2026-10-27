@@ -12,7 +12,7 @@ export const site = {
   // on the owner's decision of 24 Oct 2026; the trade name and activity were changed on 10 Jan 2023.
   since: "2000-02-20",
   description:
-    "ExpertCare is a real estate brokerage in Dubai, registered since 2000, focused on prime resale homes and off-plan projects, with selling, investor services, mortgages and property management from the same team. The full cost of every move is explained before you commit.",
+    "ExpertCare is a real estate brokerage in Dubai, registered since 2000, focused on prime resale homes and off-plan projects, with selling, investor services and property management from the same team. The full cost of every move is explained before you commit.",
   email: "info@expertcarerealestate.com",
   phone: "+971 56 401 4835",
   whatsapp: "971564014835", // digits only, with country code
@@ -38,11 +38,11 @@ export const PROMISES = [
   },
   {
     title: "One adviser, start to keys.",
-    text: "The adviser who shows you a home stays with you through the offer, the mortgage, the transfer and the handover.",
+    text: "The adviser who shows you a home stays with you through the offer, the transfer and the handover.",
   },
   {
     title: "Figures you can check.",
-    text: "Every guide names its source: the Dubai Land Department, the Central Bank of the UAE, GDRFA Dubai and the Dubai Legislation Portal.",
+    text: "Every guide names its source: the Dubai Land Department, GDRFA Dubai and the Dubai Legislation Portal.",
   },
   {
     title: "Care after the deal.",

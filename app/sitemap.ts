@@ -32,7 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...Object.keys(MARKET.areas).map((a) => ({ path: `/dubai-property-prices/${a}/`, priority: 0.8, lastModified: MARKET.snapshot })),
     { path: "/dubai-property-glossary/", priority: 0.7, lastModified: "2026-09-16" },
     { path: "/buying-costs/", priority: 0.7 },
-    { path: "/mortgage-calculator/", priority: 0.7 },
     { path: "/about/", priority: 0.5 },
     { path: "/contact/", priority: 0.5 },
     { path: "/privacy/", priority: 0.2 },

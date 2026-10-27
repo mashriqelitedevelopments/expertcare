@@ -17,11 +17,7 @@ export const HOME_FAQS = [
   },
   {
     q: "What fees do you pay when buying property in Dubai?",
-    a: "On a ready home bought with cash, about 7% of the price: the 4% DLD transfer fee, AED 520 in title deed fees, the registration trustee fee of AED 4,000 plus VAT, a customary 2% agency fee plus VAT and the developer's NOC fee. [What it costs to buy](/guides/cost-of-buying-property-in-dubai/) explains each one.",
-  },
-  {
-    q: "How much deposit do you need for a mortgage in Dubai?",
-    a: "At least 20% of the price for an expatriate buying a first home worth up to AED 5 million, because the Central Bank of the UAE caps lending at 80%. The minimum rises to 30% above AED 5 million, 40% on a second home and 50% on an off-plan home. See [how mortgages work in Dubai](/guides/mortgages-in-dubai/).",
+    a: "On a ready home, about 7% of the price: the 4% DLD transfer fee, AED 520 in title deed fees, the registration trustee fee of AED 4,000 plus VAT, a customary 2% agency fee plus VAT and the developer's NOC fee. [What it costs to buy](/guides/cost-of-buying-property-in-dubai/) explains each one.",
   },
   {
     q: "Are off-plan payments protected in Dubai?",

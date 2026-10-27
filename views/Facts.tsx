@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Blocks, Rich } from "@/components/Blocks";
 import { Eyebrow, Hero } from "@/components/Sections";
 import { getFacts } from "@/lib/content";
-import { FEES, MAX_TERM } from "@/lib/costs";
+import { FEES } from "@/lib/costs";
 import { FACTS_UPDATED } from "@/lib/facts";
 import { num, plainText } from "@/lib/format";
 import { formatDate } from "@/lib/guides";
@@ -23,8 +23,8 @@ export function Facts({ locale }: { locale: Locale }) {
   const figs = [
     { n: `${Math.round(FEES.transferPct * 100)}%`, label: t.facts.figTransfer },
     { n: `AED ${num(FEES.titleDeed)}`, label: t.facts.figDeed },
-    { n: `${(FEES.mortgageRegPct * 100).toFixed(2)}% + AED ${num(FEES.mortgageRegFixed)}`, label: t.facts.figMortgage },
-    { n: `${MAX_TERM} ${t.calc.years}`, label: t.facts.figTerm },
+    { n: `AED ${num(FEES.trusteeHigh)} + VAT`, label: t.facts.figTrustee },
+    { n: `${Math.round(FEES.transferPct * 100)}% + AED ${num(FEES.oqoodAdmin)}`, label: t.facts.figOqood },
   ];
   const article = {
     "@context": "https://schema.org",

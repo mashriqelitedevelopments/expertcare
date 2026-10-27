@@ -13,8 +13,7 @@ const TERMS: Term[] = [
     def: "The certificate a planning authority issues when a building is complete: the Dubai Development Authority, Trakhees or Dubai Municipality, depending on the area. It starts the developer's ten-year liability for structural defects.",
     link: "/guides/handover-and-snagging-in-dubai/",
   },
-  { id: "dbr", term: "Debt burden ratio", full: "DBR", def: "The share of income that goes on debt repayments. All monthly debt repayments together, a mortgage included, may not exceed 50% of income.", link: "/guides/mortgages-in-dubai/" },
-  { id: "dld", term: "DLD", full: "Dubai Land Department", def: "The Dubai government department that registers property sales, mortgages and leases and keeps the property register. Its regulatory arm is RERA." },
+  { id: "dld", term: "DLD", full: "Dubai Land Department", def: "The Dubai government department that registers property sales and leases and keeps the property register. Its regulatory arm is RERA." },
   {
     id: "dubai-rest",
     term: "Dubai REST",
@@ -40,13 +39,6 @@ const TERMS: Term[] = [
   { id: "golden-visa", term: "Golden Visa", def: "A long-term UAE residence visa. Property investors in Dubai can apply with property worth AED 2 million or more.", link: "/guides/golden-visa-through-property/" },
   { id: "handover", term: "Handover", def: "The delivery of a completed home to its buyer. It starts the developer's one-year liability for defective installations.", link: "/guides/handover-and-snagging-in-dubai/" },
   { id: "leasehold", term: "Leasehold", full: "usufruct", def: "The right to use and benefit from property for a fixed term. Dubai Law No. 7 of 2006 allows non-UAE nationals to hold it for up to 99 years in designated areas." },
-  {
-    id: "ltv",
-    term: "Loan-to-value",
-    full: "LTV",
-    def: "A mortgage as a share of the property's price. The Central Bank of the UAE caps it at 80% for an expatriate's first home up to AED 5 million, down to 50% for an off-plan home.",
-    link: "/guides/mortgages-in-dubai/",
-  },
   { id: "madmoun", term: "Madmoun", def: "The QR code issued with each Trakheesi advertising permit, which lets anyone confirm a property advert is approved. It has been required on printed and video adverts since 24 April 2023." },
   {
     id: "management-entity",
@@ -68,7 +60,7 @@ const TERMS: Term[] = [
   {
     id: "registration-trustee",
     term: "Registration trustee",
-    def: "A DLD-approved centre that registers property sales and mortgages. Its fee on a sale is AED 4,000 plus VAT, or AED 2,000 plus VAT under AED 500,000.",
+    def: "A DLD-approved centre that registers property sales. Its fee on a sale is AED 4,000 plus VAT, or AED 2,000 plus VAT under AED 500,000.",
     link: "/guides/cost-of-buying-property-in-dubai/",
   },
   { id: "rera", term: "RERA", full: "Real Estate Regulatory Agency", def: "The regulatory arm of the Dubai Land Department. It approves service charges, registers leases through Ejari and regulates brokers and property advertising." },

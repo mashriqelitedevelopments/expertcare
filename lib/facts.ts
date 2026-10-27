@@ -21,40 +21,12 @@ export const FACTS: { id: string; h: string; blocks: Block[] }[] = [
             ["Title deed fees", "AED 520 for an apartment or villa: AED 250 + AED 250 + AED 10 + AED 10", "Dubai Land Department"],
             ["Registration trustee fee", "AED 4,000 + VAT at AED 500,000 and above; AED 2,000 + VAT below", "Dubai Land Department"],
             ["Oqood registration, off-plan homes", "4% of the price + AED 20", "Dubai Land Department"],
-            ["Mortgage registration", "0.25% of the loan + AED 270", "Dubai Land Department"],
             ["Agency fee", "Usually 2% of the price + VAT", "Market custom"],
             ["Developer NOC, resales", "AED 500 to 5,000", "The developer"],
-            ["Bank valuation", "Typically AED 2,500 to 3,500 + VAT", "The bank"],
-            ["Bank arrangement fee", "Typically 0.5% to 1% of the loan + VAT", "The bank"],
           ],
         },
       },
-      { p: "VAT in the UAE is 5%. A ready home bought with cash typically carries fees of about 7% of the price; the [buying costs calculator](/buying-costs/) works out the exact figure." },
-    ],
-  },
-  {
-    id: "mortgages",
-    h: "Mortgage limits",
-    blocks: [
-      {
-        table: {
-          head: ["Home", "Expatriates", "UAE nationals"],
-          rows: [
-            ["First home, AED 5 million or less", "80% of the price", "85% of the price"],
-            ["First home, over AED 5 million", "70%", "75%"],
-            ["Second or investment home", "60%", "65%"],
-            ["Off-plan home", "50%", "50%"],
-          ],
-        },
-      },
-      {
-        ul: [
-          "Limits are set by the Central Bank of the UAE. Non-residents are lent to at each bank's discretion, commonly 50% to 60% on a ready home",
-          "Maximum term: 25 years. Each bank sets the age by which the loan must be repaid",
-          "Debt burden: all monthly debt repayments together may not exceed 50% of income",
-          "Early settlement fee: capped at 1% of the outstanding balance or AED 10,000, whichever is lower",
-        ],
-      },
+      { p: "VAT in the UAE is 5%. A ready home typically carries fees of about 7% of the price; the [buying costs calculator](/buying-costs/) works out the exact figure." },
     ],
   },
   {
@@ -109,7 +81,6 @@ export const FACTS: { id: string; h: string; blocks: Block[] }[] = [
         ul: [
           "Minimum value: property worth AED 2 million or more, in one property or several",
           "Term: ten years and renewable, according to the Dubai Land Department and GDRFA Dubai; the federal government portal shows a different term",
-          "Mortgaged property qualifies with a no-objection letter from the lending bank",
           "Jointly owned property counts only when the applicant's own share is worth AED 2 million or more",
           "The official DLD and GDRFA pages do not address off-plan property",
           "Below AED 2 million, DLD lists a two-year investor residence visa for a sole owner of property of any value, or a joint owner with a share of at least AED 400,000",
@@ -202,10 +173,6 @@ export const FACTS: { id: string; h: string; blocks: Block[] }[] = [
 
 export const FACT_FAQS = [
   { q: "What is the DLD transfer fee in Dubai?", a: "4% of the purchase price of a ready home, customarily paid by the buyer. Off-plan purchases pay the same 4% to register on Oqood, plus AED 20." },
-  {
-    q: "What is the maximum mortgage loan-to-value in Dubai?",
-    a: "80% for an expatriate's first home worth up to AED 5 million, 70% above AED 5 million, 60% for a second home and 50% for an off-plan home. UAE nationals may borrow 85%, 75% and 65% on ready homes.",
-  },
   { q: "What is the agency fee for buying property in Dubai?", a: "Usually 2% of the price plus 5% VAT. It is market custom, not a fixed legal rate." },
   { q: "How much property do you need for a Dubai Golden Visa?", a: "Property worth AED 2 million or more, held in one property or several." },
   { q: "What protects off-plan buyers in Dubai?", a: "Dubai Law No. 8 of 2007, which requires off-plan payments to be held in a project escrow account and used only for that project's construction." },
@@ -220,14 +187,9 @@ export const FACT_FAQS = [
 
 export const FACT_SOURCES = [
   S.dldSale,
-  S.dldMortgage,
   S.dldInitial,
   S.pfFees,
   S.bayutCosts,
-  S.cbuae,
-  S.kt,
-  S.nonRes,
-  S.earlySettle,
   S.freeholdReg,
   S.freeholdList,
   S.law7,

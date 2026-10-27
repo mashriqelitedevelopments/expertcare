@@ -13,7 +13,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "How does ExpertCare work for a buyer?",
-        a: "We take your brief, work out the full budget with the fees, help with mortgage pre-approval, shortlist homes whose adverts carry a valid Trakheesi permit, negotiate the offer and handle Form F, the developer's NOC and the transfer. The contract between you and us is Form B, the Dubai Land Department's standard buyer-broker agreement. [Buying property in Dubai](/services/buying-property-in-dubai/) sets out each step.",
+        a: "We take your brief, work out the full budget with the fees, shortlist homes whose adverts carry a valid Trakheesi permit, negotiate the offer and handle Form F, the developer's NOC and the transfer. The contract between you and us is Form B, the Dubai Land Department's standard buyer-broker agreement. [Buying property in Dubai](/services/buying-property-in-dubai/) sets out each step.",
       },
       {
         q: "What deposit do I pay when I agree to buy?",
@@ -33,7 +33,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "Should I buy ready or off-plan?",
-        a: "A ready home is paid for at transfer and can be lived in or let from that day; an off-plan home is paid in stages while it is built and can be financed only up to 50%. Both pay a 4% Dubai Land Department fee. [Off-plan or ready](/guides/off-plan-vs-ready-property-in-dubai/) compares them side by side.",
+        a: "A ready home is paid for at transfer and can be lived in or let from that day; an off-plan home is paid in stages while it is built. Both pay a 4% Dubai Land Department fee. [Off-plan or ready](/guides/off-plan-vs-ready-property-in-dubai/) compares them side by side.",
       },
     ],
   },
@@ -52,10 +52,6 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         q: "What must an off-plan advert show?",
         a: "A Trakheesi permit for the unit itself, which every off-plan unit has needed since April 2024, the developer's name, the project's escrow account number and the expected completion date. Printed and video adverts also carry a Madmoun QR code.",
-      },
-      {
-        q: "Can I get a mortgage on an off-plan home?",
-        a: "Yes, for up to 50% of the price under the Central Bank of the UAE's limits, subject to the bank's policy on the project. Some buyers pay the construction instalments themselves and arrange a mortgage for the balance at handover.",
       },
       {
         q: "What does ExpertCare check before I reserve?",
@@ -139,7 +135,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "Should I rent or buy when I move to Dubai?",
-        a: "Most people rent first. A tenancy needs no borrowing and can be left with at least 90 days' notice at expiry, while a ready home bought with cash carries about 7% in fees and a mortgage needs a deposit of at least 20%. [Relocation to Dubai](/services/relocation-to-dubai/) sets out both routes.",
+        a: "Most people rent first. A tenancy can be left with at least 90 days' notice at expiry, while a ready home carries about 7% in fees on top of the price. [Relocation to Dubai](/services/relocation-to-dubai/) sets out both routes.",
       },
     ],
   },
@@ -183,15 +179,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
     faqs: [
       {
         q: "What fees do I pay when buying a ready home?",
-        a: "About 7% of the price with cash. That covers the 4% Dubai Land Department transfer fee, AED 520 in title deed fees and the registration trustee fee of AED 4,000 plus VAT (AED 2,000 plus VAT under AED 500,000). It also covers the customary 2% agency fee plus VAT and the developer's NOC fee of AED 500 to 5,000. The [buying costs calculator](/buying-costs/) works it out for any price.",
-      },
-      {
-        q: "What does a mortgage add to the fees?",
-        a: "Dubai Land Department mortgage registration at 0.25% of the loan plus AED 270, a bank valuation of typically AED 2,500 to 3,500 plus VAT and an arrangement fee of typically 0.5% to 1% of the loan plus VAT. Early settlement is capped at 1% of the outstanding balance or AED 10,000, whichever is lower. The [mortgage calculator](/mortgage-calculator/) shows the repayments.",
-      },
-      {
-        q: "How much can I borrow?",
-        a: "The Central Bank of the UAE caps lending at 80% of the price for an expatriate's first home up to AED 5 million, 70% above that, 60% for a second home and 50% off-plan; UAE nationals may borrow 85%, 75% and 65% on ready homes. Non-residents are lent to at each bank's discretion, commonly 50% to 60%. The term is up to 25 years and all debt repayments must stay within 50% of income. See [how mortgages work in Dubai](/guides/mortgages-in-dubai/).",
+        a: "About 7% of the price. That covers the 4% Dubai Land Department transfer fee, AED 520 in title deed fees and the registration trustee fee of AED 4,000 plus VAT (AED 2,000 plus VAT under AED 500,000). It also covers the customary 2% agency fee plus VAT and the developer's NOC fee of AED 500 to 5,000. The [buying costs calculator](/buying-costs/) works it out for any price.",
       },
       {
         q: "Is the 2% agency fee set by law?",
@@ -199,7 +187,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "How much property do I need for a Golden Visa?",
-        a: "Property worth AED 2 million or more, in one property or several. The Dubai Land Department and GDRFA describe the visa as ten years and renewable; the federal portal shows a different term, so confirm it when you apply. Mortgaged homes qualify with a letter from the bank, and joint owners need a share worth AED 2 million. [The Golden Visa through property](/guides/golden-visa-through-property/) has the published rules.",
+        a: "Property worth AED 2 million or more, in one property or several. The Dubai Land Department and GDRFA describe the visa as ten years and renewable; the federal portal shows a different term, so confirm it when you apply. Joint owners need a share worth AED 2 million. [The Golden Visa through property](/guides/golden-visa-through-property/) has the published rules.",
       },
       {
         q: "Can I get a residence visa with property under AED 2 million?",

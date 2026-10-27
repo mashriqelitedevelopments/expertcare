@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CostCalculator, MortgageCalculator } from "./Calculators";
+import { CostCalculator } from "./Calculators";
 import type { ListingView } from "@/lib/content";
 import { buyingCosts } from "@/lib/costs";
 import { aed } from "@/lib/format";
@@ -138,7 +138,7 @@ export function Blocks({ blocks, locale }: { blocks: Block[]; locale: Locale }) 
               <Rich text={b.note} locale={locale} />
             </p>
           );
-        if ("tool" in b) return b.tool === "costs" ? <CostCalculator key={i} locale={locale} /> : <MortgageCalculator key={i} locale={locale} />;
+        if ("tool" in b) return <CostCalculator key={i} locale={locale} />;
         return <CostExample key={i} price={b.example} locale={locale} />;
       })}
     </>

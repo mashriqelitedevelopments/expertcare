@@ -32,7 +32,7 @@ function pickFeatured<T extends { developer: string; price: number | null }>(lis
 }
 
 /** "Beyond buying and selling": off-plan leads as the large tile. */
-const BENTO = ["off-plan-advisory", "investor-services", "golden-visa-through-property", "mortgage-advisory", "relocation-to-dubai"];
+const BENTO = ["off-plan-advisory", "investor-services", "golden-visa-through-property", "property-management-in-dubai", "relocation-to-dubai"];
 
 const DOORS = [
   { slug: "buying-property-in-dubai", key: "buy", inset: "handover" },

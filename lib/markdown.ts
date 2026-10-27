@@ -32,7 +32,7 @@ export function blocksToMd(blocks: Block[]) {
       if ("table" in b) return table(b.table.head, b.table.rows);
       if ("note" in b) return `> ${md(b.note)}`;
       if ("tool" in b)
-        return b.tool === "costs" ? `Calculator: ${absUrl("/buying-costs/")}` : `Calculator: ${absUrl("/mortgage-calculator/")}`;
+        return `Calculator: ${absUrl("/buying-costs/")}`;
       const r = buyingCosts({ price: b.example, status: "ready" });
       return table(["Fee", "Amount"], [...r.lines.map((l) => [l.label, money(l.amount)]), ["Price plus fees", money(r.total)]]);
     })
@@ -45,7 +45,7 @@ export function llmsTxt() {
   return [
     `# ${site.name}`,
     "",
-    `> ${site.name} is a real estate brokerage in Dubai, United Arab Emirates, registered since 2000 and focused on prime resale homes and off-plan projects, with selling, investor advice, mortgage help, Golden Visa guidance and property management from the same team. It publishes off-plan homes with the full cost of buying on each, and plain guides to buying, selling, renting and letting in Dubai whose figures are checked against the Dubai Land Department (DLD), the Central Bank of the UAE and GDRFA Dubai. Facts last checked ${FACTS_UPDATED}.`,
+    `> ${site.name} is a real estate brokerage in Dubai, United Arab Emirates, registered since 2000 and focused on prime resale homes and off-plan projects, with selling, investor advice, Golden Visa guidance and property management from the same team. It publishes off-plan homes with the full cost of buying on each, and plain guides to buying, selling, renting and letting in Dubai whose figures are checked against the Dubai Land Department (DLD) and GDRFA Dubai. Facts last checked ${FACTS_UPDATED}.`,
     "",
     "Key facts for buyers in Dubai:",
     "",
@@ -63,11 +63,10 @@ export function llmsTxt() {
     "",
     "## Reference and tools",
     "",
-    `- [Dubai property buying facts](${absUrl("/dubai-property-facts/")}): fees, mortgage limits, ownership, off-plan protections, advertising rules, Golden Visa rules and area transport on one sourced page`,
+    `- [Dubai property buying facts](${absUrl("/dubai-property-facts/")}): fees, ownership, off-plan protections, advertising rules, Golden Visa rules and area transport on one sourced page`,
     `- [Dubai property prices by area](${absUrl("/dubai-property-prices/")}): median price per sq ft and residential sales by quarter for Dubai and seven communities, our analysis of the Dubai Land Department's open transaction data (Data.Dubai, Dubai Open Data Licence)`,
     `- [Dubai property glossary](${absUrl("/dubai-property-glossary/")}): plain definitions of DLD, RERA, Oqood, Ejari, Form F, NOC, Trakheesi, Mollak, escrow, snagging and more`,
-    `- [Buying costs calculator](${absUrl("/buying-costs/")}): every fee on a ready or off-plan home, with or without a mortgage`,
-    `- [Mortgage calculator](${absUrl("/mortgage-calculator/")}): monthly repayment, minimum deposit under Central Bank limits, income needed`,
+    `- [Buying costs calculator](${absUrl("/buying-costs/")}): every fee on a ready or off-plan home`,
     "",
     "## Off-plan projects for sale",
     "",

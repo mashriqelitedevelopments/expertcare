@@ -1,9 +1,11 @@
 # ExpertCare: content rules
 
 ExpertCare is a real estate brokerage in Dubai focused on higher-ticket resale homes and off-plan
-projects (the focus since 20 Oct 2026). Selling, investor advice, mortgages, the Golden Visa and
+projects (the focus since 20 Oct 2026). Selling, investor advice, the Golden Visa and
 property management support that; renting and relocation stay as services but never lead the copy.
 Say "prime resale" or "upper end of the market", never "luxury" as a boast. The site is English only.
+No mortgages: since 27 Oct 2026 the site does not offer, explain or mention mortgages, home loans,
+lending limits or mortgage fees (`npm run check` fails on the word).
 
 ## Voice
 - Plain, short sentences. One idea per sentence. No clever phrasing, no metaphors.
@@ -20,17 +22,15 @@ Say "prime resale" or "upper end of the market", never "luxury" as a boast. The 
 - Every figure, fee, percentage, law, date and rule must come from lib/costs.ts, lib/facts.ts,
   lib/sources.ts or lib/guides/reference.ts, which were checked in September 2026 with the source on each.
 - Do not add a new number unless you add its source (label + URL + the date you checked it) to the
-  guide's `sources` list and it comes from an official body (DLD, RERA, Central Bank of the UAE,
+  guide's `sources` list and it comes from an official body (DLD, RERA,
   GDRFA, Dubai Legislation Portal, FTA, u.ae, Dubai Media Office) or a named portal guide.
-- Known traps: title deed fees are AED 520 (not 580); mortgage registration is 0.25% + AED 270
-  (not +290); there is no Central Bank cap on arrangement fees; the age-at-maturity rule was removed
-  in 2019; rent increase caps are 0/5/10/15/20%; Cabinet Decision 49/2023 on rental income.
+- Known traps: title deed fees are AED 520 (not 580); rent increase caps are 0/5/10/15/20%; Cabinet Decision 49/2023 on rental income.
 - Prices on Mashriq Elite projects are "on request" and have no handover dates. Never state them.
 - Where sources disagree or are silent, say so. Do not pick a side.
 
 ## Links
 - Internal links use [label](/path/) with a trailing slash. Guides: /guides/<slug>/. Areas:
-  /areas/<slug>/. Services: /services/<slug>/. Tools: /buying-costs/, /mortgage-calculator/.
+  /areas/<slug>/. Services: /services/<slug>/. Tools: /buying-costs/.
   Reference: /dubai-property-facts/, /dubai-property-glossary/, /dubai-property-prices/.
 - Bold uses **text**. No other markup.
 

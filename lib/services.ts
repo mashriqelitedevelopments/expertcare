@@ -44,16 +44,12 @@ export const SERVICES: Service[] = [
     summary: [
       "ExpertCare acts for buyers of ready and off-plan homes in Dubai's freehold areas, whether you live in the UAE or abroad.",
       "On a resale the customary agency fee is 2% of the price plus VAT, paid by the buyer. On an off-plan purchase from a developer, the developer pays the broker and you pay nothing extra for our work.",
-      "Before the first viewing you see the whole number: the price plus the Dubai Land Department, trustee, agency and bank fees.",
+      "Before the first viewing you see the whole number: the price plus the Dubai Land Department, trustee and agency fees.",
     ],
     steps: [
       {
         t: "Brief and budget.",
-        d: "We take your brief: areas, type, size, move-in date and how you will pay. Then we work out the full budget with the [buying costs calculator](/buying-costs/), every DLD, trustee, agency and bank fee included.",
-      },
-      {
-        t: "Mortgage pre-approval.",
-        d: "If you are borrowing, we help you get pre-approval first, so you know the ceiling before you view. The Central Bank of the UAE caps an expatriate's loan on a first home worth up to AED 5 million at 80% of the price.",
+        d: "We take your brief: areas, type, size, move-in date and how you will pay. Then we work out the full budget with the [buying costs calculator](/buying-costs/), every DLD, trustee and agency fee included.",
       },
       {
         t: "Form B.",
@@ -95,10 +91,10 @@ export const SERVICES: Service[] = [
         h: "What buying costs",
         blocks: [
           {
-            p: "On a ready home bought with cash, plan for about 7% on top of the price. That covers the 4% DLD transfer fee, AED 520 in title deed fees and the trustee fee of AED 4,000 plus VAT (AED 2,000 plus VAT under AED 500,000). It also covers the customary 2% agency fee plus VAT and the developer's NOC fee of AED 500 to 5,000.",
+            p: "On a ready home, plan for about 7% on top of the price. That covers the 4% DLD transfer fee, AED 520 in title deed fees and the trustee fee of AED 4,000 plus VAT (AED 2,000 plus VAT under AED 500,000). It also covers the customary 2% agency fee plus VAT and the developer's NOC fee of AED 500 to 5,000.",
           },
           {
-            p: "By custom the buyer pays the whole 4% transfer fee, although a different split can be agreed in Form F. A mortgage adds 0.25% of the loan plus AED 270 at DLD, the bank's valuation and its arrangement fee.",
+            p: "By custom the buyer pays the whole 4% transfer fee, although a different split can be agreed in Form F.",
           },
           { tool: "costs" },
         ],
@@ -123,7 +119,7 @@ export const SERVICES: Service[] = [
             p: "You do not need a residence visa to buy. A valid passport identifies you at the registration trustee, and if you cannot attend, an attorney signs for you. A power of attorney issued abroad must be notarised, legalised, attested, translated into Arabic and issued within two years.",
           },
           {
-            p: "UAE banks lend non-residents at their own discretion, commonly 50% to 60% of the price of a ready home. [Buying property in Dubai from abroad](/guides/buying-property-in-dubai-from-abroad/) covers identification, paying and visas.",
+            p: "[Buying property in Dubai from abroad](/guides/buying-property-in-dubai-from-abroad/) covers identification, paying and visas.",
           },
         ],
       },
@@ -140,7 +136,7 @@ export const SERVICES: Service[] = [
       },
       {
         q: "How much should I budget on top of the price?",
-        a: "About 7% for a ready home bought with cash. The [buying costs calculator](/buying-costs/) itemises every fee for any price, with or without a mortgage.",
+        a: "About 7% for a ready home. The [buying costs calculator](/buying-costs/) itemises every fee for any price.",
       },
       {
         q: "Can I buy without living in the UAE?",
@@ -158,7 +154,6 @@ export const SERVICES: Service[] = [
     guides: [
       "how-to-buy-property-in-dubai",
       "cost-of-buying-property-in-dubai",
-      "mortgages-in-dubai",
       "buying-property-in-dubai-from-abroad",
       "choosing-a-real-estate-broker-in-dubai",
       "service-charges-in-dubai",
@@ -199,7 +194,7 @@ export const SERVICES: Service[] = [
       },
       {
         t: "Viewings and offers.",
-        d: "We qualify each buyer, including mortgage pre-approval, run the viewings and bring you every offer in writing.",
+        d: "We qualify each buyer, run the viewings and bring you every offer in writing.",
       },
       {
         t: "Form F.",
@@ -279,16 +274,12 @@ export const SERVICES: Service[] = [
         a: "Yes. The tenancy and its Ejari contract pass to the buyer. If the buyer wants the home empty, ending the tenancy at expiry because of the sale needs at least 12 months' notice served through a notary public or by registered mail.",
       },
       {
-        q: "Can I sell with a mortgage on the home?",
-        a: "Yes. The bank's balance is settled from the sale proceeds at the transfer, and the mortgage is released from the title deed before the buyer's name goes on it.",
-      },
-      {
         q: "Can I sell with unpaid service charges?",
         a: "No. Under Dubai Law No. 6 of 2019 unpaid service charges are a lien on the home, and it cannot be sold until they are paid.",
       },
       {
         q: "How long does a sale take?",
-        a: "Form F fixes the transfer date, so the timing depends on the buyer's funding and the developer's NOC. A cash buyer with the NOC in hand completes sooner than one whose bank still needs to value the home.",
+        a: "Form F fixes the transfer date, so the timing depends on the buyer's funding and the developer's NOC.",
       },
     ],
     guides: [
@@ -584,7 +575,7 @@ export const SERVICES: Service[] = [
     steps: [
       {
         t: "Brief.",
-        d: "Budget, areas, size, when you need the home and whether you will live in it or let it. We also ask how you will pay the instalments, because banks lend at most 50% of an off-plan home's price.",
+        d: "Budget, areas, size, when you need the home and whether you will live in it or let it. We also ask how you will pay the instalments.",
       },
       {
         t: "Developer and project checks.",
@@ -682,10 +673,6 @@ export const SERVICES: Service[] = [
         a: "Nothing extra when you buy from the developer, because the developer pays the broker's commission. You still pay the 4% Oqood registration fee plus AED 20 to the Dubai Land Department.",
       },
       {
-        q: "Can I get a mortgage on an off-plan home?",
-        a: "Yes, for up to 50% of the price under the Central Bank of the UAE's limits, subject to the bank's policy on the project.",
-      },
-      {
         q: "What should an off-plan advert show?",
         a: "A Trakheesi permit for the unit, the developer's name, the project's escrow account number and the expected completion date. Printed and video adverts also carry a Madmoun QR code.",
       },
@@ -699,144 +686,6 @@ export const SERVICES: Service[] = [
       },
     ],
     guides: ["buying-off-plan-in-dubai", "off-plan-vs-ready-property-in-dubai", "handover-and-snagging-in-dubai", "cost-of-buying-property-in-dubai", "golden-visa-through-property"],
-    intent: "brief",
-  },
-  {
-    slug: "mortgage-advisory",
-    name: "Mortgage advisory",
-    short: "Mortgages",
-    seoTitle: "Mortgage advisory in Dubai: pre-approval to registration",
-    seoDescription:
-      "ExpertCare helps Dubai buyers get mortgage pre-approval and a final offer from UAE banks, within the Central Bank loan limits and the 50% debt burden rule.",
-    title: "Mortgage help for buyers in Dubai",
-    dek: "How much a bank can lend you, which documents it needs, and the order to do things in, from pre-approval to registration at DLD.",
-    image: "guide-keys",
-    summary: [
-      "ExpertCare helps buyers prepare for a mortgage, obtain pre-approval and reach a final offer with UAE banks, then registers the mortgage at the Dubai Land Department alongside the sale.",
-      "The Central Bank of the UAE caps lending at 80% of the price for an expatriate's first home up to AED 5 million, 70% above that, 60% for a second home and 50% off-plan; UAE nationals may borrow five points more on ready homes.",
-      "A mortgage runs for up to 25 years and all monthly debt repayments must stay within 50% of income.",
-      "ExpertCare is not a lender and does not give investment advice. The bank decides whether to lend and on what terms.",
-    ],
-    steps: [
-      {
-        t: "Assessment.",
-        d: "We look at your income, existing debts, deposit and the kind of home you want, and show what the Central Bank limits and the 50% debt burden rule mean for your budget with the [mortgage calculator](/mortgage-calculator/).",
-      },
-      {
-        t: "Documents.",
-        d: "We prepare the pack the banks ask for and check it before it goes in, so the application is not held up by a missing page.",
-      },
-      {
-        t: "Pre-approval.",
-        d: "The bank reviews your income and debts and confirms how much it will lend. You view and make offers knowing the ceiling.",
-      },
-      {
-        t: "Form F with the right dates.",
-        d: "When you agree a purchase, we set a transfer date in Form F that leaves time for the bank's valuation and its final offer.",
-      },
-      {
-        t: "Valuation and final offer.",
-        d: "The bank values the home and makes its final offer. If the valuation is below the price, the bank lends against the lower figure and your deposit grows, so we flag that risk before you offer.",
-      },
-      {
-        t: "Transfer and registration.",
-        d: "The bank pays the seller at the registration trustee, and its mortgage is registered against your title deed at DLD for 0.25% of the loan plus AED 270.",
-      },
-    ],
-    sections: [
-      {
-        id: "limits",
-        h: "How much you can borrow",
-        blocks: [
-          {
-            table: {
-              head: ["Home", "Expatriates", "UAE nationals"],
-              rows: [
-                ["First home, AED 5 million or less", "80%", "85%"],
-                ["First home, over AED 5 million", "70%", "75%"],
-                ["Second or investment home", "60%", "65%"],
-                ["Off-plan home", "50%", "50%"],
-              ],
-            },
-          },
-          {
-            p: "Non-residents are lent to at each bank's discretion rather than under the regulation, commonly 50% to 60% of the price of a ready home and 50% off-plan. The rest of the price is your deposit, and the buying fees come on top.",
-          },
-        ],
-      },
-      {
-        id: "affordability",
-        h: "Term, age and affordability",
-        blocks: [
-          {
-            ul: [
-              "**Term.** A mortgage can run for up to 25 years",
-              "**Age.** Each bank sets the age by which the loan must be repaid; many use about 65 for salaried borrowers and 70 for the self-employed",
-              "**Debt burden.** All your monthly debt repayments together, the new mortgage included, may not exceed 50% of your income",
-            ],
-          },
-          { tool: "mortgage" },
-        ],
-      },
-      {
-        id: "documents",
-        h: "What the banks ask for",
-        blocks: [
-          {
-            ul: [
-              "Passport, and for residents the Emirates ID and residence visa",
-              "Proof of income: a salary certificate and payslips for employees, or trade licence and audited accounts for the self-employed",
-              "Bank statements showing salary credits and existing commitments",
-              "Once a home is agreed, Form F, the seller's title deed and the developer's NOC",
-            ],
-          },
-          { p: "Each bank has its own list, and non-residents are asked for more on income and funds. We confirm the exact list with the bank before the application goes in." },
-        ],
-      },
-      {
-        id: "fees",
-        h: "Mortgage fees",
-        blocks: [
-          {
-            ul: [
-              "Dubai Land Department mortgage registration: 0.25% of the loan plus AED 270",
-              "Bank valuation: typically AED 2,500 to 3,500 plus VAT",
-              "Arrangement fee: typically 0.5% to 1% of the loan plus VAT, set by the bank",
-              "Early settlement: capped by the Central Bank at 1% of the outstanding balance or AED 10,000, whichever is lower",
-            ],
-          },
-          { note: "ExpertCare is not a lender and does not give investment advice. We help you prepare and present your application; the bank decides whether to lend and on what terms." },
-        ],
-      },
-    ],
-    fees: "Mortgage help is part of buying with us; the bank charges a valuation of typically AED 2,500 to 3,500 plus VAT and an arrangement fee of up to 1% of the loan plus VAT, and DLD charges 0.25% of the loan plus AED 270 to register the mortgage.",
-    faqs: [
-      {
-        q: "What deposit do I need for a mortgage in Dubai?",
-        a: "At least 20% of the price for an expatriate buying a first home worth up to AED 5 million, and 15% for a UAE national, because the Central Bank caps lending at 80% and 85%. Above AED 5 million the minimum rises to 30% and 25%; a second home needs 40% and 35%; an off-plan home needs 50%.",
-      },
-      {
-        q: "Can non-residents get a mortgage in Dubai?",
-        a: "Yes. Each bank sets its own limit for non-residents, commonly 50% to 60% of the price on a ready home and 50% off-plan. We work with banks that lend to non-residents and confirm their document list before you apply.",
-      },
-      {
-        q: "How long can a Dubai mortgage run?",
-        a: "Up to 25 years. Each bank also sets the age by which the loan must be repaid, often about 65 for salaried borrowers and 70 for the self-employed.",
-      },
-      {
-        q: "How much can I borrow on my income?",
-        a: "Your monthly repayments on all debts, the new mortgage included, must stay within 50% of your income. The [mortgage calculator](/mortgage-calculator/) shows the income a repayment needs.",
-      },
-      {
-        q: "Should I get pre-approval before I view?",
-        a: "Yes. Pre-approval tells you how much the bank will lend before you make an offer, and sellers take an offer with pre-approval behind it more seriously.",
-      },
-      {
-        q: "Is ExpertCare a lender?",
-        a: "No. ExpertCare is a real estate brokerage. We help you prepare and present a mortgage application to UAE banks and we do not give investment advice; the bank decides whether to lend and on what terms.",
-      },
-    ],
-    guides: ["mortgages-in-dubai", "cost-of-buying-property-in-dubai", "how-to-buy-property-in-dubai", "buying-property-in-dubai-from-abroad", "off-plan-vs-ready-property-in-dubai"],
     intent: "brief",
   },
   {
@@ -857,19 +706,15 @@ export const SERVICES: Service[] = [
     steps: [
       {
         t: "Eligibility check.",
-        d: "We look at what you own or plan to buy against the AED 2 million threshold, including how a mortgage or a joint owner affects it.",
+        d: "We look at what you own or plan to buy against the AED 2 million threshold, including how a joint owner affects it.",
       },
       {
         t: "Buying with the visa in mind.",
         d: "If you are still buying, we shortlist ready homes that meet the threshold, since the official pages do not address off-plan homes, and run the purchase through to the title deed.",
       },
       {
-        t: "Bank letter if mortgaged.",
-        d: "A mortgaged home qualifies with a no-objection letter from the lending bank. We request it from the bank.",
-      },
-      {
         t: "Document pack.",
-        d: "Title deed, passport, photographs and the bank letter where needed, assembled and checked against the authority's current list.",
+        d: "Title deed, passport and photographs, assembled and checked against the authority's current list.",
       },
       {
         t: "Appointment.",
@@ -884,7 +729,6 @@ export const SERVICES: Service[] = [
           {
             ul: [
               "Minimum value: property worth AED 2 million or more, in one property or several",
-              "Mortgaged property qualifies with a no-objection letter from the lending bank",
               "Jointly owned property counts only when the applicant's own share is worth AED 2 million or more",
               "The Dubai Land Department lists the Golden Visa fees for the main applicant as AED 9,884.75",
             ],
@@ -926,7 +770,6 @@ export const SERVICES: Service[] = [
     fees: "Our help with the purchase, the document pack and the appointment is part of buying with us; the Dubai Land Department lists the Golden Visa fee for the main applicant as AED 9,884.75, and the authority's fees apply when you apply.",
     faqs: [
       { q: "How much property do I need for a Golden Visa in Dubai?", a: "Property worth AED 2 million or more, in one property or several, according to the Dubai Land Department and GDRFA Dubai." },
-      { q: "Does a mortgaged property count?", a: "Yes. The Dubai Land Department asks for a no-objection letter from the lending bank, which we request on your behalf." },
       { q: "Can joint owners combine their shares?", a: "GDRFA counts a jointly owned property only when the applicant's own share is worth AED 2 million or more." },
       { q: "Does an off-plan property qualify?", a: "The official DLD and GDRFA pages do not say. Confirm with GDRFA before you buy with the visa in mind, or choose a ready home." },
       { q: "How long is the Golden Visa?", a: "The Dubai Land Department and GDRFA describe it as ten years, renewable. The federal government portal shows a different term, so confirm it when you apply." },
@@ -988,7 +831,7 @@ export const SERVICES: Service[] = [
             ol: [
               { t: "The rent.", d: "What similar homes in the building or community let for, from the Smart Rental Index and recent lets." },
               { t: "The running costs.", d: "The service charge RERA has approved for the building, looked up on DLD's Service Charge Index, plus our management fee and a provision for maintenance." },
-              { t: "The full price.", d: "The price plus the buying fees: about 7% on a ready home bought with cash, or 4% plus AED 20 on Oqood for an off-plan home, worked out with the [buying costs calculator](/buying-costs/)." },
+              { t: "The full price.", d: "The price plus the buying fees: about 7% on a ready home, or 4% plus AED 20 on Oqood for an off-plan home, worked out with the [buying costs calculator](/buying-costs/)." },
             ],
           },
           { p: "Net rent against the full price is the figure we compare homes on. We show the inputs rather than a headline percentage, because rent and service charges move." },
@@ -1028,7 +871,7 @@ export const SERVICES: Service[] = [
             p: "The UAE does not levy income tax on individuals. Under Cabinet Decision No. 49 of 2023, as explained by the Federal Tax Authority, a person's income from property held in their own name is not subject to corporate tax when the activity is not carried out, and is not required to be carried out, under a licence.",
           },
           {
-            p: "Non-residents buy with a passport, and UAE banks commonly lend them 50% to 60% of the price of a ready home. Your country of residence may tax your Dubai income; we do not give tax advice.",
+            p: "Non-residents buy with a passport. Your country of residence may tax your Dubai income; we do not give tax advice.",
           },
         ],
       },
@@ -1053,11 +896,11 @@ export const SERVICES: Service[] = [
       },
       {
         q: "Is off-plan or ready better for investors?",
-        a: "Neither as a rule. A ready home can be let from the day of transfer and financed up to 60% as a second home; an off-plan home is paid in stages, earns nothing until handover and is financed up to 50%. [Off-plan or ready](/guides/off-plan-vs-ready-property-in-dubai/) sets the two side by side.",
+        a: "Neither as a rule. A ready home can be let from the day of transfer; an off-plan home is paid in stages and earns nothing until handover. [Off-plan or ready](/guides/off-plan-vs-ready-property-in-dubai/) sets the two side by side.",
       },
       {
         q: "Can I invest without living in the UAE?",
-        a: "Yes. Non-residents can own freehold property in Dubai's designated areas and borrow from UAE banks, which commonly lend them 50% to 60% of a ready home's price.",
+        a: "Yes. Non-residents can own freehold property in Dubai's designated areas and buy with a passport.",
       },
     ],
     guides: ["investing-in-dubai-property", "renting-out-property-in-dubai", "service-charges-in-dubai", "off-plan-vs-ready-property-in-dubai", "buying-property-in-dubai-from-abroad", "cost-of-buying-property-in-dubai"],
@@ -1113,8 +956,7 @@ export const SERVICES: Service[] = [
             table: {
               head: ["", "Renting", "Buying"],
               rows: [
-                ["Upfront", "Rent in advance by post-dated cheques, a security deposit and AED 177.75 for Ejari", "The deposit, plus about 7% of the price in fees on a ready home bought with cash"],
-                ["Borrowing", "Not needed", "Up to 80% of the price for an expatriate's first home up to AED 5 million; non-residents commonly 50% to 60%"],
+                ["Upfront", "Rent in advance by post-dated cheques, a security deposit and AED 177.75 for Ejari", "The deposit, plus about 7% of the price in fees on a ready home"],
                 ["Flexibility", "At least 90 days' notice on either side to change terms or not renew", "Selling needs a transfer and the developer's NOC"],
                 ["Residency", "No property visa", "A two-year investor visa, or a Golden Visa from AED 2 million"],
               ],
@@ -1147,7 +989,6 @@ export const SERVICES: Service[] = [
             ul: [
               "**To rent:** your passport, your visa status and a UAE bank account, because by market practice rent cheques are drawn on a UAE bank",
               "**To buy:** a valid passport, which identifies you at the registration trustee. If you cannot attend, an attorney signs under a power of attorney notarised abroad, legalised, attested, translated into Arabic and issued within two years",
-              "**To borrow:** each bank sets its own list for non-residents",
             ],
           },
         ],
@@ -1169,7 +1010,7 @@ export const SERVICES: Service[] = [
     faqs: [
       {
         q: "Should I rent or buy when I move to Dubai?",
-        a: "Most people rent first. A tenancy can be in place within weeks, needs no borrowing and can be left with at least 90 days' notice at expiry, while a purchase carries about 7% in fees on a ready home and a deposit of at least 20% if you borrow.",
+        a: "Most people rent first. A tenancy can be in place within weeks and can be left with at least 90 days' notice at expiry, while a purchase carries about 7% in fees on a ready home.",
       },
       {
         q: "Can I rent a home before I arrive?",
@@ -1192,7 +1033,7 @@ export const SERVICES: Service[] = [
         a: "Yes. One brief covers every household, with a shortlist per family, grouped viewings and one contact for your people team.",
       },
     ],
-    guides: ["renting-a-home-in-dubai", "how-to-buy-property-in-dubai", "buying-property-in-dubai-from-abroad", "cost-of-buying-property-in-dubai", "mortgages-in-dubai", "golden-visa-through-property"],
+    guides: ["renting-a-home-in-dubai", "how-to-buy-property-in-dubai", "buying-property-in-dubai-from-abroad", "cost-of-buying-property-in-dubai", "golden-visa-through-property"],
     intent: "general",
   },
 ];

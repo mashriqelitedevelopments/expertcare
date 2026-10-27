@@ -1,7 +1,7 @@
 # ExpertCare
 
 A full-service real estate brokerage website for Dubai: buying, selling, renting, off-plan advice,
-mortgage help, Golden Visa guidance, investor work, relocation and property management. Built for
+Golden Visa guidance, investor work, relocation and property management. Built for
 search and for AI answer engines: every page carries structured data, every figure names its source,
 and the whole site is also published as plain text at `/llms.txt` and `/llms-full.txt`.
 
@@ -24,8 +24,8 @@ npm run check      # builds into .next-build and gates every page (see scripts/c
 | What | Where |
 | --- | --- |
 | The brokerage's own details (name, domain, contacts, ORN, `live` switch) | `lib/site.ts` |
-| Services (nine) | `lib/services.ts`; URLs in `lib/paths.ts` |
-| Guides (fourteen) | `lib/guides/a.ts`, `lib/guides/b.ts`; types in `lib/blocks.ts`; sources in `lib/sources.ts` |
+| Services (eight) | `lib/services.ts`; URLs in `lib/paths.ts` |
+| Guides (thirteen) | `lib/guides/a.ts`, `lib/guides/b.ts`; types in `lib/blocks.ts`; sources in `lib/sources.ts` |
 | Area guides (twelve) | `lib/areas.ts` |
 | Fees, loan limits and calculators | `lib/costs.ts`, `components/Calculators.tsx` |
 | Reference page and glossary | `lib/facts.ts`, `lib/glossary.ts` |

@@ -21,7 +21,6 @@ export const orgLd = {
     "Property management in Dubai",
     "Dubai Land Department fees",
     "Off-plan property in Dubai",
-    "UAE mortgages",
     "Dubai Golden Visa through property",
     ...AREAS.map((a) => a.name),
   ],

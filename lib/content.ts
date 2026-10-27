@@ -66,7 +66,6 @@ const SERVICE_ORDER = [
   "selling-property-in-dubai",
   "investor-services",
   "golden-visa-through-property",
-  "mortgage-advisory",
   "property-management-in-dubai",
   "renting-a-home-in-dubai",
   "relocation-to-dubai",

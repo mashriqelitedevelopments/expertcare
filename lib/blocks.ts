@@ -11,10 +11,10 @@ export type Block =
   | { ol: { t: string; d: string }[] }
   | { table: { head: string[]; rows: string[][] } }
   | { note: string }
-  | { tool: "costs" | "mortgage" }
+  | { tool: "costs" }
   | { example: number };
 
-export const TOPICS = ["Buying", "Costs and mortgages", "Off-plan", "Owning and letting", "Residency"] as const;
+export const TOPICS = ["Buying", "Costs", "Off-plan", "Owning and letting", "Residency"] as const;
 
 export type Guide = {
   slug: string;

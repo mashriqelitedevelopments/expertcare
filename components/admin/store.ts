@@ -185,7 +185,7 @@ function seedDemo(): DemoData {
   }));
   const now = Date.now();
   const enquiries: Enquiry[] = [
-    { id: "e1", created_at: new Date(now - 36e5).toISOString(), intent: "viewing", name: "Sample enquiry", phone: "+971 50 000 0000", email: "", context: "EC-2001, Floareá Skies, Mashriq Elite, Jumeirah Village Circle", unit: "1204", fields: { Viewing: "This week", "Paying with": "Cash" }, page: "/properties/mashriq-elite-floarea-skies/", referrer: "", status: "new", notes: "" },
+    { id: "e1", created_at: new Date(now - 36e5).toISOString(), intent: "viewing", name: "Sample enquiry", phone: "+971 50 000 0000", email: "", context: "EC-2001, Floareá Skies, Mashriq Elite, Jumeirah Village Circle", unit: "1204", fields: { Viewing: "This week", Format: "In person" }, page: "/properties/mashriq-elite-floarea-skies/", referrer: "", status: "new", notes: "" },
     { id: "e2", created_at: new Date(now - 864e5).toISOString(), intent: "brief", name: "Sample brief", phone: "+971 55 000 0000", email: "buyer@example.com", context: "", unit: "", fields: { Budget: "AED 2M to 3M", Areas: "Dubai Islands", "Ready or off-plan": "Off-plan" }, page: "/contact/", referrer: "google.com", status: "contacted", notes: "Called, sending options." },
     { id: "e3", created_at: new Date(now - 3 * 864e5).toISOString(), intent: "valuation", name: "Sample seller", phone: "+971 52 000 0000", email: "", context: "", unit: "", fields: { Property: "2 bed, Business Bay", Selling: "Within 3 months" }, page: "/sell/", referrer: "", status: "closed", notes: "" },
   ];

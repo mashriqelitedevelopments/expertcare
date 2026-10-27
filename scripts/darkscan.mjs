@@ -26,9 +26,9 @@ const PORT = 4379;
 const DEBUG_PORT = 9463;
 const ROUTES = (process.env.ROUTES ? process.env.ROUTES.split(",") : [
   "/", "/properties/", "/off-plan/", "/properties/sobha-orbis/", "/properties/mashriq-elite-floarea-skies/", "/buy/apartments-for-sale-in-dubai/", "/shortlist/",
-  "/sell/", "/rent/", "/landlords/", "/services/", "/services/mortgage-advisory/", "/areas/", "/areas/dubai-marina/",
+  "/sell/", "/rent/", "/landlords/", "/services/", "/services/off-plan-advisory/", "/areas/", "/areas/dubai-marina/",
   "/guides/", "/guides/selling-property-in-dubai/", "/faq/", "/dubai-property-facts/", "/dubai-property-glossary/",
-  "/dubai-property-prices/", "/dubai-property-prices/dubai-marina/", "/buying-costs/", "/mortgage-calculator/",
+  "/dubai-property-prices/", "/dubai-property-prices/dubai-marina/", "/buying-costs/",
   "/about/", "/contact/", "/privacy/", "/nothing-here/",
 ]).filter((r) => r === "/nothing-here/" || existsSync(join(dist, r, "index.html"))); // listings can be switched off
 const DEVICES = { desktop: { width: 1440, height: 900, mobile: false }, mobile: { width: 390, height: 844, mobile: true } };

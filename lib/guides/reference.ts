@@ -105,7 +105,7 @@ export const REFERENCE_GUIDES: Guide[] = [
   },
   {
     slug: "cost-of-buying-property-in-dubai",
-    topic: "Costs and mortgages",
+    topic: "Costs",
     seoTitle: "Cost of buying property in Dubai (2026): DLD, agency and mortgage fees",
     seoDescription:
       "Every fee a buyer pays in Dubai, checked against the Dubai Land Department: the 4% transfer fee, title deed and trustee fees, agency commission, Oqood and mortgage fees, with a calculator.",
@@ -211,7 +211,7 @@ export const REFERENCE_GUIDES: Guide[] = [
   },
   {
     slug: "mortgages-in-dubai",
-    topic: "Costs and mortgages",
+    topic: "Costs",
     seoTitle: "Mortgages in Dubai (2026): how much you can borrow, deposits and fees",
     seoDescription:
       "How mortgages work in Dubai for expatriates, UAE nationals and non-residents: Central Bank loan limits, deposits, the 25-year term, the 50% debt burden rule and fees, with a calculator.",
@@ -300,7 +300,7 @@ export const REFERENCE_GUIDES: Guide[] = [
           },
         ],
       },
-      { id: "calculator", h: "Estimate your repayments", blocks: [{ tool: "mortgage" }] },
+      { id: "calculator", h: "Estimate your repayments", blocks: [] },
     ],
     faqs: [
       {
