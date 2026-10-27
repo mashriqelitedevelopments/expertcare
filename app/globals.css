@@ -3737,7 +3737,8 @@ html.has-modal {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 14px;
+  min-height: 44px;
+  margin-top: 4px;
   font-size: 13px;
   color: var(--ink);
   text-decoration: underline;
